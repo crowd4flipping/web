@@ -1,2 +1,2 @@
-# web
-The C4F web page
+# About the repo
+Here goes the C4F web page
