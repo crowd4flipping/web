@@ -1,0 +1,64 @@
+@import "./theme/Default.module.scss";
+
+:root {
+  @include default;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-behavior: smooth;
+
+  & body::-webkit-scrollbar {
+    display: none;
+
+  } 
+
+  --blue: #00c3ff;
+  --black: #333333;
+  --gray:  #3333;
+  --grayform: #777777;
+  --bluegray:  #c8d8ddbd;
+  --white2: aliceblue;
+  --white: #fdfdfd;
+  --whitetransparent:#fdfdfd42; 
+  --whitegray:  #f8f8f8;
+  --whitegray_:  #ffffffff;
+  --orange: linear-gradient(270deg, rgba(255,64,0,1) 0%, rgba(255,93,0,1) 100%);
+  /* --orange: #25d366;; */
+  --green: #11e45e;
+  --purple: #8855ff;
+  --red: #ff0055;
+  --yellow: #fcbe0a;
+  --yellow1: #e98d00;
+  --mustard: #ffaa00;
+  --backgroundButton:  linear-gradient(145deg, #00d1ff, #00b0e6);
+
+  --boxShadowHeader: inset 10px 10px 24px #00a4d6,
+  inset -10px -10px 24px #00e2ff;
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.back_ground_traslate{
+    background-image: url('../public/images/pages_images/real-state_07.jpg');
+    background-size: contain;
+    background-position-y: center;
+    background-position-x: left;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+

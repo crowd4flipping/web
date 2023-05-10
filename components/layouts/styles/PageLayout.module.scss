@@ -1,0 +1,28 @@
+@import "../../../styles/theme/Utils.module.scss";
+
+@mixin heroAndProjects_bg($deg, $endingPercent) {
+  background: rgb(158, 181, 188);
+  background: linear-gradient(
+    $deg,
+    rgba(158, 181, 188, 0.25) 0%,
+    rgba(255, 255, 255, 0) $endingPercent
+  );
+}
+
+.pageLayout {
+  padding-bottom: 5rem;
+  font-size: var(--text-size);
+  font-weight: var(--text-weight);
+  color: var(--text-color);
+
+  &_content {
+    @extend %pagePaddingX;
+  }
+
+  &_heroPageBottomSection {
+    background-color: var(--color-dark-primary);
+    margin-top: -10rem;
+    padding-top: 15rem;
+    padding-bottom: 5rem;
+  }
+}

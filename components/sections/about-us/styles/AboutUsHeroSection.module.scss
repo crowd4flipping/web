@@ -1,0 +1,66 @@
+@use "../../../../styles/theme/Default.module.scss";
+@import "../../../../styles/theme/Utils.module.scss";
+
+.aboutUsHero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  @include isMobile {
+    margin-top: 25%;
+  }
+
+  &_title {
+    @extend %title-xl;
+    @extend %title-gradient;
+    margin-bottom: 0.7rem;
+    text-align: center;
+
+    &_highlight {
+      @extend %text-gradient-primary;
+    }
+
+    @include isSmallerRange {
+      font-size: var(--title-size);
+    }
+  }
+
+  &_subtitle {
+    text-align: center;
+  }
+
+  &_painPointsWrapper {
+    width: 100vw;
+    background-color: var(--color-dark-primary);
+    background-image: linear-gradient(
+      90deg,
+      #00193d,
+      var(--color-dark-primary),
+      var(--color-dark-primary),
+      #00193d
+    );
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+
+  &_painPointContent {
+    @extend %pagePaddingX;
+
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include isSmallerRange {
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    @include isMobile {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 2.5rem;
+    }
+  }
+}

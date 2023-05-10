@@ -1,0 +1,16 @@
+@import "./PageLayout.module.scss";
+
+.sectionLayout {
+  @extend %pagePaddingX;
+}
+
+.heroSectionLayout {
+  height: 100vh;
+  width: 100vw;
+
+  &_content {
+    @extend %pagePaddingX;
+    height: 100%;
+    width: 100%;
+  }
+}

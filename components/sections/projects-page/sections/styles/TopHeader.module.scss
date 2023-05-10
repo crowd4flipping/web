@@ -1,0 +1,23 @@
+@import "../../../../../styles/theme/Default.module.scss";
+
+.topHeader {
+  background-color: var(--color-surface);
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+  &_title {
+    @extend %title-md;
+  }
+
+  &_location {
+    margin-top: .3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
