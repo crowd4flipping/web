@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "../styles/globals.scss";
 import Script from "next/script";
+import { CookieBanner } from "../components/cookies/CookieBanner";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -37,6 +38,7 @@ function MyApp({ Component, pageProps }) {
       </Script>
 
       <Component {...pageProps} />
+      <CookieBanner />
     </>
   );
 }

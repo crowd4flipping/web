@@ -5,16 +5,15 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import ReCAPTCHA from "react-google-recaptcha";
 import Link from "next/link";
+import { Route } from "routes/Routes";
 
 export const ContactFormItem = () => {
   const router = useRouter();
-
-  const api =
-    "https://us-central1-crowd4flipping-app.cloudfunctions.net/app/api";
   const [sendData, setSendData] = useState(false);
   const [captchaa, setCaptchaa] = useState(false);
   const captcha = useRef(null);
   const fromWeb = "fw";
+  
   const [state, setState] = useState({
     email: "",
     comments: "",
@@ -41,7 +40,8 @@ export const ContactFormItem = () => {
 
   const sendContact = async (data) => {
     try {
-      let res = await axios.post(`${api}/contact`, data);
+      const api = Route().api.contact;
+      let res = await axios.post(api, data);
       if (res.data.status === 200) {
         setSendData(false);
         router.push("/thanks-investment");
