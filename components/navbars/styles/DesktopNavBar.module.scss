@@ -30,6 +30,10 @@
       color: var(--text-color);
       transition: 0.3s;
 
+      &_white{
+        color:white;
+      }
+
       &:hover {
         color: var(--color-primary);
       }

@@ -4,6 +4,7 @@ import styles from "./styles/PageLayout.module.scss";
 import { AnimatedMobileNavBar } from "../navbars/AnimatedMobileNavBar";
 import { NavBarSection } from "./types/NavBar";
 import { Route } from "routes/Routes";
+import { Footer } from "../navbars/Footer";
 
 const navBarSections: NavBarSection[] = [
   {
@@ -12,12 +13,9 @@ const navBarSections: NavBarSection[] = [
   },
   {
     label: "FAQs",
-    href:"/#faqs",
+    href: "/#faqs",
     id: "#faqs",
   },
- /*  {
-    label: "Blog",
-  }, */
   {
     label: "Acceder",
     href: Route().site.c4f_app.host,
@@ -48,6 +46,7 @@ export const PageLayout = ({
         isOpen={isOpen}
       />
       <main className={styles.pageLayout}>{children}</main>
+      <Footer></Footer>
     </>
   );
 };

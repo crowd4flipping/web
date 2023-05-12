@@ -23,14 +23,14 @@ const projectList: ProjectProps[] = [
     totalAmount: "235.000",
   },
   {
-    projectId:"cJJvQH8A1VCx7bIhpT9M",
+    projectId: "cJJvQH8A1VCx7bIhpT9M",
     profitability: "14",
     src: "https://firebasestorage.googleapis.com/v0/b/crowd4flipping-app.appspot.com/o/images-projects%2FcJJvQH8A1VCx7bIhpT9M%2FIMG-20221213-WA0005.jpg?alt=media&token=3eb484c0-56c6-4076-975b-f0d6db89127e",
     street: "Chalet en Cala Vinyes",
     totalAmount: "740.000",
   },
   {
-    projectId:"sXGiqNobBNBI4eU9bV6b",
+    projectId: "sXGiqNobBNBI4eU9bV6b",
     profitability: "11",
     src: "https://firebasestorage.googleapis.com/v0/b/crowd4flipping-app.appspot.com/o/images-projects%2FsXGiqNobBNBI4eU9bV6b%2Fson%20vida00000%20(1).jpg?alt=media&token=b2531f2d-b8fe-4140-aa60-50d397e990d0",
     street: "Chalet en Son Vida, Palma",
@@ -63,7 +63,10 @@ export const ProjectsSection = () => {
     <section className={styles.projectsSection_bg}>
       <div className={styles.projectsSection}>
         <h2 className={styles.projectsSection_title}>
-          Algunos de nuestros proyectos
+          Algunos de nuestros{" "}
+          <span className={styles.projectsSection_title_bold}>
+            proyectos finalizados
+          </span>
         </h2>
 
         <div className={styles.projectsSection_projects}>

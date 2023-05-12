@@ -13,8 +13,12 @@
     margin-bottom: 1rem;
     font-weight: 400;
 
-    @media (max-width: $md){
+    @media (max-width: $md) {
       text-align: center;
+    }
+
+    &_bold {
+      font-weight: bold;
     }
   }
 
@@ -23,15 +27,15 @@
     width: 100%;
     justify-content: space-between;
 
-    @include isMediumRange{
+    @include isMediumRange {
       margin-bottom: 3rem;
     }
-    
-    @include isLargerRange{
+
+    @include isLargerRange {
       margin-bottom: 5rem;
     }
 
-    @media (max-width: $md){
+    @media (max-width: $md) {
       display: block;
     }
   }

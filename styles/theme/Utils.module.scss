@@ -4,10 +4,6 @@ $md: 1024px;
 $lg: 1280px;
 $xl: 1536px;
 
-@function rest($one, $two) {
-  @return $one - $two;
-}
-
 @mixin isMobile {
   @media (max-width: $sm) {
     @content;
@@ -40,18 +36,18 @@ $xl: 1536px;
   }
 
   @media (min-width: $sm) {
-    max-width: rest($sm, 50px);
+    max-width: calc($sm - 5rem);
   }
 
   @media (min-width: $md) {
-    max-width: rest($md, 50px);
+    max-width: calc($md - 5rem);
   }
 
   @media (min-width: $lg) {
-    max-width: rest($lg, 50px);
+    max-width: calc($lg - 10rem);
   }
 
   @media (min-width: $xl) {
-    max-width: rest($xl, 50px);
+    max-width: calc($xl - 10rem);
   }
 }
