@@ -1,0 +1,261 @@
+.page_grid_container{
+    z-index: 10;
+    height: 100%;
+  
+    display: grid;
+    grid-template:
+      "left right " / 1fr 1fr
+    ;
+    width: 100vw;
+  }
+  
+  .right{
+    grid-area: right;
+  }
+  
+  .left{
+    grid-area: left;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    height: 100vh;
+    z-index: -10;
+  }
+  
+  .explore_btn {
+    display: block;
+    padding: 16px 24px;
+    background-color: var(--dark-green);
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: var(--title-font);
+    border-radius: 10px;
+  }
+  
+  .base_page_size {
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .explore_page_hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mountains {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5vh;
+    z-index: 0;
+    background-image: url('../public/images/brand/backgorund_buildings.png');
+    background-size: cover;
+    height: 100%;
+    background-repeat: no-repeat;
+  }
+  
+  .mountain {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 750px;
+  }
+  
+  .title_text {
+    font-size: 95px;
+    margin: 0;
+    color: var(--black);
+    & span{ 
+        color: var(--blue);
+    }
+  }
+  
+  .sub_text {
+    margin: 0;
+    margin-bottom: 18px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  .explore_page_hero_container {
+    padding: 4rem;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+  }
+  
+  .buttons_container{
+    display: flex;
+    width: 700px;
+    justify-content: space-around;
+  }
+  
+  .back_btn {
+    display: inline-block;
+    padding: 12px 18px;
+    background: var(--backgroundButton);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    min-width: 300px;
+    border-radius: 5px;
+    box-shadow: -2px -2px 4px rgba(0, 0, 0, .3);  
+    text-align: center;
+    & span{
+      color: var(--black);
+    }
+  }
+  
+  .principal_button{
+    background: var(--orange);
+  }
+  
+  .nav_bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 18px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .nav_link {
+    margin-right: 40px;
+    font-size: 28px;
+    font-family: var(--title-font);
+    cursor: pointer;
+  }
+  
+  .logo_container{
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: 1rem;
+  }
+  
+  .text_container{
+    & h1{
+      color: var(--black);
+      & span{
+        color: var(--blue);
+      }
+    }
+  }
+  
+  .thanks_message_container{
+    & h2{
+      color: var(--black);
+  
+      & span{
+        color: var(--blue);
+      }
+    }
+  }
+  
+  .BsCheck2Circle{
+    font-size: 5rem;
+    color: var(--green);
+  }
+  
+  
+  .video_container{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: -1.5px -1.5px 3px rgba($color: #000000, $alpha: .5);
+
+    & video{
+      width: 100%;
+      border-radius: 10px;
+    }
+  }
+  
+  @media only screen and (min-width: 360px) and (max-width: 991px){
+    .nav_bar{
+      height: 10vh;
+      & .back_btn{
+        font-size: 1rem;
+        min-width: 170px;
+        padding: 15px;
+        text-align: center;
+      }
+    }
+  
+    .page_grid_container{
+      grid-template: 
+        "left"
+        "right"
+      ;
+      width: initial;
+      place-content: space-evenly;
+    }
+
+    .left{
+        height: fit-content;
+    }
+  
+    .header_content{
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding-top: 5rem;
+    }
+  
+    .explore_page_hero{
+      justify-content: flex-end;
+      & .back_btn{
+        font-size: 1.2rem;
+        padding: 10px;
+        margin-bottom: .5rem;
+      }
+    }
+  
+    .explore_page_hero_container{
+      padding: 0;
+    }
+  
+    .logo_container{
+      width: 100vw;
+      padding: 5px;
+    }
+  
+    .buttons_container{
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 1rem;
+    }
+  
+    .title_text{
+      font-size: 2.5rem;
+    }
+
+    .text_container{
+        & h1{
+         font-size: 1rem;
+        }
+    }
+
+    .video_container{
+        width: 95%;
+        border-radius: 10px;
+        & video{
+          width: 100%;
+
+        }
+      }
+      
+  }
+  

@@ -1,0 +1,14 @@
+@import "../../../../styles/theme/Utils.module.scss";
+
+.teamProfiles {
+  margin-top: -1rem;
+  display: flex;
+  gap: 1rem;
+
+  @include isMobile{
+    margin-top: 2rem;
+    display: grid;
+    row-gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

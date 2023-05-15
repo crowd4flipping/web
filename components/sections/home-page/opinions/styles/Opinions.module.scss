@@ -1,0 +1,49 @@
+@import "../../../../layouts/styles/PageLayout.module.scss";
+@import "../../../../../styles/theme/Default.module.scss";
+@import "../../../../../styles/theme/Utils.module.scss";
+
+.opinions {
+  @extend %pagePaddingX;
+  padding-top: 3rem;
+  width: 50%;
+
+  @include isSmallerRange{
+    width: 100%;
+  }
+
+  &_title{
+    margin-top: 2rem;
+    text-align: center;
+    font-size: var(--title-size);
+    font-weight: var(--title-weight);
+    color: var(--text-color);
+  }
+
+  &_logoWrapper{
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  &_logo{
+    width: 12rem;
+  }
+
+  &_habitissimo{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &_starsWrapper{
+    display: flex;
+    justify-content: center;
+    color:rgb(255, 191, 0);
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &_star{
+    font-size: 1.5rem;
+  }
+}

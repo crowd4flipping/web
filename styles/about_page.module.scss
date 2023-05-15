@@ -1,0 +1,224 @@
+.about_page{
+    padding-top: 10vh;
+    display: grid;
+    place-items: center;
+}
+.about_page_section{
+    min-height: 100vh;
+}
+
+.about_page_s1{
+    display: grid;
+    grid-template: 
+        "left" 1fr
+    ;
+
+    height: 100vh;
+    background: url('/images/pages_images/team_work_01_01.png');
+    background-size : cover;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center;
+
+    & .left{
+        grid-area: left;
+        display: grid;
+        place-content: center;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 10px;
+    }
+
+    & .right{
+        grid-area: right;
+    }
+}
+
+.text_container{
+    & h1{
+        color: var(--black);
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    & span{
+        color: var(--blue);
+    }
+}
+
+.about_page_s2{
+    display: grid;
+    grid-template: 
+        "s2_left" .5fr
+        "s2_right" 1fr
+    ;
+
+    & .s2_left{
+        grid-area: s2_left;
+        background: url('/images/pages_images/our_protection.jpg');
+        background-size : contain;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: bottom;
+    }
+    & .s2_right{
+        grid-area: s2_right;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 3rem;
+
+        & h1{
+            color: var(--blue);
+        }
+    }
+}
+
+.s2_box_container_Title{
+    width: 100%;
+    text-align: justify;
+    & h1{
+        width: 100%;
+    }
+}
+
+.s2_text_container{
+    & p{
+        font-size: 1.2rem;
+        color: var(--black);
+        & span{
+            color: var(--blue);
+        }
+    }
+}
+
+.s2_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 50%;
+    gap: 1rem;
+}
+
+.s2_box_container{
+    padding: 10px;
+}
+
+.about_page_s3{
+    min-height: 50vh;
+}
+
+.s3_text_container{
+    padding: 10px;
+    & h1{
+        color: var(--blue);
+    }
+}
+
+.profile_card_container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    padding: 2rem;
+    & :hover{
+        background-color: var(--black);
+    }
+}
+
+.profile_card{
+    text-align: center;
+}
+
+.profile_image_container{
+    transition: 1s all;
+}
+
+.profile_card:hover > .profile_card_text{
+    background-color: var(--blue);
+    & h1{
+        color: var(--white);
+    }
+    & span{
+        color: var(--white);
+    }
+}
+.profile_card:hover > .profile_image_container{
+    display: none;
+}
+
+.profile_image_container_{
+    display: none;
+}
+.profile_card:hover > .profile_image_container_{
+    display: contents;
+}
+
+.profile_card_text{
+    & h1{
+        font-size: 1rem;
+        color: var(--black);
+        & span{
+            color: var(--blue);
+        }
+    }
+    & p{
+     font-size: .8rem;
+     font-weight: 500;
+    }
+}
+
+.about_page_s4{
+    background: url('/images/pages_images/team_work.jpg');
+    background-size : cover;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-position-x: center; 
+    max-height: 30vh;  
+}
+
+@media only screen and (min-width: 900px){
+    
+    .about_page_s1{
+        display: grid;
+        grid-template: 
+            "left right" / 1fr 1fr
+        ;
+
+        & .left{
+            padding: 3rem;
+        }
+        }
+    .about_page_s2{
+        display: grid;
+        grid-template: 
+            "s2_right s2_left" / 1fr 1fr
+        ;
+        width: 80vw;
+
+        & .s2_right{
+            padding: 2rem;
+        }
+        }
+
+        .text_container{
+            & h1{
+                font-size: 1.5rem;
+            }
+    }
+
+    .s2_box{
+        flex-direction: row;
+    }
+
+    .s2_box_container_Title{
+        width: 50% !important;
+    }
+
+    .s3_text_container{
+        padding: 2rem;
+    }
+
+}

@@ -1,0 +1,21 @@
+@import "../../../styles/theme/Utils.module.scss";
+
+.footer {
+  background-color: var(--color-dark-primary);
+  color: white;
+
+  &_content {
+    @extend %pagePaddingX;
+
+    @include isMediumRange {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include isLargerRange {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+}
