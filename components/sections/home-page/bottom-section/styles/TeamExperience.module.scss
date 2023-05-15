@@ -1,0 +1,38 @@
+@import "../../../../layouts/styles/PageLayout.module.scss";
+@import "../../../../../styles/theme/Default.module.scss";
+@import "../../../../../styles/theme/Utils.module.scss";
+
+.teamExperience {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  color: var(--color-surface);
+  @extend %pagePaddingX;
+
+  &_bg {
+    background-color: rgba(#02b3e8, 0.1);
+  }
+
+  &_content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  &_experience {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &_image {
+    object-fit: cover;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  &_title {
+    font-size: var(--title-size);
+    font-weight: var(--title-weight);
+    padding-bottom: 1.5rem;
+  }
+}

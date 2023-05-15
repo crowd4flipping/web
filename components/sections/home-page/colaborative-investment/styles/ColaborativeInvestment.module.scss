@@ -1,0 +1,26 @@
+@import "../../../../layouts/styles/PageLayout.module.scss";
+@import "../../../../../styles/theme/Utils.module.scss";
+@import "../../hero/styles/Hero.module.scss";
+@import "../../../../../styles/theme/Default.module.scss";
+
+.colaborativeInvestment {
+  @extend %pagePaddingX;
+  margin-top: 10rem;
+
+  @include isSmallerRange{
+    margin-top: 3rem;
+  }
+
+  &_title {
+    font-size: var(--title-size);
+    font-weight: var(--title-weight);
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &_image {
+    display: flex;
+    justify-content: center;
+  }
+}

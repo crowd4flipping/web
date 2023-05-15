@@ -1,0 +1,53 @@
+@import "../../../../../styles/theme/Default.module.scss";
+@import "../../../../../styles/theme/Utils.module.scss";
+
+.projectContent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  @include isSmallerRange{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+
+  &_details {
+    padding-left: 1rem;
+
+    @include isSmallerRange{
+      padding-left: 0rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &_title {
+    @extend %title-sm;
+  }
+
+  &_state {
+    font-weight: 400;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    display: inline-block;
+
+    &_inProgress {
+      @extend .projectContent_state;
+      background-color: var(--color-light-blue);
+      color: var(--color-primary);
+    }
+
+    &_completed {
+      @extend .projectContent_state;
+      background-color: var(--color-light-green);
+      color: var(--color-green);
+    }
+  }
+}

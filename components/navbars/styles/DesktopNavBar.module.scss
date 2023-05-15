@@ -1,0 +1,90 @@
+@import "../../layouts/styles/PageLayout.module.scss";
+
+.navbar {
+  &_fixed {
+    @extend .navbar;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  background-color: #ffffff73;
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid #ffffff3b;
+
+  &_content {
+    @extend %pagePaddingX;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_button {
+    cursor: pointer;
+    padding: 1.1rem;
+    font-size: 1rem;
+
+    &Text {
+      color: var(--text-color);
+      transition: 0.3s;
+
+      &_white{
+        color:white;
+      }
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    &List {
+      @include isMobile {
+        display: none;
+      }
+
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+
+      &Mobile {
+        list-style: none;
+      }
+    }
+  }
+
+  &_hamburgerMenu {
+    all: unset;
+    color: var(--text-color);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+
+    @media (min-width: $sm) {
+      display: none;
+    }
+
+    &_close {
+      @extend .navbar_hamburgerMenu;
+      width: 75%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &_mobileNavBar {
+    position: fixed;
+    background-color: white;
+    inset: 0;
+    box-shadow: -10px 0px 100px #3d4247;
+
+    &_bg {
+      background-color: #50595e89;
+      z-index: 10000;
+      inset: 0;
+      position: fixed;
+      backdrop-filter: blur(2px);
+    }
+  }
+}

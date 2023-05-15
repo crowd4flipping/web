@@ -1,0 +1,96 @@
+@mixin default {
+  //* -- text & titles
+  --text-color: #2d3038;
+  --text-gradient: linear-gradient(0deg, #1b2444, #4c5473);
+  --text-size: 1.15rem;
+  --text-weight: 300;
+  --title-size: 2.4rem;
+  --title-size-xl: 4rem;
+  --title-size-md: 1.8rem;
+  --title-size-sm: 1.2rem;
+  --title-weight: 700;
+
+  //* -- colors
+  --color-surface: #f6f2f2;
+  --color-surface-rgb: rgb(246, 242, 242);
+  --color-primary: #02b3e8;
+  --color-light-blue: #ccf3ff;
+  --color-primary-hover: #1ecbff;
+  --color-dark-primary: #010f24;
+  --gradient-primary: linear-gradient(
+    0deg,
+    var(--text-color),
+    var(--color-primary),
+    var(--color-primary-hover)
+  );
+  --color-green: green;
+  --color-light-green: #c7ecc7;
+  --color-light-warning: #ffdba0;
+  --color-dark-warning: #935f00;
+
+  //* --- screen sizes
+  --screen-size-sm: 640px;
+  --screen-size-md: 1024px;
+  --screen-size-lg: 1280px;
+  --screen-size-xl: 1536px;
+}
+
+%title-xl{
+  font-size: var(--title-size-xl);
+  font-weight: var(--title-weight);
+  color: var(--text-color);
+}
+
+%title-lg {
+  font-size: var(--title-size);
+  font-weight: var(--title-weight);
+  color: var(--text-color);
+}
+
+%title-md {
+  font-size: var(--title-size-md);
+  font-weight: var(--title-weight);
+  color: var(--text-color);
+}
+
+%title-sm {
+  font-size: var(--title-size-sm);
+  font-weight: var(--title-weight);
+  color: var(--text-color);
+}
+
+%shadow {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+%text-gradient-primary {
+  background-image: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+%title-gradient {
+  background-image: var(--text-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+%input {
+  border: 1px solid #dadada;
+  height: 2.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+}
+
+%textArea {
+  @extend %input;
+  padding-top: 0.6rem;
+}

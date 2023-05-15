@@ -1,0 +1,7 @@
+@import "../../../../styles/theme/Utils.module.scss";
+
+.ourGoal {
+  @include isMobile {
+    margin-top: 2rem;
+  }
+}

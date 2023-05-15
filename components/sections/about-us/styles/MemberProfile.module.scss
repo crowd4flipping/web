@@ -1,0 +1,29 @@
+@use "../../../../styles/theme/Default.module.scss";
+@use "../../../../styles/theme/Utils.module.scss";
+
+.memberProfile {
+
+  &_card {
+    text-align: center;
+  }
+
+  &_name {
+    font-size: var(--title-sm);
+  }
+
+  &_role {
+    font-size: medium;
+  }
+}
+
+.memberProfile:hover > .memberProfile_image_container {
+  display: none;
+}
+
+.memberProfile_image_container_ {
+  display: none;
+}
+
+.memberProfile:hover > .memberProfile_image_container_ {
+  display: contents;
+}

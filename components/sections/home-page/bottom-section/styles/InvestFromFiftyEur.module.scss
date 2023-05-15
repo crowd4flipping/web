@@ -1,0 +1,25 @@
+@import "../../../../layouts/styles/PageLayout.module.scss";
+@import "../../../../../styles/theme/Default.module.scss";
+@import "../../../../../styles/theme/Utils.module.scss";
+
+.investFromFiftyEur {
+  @extend %pagePaddingX;
+  padding-top: 4.3rem;
+
+  @media (min-width: $lg){
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  &_video {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+
+  &_videoWrapper {
+    @media (max-width: $lg) {
+      margin-bottom: 2rem;
+    }
+  }
+}

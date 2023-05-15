@@ -1,0 +1,48 @@
+.heder_page_btn_burger{
+    width: 30px;
+    height: 2px;
+    background: var(--black);
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);  
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.heder_page_btn_burger::before,
+.heder_page_btn_burger::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    background: var(--blue);
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);  
+    transition: all 0.3s ease-in-out;
+    width: 35px;
+}
+
+.heder_page_btn_burger::before{
+    transform: translateY(-8px);
+    background: var(--grayform);
+
+}
+.heder_page_btn_burger::after{
+    transform: translateY(8px);
+}
+
+.header_page_burger.open .heder_page_btn_burger{
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.header_page_burger.open .heder_page_btn_burger::before{
+    transform: rotate(45deg) translate(35px, -35px);
+    width: 30px;
+    background: var(--blue);
+
+} 
+.header_page_burger.open .heder_page_btn_burger::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+    background-color: var(--black);
+    width: 30px;
+} 

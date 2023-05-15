@@ -1,0 +1,25 @@
+@import "../../../../../styles/theme/Utils.module.scss";
+
+.theMostForMoneySection {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+
+  &_content {
+    @extend %pagePaddingX;
+  }
+
+  &_imageWrapper {
+    @media (min-width: $sm) and (max-width: $md) {
+      display: flex;
+      margin-top: -3rem;
+      justify-content: center;
+    }
+
+    @media (min-width: $md) {
+      position: absolute;
+      top: 45%;
+      right: 5%;
+    }
+  }
+}

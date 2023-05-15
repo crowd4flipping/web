@@ -1,0 +1,39 @@
+@import "../../../../../styles/theme/Default.module.scss";
+
+.lockedSection {
+  position: relative;
+  height: 100%;
+
+  &_lockedContent {
+    position: relative;
+    filter: blur(4px);
+  }
+
+  &_content {
+    padding: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  &_cardWrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    padding: 5%;
+  }
+
+  &_card {
+    @extend %shadow;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    row-gap: 1rem;
+    top: 0;
+    background-color: white;
+    padding: 2rem;
+  }
+}
