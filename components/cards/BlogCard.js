@@ -35,7 +35,7 @@ export default function BlogCard({id, title, description, imageUrl, lg, autor}) 
         let shortDescription = shortenString(description);
         setDescription(shortDescription);
         setTitle(shortTitle);
-    }, [description, title]);
+    }, [description]);
 
   return (
     <motion.div 
