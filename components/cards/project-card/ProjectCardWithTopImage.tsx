@@ -1,7 +1,6 @@
 import { ProjectAddress } from "./ProjectAddress";
 import styles from "../styles/Card.module.scss";
 import { ProjectFinancialData } from "./ProjectFinancialData";
-import Project from "@/public/images/obras/foto_casa_example_02.jpg";
 import Image from "next/image";
 import { Button } from "@/components/buttons/primary/Button";
 import { ProjectCard } from "./ProjectCard";

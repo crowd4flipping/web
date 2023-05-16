@@ -64,7 +64,7 @@ function InvestmentForm({type, tag, urlThanks}) {
     useEffect(()=>{
         if(!sendData)return
         sendContact(state);
-    },[sendData])
+    },[sendData,sendContact, state])
 
   return (
     <div className={styles.InvestmentForm}>

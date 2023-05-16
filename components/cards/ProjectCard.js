@@ -41,6 +41,7 @@ function ProjectCard({id, imgs, name, location, quantityFunded, estimatedRentabi
                     >
                         {imgs?.map((img, i) => (
                             <Image 
+                                alt='carousel'
                                 key={i}
                                 src={img.link}
                                 layout='fill'
@@ -63,6 +64,7 @@ function ProjectCard({id, imgs, name, location, quantityFunded, estimatedRentabi
                             <>
                                 <h1>PROYECTO EN ESTUDIO</h1>
                                 <Image
+                                alt='study-image'
                                     src={StudyImage}
                                     width={100}
                                     height={100}
