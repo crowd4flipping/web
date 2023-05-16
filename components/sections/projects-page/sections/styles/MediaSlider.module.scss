@@ -1,6 +1,37 @@
+@import "../../../../../styles/theme/Utils.module.scss";
+
 .mediaSlider {
   width: 100%;
   height: 450px;
+
+  @include isMobile {
+    height: 300px;
+  }
+
+  &_carousel {
+    position: relative;
+  }
+
+  &_button {
+    position: absolute;
+    top: 50%;
+    padding: none;
+    border: none;
+    padding-top: 0.2rem;
+    background-color: rgba(0, 0, 0, 0.463);
+    z-index: 2;
+    cursor: pointer;
+
+    &_right{
+      right: 0;
+    }
+  }
+
+  &_buttonIcon {
+    width: 20px;
+    height: 20px;
+    color: white;
+  }
 
   &_slider {
     width: 100%;
