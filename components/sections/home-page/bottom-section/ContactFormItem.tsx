@@ -1,11 +1,12 @@
 import { Button } from "@/components/buttons/primary/Button";
 import styles from "./styles/ContactForm.module.scss";
-import { useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import ReCAPTCHA from "react-google-recaptcha";
 import Link from "next/link";
 import { Route } from "routes/Routes";
+import { Loader } from "@/components/loaders/Loader";
 
 export const ContactFormItem = () => {
   const router = useRouter();
@@ -13,7 +14,7 @@ export const ContactFormItem = () => {
   const [captchaa, setCaptchaa] = useState(false);
   const captcha = useRef(null);
   const fromWeb = "fw";
-  
+
   const [state, setState] = useState({
     email: "",
     comments: "",
@@ -40,8 +41,10 @@ export const ContactFormItem = () => {
 
   const sendContact = async (data) => {
     try {
+      setSendData(true);
       const api = Route().api.contact;
       let res = await axios.post(api, data);
+
       if (res.data.status === 200) {
         setSendData(false);
         router.push("/thanks-investment");
@@ -51,16 +54,18 @@ export const ContactFormItem = () => {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (!captchaa || !state.termsAndConditions) {
       alert("Debe validar su información");
       return setSendData(false);
     }
+    if (sendData) return;
     sendContact(state);
   };
 
   return (
-    <form className={styles.contactForm_form}>
+    <form onSubmit={handleSubmit} className={styles.contactForm_form}>
       <div>
         <label className={styles.contactForm_formLabel}>Email</label>
         <input
@@ -104,14 +109,8 @@ export const ContactFormItem = () => {
         onChange={onChangeCaptcha}
       />
       <div className={styles.contactForm_formButton}>
-        <Button
-          onClick={handleSubmit}
-          size="md"
-          button="primary"
-          fullWidth
-          type="submit"
-        >
-          Enviar
+        <Button size="md" button="primary" fullWidth type="submit">
+          {sendData ? <Loader /> : "Enviar"}
         </Button>
       </div>
     </form>

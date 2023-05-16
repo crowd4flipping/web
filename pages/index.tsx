@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { HomePage } from "@/components/sections/home-page/HomePage";
 
+import { Dialog } from "@/components/dialogs/Dialog";
+
 export default function Home() {
   return (
     <>

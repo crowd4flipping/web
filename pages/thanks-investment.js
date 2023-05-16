@@ -6,11 +6,12 @@ import Link from "next/link";
 import Image from 'next/image';
 import Logo from '../public/images/brand/crowd4flipping/PNG_Files/Transparent_Logo_02.png'
 import {BsCheck2Circle} from 'react-icons/bs'
+import {PageLayout} from "../components/layouts/PageLayout"
 
 export default function ThanksInvestment() {
   return (
     <>
-      <Layout>
+      <PageLayout fixedNavBar>
         <div className={styles.explore_page_hero}>
           <div className={styles.page_grid_container}>
             <motion.div
@@ -55,7 +56,7 @@ export default function ThanksInvestment() {
             >
           </motion.div>
         </div>
-      </Layout>
+      </PageLayout>
     </>
   )
 }
