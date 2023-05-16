@@ -7,7 +7,7 @@ export const Route = () => {
     api: {
       projects: c4fCloud + apiProjects,
       project: (id: string) => c4fCloud + apiProjects + id,
-      contact: c4fCloud + "/api/contact`"
+      contact: c4fCloud + "api/contact"
     },
     site: {
       c4f_app: {
