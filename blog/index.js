@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head';
-import Footer from '../../components/footers/index';
+import Footer from '../components/footers/index';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Layout from '../../components/layouts/Layout';
+import Layout from '../components/layouts/Layout';
 import styles from '../../styles/BlogPage.module.scss';
-import BlogCard from '../../components/cards/BlogCard';
-import WhatsAppButton from '../../components/buttons/WhatsAppButton';
-import NewsLetterSuscription from '../../components/forms/NewsLetterSuscription';
-import MiniBlockLoader from '../../components/loaders/MiniBlockLoader';
+import BlogCard from '../components/cards/BlogCard';
+import WhatsAppButton from '../components/buttons/WhatsAppButton';
+import NewsLetterSuscription from '../components/forms/NewsLetterSuscription';
+import MiniBlockLoader from '../components/loaders/MiniBlockLoader';
 import {ImDownload} from 'react-icons/im';
 import {TbListSearch} from 'react-icons/tb';
 
