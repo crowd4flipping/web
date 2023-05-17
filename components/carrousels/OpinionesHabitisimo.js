@@ -114,6 +114,7 @@ const Example = () => {
       infiniteLoop
       showIndicators={false}
       showStatus={false}
+      showThumbs={false}
       renderArrowNext={(onClickHandler, hasNext, label) =>
         hasNext && (
           <button
@@ -126,7 +127,7 @@ const Example = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="4"
               stroke="currentColor"
               className={sliderStyles.mediaSlider_buttonIcon}
             >
@@ -151,7 +152,7 @@ const Example = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="4"
+              strokeWidth="4"
               stroke="currentColor"
               className={sliderStyles.mediaSlider_buttonIcon}
             >
