@@ -1,4 +1,6 @@
+import Link from "next/link";
 import CookieConsent from "react-cookie-consent";
+import styles from "./CookieBanner.module.scss";
 
 export const CookieBanner = () => {
   return (
@@ -33,8 +35,15 @@ export const CookieBanner = () => {
         Respetamos tu privacidad y estamos comprometidos en preservar tu derecho
         al procesamiento legal y a la protección de tus datos personales.
       </p>
-      <br/>
-      <p> Utilizamos cookies para mejorar la experiencia de usuario</p>
+      <br />
+      <p>
+        {" "}
+        Utilizamos{" "}
+        <span className={styles.cookieBanner_link}>
+          <Link href="/politica-cookies">cookies</Link>{" "}
+        </span>
+        para mejorar la experiencia de usuario
+      </p>
     </CookieConsent>
   );
 };
