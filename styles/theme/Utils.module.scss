@@ -20,7 +20,7 @@ $xl: 1536px;
   @media (min-width: $md) and (max-width: $lg) {
     @content;
   }
-}
+} 
 
 @mixin isLargerRange {
   @media (min-width: $lg) {
