@@ -1,6 +1,8 @@
 import Link from "next/link";
 import styles from "./styles/Footer.module.scss";
 import navStyles from "./styles/DesktopNavBar.module.scss";
+import Image from "next/image";
+import C4FLogo from "@/public/images/brand/crowd4flipping/logo/Crowd4Flipping.png";
 
 type FooterNav = {
   [key: string]: { label: string; href: string };
@@ -31,7 +33,6 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <nav className={styles.footer_content}>
-        
         <ul className={navStyles.navbar_buttonListMobile}>
           {footerNavLeft.map((nav) => {
             return (
@@ -64,6 +65,10 @@ export const Footer = () => {
           })}
         </ul>
       </nav>
+      <div className={styles.footer_copyRight}>
+        <Image src={C4FLogo} width={70} height={50} alt="crowd4flipping" objectFit="contain" />
+        <p>Copyright 2023 · Crowd4Flipping.com</p>
+      </div>
     </footer>
   );
 };

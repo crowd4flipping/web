@@ -10,6 +10,8 @@ export const Route = () => {
       contact: c4fCloud + "api/contact"
     },
     site: {
+      facebook: "https://www.facebook.com/Crowd4Flipping",
+      instagram: "https://www.instagram.com/crowd4flipping/",
       c4f_app: {
         host: c4f_app,
         projects: () => c4f_app + "proyectos",
