@@ -1,4 +1,4 @@
-const navBarLabels = ["Sobre nosotros", "Blog", "FAQs", "Acceder"] as const;
+const navBarLabels = ["Sobre nosotros", "Blog", "FAQs", "Acceder", "Transparencia"] as const;
 
 export type NavBarLabel = (typeof navBarLabels)[number];
 

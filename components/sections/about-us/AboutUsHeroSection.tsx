@@ -7,7 +7,7 @@ import { PainPointIconThree } from "@/components/icons/PainPointIconThree";
 
 export const AboutUsHeroSection = () => {
   return (
-    <SectionLayout isHeroSection>
+    <SectionLayout>
       <div className={styles.aboutUsHero}>
         <div>
           <div>
