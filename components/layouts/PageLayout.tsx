@@ -8,6 +8,10 @@ import { Footer } from "../navbars/Footer";
 
 const navBarSections: NavBarSection[] = [
   {
+    label: "Transparencia",
+    href: "/transparencia",
+  },
+  {
     label: "Sobre nosotros",
     href: "/sobre-nosotros",
   },
@@ -18,7 +22,7 @@ const navBarSections: NavBarSection[] = [
   },
   {
     label: "Acceder",
-    href: Route().site.c4f_app.host,
+    href: Route().site.c4f_app.host + "/?fw",
   },
 ];
 
