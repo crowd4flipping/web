@@ -35,7 +35,7 @@ export const TransparencyPage = () => {
     ),
     elementTwo: (
       <PainPoint
-        title="Información financiera del proyecto"
+        title="Información financiera"
         text="Para tomar una decisión acertada, facilitamos el desglose de costes para realizar la inversión, contemplando diferentes escenarios: Desfavorable, moderado y favorable."
         icon={<PainPointIconThree />}
       />

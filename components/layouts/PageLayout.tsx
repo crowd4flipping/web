@@ -22,7 +22,7 @@ const navBarSections: NavBarSection[] = [
   },
   {
     label: "Acceder",
-    href: Route().site.c4f_app.host + "/?fw",
+    href: Route().site.c4f_app.host + "?fw",
   },
 ];
 
