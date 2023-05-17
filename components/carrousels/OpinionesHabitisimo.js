@@ -3,7 +3,6 @@ import styles from "../../styles/carrousels.module.scss";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-
 import sliderStyles from "../sections/projects-page/sections/styles/MediaSlider.module.scss";
 
 const data = [
@@ -104,7 +103,7 @@ const data = [
     text: `Lo más importante es que cumple con las fechas que te dice, sin perder nada en la calidad del trabajo`,
   },
 ];
-
+ 
 const Example = () => {
   return (
     <Carousel
@@ -151,7 +150,7 @@ const Example = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="4"
+              stroke-width="1.5"
               stroke="currentColor"
               className={sliderStyles.mediaSlider_buttonIcon}
             >
@@ -178,7 +177,9 @@ const Example = () => {
             >
               {item.date}
             </p>
-            <p style={{ paddingLeft: "2rem", paddingRight: "2rem" }}>
+            <p 
+              className={sliderStyles.mediaSlider_opinion}
+            >
               {item.text}
             </p>
           </div>
