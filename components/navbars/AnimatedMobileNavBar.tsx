@@ -1,14 +1,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import styles from "./styles/DesktopNavBar.module.scss";
-import {
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { Dispatch, SetStateAction } from "react";
 import { MdClose } from "react-icons/md";
 import { NavBarSection } from "../layouts/types/NavBar";
 
@@ -66,6 +59,9 @@ export const AnimatedMobileNavBar = ({
                         href={section.href}
                       >
                         <div className={styles.navbar_buttonText}>
+                          <div className={styles.navbar_buttonIcon}>
+                            {section.icon}
+                          </div>{" "}
                           {section.label}
                         </div>
                       </Link>

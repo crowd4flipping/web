@@ -7,22 +7,30 @@ import { Route } from "routes/Routes";
 import { Footer } from "../navbars/Footer";
 import { WhatsAppButton } from "@/components/buttons/WhatsAppButton";
 import { useBreakPoints } from "../hooks/useBreakPoints";
+import { TeamIcon } from "../icons/TeamIcon";
+import { QuestionIcon } from "../icons/QuestionIcon";
+import { DocCheckedIcon } from "../icons/DocCheckedIcon";
+import { SigninIcon } from "../icons/SinginIcon";
 
 const navBarSections: NavBarSection[] = [
   {
+    icon: <DocCheckedIcon />,
     label: "Transparencia",
     href: "/transparencia",
   },
   {
+    icon: <TeamIcon />,
     label: "Sobre nosotros",
     href: "/sobre-nosotros",
   },
   {
+    icon: <QuestionIcon />,
     label: "FAQs",
     href: "/#faqs",
     id: "#faqs",
   },
   {
+    icon: <SigninIcon />,
     label: "Acceder",
     href: Route().site.c4f_app.host + "?fw",
   },
@@ -36,7 +44,6 @@ export const PageLayout = ({
   children: ReactElement | ReactElement[];
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const {isXSmall} = useBreakPoints();
 
   return (
     <>
