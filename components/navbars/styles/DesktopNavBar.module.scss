@@ -30,8 +30,8 @@
       color: var(--text-color);
       transition: 0.3s;
 
-      &_white{
-        color:white;
+      &_white {
+        color: white;
       }
 
       &:hover {
@@ -75,16 +75,19 @@
 
   &_mobileNavBar {
     position: fixed;
-    background-color: white;
-    inset: 0;
-    box-shadow: -10px 0px 100px #3d4247;
+    z-index: 10000;
 
     &_bg {
-      background-color: #50595e89;
-      z-index: 10000;
-      inset: 0;
       position: fixed;
+      inset: 0;
       backdrop-filter: blur(2px);
+    }
+
+    &_content {
+      position: fixed;
+      background-color: white;
+      inset: 0;
+      box-shadow: -10px 0px 100px #3d4247;
     }
   }
 }

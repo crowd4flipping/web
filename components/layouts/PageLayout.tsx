@@ -6,6 +6,7 @@ import { NavBarSection } from "./types/NavBar";
 import { Route } from "routes/Routes";
 import { Footer } from "../navbars/Footer";
 import { WhatsAppButton } from "@/components/buttons/WhatsAppButton";
+import { useBreakPoints } from "../hooks/useBreakPoints";
 
 const navBarSections: NavBarSection[] = [
   {
@@ -35,6 +36,7 @@ export const PageLayout = ({
   children: ReactElement | ReactElement[];
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const {isXSmall} = useBreakPoints();
 
   return (
     <>
