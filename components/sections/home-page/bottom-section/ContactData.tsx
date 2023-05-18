@@ -27,8 +27,20 @@ export const ContactData = ({ children }: ContactFormDataProps) => {
         <br />
         <p>contacto@crowd4flipping.com</p>
         <div className={styles.contactForm_iconsWrapper}>
-          <FaFacebookSquare className={styles.contactForm_icon} />
-          <RiInstagramFill className={styles.contactForm_icon} />
+          <a 
+            href='https://www.facebook.com/Crowd4Flipping' 
+            target="_blank"
+            rel="noreferrer" 
+          >
+            <FaFacebookSquare className={styles.contactForm_icon} />
+          </a>
+          <a
+            href='https://www.instagram.com/crowd4flipping' 
+            target="_blank"
+            rel="noreferrer" 
+          >
+            <RiInstagramFill className={styles.contactForm_icon} />
+          </a>
         </div>
       </div>
     </div>

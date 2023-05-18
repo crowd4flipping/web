@@ -1,0 +1,15 @@
+@import '../styles/theme/Default.module.scss';
+@import '../styles/theme/Utils.module.scss';
+
+.page_404{
+    display: grid;
+    place-items: center;
+    padding-top: 10vh;
+
+    &_title{
+        color: var(--black);
+        text-align: center;
+        font-size: xx-large;
+    }
+   
+}
