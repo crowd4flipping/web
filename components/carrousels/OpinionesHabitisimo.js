@@ -132,8 +132,8 @@ const Example = () => {
               className={sliderStyles.mediaSlider_buttonIcon}
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M8.25 4.5l7.5 7.5-7.5 7.5"
               />
             </svg>
@@ -157,8 +157,8 @@ const Example = () => {
               className={sliderStyles.mediaSlider_buttonIcon}
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M15.75 19.5L8.25 12l7.5-7.5"
               />
             </svg>

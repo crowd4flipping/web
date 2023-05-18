@@ -5,8 +5,7 @@ import { AnimatedMobileNavBar } from "../navbars/AnimatedMobileNavBar";
 import { NavBarSection } from "./types/NavBar";
 import { Route } from "routes/Routes";
 import { Footer } from "../navbars/Footer";
-import {WhatsAppButton} from "@/components/buttons/WhatsAppButton";
-import { useBreakPoints } from "../hooks/useBreakPoints";
+import { WhatsAppButton } from "@/components/buttons/WhatsAppButton";
 
 const navBarSections: NavBarSection[] = [
   {
@@ -36,7 +35,6 @@ export const PageLayout = ({
   children: ReactElement | ReactElement[];
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const {isXSmall} = useBreakPoints()
 
   return (
     <>
@@ -54,7 +52,9 @@ export const PageLayout = ({
       />
       <main className={styles.pageLayout}>{children}</main>
       <Footer />
-      {isXSmall && <WhatsAppButton />}
+      <div className={styles.mobileOnly}>
+        <WhatsAppButton />
+      </div>
     </>
   );
 };

@@ -26,3 +26,12 @@
     padding-bottom: 5rem;
   }
 }
+
+
+.mobileOnly{
+  display: none;
+
+  @include isMobile{
+    display: inline-block;
+  }
+}
