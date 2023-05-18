@@ -1,9 +1,5 @@
 import { ReactElement } from "react";
 import styles from "./styles/InfoHeroSection.module.scss";
-import { PainPoint } from "../home-page/bottom-section/PainPoint";
-import { PainPointIconOne } from "@/components/icons/PainPointIconOne";
-import { PainPointIconTwo } from "@/components/icons/PainPointIconTwo";
-import { PainPointIconThree } from "@/components/icons/PainPointIconThree";
 import { SectionLayout } from "@/components/layouts/SectionLayout";
 
 type InfoHeroSectionProps = {
