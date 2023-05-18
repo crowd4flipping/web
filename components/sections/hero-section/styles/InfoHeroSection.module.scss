@@ -1,32 +1,12 @@
 @use "../../../../styles/theme/Default.module.scss";
 @import "../../../../styles/theme/Utils.module.scss";
 
-.aboutUsHero {
+.infoHeroSection {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
-  margin-bottom: 5rem;
-
-  &_title {
-    @extend %title-xl;
-    @extend %title-gradient;
-    margin-bottom: 0.7rem;
-    text-align: center;
-
-    &_highlight {
-      @extend %text-gradient-primary;
-    }
-
-    @include isSmallerRange {
-      font-size: var(--title-size);
-    }
-  }
-
-  &_subtitle {
-    text-align: center;
-  }
 
   &_painPointsWrapper {
     width: 100vw;
@@ -47,7 +27,15 @@
 
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+
+    &_two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &_three {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
     @include isSmallerRange {
       p {

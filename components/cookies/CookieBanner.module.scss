@@ -1,0 +1,7 @@
+@import "../../styles/theme/Default.module.scss";
+
+.cookieBanner {
+  &_link {
+    color: var(--color-primary);
+  }
+}

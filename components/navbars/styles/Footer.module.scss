@@ -3,8 +3,19 @@
 .footer {
   background-color: var(--color-dark-primary);
   color: white;
+  
+
+  &_copyRight {
+   /*  @extend %pagePaddingX; */
+    text-align: center;
+    padding: 1rem 0;
+    font-size: .85rem;
+    background-color: rgba(#02b3e8, 0.1);
+    color: var(--color-surface);
+  }
 
   &_content {
+    text-align: center;
     @extend %pagePaddingX;
 
     @include isMediumRange {
@@ -17,5 +28,4 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
-
 }

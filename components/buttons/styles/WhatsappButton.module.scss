@@ -1,0 +1,25 @@
+@use "../../../styles/theme/Utils.module.scss";
+
+.whatsappBtn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  font-size: 3.5rem;
+  z-index: 3;
+
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+
+  &_icon {
+    border-radius: 5rem;
+    box-shadow: -.3rem .3rem 1.2rem #0f301a8d;
+    padding: 0.5rem;
+    background-color: #23ae56;
+    color: white;
+    transition: ease-in 150ms;
+
+    &:hover {
+      background-color: #26c360;
+    }
+  }
+}
