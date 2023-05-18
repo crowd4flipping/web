@@ -21,9 +21,21 @@
 
   &_heroPageBottomSection {
     background-color: var(--color-dark-primary);
+    background: radial-gradient(
+      ellipse at bottom right,
+      #00193d,
+      var(--color-dark-primary)
+    );
     margin-top: -10rem;
     padding-top: 15rem;
     padding-bottom: 5rem;
   }
 }
- 
+
+.mobileOnly {
+  display: none;
+
+  @include isMobile {
+    display: inline-block;
+  }
+}

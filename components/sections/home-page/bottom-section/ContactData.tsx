@@ -2,6 +2,8 @@ import { FaFacebookSquare } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import styles from "./styles/ContactForm.module.scss";
 import { ReactElement } from "react";
+import Link from "next/link";
+import { Route } from "routes/Routes";
 
 type ContactFormDataProps = { children?: ReactElement | ReactElement[] };
 
@@ -27,20 +29,24 @@ export const ContactData = ({ children }: ContactFormDataProps) => {
         <br />
         <p>contacto@crowd4flipping.com</p>
         <div className={styles.contactForm_iconsWrapper}>
-          <a 
-            href='https://www.facebook.com/Crowd4Flipping' 
-            target="_blank"
-            rel="noreferrer" 
-          >
-            <FaFacebookSquare className={styles.contactForm_icon} />
-          </a>
-          <a
-            href='https://www.instagram.com/crowd4flipping' 
-            target="_blank"
-            rel="noreferrer" 
-          >
-            <RiInstagramFill className={styles.contactForm_icon} />
-          </a>
+          <span style={{ cursor: "pointer" }}>
+            <a
+              href={Route().site.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookSquare className={styles.contactForm_icon} />
+            </a>
+          </span>
+          <span style={{ cursor: "pointer" }}>
+            <a
+              href={Route().site.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <RiInstagramFill className={styles.contactForm_icon} />
+            </a>
+          </span>
         </div>
       </div>
     </div>

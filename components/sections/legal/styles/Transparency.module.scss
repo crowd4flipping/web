@@ -1,0 +1,31 @@
+@import "../../../../styles/theme/Utils.module.scss";
+
+.transparencyPolicy {
+  &_contentWithImage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include isSmallerRange {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    &_content {
+      @include isSmallerRange {
+        width: auto;
+      }
+    }
+
+    &_image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      @include isSmallerRange {
+        width: auto;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

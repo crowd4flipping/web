@@ -26,12 +26,20 @@
     padding: 1.1rem;
     font-size: 1rem;
 
+    &Icon {
+      margin-right: 1rem;
+      width: 1rem;
+      height: 1rem;
+    }
+
     &Text {
+      display: flex;
+      align-items: center;
       color: var(--text-color);
       transition: 0.3s;
 
-      &_white{
-        color:white;
+      &_white {
+        color: white;
       }
 
       &:hover {
@@ -50,6 +58,7 @@
 
       &Mobile {
         list-style: none;
+        padding-right: 10rem;
       }
     }
   }
@@ -69,22 +78,32 @@
       @extend .navbar_hamburgerMenu;
       width: 75%;
       display: flex;
+      margin-top: 1rem;
       justify-content: flex-end;
     }
   }
 
   &_mobileNavBar {
     position: fixed;
-    background-color: white;
-    inset: 0;
-    box-shadow: -10px 0px 100px #3d4247;
+    z-index: 10000;
 
     &_bg {
-      background-color: #50595e89;
-      z-index: 10000;
-      inset: 0;
       position: fixed;
+      inset: 0;
       backdrop-filter: blur(2px);
+    }
+
+    &_content {
+      position: fixed;
+      /*  background-color: white; */
+      background-image: linear-gradient(
+        0deg,
+        #abb6c1,
+        var(--color-surface),
+        white
+      );
+      inset: 0;
+      box-shadow: -10px 0px 100px #3d4247;
     }
   }
 }

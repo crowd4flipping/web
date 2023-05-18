@@ -27,7 +27,7 @@ export const HeroHeader = () => {
           </Button>
         </Link>
 
-        <Link href={Route().site.c4f_app.host}>
+        <Link href={Route().site.c4f_app.host + "?fw"}>
           <Button size="md" button="primary" fullWidth>
             Empezar a invertir
           </Button>

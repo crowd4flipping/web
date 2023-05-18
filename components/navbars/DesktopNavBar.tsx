@@ -19,7 +19,8 @@ export const DesktopNavBar = ({
 
   return (
     <nav className={navBarStyle}>
-      <div className={styles.navbar_content}>
+      <div  className={styles.navbar_content}>
+        
         <div>
           <div className={styles.navbar_button}>
             <Link href="/">

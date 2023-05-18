@@ -6,7 +6,7 @@ import { TeamProfiles } from "@/components/sections/about-us/TeamProfiles";
 
 export default function AboutUs() {
   return (
-    <PageLayout fixedNavBar>
+    <PageLayout>
       <AboutUsHeroSection />
       <OurGoal />
       <TeamProfiles />
