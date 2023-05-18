@@ -32,6 +32,7 @@ export const Opinions = () => {
           alt="Logo Habitissimo"
         />
       </div>
+      <h2 className={styles.opinions_title}>4.8/5</h2>
       <div className={styles.opinions_starsWrapper}>
         <FaStar className={styles.opinions_star} />
         <FaStar className={styles.opinions_star} />

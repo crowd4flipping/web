@@ -15,44 +15,58 @@
   &_title {
     font-size: var(--title-size);
     padding-bottom: 1rem;
+    
   }
 
   &_wrapper {
+    background-color: rgba(#02b3e8, 0.1);
+    border-radius: .3rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding-bottom: 2rem;
+    padding: 1rem;
+    width: 50%;
     @include isSmallerRange {
-      padding-bottom: 0rem;
+      width: 100%;
     }
   }
 
-  &_question {
+  &_question_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
-    background-color: rgba(#02b3e8, 0.1);
+  }
+
+  &_question { 
+    cursor: pointer;
     border-radius: 0.5rem;
-    padding: 1rem;
     color: white;
     font-size: larger;
     font-weight: bold;
 
-    @include isSmallerRange {
-      line-height: 4rem;
-    }
-
     @include isMobile {
-      line-height: 3rem;
-      padding: 0.8rem;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      font-size: 1.2rem;
+      font-size: .8rem;
+    }
+  }
+
+  &_icon{
+    width: 2rem;
+
+    @include isMobile{
+      width: .8rem;
     }
   }
 
   &_answer {
-    width: 70%;
+    width: 100%;
 
     @include isMobile {
       width: 100%;
+
+    }
+
+    @include isSmallerRange{
+      font-size: .8rem;
     }
 
     margin-top: 2rem;
@@ -60,3 +74,4 @@
     padding-left: 1rem;
   }
 }
+

@@ -5,7 +5,7 @@
   height: 450px;
 
   @include isMobile {
-    height: 300px;
+    height: 300px; 
   }
 
   &_carousel {
@@ -36,5 +36,14 @@
   &_slider {
     width: 100%;
     height: 100%;
+  }
+
+  &_opinion{
+    padding: 0 2rem 0 2rem;
+    text-align: center;
+
+    @include isSmallerRange{
+      text-align: left;
+    }
   }
 }
