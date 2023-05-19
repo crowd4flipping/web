@@ -3,7 +3,6 @@ import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 import { ProjectCard } from "@/components/cards/project-card/ProjectCard";
 import { ReactElement } from "react";
 import { ProjectCardWithTopImage } from "@/components/cards/project-card/ProjectCardWithTopImage";
-import { ProjectData } from "./types/ProjectData";
 
 type ProjectProps = Omit<Parameters<typeof ProjectCard>[number], "size">;
 
