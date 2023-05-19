@@ -110,6 +110,7 @@ const Example = () => {
       className={sliderStyles.mediaSlider_carousel}
       autoPlay
       showArrows
+      swipeable={false}
       infiniteLoop
       showIndicators={false}
       showStatus={false}
