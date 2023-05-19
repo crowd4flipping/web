@@ -15,7 +15,7 @@ function Index() {
         >
             <div className={styles.logo}>
                 <div className={styles.logoContent}>
-                    <h1>by refcon</h1>
+                    <p>by refcon</p>
                 </div>
             </div>
         </a>
