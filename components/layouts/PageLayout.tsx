@@ -61,9 +61,8 @@ export const PageLayout = ({
       />
       <main className={styles.pageLayout}>{children}</main>
       <Footer />
-      <div className={styles.mobileOnly}>
-        <WhatsAppButton />
-      </div>
+
+      <WhatsAppButton />
     </>
   );
 };
