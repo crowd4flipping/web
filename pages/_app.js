@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import "../styles/globals.scss";
 import Script from "next/script";
 import { CookieBanner } from "../components/cookies/CookieBanner";
-import ErrorBoundary from '../utils/ErrorBoundary';
+import ErrorBoundary from "../utils/ErrorBoundary";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -38,7 +39,7 @@ function MyApp({ Component, pageProps }) {
       `}
       </Script>
 
-      <ErrorBoundary >
+      <ErrorBoundary>
         <Component {...pageProps} />
         <CookieBanner />
       </ErrorBoundary>
