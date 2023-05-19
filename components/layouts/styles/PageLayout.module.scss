@@ -21,8 +21,9 @@
 
   &_heroPageBottomSection {
     background-color: var(--color-dark-primary);
-    background: radial-gradient(
-      ellipse at bottom right,
+    background: linear-gradient(
+      270deg,
+      var(--color-dark-primary),
       #00193d,
       var(--color-dark-primary)
     );
@@ -36,6 +37,6 @@
   display: none;
 
   @include isMobile {
-    display: inline-block;
+    display: block;
   }
 }

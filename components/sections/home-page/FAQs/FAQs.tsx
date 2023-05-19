@@ -18,7 +18,7 @@ const questions: FAQ[] = [
     question: "¿Qué coste tiene participar en el proyecto?",
     answer: `Solo se aplica una comisión del 10% del total del proyecto si se
     ejecuta.`,
-  }, 
+  },
   {
     id: "q3",
     question: `¿Qué seguridad tiene participar en un proyecto inmobiliario?`,
@@ -89,35 +89,24 @@ export const FAQs = () => {
       {questions.map((question) => {
         return (
           <div className={style.faqs_wrapper} key={question.id}>
-
-            <div 
+            <div
               className={style.faqs_question_container}
               onClick={() => toggle(question.id)}
-            > 
-
-              <p
-                className={style.faqs_question}
-              >
-                {question.question}
-              </p>  
-
-              <div className={style.faqs_icon}>
-                {selected === question.id ? <ChevronUp /> : <ChevronDown />  }
+            >
+              <p className={style.faqs_question}>{question.question}</p>
+              <div>
+                <div className={style.faqs_icon}>
+                  {selected === question.id ? <ChevronUp /> : <ChevronDown />}
+                </div>
               </div>
-
             </div>
 
             {selected === question.id && (
               <p className={style.faqs_answer}>{question.answer}</p>
             )}
-
           </div>
         );
       })}
-
-
-
-
     </div>
   );
 };

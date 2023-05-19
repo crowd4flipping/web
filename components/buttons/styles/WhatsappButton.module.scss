@@ -4,15 +4,19 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  font-size: 3.5rem;
   z-index: 3;
 
-  padding-right: 0.75rem;
-  padding-bottom: 0.5rem;
+  box-shadow: -0.3rem 0.3rem 1.2rem #0f301a8d;
+  border-radius: 100%;
+  margin-right: 0.75rem;
+  margin-bottom: 0.5rem;
 
   &_icon {
-    border-radius: 5rem;
-    box-shadow: -.3rem .3rem 1.2rem #0f301a8d;
+    float: left;
+    display: flex;
+    align-items: center;
+    font-size: 3.5rem;
+    border-radius: 100%;
     padding: 0.5rem;
     background-color: #23ae56;
     color: white;

@@ -1,6 +1,5 @@
 import React from "react";
 import { RiWhatsappLine } from "react-icons/ri";
-//import styles from '../../styles/buttons.module.scss';
 import styles from "./styles/WhatsappButton.module.scss";
 
 export const WhatsAppButton = () => {

@@ -15,29 +15,29 @@
   &_title {
     font-size: var(--title-size);
     padding-bottom: 1rem;
-    
   }
 
   &_wrapper {
     background-color: rgba(#02b3e8, 0.1);
-    border-radius: .3rem;
+    border-radius: 0.3rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 1rem;
-    width: 50%;
+   /*  width: 50%; */
     @include isSmallerRange {
       width: 100%;
     }
   }
 
-  &_question_container{
+  &_question_container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:flex-start;
     cursor: pointer;
+    column-gap: 1rem;
   }
 
-  &_question { 
+  &_question {
     cursor: pointer;
     border-radius: 0.5rem;
     color: white;
@@ -45,15 +45,15 @@
     font-weight: bold;
 
     @include isMobile {
-      font-size: .8rem;
+      font-size: 1rem;
     }
   }
 
-  &_icon{
+  &_icon {
     width: 2rem;
 
-    @include isMobile{
-      width: .8rem;
+    @include isMobile { 
+      width: 1rem;
     }
   }
 
@@ -62,16 +62,14 @@
 
     @include isMobile {
       width: 100%;
-
     }
 
-    @include isSmallerRange{
-      font-size: .8rem;
+    @include isSmallerRange {
+      font-size: 0.8rem;
     }
 
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    /* padding-left: 1rem; */
   }
 }
-
