@@ -8,7 +8,7 @@ export default function Index({ project }) {
   return (
     <>
       <Head>
-        <title>{project?.name}</title>
+        <title>{project?.name} | Crowd4Flipping</title>
         <meta name="description" content={project.description} />
       </Head>
       <ProjectsPage project={{ ...project, media: project.projectMedia }} />
