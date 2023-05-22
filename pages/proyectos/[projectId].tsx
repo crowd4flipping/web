@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import { ProjectsPage } from "@/components/sections/projects-page/ProjectsPage";
-import { Route } from "routes/Routes";
+import { Routes } from "routes/Routes";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 export default function Index({ project }) {
@@ -18,7 +18,7 @@ export default function Index({ project }) {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const projectId = context.params.projectId as string;
-  const api = Route().api.project(projectId);
+  const api = Routes.cloud().projectId(projectId);
   const project = (await fetch(api).then((res) => res.json())) as object;
 
   return {
@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const api = Route().api.projects;
+  const api = Routes.cloud().projects();
 
   const projectsFound = await fetch(api);
   const projectsJSON = await projectsFound.json();

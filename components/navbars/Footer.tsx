@@ -30,6 +30,7 @@ const footerNavContent: FooterNav = {
 export const Footer = () => {
   const footerNavLeft = Object.entries(footerNavContent).slice(0, 2);
   const footerNavRight = Object.entries(footerNavContent).slice(2, 4);
+  const currentYear =  new Date().getFullYear();
   return (
     <footer className={styles.footer}>
       <nav className={styles.footer_content}>
@@ -66,8 +67,17 @@ export const Footer = () => {
         </ul>
       </nav>
       <div className={styles.footer_copyRight}>
-        <Image src={C4FLogo} width={70} height={50} alt="crowd4flipping" objectFit="contain" />
-        <p>Copyright 2023 · Crowd4Flipping.com</p>
+        <Link href="/">
+          <Image
+            className={styles.footer_logo}
+            src={C4FLogo}
+            width={70}
+            height={50}
+            alt="crowd4flipping"
+            objectFit="contain"
+          />
+        </Link>
+        <p>Copyright {currentYear} · Crowd4Flipping.com</p>
       </div>
     </footer>
   );

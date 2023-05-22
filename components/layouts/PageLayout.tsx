@@ -3,7 +3,7 @@ import { DesktopNavBar } from "../navbars/DesktopNavBar";
 import styles from "./styles/PageLayout.module.scss";
 import { AnimatedMobileNavBar } from "../navbars/AnimatedMobileNavBar";
 import { NavBarSection } from "./types/NavBar";
-import { Route } from "routes/Routes";
+import { Routes } from "routes/Routes";
 import { Footer } from "../navbars/Footer";
 import { WhatsAppButton } from "@/components/buttons/WhatsAppButton";
 import { useBreakPoints } from "../hooks/useBreakPoints";
@@ -32,7 +32,7 @@ const navBarSections: NavBarSection[] = [
   {
     icon: <SigninIcon />,
     label: "Acceder",
-    href: Route().site.c4f_app.host + "?fw",
+    href: Routes.app().queryHostFW(),
   },
 ];
 

@@ -5,7 +5,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import ReCAPTCHA from "react-google-recaptcha";
 import Link from "next/link";
-import { Route } from "routes/Routes";
+import { Routes } from "routes/Routes";
 import { Loader } from "@/components/loaders/Loader";
 
 export const ContactFormItem = () => {
@@ -42,7 +42,7 @@ export const ContactFormItem = () => {
   const sendContact = async (data) => {
     try {
       setSendData(true);
-      const api = Route().api.contact;
+      const api = Routes.cloud().contact();
       let res = await axios.post(api, data);
 
       if (res.data.status === 200) {
