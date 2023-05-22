@@ -69,9 +69,11 @@ export const ProjectsSection = () => {
         </h2>
 
         <div className={styles.projectsSection_projects}>
-          {projectList
-            .slice(0, 2)
-            .map((project) => projectCard(project)[breakingPoint])}
+          
+            {projectList
+              .slice(0, 2)
+              .map((project) => projectCard(project)[breakingPoint])}
+          
         </div>
 
         <div className={styles.projectsSection_projects}>
