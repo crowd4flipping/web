@@ -1,0 +1,37 @@
+/* $primaryColor: #02b3e8;
+$hoverColor: #1ecbff; */
+.button, .button_secondary, .button_primary {
+  all: unset;
+  cursor: pointer;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+.button_fullWidth {
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+.button_primary {
+  color: white;
+  background-color: var(--color-primary);
+  transition: 0.3s;
+}
+.button_primary:hover {
+  background-color: var(--color-primary-hover);
+}
+.button_secondary {
+  border: 0.1rem solid var(--color-primary);
+  transition: 0.1s;
+}
+.button_secondary:hover {
+  color: var(--color-primary);
+}
+.button_sm {
+  font-size: 0.8rem;
+}/*# sourceMappingURL=Button.module.css.map */

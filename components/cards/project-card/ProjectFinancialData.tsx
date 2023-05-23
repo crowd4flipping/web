@@ -2,14 +2,12 @@ import styles from "../styles/Card.module.scss";
 
 type ProjectFinancialDataProps = {
   totalProjectAmount: string;
-  /* pendingAmount: string; */
   profitability: string;
   isHorizontal?: boolean;
 };
 
 export const ProjectFinancialData = ({
   totalProjectAmount,
-  /* pendingAmount, */
   profitability,
   isHorizontal = false,
 }: ProjectFinancialDataProps) => {
@@ -33,7 +31,7 @@ export const ProjectFinancialData = ({
       </div>
 
       <div>
-        <p>Rentabilidad</p>
+        <p>Rentabilidad anual</p>
         <p>
           <span
             className={`${styles.cardProject_financialData_highlight} ${styles.cardProject_financialData_highlight_yield}`}

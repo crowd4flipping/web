@@ -2,21 +2,34 @@ import Image from "next/image";
 import styles from "./styles/TeamExperience.module.scss";
 import Workers from "@/public/images/home-page/workers-in-a-construction.png";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
+import { LinkButton } from "@/components/buttons/primary/Button";
+import { ProjectCard } from "@/components/cards/project-card/ProjectCard";
+import { DecoratorProjectCard } from "@/components/cards/project-card/DecoratorProjectCard";
 
 export const TeamExperience = () => {
   const { isXSmall } = useBreakPoints();
 
   const text = (
     <div className={styles.teamExperience_experience}>
+      <h2 className={styles.teamExperience_title}>
+        Conoce el estado del proyecto en cada momento
+      </h2>
+      <p>
+        La transparencia es uno de nuestros pilares clave. Es por ello que te
+        mantenemos informado sobre el estado de cada proyecto, su duración y los
+        posibles escenarios que puedan surgir. Esto es posible gracias a nuestra
+        infraestructura organizativa sólida y a los contratos firmados entre
+        todas las partes involucradas en cada proyecto.
+      </p>
       <div>
-        <h2 className={styles.teamExperience_title}>
-          Contamos con más de 20 años de experiencia
-        </h2>
-        <p>
-          Aseguramos una correcta ejecución en cada uno de los proyectos.
-          Olvídate de las complicaciones y sorpresas desagradables en la letra
-          pequeña
-        </p>
+        <LinkButton
+          href="/transparencia"
+          size="md"
+          fullWidth={isXSmall ? true : false}
+          button="primary"
+        >
+          Política de transparencia
+        </LinkButton>
       </div>
     </div>
   );
@@ -26,7 +39,7 @@ export const TeamExperience = () => {
       <div className={styles.teamExperience_bg}>
         <div className={styles.teamExperience}>
           <Image
-            className={styles.teamExperience_image}
+            objectFit="cover"
             width={498}
             height={208}
             alt="con-mas-de-veinte-años-de-experiencia"
@@ -45,13 +58,27 @@ export const TeamExperience = () => {
       >
         {text}
 
-        <Image
-          className={styles.teamExperience_image}
-          width={498}
-          height={208}
-          alt="con-mas-de-veinte-años-de-experiencia"
-          src={Workers}
-        />
+        <div className={styles.teamExperience_rightSection}>
+
+          <div className={styles.exampleProjectCard_firstCard}>
+            <div className={styles.exampleProjectCard_content}>
+              <DecoratorProjectCard />
+            </div>
+          </div>
+
+          <div className={styles.exampleProjectCard_secondCard}>
+            <div className={styles.exampleProjectCard_content}>
+              <DecoratorProjectCard />
+            </div>
+          </div>
+
+          <div className={styles.exampleProjectCard_thirdCard}>
+            <div className={styles.exampleProjectCard_content}>
+              <DecoratorProjectCard />
+            </div>
+          </div>
+          
+        </div>
       </div>
     </div>
   );

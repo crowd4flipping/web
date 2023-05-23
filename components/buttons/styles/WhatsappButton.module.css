@@ -1,0 +1,48 @@
+.whatsappBtn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  margin: 1rem;
+  box-shadow: -0.3rem 0.3rem 1.2rem rgba(15, 48, 26, 0.5529411765);
+  border-radius: 100%;
+}
+@media (min-width: 320px) {
+  .whatsappBtn {
+    margin-left: calc(50vw - 160px - 8rem);
+  }
+}
+@media (min-width: 640px) {
+  .whatsappBtn {
+    margin-right: calc(50vw - 320px);
+  }
+}
+@media (min-width: 1024px) {
+  .whatsappBtn {
+    margin-right: calc(50vw - 512px);
+  }
+}
+@media (min-width: 1280px) {
+  .whatsappBtn {
+    margin-right: calc(50vw - 640px);
+  }
+}
+@media (min-width: 1536px) {
+  .whatsappBtn {
+    margin-right: calc(50vw - 768px);
+  }
+}
+.whatsappBtn_icon {
+  float: left;
+  display: flex;
+  align-items: center;
+  font-size: 60px;
+  border-radius: 100%;
+  padding: 6px;
+  background-color: #23ae56;
+  color: white;
+  transition: ease-in 150ms;
+}
+.whatsappBtn_icon:hover {
+  background-color: #26c360;
+}/*# sourceMappingURL=WhatsappButton.module.css.map */
