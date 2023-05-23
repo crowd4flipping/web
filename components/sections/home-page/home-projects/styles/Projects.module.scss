@@ -5,11 +5,10 @@
 .projectsSection {
   @extend %pagePaddingX;
 
-  background: linear-gradient(120deg, white, transparent, #f6f2f2);
+  background: linear-gradient(180deg, white, #f6f2f2);
   padding: 1rem;
   border: 2px solid white;
   border-radius: 1rem;
-  box-shadow: 0 10px 10px -3px #e0e0e0;
 
   display: flex;
   flex-direction: column;
