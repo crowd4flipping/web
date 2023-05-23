@@ -1,23 +1,42 @@
-@use "../../../styles/theme/Utils.module.scss";
+@import "../../../styles/theme/Utils.module.scss";
 
 .whatsappBtn {
   position: fixed;
   bottom: 0;
   right: 0;
   z-index: 3;
-
+  margin: 1rem;
+  
   box-shadow: -0.3rem 0.3rem 1.2rem #0f301a8d;
   border-radius: 100%;
-  margin-right: 0.75rem;
-  margin-bottom: 0.5rem;
+  
+  @media (min-width: $xs) {
+    margin-left: calc(50vw - $xs / 2 - 8rem);
+  }
+
+  @media (min-width: $sm) {
+    margin-right: calc(50vw - $sm / 2);
+  }
+
+  @media (min-width: $md) {
+    margin-right: calc(50vw - $md / 2);
+  }
+
+  @media (min-width: $lg) {
+    margin-right: calc(50vw - $lg / 2);
+  }
+
+  @media (min-width: $xl) {
+    margin-right: calc(50vw - $xl / 2);
+  }
 
   &_icon {
     float: left;
     display: flex;
     align-items: center;
-    font-size: 3.5rem;
+    font-size: 60px;
     border-radius: 100%;
-    padding: 0.5rem;
+    padding: 6px;
     background-color: #23ae56;
     color: white;
     transition: ease-in 150ms;

@@ -1,7 +1,7 @@
 import { Button } from "@/components/buttons/primary/Button";
 import heroStyles from "./styles/Hero.module.scss";
 import Link from "next/link";
-import { Route } from "routes/Routes";
+import { Routes } from "routes/Routes";
 
 export const HeroHeader = () => {
   return (
@@ -27,7 +27,7 @@ export const HeroHeader = () => {
           </Button>
         </Link>
 
-        <Link href={Route().site.c4f_app.host + "?fw"}>
+        <Link href={Routes.app().queryHostFW()}>
           <Button size="md" button="primary" fullWidth>
             Empezar a invertir
           </Button>

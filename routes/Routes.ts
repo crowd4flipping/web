@@ -1,22 +1,23 @@
-export const Route = () => {
-  const c4fCloud = process.env.NEXT_PUBLIC_C4F_CLOUD;
-  const c4f_app = process.env.NEXT_PUBLIC_C4F_APP;
-  const apiProjects = "api/get-projects/";
+import { C4FAppRoutes } from "./C4FAppRoutes";
+import { C4FCloudRoutes } from "./C4FCloudRoutes";
 
-  return {
-    api: {
-      projects: c4fCloud + apiProjects,
-      project: (id: string) => c4fCloud + apiProjects + id,
-      contact: c4fCloud + "api/contact"
-    },
-    site: {
-      facebook: "https://www.facebook.com/Crowd4Flipping",
-      instagram: "https://www.instagram.com/crowd4flipping/",
-      c4f_app: {
-        host: c4f_app,
-        projects: () => c4f_app + "proyectos",
-        project: (id: string) => c4f_app + `proyectos/${id}`,
-      },
-    },
-  };
-};
+export class Routes {
+  private static cloudRoute = process.env.NEXT_PUBLIC_C4F_CLOUD;
+  private static appRoute = process.env.NEXT_PUBLIC_C4F_APP;
+
+  static app() {
+    return new C4FAppRoutes(this.appRoute);
+  }
+
+  static cloud() {
+    return new C4FCloudRoutes(this.cloudRoute);
+  }
+
+  static facebook() {
+    return "https://www.facebook.com/Crowd4Flipping/";
+  }
+
+  static instagram() {
+    return "https://www.instagram.com/crowd4flipping/";
+  }
+}

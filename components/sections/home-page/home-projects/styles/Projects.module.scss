@@ -1,20 +1,40 @@
 @import "../../../../layouts/styles/PageLayout.module.scss";
 @import "../../../../../styles/theme/Utils.module.scss";
+@import "../../../../../styles/theme/Default.module.scss";
 
 .projectsSection {
   @extend %pagePaddingX;
+
+  background: linear-gradient(180deg, white, #f6f2f2);
+  padding: 1rem;
+  border: 2px solid white;
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @include isMobile {
+    background: none;
+    padding: 0rem;
+    border: none;
+    border-radius: 0rem;
+    box-shadow: none;
+  }
 
   &_bg {
     @include heroAndProjects_bg(180deg, 100%);
   }
 
   &_title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: var(--title-size);
+    margin-left: 1.5rem;
     font-weight: 400;
 
     @media (max-width: $md) {
+      font-size: var(--title-size-md);
       text-align: center;
+      padding: 0rem;
     }
 
     &_bold {
@@ -26,14 +46,6 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-
-    @include isMediumRange {
-      margin-bottom: 3rem;
-    }
-
-    @include isLargerRange {
-      margin-bottom: 5rem;
-    }
 
     @media (max-width: $md) {
       display: block;

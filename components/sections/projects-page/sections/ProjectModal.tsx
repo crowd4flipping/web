@@ -3,7 +3,7 @@ import Image from "next/image";
 import Logo from "@/public/images/brand/crowd4flipping/logo/Crowd4Flipping.png";
 import styles from "../../../../styles/project_page.module.scss";
 import Link from "next/link";
-import { Route } from "routes/Routes";
+import { Routes } from "routes/Routes";
 
 export const ProjectModal = ({ projectId }: { projectId: string }) => {
   return (
@@ -23,7 +23,7 @@ export const ProjectModal = ({ projectId }: { projectId: string }) => {
           <span>¿a qué estás esperando?</span>
         </h1>
         <h2></h2>
-        <Link href={Route().site.c4f_app.project(projectId)}>
+        <Link href={Routes.app().projectId(projectId)}>
           <div className={styles.button}>
             <span>Acceso a Crowd4Flipping</span>
           </div>
