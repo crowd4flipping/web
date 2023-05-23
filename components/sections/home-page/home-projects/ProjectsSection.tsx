@@ -3,7 +3,6 @@ import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 import { ProjectCard } from "@/components/cards/project-card/ProjectCard";
 import { ReactElement } from "react";
 import { ProjectCardWithTopImage } from "@/components/cards/project-card/ProjectCardWithTopImage";
-import { ProjectData } from "./types/ProjectData";
 
 type ProjectProps = Omit<Parameters<typeof ProjectCard>[number], "size">;
 
@@ -70,9 +69,11 @@ export const ProjectsSection = () => {
         </h2>
 
         <div className={styles.projectsSection_projects}>
-          {projectList
-            .slice(0, 2)
-            .map((project) => projectCard(project)[breakingPoint])}
+          
+            {projectList
+              .slice(0, 2)
+              .map((project) => projectCard(project)[breakingPoint])}
+          
         </div>
 
         <div className={styles.projectsSection_projects}>

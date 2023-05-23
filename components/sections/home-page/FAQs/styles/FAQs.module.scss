@@ -50,7 +50,8 @@
   }
 
   &_icon {
-    width: 2rem;
+    width: 1.8rem;
+    height: 0rem;
 
     @include isMobile { 
       width: 1rem;

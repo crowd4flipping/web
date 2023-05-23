@@ -1,7 +1,8 @@
 import { InfoCard } from "@/components/cards/info-card/InfoCard";
 import style from "./styles/InvestFromFiftyEur.module.scss";
-import { Button } from "@/components/buttons/primary/Button";
+import { LinkButton } from "@/components/buttons/primary/Button";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
+import { Routes } from "routes/Routes";
 
 export const InvestFromFiftyEur = () => {
   const { isXSmall } = useBreakPoints();
@@ -24,9 +25,14 @@ export const InvestFromFiftyEur = () => {
           que comprometer grandes sumas de dinero.
         </p>
         <br />
-        <Button size="md" button="primary" fullWidth={isXSmall && true}>
+        <LinkButton
+          href={Routes.app().queryHostFW()}
+          size="md"
+          button="primary"
+          fullWidth={isXSmall && true}
+        >
           Empezar a invertir
-        </Button>
+        </LinkButton>
       </InfoCard>
     </div>
   );

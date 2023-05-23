@@ -3,7 +3,7 @@ import { RiInstagramFill } from "react-icons/ri";
 import styles from "./styles/ContactForm.module.scss";
 import { ReactElement } from "react";
 import Link from "next/link";
-import { Route } from "routes/Routes";
+import { Routes } from "routes/Routes";
 
 type ContactFormDataProps = { children?: ReactElement | ReactElement[] };
 
@@ -31,7 +31,7 @@ export const ContactData = ({ children }: ContactFormDataProps) => {
         <div className={styles.contactForm_iconsWrapper}>
           <span style={{ cursor: "pointer" }}>
             <a
-              href={Route().site.facebook}
+              href={Routes.facebook()}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -40,7 +40,7 @@ export const ContactData = ({ children }: ContactFormDataProps) => {
           </span>
           <span style={{ cursor: "pointer" }}>
             <a
-              href={Route().site.instagram}
+              href={Routes.instagram()}
               target="_blank"
               rel="noopener noreferrer"
             >

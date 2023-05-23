@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import styles from "./styles/LockedSection.module.scss";
 import { Button } from "@/components/buttons/primary/Button";
 import Link from "next/link";
-import { Route } from "routes/Routes";
+import { Routes } from "routes/Routes";
 
 export const LockedSection = ({
   children,
@@ -28,7 +28,7 @@ export const LockedSection = ({
               o iniciar sesión
             </p>
             <div>
-              <Link href={Route().site.c4f_app.project(projectId)}>
+              <Link href={Routes.app().projectId(projectId)}>
                 <Button size="md" button="primary">
                   Acceder
                 </Button>

@@ -2,7 +2,6 @@ import Image from "next/image";
 import styles from "./styles/MediaSlider.module.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 
 export const MediaSlider = ({ media }: { media: { link: string }[] }) => {
   return (
@@ -11,6 +10,7 @@ export const MediaSlider = ({ media }: { media: { link: string }[] }) => {
         className={styles.mediaSlider_carousel}
         autoPlay
         showArrows
+        showThumbs={false}
         infiniteLoop
         showIndicators={false}
         showStatus={false}
