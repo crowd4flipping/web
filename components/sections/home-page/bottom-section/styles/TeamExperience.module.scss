@@ -18,6 +18,12 @@
     gap: 2rem;
   }
 
+  &_projectCardWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &_experience {
     width: 100%;
     display: flex;
@@ -42,15 +48,18 @@
   }
 }
 
-.exampleProjectCard {
+/* .exampleProjectCard {
   width: 100%;
   height: fit-content;
   overflow: hidden;
   position: absolute;
+  z-index: 2;
 
   &::before {
     content: "";
     position: absolute;
+    z-index: 1;
+   
     left: 0;
     width: 70%;
     height: 100%;
@@ -82,4 +91,4 @@
     height: 100%;
     padding-left: 1rem;
   }
-}
+} */

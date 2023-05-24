@@ -1,6 +1,6 @@
 import { Query } from "./types/types";
 
-type ProjectStatus = "in-study" | "processing" | "finished";
+export type ProjectStatus = "in_study" | "processing" | "finished";
 type QueryProjects = { status: ProjectStatus };
 
 export class C4FCloudRoutes {

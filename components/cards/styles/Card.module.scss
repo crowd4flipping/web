@@ -124,9 +124,6 @@ $borderRadius: 0.5rem;
   &_image {
     border-radius: $borderRadius;
     overflow: hidden;
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/crowd4flipping-app.appspot.com/o/images-projects%2F4xbRkFq6hVGu1YECdCRU%2F02.jpg?alt=media&token=4a96e832-2a0e-45b3-b389-b44b37af4d05");
-    width: 232px;
-    height: 200px;
   }
 
   &_button {
@@ -153,10 +150,27 @@ $borderRadius: 0.5rem;
   }
 }
 
-.projectCardDecorator {
+.projectCardShowcase {
   background-color: #4e6374;
   border: 2px solid #8d9ba680;
+  color: white;
   padding: 1.3rem;
   border-radius: 0.8rem;
   box-shadow: -10px 20px 20px -8px #0f0c3388;
+
+  &_image {
+    border-radius: $borderRadius;
+    overflow: hidden;
+    background-image: url("../../../public/images/obras/foto_casa_example_02.jpg");
+    background-size: cover;
+    width: 232px;
+    height: 200px;
+  }
+
+  &_address {
+    background-color: #7f8f9b;
+    color: white;
+    border-radius: $borderRadius;
+    padding: 1rem;
+  }
 }

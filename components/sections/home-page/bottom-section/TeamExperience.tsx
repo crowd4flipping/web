@@ -4,7 +4,7 @@ import Workers from "@/public/images/home-page/workers-in-a-construction.png";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 import { LinkButton } from "@/components/buttons/primary/Button";
 import { ProjectCard } from "@/components/cards/project-card/ProjectCard";
-import { DecoratorProjectCard } from "@/components/cards/project-card/DecoratorProjectCard";
+import { ProjectCardShowcase } from "@/components/cards/project-card-showcase/ProjectCardShowcase";
 
 export const TeamExperience = () => {
   const { isXSmall } = useBreakPoints();
@@ -58,26 +58,8 @@ export const TeamExperience = () => {
       >
         {text}
 
-        <div className={styles.teamExperience_rightSection}>
-
-          <div className={styles.exampleProjectCard_firstCard}>
-            <div className={styles.exampleProjectCard_content}>
-              <DecoratorProjectCard />
-            </div>
-          </div>
-
-          <div className={styles.exampleProjectCard_secondCard}>
-            <div className={styles.exampleProjectCard_content}>
-              <DecoratorProjectCard />
-            </div>
-          </div>
-
-          <div className={styles.exampleProjectCard_thirdCard}>
-            <div className={styles.exampleProjectCard_content}>
-              <DecoratorProjectCard />
-            </div>
-          </div>
-          
+        <div className={styles.teamExperience_projectCardWrapper}>
+          <ProjectCardShowcase status="processing" />
         </div>
       </div>
     </div>

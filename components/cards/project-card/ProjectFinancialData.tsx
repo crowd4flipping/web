@@ -26,18 +26,16 @@ export const ProjectFinancialData = ({
           <span className={styles.cardProject_financialData_highlight}>
             {totalProjectAmount}€
           </span>{" "}
-         {/*  / {totalProjectAmount}€ */}
+          {/*  / {totalProjectAmount}€ */}
         </p>
       </div>
 
       <div>
-        <p>Rentabilidad anual</p>
-        <p>
-          <span
-            className={`${styles.cardProject_financialData_highlight} ${styles.cardProject_financialData_highlight_yield}`}
-          >
-            {profitability}%
-          </span>
+        <p>Rent. anual</p>
+        <p
+          className={`${styles.cardProject_financialData_highlight} ${styles.cardProject_financialData_highlight_yield}`}
+        >
+          {profitability}%
         </p>
       </div>
     </div>
