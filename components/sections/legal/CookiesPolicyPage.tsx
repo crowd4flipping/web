@@ -10,7 +10,7 @@ export const CookiesPolicyPage = () => {
           Nuestra Política de cookies y seguimiento
         </h2>
         <p>
-          En Obra Plus S.L. respetamos tu privacidad y estamos comprometidos en
+          En Proyectos Alcasor SLU respetamos tu privacidad y estamos comprometidos en
           preservar tu derecho al procesamiento legal y a la protección de tus
           datos personales. Nuestra Política de cookies y seguimiento te
           proporciona explicaciones claras sobre cómo se utilizan las cookies y
