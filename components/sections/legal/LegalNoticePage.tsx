@@ -9,7 +9,7 @@ export const LegalNoticePage = () => {
           Aviso legal y condiciones generales de uso
         </h2>
         <p>
-          Obra Plus S.L., (en adelante Obra Plus) responsable del sitio web
+          Proyectos Alcasor SLU, (en adelante Proyectos Alcasor) responsable del sitio web
           https://www.crowd4flipping.com/ (en adelante el sitio Web) pone a
           disposición de los Usuarios el presente documento, con el que pretende
           dar cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de
@@ -24,18 +24,18 @@ export const LegalNoticePage = () => {
           a cualquier otra disposición legal que fuera de aplicación. La
           condición de Usuario se adquiere por el uso y navegación de los sitios
           web, con independencia de la eventual condición de cliente de los
-          servicios prestados. Obra Plus S.L., se reserva el derecho de
+          servicios prestados. Proyectos Alcasor, se reserva el derecho de
           modificar cualquier tipo de información que pudiera aparecer en los
           sitios web, sin que exista obligación de preavisar o poner en
           conocimiento de los Usuarios dichas obligaciones, entendiéndose como
-          suficiente con la su publicación en los sitios web de Obra Plus.
+          suficiente con la su publicación en los sitios web de Proyectos Alcasor.
         </p>
       </div>
       <div>
         <h2 className={styles.legalSection_title}>1. DATOS IDENTIFICATIVOS</h2>
-        <p>Denominación social: Obra Plus S.L.</p>
+        <p>Denominación social: Proyectos Alcasor SLU.</p>
         <p>Nombre comercial: Crowd4Flipping</p>
-        <p>CIF: B57511776</p>
+        <p>CIF: B42942037</p>
         <p>
           Domicilio: Calle Balanguera, nº28, de Palma de Mallorca, código postal
           07011
@@ -61,7 +61,7 @@ export const LegalNoticePage = () => {
         <br />
         <p>
           La utilización de los sitios web no implica la concesión por parte de
-          Obra Plus de ningún tipo de cesión al Usuario sobre sus derechos de
+          Proyectos Alcasor de ningún tipo de cesión al Usuario sobre sus derechos de
           propiedad intelectual e industrial o sobre cualquier otro derecho
           relacionado con los servicios ofrecidos en el mismo.
         </p>
@@ -72,7 +72,7 @@ export const LegalNoticePage = () => {
           información que pudieren contener los contenidos, así como el uso de
           links y/o redirecciones, o del nombre comercial o la marca o
           cualquiera de las denominaciones registradas o utilizadas bajo
-          licencia exclusiva por Obra Plus. El Usuario de los sitios web se
+          licencia exclusiva por Proyectos Alcasor. El Usuario de los sitios web se
           compromete a respetar los derechos enunciados y a evitar cualquier
           actuación que pudiera perjudicarlos, reservándose en todo caso la
           empresa el ejercicio de cuantos medios o acciones legales le
@@ -116,7 +116,7 @@ export const LegalNoticePage = () => {
             Hacer un uso no autorizado o fraudulento de los sitios web y/o de
             los contenidos con fines o efectos ilícitos, prohibidos en las
             presentes Condiciones Generales de Uso, lesivos de los derechos e
-            intereses de Obra Plus o de terceros, o que de cualquier forma
+            intereses de Proyectos Alcasor o de terceros, o que de cualquier forma
             puedan dañar, inutilizar, sobrecargar, deteriorar o impedir la
             normal utilización de los servicios o los documentos, archivos y
             toda clase de contenidos almacenados en cualquier equipo
@@ -199,11 +199,11 @@ export const LegalNoticePage = () => {
       <div>
         <h2 className={styles.legalSection_title}>4. RESPONSABILIDADES</h2>
         <p>
-          Obra Plus no puede garantizar el acceso continuado, ni la correcta
+          Proyectos Alcasor no puede garantizar el acceso continuado, ni la correcta
           visualización, descarga o utilidad de los elementos e informaciones
           contenidas en la web en la medida en que pueden verse impedidos,
           dificultados o interrumpidos por factores o circunstancias que están
-          fuera del control de Obra Plus, por ejemplo interrupciones del
+          fuera del control de Proyectos Alcasor, por ejemplo interrupciones del
           suministro eléctrico, líneas de telecomunicaciones, conflictos
           sociales, huelgas, rebelión, explosiones, inundaciones, actos y
           omisiones del Gobierno, y en general todos los supuestos de fuerza
@@ -211,7 +211,7 @@ export const LegalNoticePage = () => {
         </p>
         <br />
         <p>
-          Obra Plus queda exonerado de cualquier responsabilidad por los daños y
+          Proyectos Alcasor queda exonerado de cualquier responsabilidad por los daños y
           perjuicios de toda naturaleza que pudieran deberse a la mala
           utilización de los servicios, por el contenido e informaciones que
           puedan ser recibidas como consecuencia de los formularios de recogida
@@ -241,7 +241,7 @@ export const LegalNoticePage = () => {
         <p>
           La empresa se reserva el derecho de utilizar la tecnología “cookie” en
           los sitios web, a fin de reconocerlo como Usuario frecuente y
-          personalizar el uso que realice de Obra Plus mediante la preselección
+          personalizar el uso que realice de Proyectos Alcasor mediante la preselección
           de su idioma, o contenidos más deseados o específicos. Para más
           información sobre el uso de “cookies” el Usuario puede acceder a
           nuestra Política de Cookies.

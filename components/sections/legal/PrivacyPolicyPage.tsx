@@ -7,7 +7,7 @@ export const PrivacyPolicyPage = () => {
       <div>
         <h2 className={styles.legalSection_title}>Política de Privacidad</h2>
         <p>
-          En Obra Plus respetamos su privacidad y tenemos el firme compromiso de
+          En Proyectos Alcasor respetamos su privacidad y tenemos el firme compromiso de
           preservar su derecho al tratamiento legítimo, ya la protección de sus
           datos de carácter personal. La protección y la seguridad de sus datos
           personales es una de nuestras principales prioridades con el cliente.
@@ -46,9 +46,9 @@ export const PrivacyPolicyPage = () => {
         </p>
         <br />
         <p>
-          Obra Plus S.L., con CIF n.º. B57511776 y domicilio social en Calle
+          Proyectos Alcasor SLU, con CIF n.º. B42942037 y domicilio social en Calle
           Balanguera, nº28 de Palma de Mallorca, código postal 07011, (en
-          adelante, “Obra Plus” y/o “nosotros”), es la responsable de tratar los
+          adelante, “Proyectos Alcasor” y/o “nosotros”), es la responsable de tratar los
           datos personales recogidos como consecuencia de la utilización de la
           presente web y de sus productos y servicios.
         </p>
@@ -267,7 +267,7 @@ export const PrivacyPolicyPage = () => {
         <p>INFORMACIÓN QUE NOS PROPORCIONA:</p>
         <br />
         <h3 className={styles.legalSection_title}>
-          ‍Obra Plus recoge la información que nos proporciona:
+          ‍Proyectos Alcasor recoge la información que nos proporciona:
         </h3>
         <br />
         <ul className={styles.legalSection_list}>
@@ -405,7 +405,7 @@ export const PrivacyPolicyPage = () => {
         </ul>
         <br />
         <p>
-          De otras empresas del grupo Obra Plus, y de aquellos socios
+          De otras empresas del grupo Proyectos Alcasor, y de aquellos socios
           comerciales con los que colaboramos, por ejemplo en los concursos,
           promociones o encuestas en las que participe;
         </p>
@@ -454,7 +454,7 @@ export const PrivacyPolicyPage = () => {
         <br />
         <ul className={styles.legalSection_list}>
           <li>
-            Para que puedan asistir a Obra Plus en la realización de tareas de
+            Para que puedan asistir a Proyectos Alcasor en la realización de tareas de
             apoyo, administración y gestión de negocio, por ejemplo, analizando
             datos para el desarrollo del negocio.
           </li>
@@ -794,7 +794,7 @@ export const PrivacyPolicyPage = () => {
         <p>También puede contactar por correo postal:</p>
         <br />
         <p>
-          Obra Plus S.L. Calle Balanguera, nº28 Palma de Mallorca, código postal
+          Proyectos Alcasor SLU. Calle Balanguera, nº28 Palma de Mallorca, código postal
           07011
         </p>
       </div>
