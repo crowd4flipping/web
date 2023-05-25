@@ -155,7 +155,7 @@ export const CookiesPolicyPage = () => {
         <ul className={styles.legalSection_list}>
           <li>
             Cookies propias.- Las cookies propias se envían al equipo terminal
-            del usuario desde un equipo o dominio gestionado por Obra Plus S.L.
+            del usuario desde un equipo o dominio gestionado por Proyectos Alcasor SLU
             Por ejemplo, protección DDoS y firewall.
           </li>
         </ul>
@@ -166,7 +166,7 @@ export const CookiesPolicyPage = () => {
           <li>
             Cookies de terceros.- Las cookies de terceros se envían al equipo
             terminal del usuario desde un equipo o dominio que no es gestionado
-            por Obra Plus S.L., sino por otra entidad que trata los datos
+            por Proyectos Alcasor SLU, sino por otra entidad que trata los datos
             obtenidos través de las cookies. Por ejemplo, Google, Facebook, etc.
           </li>
         </ul>
