@@ -28,6 +28,16 @@
     }
   }
 
+  &_orange {
+    background-color: var(--color-light-green);
+    color: #ff6f00;
+
+    &_darkMode {
+      background-color: #3a4956;
+      color: #ff7640;
+    }
+  }
+
   &_yellow {
     background-color: #fffd9d;
     color: #c39900;

@@ -13,6 +13,9 @@ export class MoneyFormatter {
   }
 
   static withUnitySufix(amount: number) {
+
+    if(amount == 0) return "0 €";
+
     const suffixes = ["", "K", "M", "B", "T"];
     const suffixIndex = Math.floor(Math.log10(Math.abs(amount)) / 3);
     const scaledNumber = amount / Math.pow(10, suffixIndex * 3);
@@ -20,7 +23,7 @@ export class MoneyFormatter {
     const format = new Intl.NumberFormat("en-US", {
       maximumFractionDigits: suffixIndex == 1 ? 0 : 1,
     });
-
+    
     return format.format(scaledNumber) + suffixes[suffixIndex] + " €";
   }
 }

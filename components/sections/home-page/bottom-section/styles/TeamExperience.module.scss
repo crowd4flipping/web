@@ -9,13 +9,18 @@
   @extend %pagePaddingX;
 
   &_bg {
-    background: #00294e;
+    background: linear-gradient(270deg, transparent, #00294e, transparent);
   }
 
   &_content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 3rem;
+
+    @include isSmallerRange{
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
 
   &_projectCardWrapper {

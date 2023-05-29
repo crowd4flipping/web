@@ -8,28 +8,23 @@ type ProjectFinancialDataProps = {
   totalProjectAmount: number;
   currentAmount: number;
   profitability: string;
-  isHorizontal?: boolean;
 };
 
-export const ProjectFinancialDataShowcase = ({
+export const HorizontalFinancialData = ({
   status,
   totalProjectAmount,
   profitability,
   currentAmount,
-  isHorizontal = false,
 }: ProjectFinancialDataProps) => {
   const boxStyle = () => {
-    let style = styles.projectFinancialData;
-    if (isHorizontal) style.concat(" ", styles.projectFinancialData_horizontal);
-    return style;
+    return `${styles.projectFinancialData} ${styles.projectFinancialData_horizontal}`;
   };
 
   const fundstyle = () => {
-    if (isHorizontal) {
-      return `${styles.projectFinancialData_horizontal} ${styles.projectFinancialData_funds_horizontal}`;
-    }
-    return ;
+    return `${styles.projectFinancialData_horizontal} ${styles.projectFinancialData_funds_horizontal}`;
   };
+
+  const highLightStyle = `${styles.projectFinancialData_horizontal_highlight} ${styles.projectFinancialData_horizontal_highlight_yield_darkMode}`;
 
   const formatedAmount = MoneyFormatter.round(totalProjectAmount);
 
@@ -51,51 +46,47 @@ export const ProjectFinancialDataShowcase = ({
     );
 
   return (
-    <div className={boxStyle()}>
+    <div className={styles.projectFinancialData}>
+      <div className={fundstyle()}>
+        <div>
+          <p>Rent. anual</p>
+          <p className={highLightStyle}>{profitability}%</p>
+        </div>
+        <div>
+          {status == "funding" ? (
+            <>
+              <p>Objetivo</p>
+              <p className={highLightStyle}>{formatedAmount}</p>
+            </>
+          ) : (
+            <>
+              <p>Recaudado</p>
+              <p className={highLightStyle}>{formatedAmount}</p>
+            </>
+          )}
+        </div>
+      </div>
       {status == "funding" && (
         <div>
-          <p>Objetivo</p>
-          <p
-            className={`${styles.projectFinancialData_highlight} ${styles.projectFinancialData_highlight_yield_darkMode}`}
-          >
-            {formatedAmount}
-          </p>
-        </div>
-      )}
-
-      <div>
-        <p>Rentabilidad anual</p>
-        <p
-          className={`${styles.projectFinancialData_highlight} ${styles.projectFinancialData_highlight_yield_darkMode}`}
-        >
-          {profitability}%
-        </p>
-      </div>
-
-      <div >
-        <p>Recaudado</p>
-
-        {status == "funding" ? (
+          <p>Recaudado</p>
           <FundedProgressBar
             currentAmount={currentAmount}
             maxAmount={totalProjectAmount}
           />
-        ) : (
-          <p
-            className={`${styles.projectFinancialData_highlight} ${styles.projectFinancialData_highlight_yield_darkMode}`}
-          >
-            {formatedAmount}
-          </p>
-        )}
-      </div>
+        </div>
+      )}
 
       {status == "active" && (
-        <p className={styles.projectFinancialData_info}>
+        <p
+          className={`${styles.projectFinancialData_info} ${styles.projectFinancialData_info_center}`}
+        >
           Este proyecto ya está en ejecución
         </p>
       )}
       {status == "finished" && (
-        <p className={styles.projectFinancialData_info}>
+        <p
+          className={`${styles.projectFinancialData_info} ${styles.projectFinancialData_info_center}`}
+        >
           Este proyecto ya ha sido explotado
         </p>
       )}

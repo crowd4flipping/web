@@ -1,10 +1,11 @@
 import { ReactElement } from "react";
 import styles from "./styles/Tag.module.scss";
+import { unhandledType } from "utils/utils";
 
 type DarkMod<TagColor extends readonly string[]> =
   `${TagColor[number]}-darkmod`;
 
-const tagColors = ["green", "blue", "yellow"] as const;
+const tagColors = ["green", "blue", "yellow", "orange"] as const;
 
 type TagColorDarkMod = DarkMod<typeof tagColors>;
 export type TagColor = (typeof tagColors)[number] | TagColorDarkMod;
@@ -29,8 +30,12 @@ export const Tag = ({ children, color }: TagProps) => {
         return styles.tag_green;
       case "green-darkmod":
         return styles.tag_green_darkMode;
+      case "orange":
+        return styles.tag_orange;
+      case "orange-darkmod":
+        return styles.tag_orange_darkMode;
       default:
-        unhandled(color);
+        unhandledType(color);
     }
   };
 
@@ -40,7 +45,3 @@ export const Tag = ({ children, color }: TagProps) => {
     </div>
   );
 };
-
-function unhandled(value: never): value is never {
-  return value;
-}

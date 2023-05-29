@@ -3,8 +3,11 @@ import styles from "./styles/TeamExperience.module.scss";
 import Workers from "@/public/images/home-page/workers-in-a-construction.png";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 import { LinkButton } from "@/components/buttons/primary/Button";
-import { ProjectCard } from "@/components/cards/project-card/ProjectCard";
 import { ProjectCardShowcase } from "@/components/cards/project-card-showcase/ProjectCardShowcase";
+import { ProjectShowcaseAnimation } from "@/components/cards/project-card-showcase/ProjectShowcaseAnimation";
+import { ProjectCardShowcaseWithTopImage } from "@/components/cards/project-card-showcase/ProjectCardShowcaseWithTopImage";
+import { Tag } from "@/components/tags/Tag";
+import { ProjectTag } from "@/components/cards/project-card-showcase/ProjectTag";
 
 export const TeamExperience = () => {
   const { isXSmall } = useBreakPoints();
@@ -28,28 +31,11 @@ export const TeamExperience = () => {
           fullWidth={isXSmall ? true : false}
           button="primary"
         >
-          Política de transparencia
+          Programa de transparencia
         </LinkButton>
       </div>
     </div>
   );
-
-  if (isXSmall)
-    return (
-      <div className={styles.teamExperience_bg}>
-        <div className={styles.teamExperience}>
-          <Image
-            objectFit="cover"
-            width={498}
-            height={208}
-            alt="con-mas-de-veinte-años-de-experiencia"
-            src={Workers}
-          />
-
-          {text}
-        </div>
-      </div>
-    );
 
   return (
     <div className={styles.teamExperience_bg}>
@@ -59,7 +45,33 @@ export const TeamExperience = () => {
         {text}
 
         <div className={styles.teamExperience_projectCardWrapper}>
-          <ProjectCardShowcase status="processing" />
+          {isXSmall ? (
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "1rem",
+                justifyContent: "space-around",
+
+              }}
+            >
+              <ProjectTag status="in_study" />
+              <ProjectTag status="finished" />
+              <ProjectTag status="funding" />
+              <ProjectTag status="active" />
+              
+            </div>
+          ) : (
+            <ProjectShowcaseAnimation
+              projectType="Alquiler"
+              street="C/ Avenida de Don Blas de Lezo 23"
+              totalProjectAmount={402000}
+              currentAmount={123000}
+              profitability="14"
+              region="Mallorca, Baleares"
+              status="funding"
+            />
+          )}
         </div>
       </div>
     </div>

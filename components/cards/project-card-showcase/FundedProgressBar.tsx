@@ -51,7 +51,8 @@ export const FundedProgressBar = (props: FundedProgressBarProps) => {
   const percentageFunded = isOverFunded ? 100 : Math.ceil(calcPercentageFunded);
   const percentageToFund = isOverFunded ? 0 : Math.ceil(calcPercentageToFund);
 
-  const roundMoney = MoneyFormatter.withUnitySufix(maxAmount - currentAmount);
+  const limitCurrentAmount = currentAmount > maxAmount ? maxAmount : currentAmount;
+  const roundMoney = MoneyFormatter.withUnitySufix(maxAmount - limitCurrentAmount);
 
   return (
     <div className={styles.projectFinancialData_progressBar}>
@@ -64,7 +65,7 @@ export const FundedProgressBar = (props: FundedProgressBarProps) => {
         <InnerBar
           percentageFunded={percentageFunded}
           percentageToFund={percentageToFund}
-          remainingAmountToFund={maxAmount - currentAmount}
+          remainingAmountToFund={maxAmount - limitCurrentAmount}
         />
       </div>
     </div>
