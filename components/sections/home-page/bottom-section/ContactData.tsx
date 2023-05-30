@@ -24,7 +24,6 @@ export const ContactData = ({ children }: ContactFormDataProps) => {
         <p className={styles.contactForm_titleSchedule}>Servicio al cliente</p>
         <p>De lunes a viernes, de 09:00h a 18:00h</p>
         <br />
-        <p>+34 971 105 648</p>
         <p>+34 672 126 268</p>
         <br />
         <p>contacto@crowd4flipping.com</p>
