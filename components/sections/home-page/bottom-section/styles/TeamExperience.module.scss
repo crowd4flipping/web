@@ -9,19 +9,37 @@
   @extend %pagePaddingX;
 
   &_bg {
-    background-color: rgba(#02b3e8, 0.1);
+    background: linear-gradient(270deg, transparent, #00294e, transparent);
   }
 
   &_content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+
+    @include isSmallerRange {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &_projectCardWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_tagsWrapper {
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
   }
 
   &_experience {
     width: 100%;
     display: flex;
-    align-items: center;
+    row-gap: 1.5rem;
+    flex-direction: column;
   }
 
   &_image {
@@ -33,6 +51,55 @@
   &_title {
     font-size: var(--title-size);
     font-weight: var(--title-weight);
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  &_rightSection {
+    position: relative;
   }
 }
+
+/* .exampleProjectCard {
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
+  position: absolute;
+  z-index: 2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+   
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #00294e);
+    pointer-events: none;
+  }
+
+  &_firstCard {
+    @extend .exampleProjectCard;
+    top: -1rem;
+    left: -1rem;
+  }
+
+  &_secondCard {
+    @extend .exampleProjectCard;
+    top: 3rem;
+    left: 5rem;
+  }
+
+  &_thirdCard {
+    @extend .exampleProjectCard;
+    top: 0rem;
+    left: 13rem;
+  }
+
+  &_content {
+    overflow: hidden;
+    width: 70%;
+    height: 100%;
+    padding-left: 1rem;
+  }
+} */

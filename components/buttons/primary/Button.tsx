@@ -38,7 +38,7 @@ export const LinkButton = ({
   size,
   fullWidth = false,
 }: Omit<ButtonProps, "type" | "onClick"> & { href: string }) => {
-  const getButtonStyles = () => {
+  /* const getButtonStyles = () => {
     let width = "";
     let bSize = "";
 
@@ -50,11 +50,13 @@ export const LinkButton = ({
       return `${styles.button_primary} ${width} ${bSize}`;
     if (button == "secondary")
       return `${styles.button_secondary} ${width} ${bSize}`;
-  };
+  }; */
 
   return (
-    <Link href={href}  passHref>
-      <a className={getButtonStyles()}>{children}</a>
+    <Link href={href} passHref>
+      <Button fullWidth={fullWidth}  size={size} button={button}>
+        {children}
+      </Button>
     </Link>
   );
 };

@@ -5,6 +5,7 @@ import HabitissimoSrc from "@/public/images/brand/habitissimo_logo.png";
 import Logo from "@/public/images/brand/crowd4flipping/logo/Crowd4Flipping.png";
 import RefconLogo from "../../../logos/RefconLogo";
 import { FaStar } from "react-icons/fa";
+import Link from "next/link";
 
 export const Opinions = () => {
   return (
@@ -22,16 +23,11 @@ export const Opinions = () => {
         </div>
       </div>
 
-      <h2 className={styles.opinions_title}>Lo que opinan de nosotros</h2>
-
-      <div className={styles.opinions_habitissimo}>
-        <Image
-          src={HabitissimoSrc}
-          width={133}
-          height={20}
-          alt="Logo Habitissimo"
-        />
-      </div>
+      <h2 className={styles.opinions_title}>Más de 20 años de experiencia</h2>
+      <p className={styles.opinions_text}>
+        Crowd4Flipping es un spin-off de <a className={styles.opinions_link} href="https://www.refcon.es/" target="_blank" rel="noreferrer">Refcon</a>, una constructora con una amplia
+        experiencia en el sector inmobiliario, con más de 500 proyectos ejecutados.
+      </p>
       <h2 className={styles.opinions_title}>4.8/5</h2>
       <div className={styles.opinions_starsWrapper}>
         <FaStar className={styles.opinions_star} />

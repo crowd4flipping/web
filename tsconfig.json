@@ -20,6 +20,7 @@
       "@/pages/*": ["./pages/*"],
       "@/styles/*": ["./styles/*"],
       "@/public/*": ["./public/*"],
+      "@/routes/*": ["./routes/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/inversor.js", "pages/_error.js"],
