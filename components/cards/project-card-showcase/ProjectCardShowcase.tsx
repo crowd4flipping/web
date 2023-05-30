@@ -19,7 +19,7 @@ type ProjectFinancialDataProps = Parameters<
 
 type ProjectCardProps = {
   status: Exclude<ProjectStatus, "in_study">;
-  projectType: string;
+  businessModel: string;
   isDarkMode?: boolean;
   isSmall?: boolean;
   projectId: string | undefined;
@@ -44,7 +44,7 @@ export const ProjectCardShowcase = (props: ProjectCardShowcaseProps) => {
         <>
           <div>
             <ProjectTag isDarkMode={isDarkMode} status={props.status} />
-            <div className={tagStyles}>{props.projectType}</div>
+            <div className={tagStyles}>{props.businessModel}</div>
           </div>
           <ProjectFinancialDataShowcase
             isDarkMode={isDarkMode}

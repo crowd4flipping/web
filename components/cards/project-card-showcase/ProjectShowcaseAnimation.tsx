@@ -160,7 +160,7 @@ export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
           isDarkMode
           region={props.region}
           street={props.street}
-          projectType={props.projectType}
+          businessModel={props.businessModel}
         />
       </div>
       <div
@@ -172,7 +172,7 @@ export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
           src={undefined}
           projectId={undefined}
           isDarkMode
-          projectType={props.projectType}
+          businessModel={props.businessModel}
           totalProjectAmount={props.totalProjectAmount}
           status={"funding"}
           profitability={props.profitability}
@@ -190,7 +190,7 @@ export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
           src={undefined}
           projectId={undefined}
           isDarkMode
-          projectType={props.projectType}
+          businessModel={props.businessModel}
           totalProjectAmount={props.totalProjectAmount}
           status={"active"}
           profitability={props.profitability}
@@ -208,7 +208,7 @@ export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
           src={undefined}
           projectId={undefined}
           isDarkMode
-          projectType={props.projectType}
+          businessModel={props.businessModel}
           totalProjectAmount={props.totalProjectAmount}
           status={"finished"}
           profitability={props.profitability}

@@ -14,12 +14,8 @@ export const ProjectImageShowcase = ({
 }) => {
   return (
     <div className={styles.projectCardShowcase_imageWrapper}>
-      <div className={styles.projectCardShowcase_address}>
-        <p className={styles.projectCardShowcase_region}>{region}</p>
-        <p className={styles.projectCardShowcase_street}>{street}</p>
-      </div>
-      {src ? (
-        isSmall ? (
+      {src &&
+        (isSmall ? (
           <Image
             src={src}
             alt="imagen del proyecto"
@@ -35,10 +31,12 @@ export const ProjectImageShowcase = ({
             height={227}
             objectFit="cover"
           />
-        )
-      ) : (
-        <div className={styles.projectCardShowcase_image} />
-      )}
+        ))}
+      <div className={styles.projectCardShowcase_address}>
+        <p className={styles.projectCardShowcase_region}>{region}</p>
+        <p className={styles.projectCardShowcase_street}>{street}</p>
+      </div>
+      {!src && <div className={styles.projectCardShowcase_image} />}
     </div>
   );
 };
