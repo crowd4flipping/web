@@ -10,7 +10,7 @@ import Link from "next/link";
 type InStudyProjectCardShowcaseProps = Parameters<
   typeof ProjectImageShowcase
 >[number] & {
-  projectType: string;
+  businessModel: string;
   isDarkMode?: boolean;
   projectId: string | undefined;
 };
@@ -18,7 +18,7 @@ type InStudyProjectCardShowcaseProps = Parameters<
 export const InStudyProjectCardShowcase = ({
   region,
   street,
-  projectType,
+  businessModel,
   isDarkMode = false,
   projectId,
   src,
@@ -31,7 +31,7 @@ export const InStudyProjectCardShowcase = ({
           <div>
             <ProjectTag isDarkMode={isDarkMode} status="in_study" />
             <div className={styles.projectCardShowcase_projectType}>
-              {projectType}
+              {businessModel}
             </div>
           </div>
           <div>

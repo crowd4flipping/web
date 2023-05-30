@@ -56,7 +56,7 @@ export const TeamExperience = () => {
             </div>
           ) : (
             <ProjectShowcaseAnimation
-              projectType="Alquiler"
+              businessModel="Alquiler"
               street="C/ Avenida de Don Blas de Lezo 23"
               totalProjectAmount={402000}
               currentAmount={123000}
