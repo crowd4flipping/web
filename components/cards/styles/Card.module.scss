@@ -1,5 +1,6 @@
 @import "../../layouts/styles/PageLayout.module.scss";
 @import "../../../styles/theme/Utils.module.scss";
+@import "../../../styles/theme/Default.module.scss";
 
 $cardBorderRadius: 0.7rem;
 $borderRadius: 0.5rem;
@@ -159,6 +160,13 @@ $borderRadius: 0.5rem;
   border-radius: 0.8rem;
   box-shadow: -10px 20px 20px -8px #0f0c3388;
 
+  &_whiteCard {
+    background-color: white;
+    border: 2px solid white;
+    color: var(--text-color);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  }
+
   &_projectType {
     margin-top: 1rem;
     height: fit-content;
@@ -178,20 +186,16 @@ $borderRadius: 0.5rem;
     height: 17rem;
 
     &_sm {
-      width: 25rem;
+      width: 27rem;
     }
 
     &Left {
       width: 40%;
+      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 1rem;
-      height: 100%;
-
-      &_sm {
-        width: 68%;
-      }
     }
 
     &Right {
@@ -216,7 +220,7 @@ $borderRadius: 0.5rem;
   }
 
   &_image {
-    background-image: url("../../../public/images/obras/foto_casa_example_02.jpg"); //url("../../../public/images/opengraph-c4f.png");
+    background-image: url("../../../public/images/obras/foto_casa_example_02.jpg");
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -243,6 +247,10 @@ $borderRadius: 0.5rem;
 
 .projectCardShowcaseTopImage {
   @extend .projectCardShowcase;
+
+  &_whiteMode {
+    @extend .projectCardShowcase_whiteCard;
+  }
 
   &_content {
     width: 17rem;

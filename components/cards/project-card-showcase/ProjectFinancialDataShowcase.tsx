@@ -9,6 +9,7 @@ type ProjectFinancialDataProps = {
   currentAmount: number;
   profitability: string;
   isHorizontal?: boolean;
+  isDarkMode?: boolean;
 };
 
 export const ProjectFinancialDataShowcase = ({
@@ -17,6 +18,7 @@ export const ProjectFinancialDataShowcase = ({
   profitability,
   currentAmount,
   isHorizontal = false,
+  isDarkMode = false,
 }: ProjectFinancialDataProps) => {
   const boxStyle = () => {
     let style = styles.projectFinancialData;
@@ -24,19 +26,20 @@ export const ProjectFinancialDataShowcase = ({
     return style;
   };
 
-  const fundstyle = () => {
-    if (isHorizontal) {
-      return `${styles.projectFinancialData_horizontal} ${styles.projectFinancialData_funds_horizontal}`;
-    }
-    return ;
-  };
+  const highlightStyle = `${styles.projectFinancialData_highlight} ${
+    isDarkMode
+      ? styles.projectFinancialData_highlight_yield_darkMode
+      : styles.projectFinancialData_highlight_yield
+  }`;
+
+  const dividerStyle = `${styles.projectFinancialData_divider} ${styles.projectFinancialData_divider_whiteMode}`
 
   const formatedAmount = MoneyFormatter.round(totalProjectAmount);
 
   if (status == "in_study")
     return (
       <div className={boxStyle()}>
-        <hr className={styles.projectFinancialData_divider} />
+        <hr className={dividerStyle} />
         <div className={styles.projectFinancialData_inStudyContent}>
           <p>Estamos analizando la viabilidad de este proyecto.</p>
           <p>
@@ -55,37 +58,26 @@ export const ProjectFinancialDataShowcase = ({
       {status == "funding" && (
         <div>
           <p>Objetivo</p>
-          <p
-            className={`${styles.projectFinancialData_highlight} ${styles.projectFinancialData_highlight_yield_darkMode}`}
-          >
-            {formatedAmount}
-          </p>
+          <p className={highlightStyle}>{formatedAmount}</p>
         </div>
       )}
 
       <div>
         <p>Rentabilidad anual</p>
-        <p
-          className={`${styles.projectFinancialData_highlight} ${styles.projectFinancialData_highlight_yield_darkMode}`}
-        >
-          {profitability}%
-        </p>
+        <p className={highlightStyle}>{profitability}%</p>
       </div>
 
-      <div >
+      <div>
         <p>Recaudado</p>
 
         {status == "funding" ? (
           <FundedProgressBar
+            isDarkMode={isDarkMode}
             currentAmount={currentAmount}
             maxAmount={totalProjectAmount}
           />
         ) : (
-          <p
-            className={`${styles.projectFinancialData_highlight} ${styles.projectFinancialData_highlight_yield_darkMode}`}
-          >
-            {formatedAmount}
-          </p>
+          <p className={highlightStyle}>{formatedAmount}</p>
         )}
       </div>
 

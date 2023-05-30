@@ -7,13 +7,19 @@ import { HorizontalFinancialData } from "./HorizontalFinancialData";
 
 type ProjectCardProps = Parameters<typeof ProjectCardShowcase>[number] & {
   projectType: string;
+  isDarkMode?: boolean;
+  src: string | undefined;
 };
 
 export const ProjectCardShowcaseWithTopImage = (props: ProjectCardProps) => {
+  const { isDarkMode = false } = props;
   return (
     <ProjectCardTopImageLayout
+      isDarkMode={isDarkMode}
       top={
         <ProjectCardTopImage
+        src={props.src}
+          isDarkMode={isDarkMode}
           region={props.region}
           street={props.street}
           projectStatus={props.status}
@@ -21,8 +27,11 @@ export const ProjectCardShowcaseWithTopImage = (props: ProjectCardProps) => {
       }
       bottom={
         <>
-          <div className={styles.projectCardShowcase_projectType}>{props.projectType}</div>
+          <div className={styles.projectCardShowcase_projectType}>
+            {props.projectType}
+          </div>
           <HorizontalFinancialData
+            isDarkMode={isDarkMode}
             status={props.status}
             currentAmount={props.currentAmount}
             totalProjectAmount={props.totalProjectAmount}

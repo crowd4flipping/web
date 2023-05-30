@@ -5,10 +5,11 @@ import { Routes } from "routes/Routes";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 export default function Index({ project }) {
+  const title = project.name +  " | Crowd4Flipping";
   return (
     <>
       <Head>
-        <title>{project?.name} | Crowd4Flipping</title>
+        <title>{title}</title>
         <meta name="description" content={project.description} />
       </Head>
       <ProjectsPage project={{ ...project, media: project.projectMedia }} />

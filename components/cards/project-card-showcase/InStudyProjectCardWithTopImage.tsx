@@ -10,17 +10,19 @@ import { HorizontalFinancialData } from "./HorizontalFinancialData";
 
 type InStudyProjectCardWithTopImageProps = Parameters<
   typeof ProjectImageShowcase
->[number] & { projectType: string };
+>[number] & { projectType: string; src: string | undefined };
 
 export const InStudyProjectCardWithTopImage = ({
   region,
   street,
   projectType,
+  src
 }: InStudyProjectCardWithTopImageProps) => {
   return (
     <ProjectCardTopImageLayout
       top={
         <ProjectCardTopImage
+          src={src}
           region={region}
           street={street}
           projectStatus={"in_study"}

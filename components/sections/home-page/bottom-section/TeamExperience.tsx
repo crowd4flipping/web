@@ -47,18 +47,11 @@ export const TeamExperience = () => {
         <div className={styles.teamExperience_projectCardWrapper}>
           {isXSmall ? (
             <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "1rem",
-                justifyContent: "space-around",
-
-              }}
-            >
+            className={styles.teamExperience_tagsWrapper}>
               <ProjectTag status="in_study" />
+              <ProjectTag status="active" />
               <ProjectTag status="finished" />
               <ProjectTag status="funding" />
-              <ProjectTag status="active" />
               
             </div>
           ) : (

@@ -7,7 +7,7 @@ export const ProjectTag = ({
   isDarkMode = true,
 }: {
   status: ProjectStatus;
-  isDarkMode?: true;
+  isDarkMode?: boolean;
 }) => {
 
   if (isDarkMode)

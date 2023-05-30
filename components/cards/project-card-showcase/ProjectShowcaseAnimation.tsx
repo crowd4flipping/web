@@ -8,7 +8,10 @@ import { ProjectCardShowcaseWithTopImage } from "./ProjectCardShowcaseWithTopIma
 import { InStudyProjectCardWithTopImage } from "./InStudyProjectCardWithTopImage";
 
 type AnimationSteps = ProjectStatus | "empty";
-type ProjectShowcaseAnimation =  Parameters<typeof ProjectCardShowcase>[number];
+type ProjectShowcaseAnimation = Omit<
+  Parameters<typeof ProjectCardShowcase>[number],
+  "projectId" | "src"
+>;
 
 export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
   const { isSmallerSize } = useBreakPoints();
@@ -151,6 +154,10 @@ export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
         }`}
       >
         <InStudyProjectCardShowcase
+          src={undefined}
+          isSmall={false}
+          projectId={undefined}
+          isDarkMode
           region={props.region}
           street={props.street}
           projectType={props.projectType}
@@ -161,7 +168,10 @@ export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
           styles.projectCardAnimation_cardWrapper
         }`}
       >
-         <ProjectCardShowcase
+        <ProjectCardShowcase
+          src={undefined}
+          projectId={undefined}
+          isDarkMode
           projectType={props.projectType}
           totalProjectAmount={props.totalProjectAmount}
           status={"funding"}
@@ -176,7 +186,10 @@ export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
           styles.projectCardAnimation_cardWrapper
         }`}
       >
-         <ProjectCardShowcase
+        <ProjectCardShowcase
+          src={undefined}
+          projectId={undefined}
+          isDarkMode
           projectType={props.projectType}
           totalProjectAmount={props.totalProjectAmount}
           status={"active"}
@@ -191,7 +204,10 @@ export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
           styles.projectCardAnimation_cardWrapper
         }`}
       >
-         <ProjectCardShowcase
+        <ProjectCardShowcase
+          src={undefined}
+          projectId={undefined}
+          isDarkMode
           projectType={props.projectType}
           totalProjectAmount={props.totalProjectAmount}
           status={"finished"}

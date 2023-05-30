@@ -4,25 +4,32 @@ import { ProjectFinancialDataShowcase } from "./ProjectFinancialDataShowcase";
 import { ProjectImageShowcase } from "./ProjectImageShowcase";
 import { Button } from "@/components/buttons/primary/Button";
 import styles from "../styles/Card.module.scss";
+import { ProjectTag } from "./ProjectTag";
+import Link from "next/link";
 
 type InStudyProjectCardShowcaseProps = Parameters<
   typeof ProjectImageShowcase
->[number] & { projectType: string };
+>[number] & {
+  projectType: string;
+  isDarkMode?: boolean;
+  projectId: string | undefined;
+};
 
 export const InStudyProjectCardShowcase = ({
   region,
   street,
   projectType,
+  isDarkMode = false,
+  projectId,
+  src,
 }: InStudyProjectCardShowcaseProps) => {
   return (
     <ProjectCardLayout
+      isDarkMode={isDarkMode}
       leftSide={
         <>
           <div>
-            <Tag color="blue-darkmod">
-              <p>En estudio</p>
-            </Tag>
-
+            <ProjectTag isDarkMode={isDarkMode} status="in_study" />
             <div className={styles.projectCardShowcase_projectType}>
               {projectType}
             </div>
@@ -40,13 +47,18 @@ export const InStudyProjectCardShowcase = ({
       }
       rightSide={
         <>
-          <ProjectImageShowcase region={region} street={street} />
-
-          <div className={styles.projectCardShowcase_button}>
+          <ProjectImageShowcase src={src} region={region} street={street} />
+          {projectId ? (
+            <Link href={`/proyectos/${projectId}`}>
+              <Button size="sm" button="secondary" fullWidth>
+                Ver proyecto
+              </Button>
+            </Link>
+          ) : (
             <Button size="sm" button="secondary" fullWidth>
               Ver proyecto
             </Button>
-          </div>
+          )}
         </>
       }
     />

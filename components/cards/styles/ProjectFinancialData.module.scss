@@ -65,12 +65,20 @@
     justify-content: space-between;
     align-items: center;
 
+    &_whiteMode {
+      background-color: var(--color-surface);
+    }
+
     &_bar {
       position: relative;
       overflow: hidden;
       height: 100%;
       background-color: white;
       border-radius: 3rem;
+
+      &_whiteMode {
+        background-color: #8f919a; //#5d6170;
+      }
     }
   }
 
@@ -88,6 +96,10 @@
     font-weight: bold;
     position: absolute;
     left: 0;
+
+    &_whiteMode {
+      color: white;
+    }
   }
 
   &_maxAmount {
@@ -97,10 +109,18 @@
     position: absolute;
     right: 0;
 
+    &_whiteMode {
+      color: var(--text-color);
+    }
+
     &_inBar {
       @extend .projectFinancialData_maxAmount;
       color: #3a4956;
       margin-top: 0.1rem;
+
+      &_whiteMode {
+        color: white;
+      }
     }
   }
 
@@ -113,6 +133,11 @@
   &_divider {
     opacity: 0.2;
     border: 0.5px solid white;
+
+    &_whiteMode {
+      opacity: 1;
+      border: 0.5px solid #8d9ba645;
+    }
   }
 
   &_inStudyContent {
@@ -120,13 +145,18 @@
     flex-direction: column;
     gap: 0.4rem;
     font-size: 0.9rem;
+    text-align: start;
   }
 
   &_info {
     font-style: italic;
     color: white;
 
-    &_center{
+    &_whiteMode {
+      color: var(--text-color);
+    }
+
+    &_center {
       text-align: center;
     }
   }

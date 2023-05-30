@@ -9,8 +9,8 @@
   display: inline-block;
 
   &_blue {
-    background-color: var(--color-light-blue);
-    color: var(--color-primary);
+    background-color:  var(--color-surface);//#d2f3ff; //var(--color-light-blue);
+    color: #0586ad;
 
     &_darkMode {
       background-color: #3a4956;
@@ -19,7 +19,7 @@
   }
 
   &_green {
-    background-color: var(--color-light-green);
+    background-color: var(--color-surface);//#e1ffe1;
     color: var(--color-green);
 
     &_darkMode {
@@ -29,8 +29,8 @@
   }
 
   &_orange {
-    background-color: var(--color-light-green);
-    color: #ff6f00;
+    background-color: var(--color-surface);//#ffe9d1;
+    color: #ff6200;
 
     &_darkMode {
       background-color: #3a4956;
@@ -39,8 +39,8 @@
   }
 
   &_yellow {
-    background-color: #fffd9d;
-    color: #c39900;
+    background-color: #fff5cb;
+    color: #df9100;
 
     &_darkMode {
       background-color: #3a4956;

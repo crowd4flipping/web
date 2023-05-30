@@ -7,8 +7,12 @@ import { ProjectFinancialDataShowcase } from "./ProjectFinancialDataShowcase";
 import { ProjectImageShowcase } from "./ProjectImageShowcase";
 import { ProjectCardLayout } from "./ProjectCardLayout";
 import { ProjectTag } from "./ProjectTag";
+import Link from "next/link";
 
-type ProjectImageProps = Parameters<typeof ProjectImageShowcase>[number];
+type ProjectImageProps = Omit<
+  Parameters<typeof ProjectImageShowcase>[number],
+  "isSmall"
+>;
 type ProjectFinancialDataProps = Parameters<
   typeof ProjectFinancialDataShowcase
 >[number];
@@ -16,6 +20,10 @@ type ProjectFinancialDataProps = Parameters<
 type ProjectCardProps = {
   status: Exclude<ProjectStatus, "in_study">;
   projectType: string;
+  isDarkMode?: boolean;
+  isSmall?: boolean;
+  projectId: string | undefined;
+  src: string | undefined;
 };
 
 type ProjectCardShowcaseProps = ProjectCardProps &
@@ -23,19 +31,23 @@ type ProjectCardShowcaseProps = ProjectCardProps &
   ProjectImageProps;
 
 export const ProjectCardShowcase = (props: ProjectCardShowcaseProps) => {
+  const { isDarkMode = false, isSmall = false } = props;
+  const tagStyles = `${styles.projectCardShowcase_projectType} ${
+    !isDarkMode && styles.projectCardShowcase_projectType_whiteMode
+  }`;
 
   return (
     <ProjectCardLayout
+      isDarkMode={isDarkMode}
+      isSmall={isSmall}
       leftSide={
         <>
           <div>
-            <ProjectTag status={props.status} />
-            
-            <div className={styles.projectCardShowcase_projectType}>
-              {props.projectType}
-            </div>
+            <ProjectTag isDarkMode={isDarkMode} status={props.status} />
+            <div className={tagStyles}>{props.projectType}</div>
           </div>
           <ProjectFinancialDataShowcase
+            isDarkMode={isDarkMode}
             status={props.status}
             isHorizontal={false}
             currentAmount={props.currentAmount}
@@ -46,12 +58,24 @@ export const ProjectCardShowcase = (props: ProjectCardShowcaseProps) => {
       }
       rightSide={
         <>
-          <ProjectImageShowcase region={props.region} street={props.street} />
-
+          <ProjectImageShowcase
+            isSmall={isSmall}
+            src={props.src}
+            region={props.region}
+            street={props.street}
+          />
           <div className={styles.projectCardShowcase_button}>
-            <Button size="sm" button="secondary" fullWidth>
-              Ver proyecto
-            </Button>
+            {props.projectId ? (
+              <Link href={`/proyectos/${props.projectId}`}>
+                <Button size="sm" button="secondary" fullWidth>
+                  Ver proyecto
+                </Button>
+              </Link>
+            ) : (
+              <Button size="sm" button="secondary" fullWidth>
+                Ver proyecto
+              </Button>
+            )}
           </div>
         </>
       }

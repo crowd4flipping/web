@@ -8,6 +8,7 @@ type ProjectFinancialDataProps = {
   totalProjectAmount: number;
   currentAmount: number;
   profitability: string;
+  isDarkMode?: boolean;
 };
 
 export const HorizontalFinancialData = ({
@@ -15,6 +16,7 @@ export const HorizontalFinancialData = ({
   totalProjectAmount,
   profitability,
   currentAmount,
+  isDarkMode = false,
 }: ProjectFinancialDataProps) => {
   const boxStyle = () => {
     return `${styles.projectFinancialData} ${styles.projectFinancialData_horizontal}`;
@@ -24,7 +26,14 @@ export const HorizontalFinancialData = ({
     return `${styles.projectFinancialData_horizontal} ${styles.projectFinancialData_funds_horizontal}`;
   };
 
-  const highLightStyle = `${styles.projectFinancialData_horizontal_highlight} ${styles.projectFinancialData_horizontal_highlight_yield_darkMode}`;
+  const highLightStyle = `${styles.projectFinancialData_horizontal_highlight} ${
+    isDarkMode
+      ? styles.projectFinancialData_horizontal_highlight_yield_darkMode
+      : styles.projectFinancialData_horizontal_highlight_yield
+  }`;
+  const infoStyle = `${styles.projectFinancialData_info} ${
+    styles.projectFinancialData_info_center
+  } ${!isDarkMode && styles.projectFinancialData_info_whiteMode}`;
 
   const formatedAmount = MoneyFormatter.round(totalProjectAmount);
 
@@ -70,6 +79,7 @@ export const HorizontalFinancialData = ({
         <div>
           <p>Recaudado</p>
           <FundedProgressBar
+            isDarkMode={isDarkMode}
             currentAmount={currentAmount}
             maxAmount={totalProjectAmount}
           />
@@ -77,18 +87,10 @@ export const HorizontalFinancialData = ({
       )}
 
       {status == "active" && (
-        <p
-          className={`${styles.projectFinancialData_info} ${styles.projectFinancialData_info_center}`}
-        >
-          Este proyecto ya está en ejecución
-        </p>
+        <p className={infoStyle}>Este proyecto ya está en ejecución</p>
       )}
       {status == "finished" && (
-        <p
-          className={`${styles.projectFinancialData_info} ${styles.projectFinancialData_info_center}`}
-        >
-          Este proyecto ya ha sido explotado
-        </p>
+        <p className={infoStyle}>Este proyecto ya ha sido explotado</p>
       )}
     </div>
   );
