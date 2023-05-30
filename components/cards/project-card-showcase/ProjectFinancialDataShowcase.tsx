@@ -33,6 +33,7 @@ export const ProjectFinancialDataShowcase = ({
   }`;
 
   const dividerStyle = `${styles.projectFinancialData_divider} ${styles.projectFinancialData_divider_whiteMode}`
+  const infoStyles = `${styles.projectFinancialData_info} ${!isDarkMode && styles.projectFinancialData_info_whiteMode}`
 
   const formatedAmount = MoneyFormatter.round(totalProjectAmount);
 
@@ -82,12 +83,12 @@ export const ProjectFinancialDataShowcase = ({
       </div>
 
       {status == "active" && (
-        <p className={styles.projectFinancialData_info}>
+        <p className={infoStyles}>
           Este proyecto ya está en ejecución
         </p>
       )}
       {status == "finished" && (
-        <p className={styles.projectFinancialData_info}>
+        <p className={infoStyles}>
           Este proyecto ya ha sido explotado
         </p>
       )}
