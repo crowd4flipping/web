@@ -1,0 +1,127 @@
+.opinions, .pageLayout_content {
+  margin: auto;
+}
+@media (min-width: 320px) {
+  .opinions, .pageLayout_content {
+    max-width: 320px;
+  }
+}
+@media (min-width: 640px) {
+  .opinions, .pageLayout_content {
+    max-width: calc(640px - 5rem);
+  }
+}
+@media (min-width: 1024px) {
+  .opinions, .pageLayout_content {
+    max-width: calc(1024px - 5rem);
+  }
+}
+@media (min-width: 1280px) {
+  .opinions, .pageLayout_content {
+    max-width: calc(1280px - 10rem);
+  }
+}
+@media (min-width: 1536px) {
+  .opinions, .pageLayout_content {
+    max-width: calc(1536px - 10rem);
+  }
+}
+
+.pageLayout {
+  padding-bottom: 5rem;
+  font-size: var(--text-size);
+  font-weight: var(--text-weight);
+  color: var(--text-color);
+}
+.pageLayout_heroPageBottomSection {
+  background-color: var(--color-dark-primary);
+  background: linear-gradient(270deg, var(--color-dark-primary), #00193d, var(--color-dark-primary));
+  margin-top: -10rem;
+  padding-top: 13rem;
+  padding-bottom: 5rem;
+}
+
+.mobileOnly {
+  display: none;
+}
+@media (max-width: 640px) {
+  .mobileOnly {
+    display: block;
+  }
+}
+
+.opinions, .pageLayout_content {
+  margin: auto;
+}
+@media (min-width: 320px) {
+  .opinions, .pageLayout_content {
+    max-width: 320px;
+  }
+}
+@media (min-width: 640px) {
+  .opinions, .pageLayout_content {
+    max-width: calc(640px - 5rem);
+  }
+}
+@media (min-width: 1024px) {
+  .opinions, .pageLayout_content {
+    max-width: calc(1024px - 5rem);
+  }
+}
+@media (min-width: 1280px) {
+  .opinions, .pageLayout_content {
+    max-width: calc(1280px - 10rem);
+  }
+}
+@media (min-width: 1536px) {
+  .opinions, .pageLayout_content {
+    max-width: calc(1536px - 10rem);
+  }
+}
+
+.opinions {
+  padding-top: 3rem;
+  width: 50%;
+}
+@media (max-width: 1024px) {
+  .opinions {
+    width: 100%;
+  }
+}
+.opinions_title {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: var(--title-size);
+  font-weight: var(--title-weight);
+  color: var(--text-color);
+}
+.opinions_text {
+  text-align: center;
+  margin-top: 1rem;
+}
+.opinions_link {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+.opinions_logoWrapper {
+  display: flex;
+  justify-content: center;
+}
+.opinions_logo {
+  width: 12rem;
+}
+.opinions_habitissimo {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.opinions_starsWrapper {
+  display: flex;
+  justify-content: center;
+  color: rgb(255, 191, 0);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+.opinions_star {
+  font-size: 1.5rem;
+}/*# sourceMappingURL=Opinions.module.css.map */

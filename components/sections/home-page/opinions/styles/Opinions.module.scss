@@ -19,6 +19,16 @@
     color: var(--text-color);
   }
 
+  &_text{
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  &_link{
+    color: var(--color-primary);
+    font-weight:500;
+  }
+
   &_logoWrapper{
     display: flex;
     justify-content: center;

@@ -1,0 +1,163 @@
+.projectFinancialData {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  font-size: 1rem;
+
+  &_dataWrapper {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  &_horizontal {
+    /* font-size: 0.8rem; */
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    &_highlight {
+      font-size: 1rem;
+      font-weight: bold;
+
+      &_yield {
+        color: #63b000;
+
+        &_darkMode {
+          color: #8bf502;
+        }
+      }
+    }
+  }
+
+  &_funds {
+    &_horizontal {
+      margin-bottom: 0rem;
+      margin-top: 1rem;
+    }
+  }
+
+  &_highlight {
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    &_yield {
+      color: #63b000;
+
+      &_darkMode {
+        color: #8bf502;
+      }
+    }
+  }
+
+  &_progressBar {
+    margin-top: 0.2rem;
+    height: 1.5rem;
+    position: relative;
+
+    width: 100%;
+    border-radius: 3rem;
+    background-color: #3a4956;
+    overflow: hidden;
+    padding: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_whiteMode {
+      background-color: var(--color-surface);
+    }
+
+    &_bar {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      background-color: white;
+      border-radius: 3rem;
+
+      &_whiteMode {
+        background-color: #8f919a; //#5d6170;
+      }
+    }
+  }
+
+  &_percentageFundedWrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+  }
+
+  &_percentageFunded {
+    font-size: 0.7rem;
+    color: #3a4956;
+    margin-left: 0.5rem;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+
+    &_whiteMode {
+      color: white;
+    }
+  }
+
+  &_maxAmount {
+    font-size: 0.7rem;
+    color: white;
+    margin-right: 1rem;
+    position: absolute;
+    right: 0;
+
+    &_whiteMode {
+      color: var(--text-color);
+    }
+
+    &_inBar {
+      @extend .projectFinancialData_maxAmount;
+      color: #3a4956;
+      margin-top: 0.1rem;
+
+      &_whiteMode {
+        color: white;
+      }
+    }
+  }
+
+  &_inBarWrapper {
+    height: 100%;
+    position: absolute;
+    top: 0;
+  }
+
+  &_divider {
+    opacity: 0.2;
+    border: 0.5px solid white;
+
+    &_whiteMode {
+      opacity: 1;
+      border: 0.5px solid #8d9ba645;
+    }
+  }
+
+  &_inStudyContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    text-align: start;
+  }
+
+  &_info {
+    font-style: italic;
+    color: white;
+
+    &_whiteMode {
+      color: var(--text-color);
+    }
+
+    &_center {
+      text-align: center;
+    }
+  }
+}
