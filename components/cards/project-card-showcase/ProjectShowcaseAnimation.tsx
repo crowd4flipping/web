@@ -155,7 +155,7 @@ export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
       >
         <InStudyProjectCardShowcase
           src={undefined}
-          isSmall={false}
+         /*  isSmall={false} */
           projectId={undefined}
           isDarkMode
           region={props.region}
