@@ -22,6 +22,7 @@ export const InStudyProjectCardShowcase = ({
   isDarkMode = false,
   projectId,
   src,
+  isSmall,
 }: InStudyProjectCardShowcaseProps) => {
   return (
     <ProjectCardLayout
@@ -47,18 +48,25 @@ export const InStudyProjectCardShowcase = ({
       }
       rightSide={
         <>
-          <ProjectImageShowcase src={src} region={region} street={street} />
-          {projectId ? (
-            <Link href={`/proyectos/${projectId}`}>
+          <ProjectImageShowcase
+            isSmall={isSmall}
+            src={src}
+            region={region}
+            street={street}
+          />
+          <div className={styles.projectCardShowcase_button}>
+            {projectId ? (
+              <Link href={`/proyectos/${projectId}`}>
+                <Button size="sm" button="secondary" fullWidth>
+                  Ver proyecto
+                </Button>
+              </Link>
+            ) : (
               <Button size="sm" button="secondary" fullWidth>
                 Ver proyecto
               </Button>
-            </Link>
-          ) : (
-            <Button size="sm" button="secondary" fullWidth>
-              Ver proyecto
-            </Button>
-          )}
+            )}
+          </div>
         </>
       }
     />
