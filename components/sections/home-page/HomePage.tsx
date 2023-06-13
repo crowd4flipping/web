@@ -7,10 +7,11 @@ import { InvestFromFiftyEur } from "./bottom-section/InvestFromFiftyEur";
 import { MainPainPoints } from "./bottom-section/MainPainPoints";
 import { TeamExperience } from "./bottom-section/TeamExperience";
 import { FAQs } from "./FAQs/FAQs";
-import { Opinions } from "./opinions/Opinions";
+import { OpinionsHabitissimo } from "./opinions/OpinionsHabitissimo";
 import { ContactForm } from "./bottom-section/ContactForm";
 import styles from "@/components/layouts/styles/PageLayout.module.scss";
 import Head from "next/head";
+import { OpinionsTrustpilot } from "./opinions/OpinionsTrustpilot";
 
 export const HomePage = () => {
   return (
@@ -27,6 +28,7 @@ export const HomePage = () => {
         <HeroSection />
         <ProjectsSection />
         <GetTheMostForYourMoneySection />
+        <OpinionsTrustpilot />
         <ColaborativeInvestmentSection />
         <div className={styles.pageLayout_heroPageBottomSection}>
           <InvestFromFiftyEur />
@@ -34,7 +36,7 @@ export const HomePage = () => {
           <TeamExperience />
           <FAQs />
         </div>
-        <Opinions />
+        <OpinionsHabitissimo />
         <ContactForm />
       </PageLayout>
     </>

@@ -6,54 +6,77 @@
   @extend %pagePaddingX;
   padding-top: 3rem;
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
-  @include isSmallerRange{
+  &_trustPilot {
+    @extend .opinions;
+    margin-top: 7rem;
+
+    @include isSmallerRange {
+      padding-top: 0rem;
+      margin-top: 0rem;
+      margin-bottom: 5rem;
+    }
+
+    &_title {
+      color: var(--text-color);
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+
+  @include isSmallerRange {
     width: 100%;
   }
 
-  &_title{
-    margin-top: 2rem;
+  &_title {
     text-align: center;
     font-size: var(--title-size);
     font-weight: var(--title-weight);
     color: var(--text-color);
   }
 
-  &_text{
+  &_text {
     text-align: center;
     margin-top: 1rem;
   }
 
-  &_link{
+  &_link {
     color: var(--color-primary);
-    font-weight:500;
+    font-weight: 500;
   }
 
-  &_logoWrapper{
+  &_logoWrapper {
     display: flex;
     justify-content: center;
-    
   }
 
-  &_logo{
+  &_logo {
     width: 12rem;
   }
 
-  &_habitissimo{
+  &_habitissimo {
     margin-top: 1.5rem;
     display: flex;
     justify-content: center;
   }
 
-  &_starsWrapper{
+  &_starsWrapper {
     display: flex;
     justify-content: center;
-    color:rgb(255, 191, 0);
+    color: rgb(255, 191, 0);
     margin-top: 1rem;
     margin-bottom: 1.5rem;
   }
 
-  &_star{
+  &_star {
     font-size: 1.5rem;
+
+    &_trustpilot {
+      width: 1.5rem;
+      margin: 0rem 0.1rem;
+    }
   }
 }
