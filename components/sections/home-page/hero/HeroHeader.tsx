@@ -21,7 +21,7 @@ export const HeroHeader = () => {
       </div>
 
       <div className={heroStyles.heroSection_ctas}>
-        <Link href="#info-video">
+        <Link href="#info-section">
           <Button size="md" button="secondary" fullWidth>
             Saber más
           </Button>
@@ -36,3 +36,4 @@ export const HeroHeader = () => {
     </div>
   );
 };
+ 

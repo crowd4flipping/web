@@ -9,6 +9,7 @@ import { WhatsAppButton } from "@/components/buttons/WhatsAppButton";
 import { useBreakPoints } from "../hooks/useBreakPoints";
 import { TeamIcon } from "../icons/TeamIcon";
 import { QuestionIcon } from "../icons/QuestionIcon";
+import { BlogIcon } from "../icons/BlogIcon";
 import { DocCheckedIcon } from "../icons/DocCheckedIcon";
 import { SigninIcon } from "../icons/SinginIcon";
 
@@ -17,11 +18,16 @@ const navBarSections: NavBarSection[] = [
     icon: <DocCheckedIcon />,
     label: "Transparencia",
     href: "/transparencia",
-  },
+  }, 
   {
     icon: <TeamIcon />,
     label: "Sobre nosotros",
     href: "/sobre-nosotros",
+  },
+  {
+    icon: <BlogIcon />,
+    label: "Blog",
+    href: "/blog",
   },
   {
     icon: <QuestionIcon />,
@@ -32,7 +38,7 @@ const navBarSections: NavBarSection[] = [
   {
     icon: <SigninIcon />,
     label: "Acceder",
-    href: Routes.app().queryHostFW(),
+    href: Routes.app().host(),
   },
 ];
 

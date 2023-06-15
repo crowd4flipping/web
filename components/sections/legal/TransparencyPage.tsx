@@ -81,8 +81,7 @@ export const TransparencyPage = () => {
             pagar y perderíamos nuestra inversión. Básicamente, estamos
             arriesgando nuestro capital a cambio de tener el derecho a
             participar en el fruto de una actividad. Uno de nuestros principales
-            VALORES es la TRANSPARENCIA, pero ¿de qué hablamos cuando nos
-            referimos a la transparencia?
+            VALORES es la TRANSPARENCIA.
           </p>
         </div>
         <div

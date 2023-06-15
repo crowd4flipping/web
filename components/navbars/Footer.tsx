@@ -15,7 +15,7 @@ const footerNavContent: FooterNav = {
   },
   legalNotice: {
     label: "Aviso legal",
-    href: "/aviso-legal",
+    href: "/aviso-legal", 
   },
   cookiesPolicy: {
     label: "Política de Cookies",
