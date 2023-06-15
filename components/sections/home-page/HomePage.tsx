@@ -25,19 +25,22 @@ export const HomePage = () => {
         />
       </Head>
       <PageLayout fixedNavBar>
-         <HeroSection />
+        <HeroSection />
         <ProjectsSection />
         <GetTheMostForYourMoneySection />
         <OpinionsTrustpilot />
-       {/* <ColaborativeInvestmentSection />
-        <div className={styles.pageLayout_heroPageBottomSection}>
+        <ColaborativeInvestmentSection />
+        <div
+          className={styles.pageLayout_heroPageBottomSection}
+          id="info-section"
+        >
           <InvestFromFiftyEur />
           <MainPainPoints />
           <KnowTheProjectStatus />
           <FAQs />
         </div>
         <OpinionsHabitissimo />
-        <ContactForm /> */}
+        <ContactForm />
       </PageLayout>
     </>
   );

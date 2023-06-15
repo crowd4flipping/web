@@ -3,10 +3,8 @@ import { StarTrustPilotIcon } from "@/components/icons/StarTrustPilotIcon";
 import { Opinion } from "@/components/carrousels/types/Opinion";
 import { OpinionsCarrousel } from "@/components/carrousels/OpinionsCarrousel";
 import { getReadableDate } from "utils/utils";
-import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 import { GrayStarTrustPilotIcon } from "@/components/icons/GrayStarTrustPilotIcon";
-import { GreenStarTrustPilotIcon } from "@/components/icons/GreenStarTrustPilotIcon";
-import { useEffect, useMemo, useState } from "react";
+import {SiTrustpilot} from 'react-icons/si'
 
 const data: Opinion[] = [
   {
@@ -22,7 +20,7 @@ const data: Opinion[] = [
     text: `Muy buena opción para poder invertir en inmuebles con poco capital. 
     Sobre todo parte de los proyectos han sido ejecutados en las Islas Baleares. 
     Han funcionado muy bien.`,
-  },
+  }, 
   {
     date: getReadableDate({ yyyy: "2023", mm: "6", dd: "13" }),
     name: "Victoria",
@@ -47,24 +45,18 @@ const data: Opinion[] = [
 ];
 
 export const OpinionsTrustpilot = () => {
-  const [reviews, setReviews] = useState<Opinion[]>([]);
-
-  useEffect(() => {
-    setReviews(data);
-  }, []);
-
   return (
     <div className={styles.opinions_trustPilot}>
       <h2 className={styles.opinions_title}>Lo que opinan de nosotros</h2>
 
       <div>
-        <div className={styles.opinions_trustPilot_branding}>
-          <div className={styles.opinions_trustPilot_icon}>
-            <GreenStarTrustPilotIcon />
-          </div>
-          <h2 className={styles.opinions_trustPilot_title}>TrustPilot</h2>
+        <h2 className={styles.opinions_title}>4.1/5</h2>
+        <div className={styles.opinions_trustPilot_title}>
+          <SiTrustpilot 
+            color="#00b67a"
+          />
+          TrustPilot
         </div>
-        <h3 className={styles.opinions_title}>4.1/5</h3>
         <div className={styles.opinions_starsWrapper}>
           <div className={styles.opinions_star_trustpilot}>
             <StarTrustPilotIcon />
@@ -83,7 +75,7 @@ export const OpinionsTrustpilot = () => {
           </div>
         </div>
 
-        <OpinionsCarrousel data={reviews} />
+        <OpinionsCarrousel data={data} />
       </div>
     </div>
   );

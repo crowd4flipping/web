@@ -15,7 +15,6 @@
   }
 
   &_content {
-    text-align: center;
     @extend %pagePaddingX;
 
     @include isMediumRange {

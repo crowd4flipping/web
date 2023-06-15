@@ -10,7 +10,7 @@ export const Opinions = ({ data }) => {
       className={styles.mediaSlider_carousel}
       autoPlay
       showArrows
-      swipeable={false}
+      swipeable={false} 
       infiniteLoop
       showIndicators={false}
       showStatus={false}
