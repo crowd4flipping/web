@@ -1,9 +1,11 @@
-import { FaFacebookSquare } from "react-icons/fa";
+import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
+import InstagramIcon from '@/public/images/icons/instagramIcon.webp';
 import styles from "./styles/ContactForm.module.scss";
 import { ReactElement } from "react";
 import Link from "next/link";
 import { Routes } from "routes/Routes";
+import Image from "next/image";
 
 type ContactFormDataProps = { children?: ReactElement | ReactElement[] };
 
@@ -34,7 +36,7 @@ export const ContactData = ({ children }: ContactFormDataProps) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaFacebookSquare className={styles.contactForm_icon} />
+              <FaFacebookSquare className={`${styles.contactForm_icon} ${styles.contactForm_faceBook}`} />
             </a>
           </span>
           <span style={{ cursor: "pointer" }}>
@@ -43,7 +45,26 @@ export const ContactData = ({ children }: ContactFormDataProps) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <RiInstagramFill className={styles.contactForm_icon} />
+              <Image 
+                src={InstagramIcon}
+                height={42}
+                width={42}
+                alt="Instagram icon"
+
+                style={{
+                  objectFit: 'cover',
+                  margin: '0'
+                }}
+              />
+            </a>
+          </span>
+          <span style={{ cursor: "pointer" }}>
+            <a
+              href={Routes.linkedin()}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin className={`${styles.contactForm_icon} ${styles.contactForm_linkedin}`} />
             </a>
           </span>
         </div>

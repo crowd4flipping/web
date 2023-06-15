@@ -24,3 +24,4 @@ export function getReadableDate(date: Date) {
   return `Hace ${toYears} años`;
 }
 
+ 

@@ -20,4 +20,7 @@ export class Routes {
   static instagram() {
     return "https://www.instagram.com/crowd4flipping/";
   }
+  static linkedin() {
+    return "https://www.linkedin.com/company/crowd4flipping/";
+  }
 }

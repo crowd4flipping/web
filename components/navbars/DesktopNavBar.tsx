@@ -9,7 +9,7 @@ import { NavBarSection } from "../layouts/types/NavBar";
 export const DesktopNavBar = ({
   setIsOpen,
   navBarSections,
-  isFixed = false,
+  isFixed = false,  
 }: {
   isFixed?: boolean;
   navBarSections: NavBarSection[];
@@ -26,8 +26,8 @@ export const DesktopNavBar = ({
             <Link href="/">
               <Image
                 src={Logo}
-                width={136}
-                height={40}
+                width={153}
+                height={45}
                 alt="logo crowd4flipping"
                 objectFit="contain"
               />
