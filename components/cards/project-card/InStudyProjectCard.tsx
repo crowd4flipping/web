@@ -30,7 +30,7 @@ export const InStudyProjectCard = ({
         <>
           <div>
             <ProjectTag isDarkMode={isDarkMode} status="in_study" />
-            <div className={styles.projectCardShowcase_projectType}>
+            <div className={styles.projectCard_projectType}>
               {businessModel}
             </div>
           </div>
@@ -53,7 +53,7 @@ export const InStudyProjectCard = ({
             region={region}
             street={street}
           />
-          <div className={styles.projectCardShowcase_button}>
+          <div className={styles.projectCard_button}>
             {projectId ? (
               <Link href={`/proyectos/${projectId}`}>
                 <Button size="sm" button="secondary" fullWidth>

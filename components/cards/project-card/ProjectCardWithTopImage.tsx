@@ -24,7 +24,7 @@ export const ProjectCardWithTopImage = (props: ProjectCardProps) => {
       }
       bottom={
         <>
-          <div className={styles.projectCardShowcase_projectType}>
+          <div className={styles.projectCard_projectType}>
             {props.businessModel}
           </div>
           <HorizontalFinancialData
@@ -35,7 +35,7 @@ export const ProjectCardWithTopImage = (props: ProjectCardProps) => {
             profitability={props.profitability}
           />
           {props.projectId ? (
-            <div className={styles.projectCardShowcase_button}>
+            <div className={styles.projectCard_button}>
               <Link href={`/proyectos/${props.projectId}`}>
                 <Button size="sm" button="secondary" fullWidth>
                   Ver proyecto
@@ -43,7 +43,7 @@ export const ProjectCardWithTopImage = (props: ProjectCardProps) => {
               </Link>
             </div>
           ) : (
-            <div className={styles.projectCardShowcase_button}>
+            <div className={styles.projectCard_button}>
               <Button size="sm" button="secondary" fullWidth>
                 Ver proyecto
               </Button>

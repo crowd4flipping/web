@@ -33,7 +33,7 @@ export const InStudyProjectCardWithTopImage = ({
       }
       bottom={
         <>
-          <div className={styles.projectCardShowcase_projectType}>
+          <div className={styles.projectCard_projectType}>
             {businessModel}
           </div>
           <HorizontalFinancialData
@@ -42,7 +42,7 @@ export const InStudyProjectCardWithTopImage = ({
             totalProjectAmount={0}
             profitability={""}
           />
-          <div className={styles.projectCardShowcase_button}>
+          <div className={styles.projectCard_button}>
             {projectId ? (
               <Link href={`/proyectos/${projectId}`}>
                 <Button size="sm" button="secondary" fullWidth>

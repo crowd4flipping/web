@@ -15,17 +15,17 @@ export const ProjectCardTopImage = (props: ProjectCardTopImageProps) => {
   const { region, street, projectStatus, isDarkMode = false, src } = props;
 
   return (
-    <div className={styles.projectCardShowcaseTopImage_imageWrapper}>
-      <div className={styles.projectCardShowcase_address}>
-        <p className={styles.projectCardShowcase_region}>{region}</p>
-        <p className={styles.projectCardShowcase_street}>{street}</p>
+    <div className={styles.projectCardTopImage_imageWrapper}>
+      <div className={styles.projectCard_address}>
+        <p className={styles.projectCard_region}>{region}</p>
+        <p className={styles.projectCard_street}>{street}</p>
       </div>
       {src ? (
         <Image src={src} alt="imagen del proyecto" width={272} height={208} objectFit="cover" />
       ) : (
-        <div className={styles.projectCardShowcaseTopImage_image} />
+        <div className={styles.projectCardTopImage_image} />
       )}
-      <div className={styles.projectCardShowcaseTopImage_tagWrapper}>
+      <div className={styles.projectCardTopImage_tagWrapper}>
         <ProjectTag isDarkMode={isDarkMode} status={projectStatus} />
       </div>
     </div>

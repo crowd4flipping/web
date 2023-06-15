@@ -12,15 +12,15 @@ export const ProjectCardTopImageLayout = ({
   bottom,
   isDarkMode,
 }: ProjectCardTopImageLayoutProps) => {
-  const cardStyles = `${styles.projectCardShowcaseTopImage} ${
-    !isDarkMode && styles.projectCardShowcaseTopImage_whiteMode
+  const cardStyles = `${styles.projectCardTopImage} ${
+    !isDarkMode && styles.projectCardTopImage_whiteMode
   }`;
 
   return (
     <div className={cardStyles}>
-      <div className={styles.projectCardShowcaseTopImage_content}>
-        <div className={styles.projectCardShowcase_top}>{top}</div>
-        <div className={styles.projectCardShowcase_contentBottom}>{bottom}</div>
+      <div className={styles.projectCardTopImage_content}>
+        <div className={styles.projectCard_top}>{top}</div>
+        <div className={styles.projectCard_contentBottom}>{bottom}</div>
       </div>
     </div>
   );

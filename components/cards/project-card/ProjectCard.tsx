@@ -30,8 +30,8 @@ type ProjectCardProps = ProjectProps &
 
 export const ProjectCard = (props: ProjectCardProps) => {
   const { isDarkMode = false, isSmall = false } = props;
-  const tagStyles = `${styles.projectCardShowcase_projectType} ${
-    !isDarkMode && styles.projectCardShowcase_projectType_whiteMode
+  const tagStyles = `${styles.projectCard_projectType} ${
+    !isDarkMode && styles.projectCard_projectType_whiteMode
   }`;
 
   return (
@@ -62,7 +62,7 @@ export const ProjectCard = (props: ProjectCardProps) => {
             region={props.region}
             street={props.street}
           />
-          <div className={styles.projectCardShowcase_button}>
+          <div className={styles.projectCard_button}>
             {props.projectId ? (
               <Link href={`/proyectos/${props.projectId}`}>
                 <Button size="sm" button="secondary" fullWidth>

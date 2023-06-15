@@ -5,6 +5,7 @@ import { OpinionsCarrousel } from "@/components/carrousels/OpinionsCarrousel";
 import { getReadableDate } from "utils/utils";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 import { GrayStarTrustPilotIcon } from "@/components/icons/GrayStarTrustPilotIcon";
+import { GreenStarTrustPilotIcon } from "@/components/icons/GreenStarTrustPilotIcon";
 
 const data: Opinion[] = [
   {
@@ -50,8 +51,13 @@ export const OpinionsTrustpilot = () => {
       <h2 className={styles.opinions_title}>Lo que opinan de nosotros</h2>
 
       <div>
-        <h2 className={styles.opinions_title}>4.1/5</h2>
-        <div className={styles.opinions_trustPilot_title}>TrustPilot</div>
+        <div className={styles.opinions_trustPilot_branding}>
+          <div className={styles.opinions_trustPilot_icon}>
+            <GreenStarTrustPilotIcon />
+          </div>
+          <h2 className={styles.opinions_trustPilot_title}>TrustPilot</h2>
+        </div>
+        <h3 className={styles.opinions_title}>4.1/5</h3>
         <div className={styles.opinions_starsWrapper}>
           <div className={styles.opinions_star_trustpilot}>
             <StarTrustPilotIcon />

@@ -43,7 +43,7 @@ $borderRadius: 0.5rem;
   display: inline-block;
 }
 
-.projectCardShowcase {
+.projectCard {
   @extend .card;
   background-color: #4e6374;
   border: 2px solid #8d9ba680;
@@ -138,11 +138,11 @@ $borderRadius: 0.5rem;
   }
 }
 
-.projectCardShowcaseTopImage {
-  @extend .projectCardShowcase;
+.projectCardTopImage {
+  @extend .projectCard;
 
   &_whiteMode {
-    @extend .projectCardShowcase_whiteCard;
+    @extend .projectCard_whiteCard;
   }
 
   &_content {

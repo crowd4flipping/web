@@ -20,10 +20,22 @@
       margin-bottom: 5rem;
     }
 
+    &_branding {
+      display: flex;
+      gap: .3rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &_icon {
+      width: 1.5rem;
+    }
+
     &_title {
       color: var(--text-color);
       text-align: center;
-      margin-top: 1rem;
+      font-size: 1.5rem;
+      font-weight: 500;
     }
   }
 
