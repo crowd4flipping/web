@@ -25,11 +25,11 @@ export const HomePage = () => {
         />
       </Head>
       <PageLayout fixedNavBar>
-        <HeroSection />
+         <HeroSection />
         <ProjectsSection />
         <GetTheMostForYourMoneySection />
         <OpinionsTrustpilot />
-        <ColaborativeInvestmentSection />
+       {/* <ColaborativeInvestmentSection />
         <div className={styles.pageLayout_heroPageBottomSection}>
           <InvestFromFiftyEur />
           <MainPainPoints />
@@ -37,7 +37,7 @@ export const HomePage = () => {
           <FAQs />
         </div>
         <OpinionsHabitissimo />
-        <ContactForm />
+        <ContactForm /> */}
       </PageLayout>
     </>
   );

@@ -1,14 +1,13 @@
 import React from "react";
-import styles from "../../styles/carrousels.module.scss";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import sliderStyles from "../sections/projects-page/sections/styles/MediaSlider.module.scss";
+import styles from "../sections/projects-page/sections/styles/MediaSlider.module.scss";
 
-export const Opinions = ({data}) => {
+export const Opinions = ({ data }) => {
   return (
     <Carousel
-      className={sliderStyles.mediaSlider_carousel}
+      className={styles.mediaSlider_carousel}
       autoPlay
       showArrows
       swipeable={false}
@@ -22,7 +21,7 @@ export const Opinions = ({data}) => {
             type="button"
             onClick={onClickHandler}
             title={label}
-            className={`${sliderStyles.mediaSlider_button} ${sliderStyles.mediaSlider_button_right}`}
+            className={`${styles.mediaSlider_button} ${styles.mediaSlider_button_right}`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +29,7 @@ export const Opinions = ({data}) => {
               viewBox="0 0 24 24"
               strokeWidth="4"
               stroke="currentColor"
-              className={sliderStyles.mediaSlider_buttonIcon}
+              className={styles.mediaSlider_buttonIcon}
             >
               <path
                 strokeLinecap="round"
@@ -47,7 +46,7 @@ export const Opinions = ({data}) => {
             type="button"
             onClick={onClickHandler}
             title={label}
-            className={sliderStyles.mediaSlider_button}
+            className={styles.mediaSlider_button}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +54,7 @@ export const Opinions = ({data}) => {
               viewBox="0 0 24 24"
               strokeWidth="4"
               stroke="currentColor"
-              className={sliderStyles.mediaSlider_buttonIcon}
+              className={styles.mediaSlider_buttonIcon}
             >
               <path
                 strokeLinecap="round"
@@ -71,16 +70,8 @@ export const Opinions = ({data}) => {
         return (
           <div key={i}>
             <h2>{item.name}</h2>
-            <p
-              style={{
-                fontSize: "0.8rem",
-                paddingTop: "1rem",
-                paddingBottom: "1rem",
-              }}
-            >
-              {item.date}
-            </p>
-            <p className={sliderStyles.mediaSlider_opinion}>{item.text}</p>
+            <p className={styles.mediaSlider_carousel_date}>{item.date}</p>
+            <p className={styles.mediaSlider_opinion}>{item.text}</p>
           </div>
         );
       })}
