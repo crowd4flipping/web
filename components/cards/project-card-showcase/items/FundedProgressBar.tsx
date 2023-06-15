@@ -1,5 +1,5 @@
 import { MoneyFormatter } from "utils/MoneyFormatter";
-import styles from "../styles/ProjectFinancialData.module.scss";
+import styles from "../../styles/ProjectFinancialData.module.scss";
 
 type FundedProgressBarProps = {
   maxAmount: number;

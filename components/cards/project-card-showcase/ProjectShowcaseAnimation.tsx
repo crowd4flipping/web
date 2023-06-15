@@ -1,22 +1,25 @@
-import { useEffect, useRef, useState } from "react";
+import { ReactElement, useEffect, useRef, useState } from "react";
 import { InStudyProjectCardShowcase } from "./InStudyProjectCardShowcase";
 import { ProjectCardShowcase } from "./ProjectCardShowcase";
 import styles from "../styles/Card.module.scss";
 import { ProjectStatus } from "@/routes/C4FCloudRoutes";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
-import { ProjectCardShowcaseWithTopImage } from "./ProjectCardShowcaseWithTopImage";
-import { InStudyProjectCardWithTopImage } from "./InStudyProjectCardWithTopImage";
 
 type AnimationSteps = ProjectStatus | "empty";
-type ProjectShowcaseAnimation = Omit<
+/* type ProjectShowcaseAnimation = Omit<
   Parameters<typeof ProjectCardShowcase>[number],
-  "projectId" | "src"
->;
+  "projectId" | "src" | "status"
+> & { projects: [ReactElement, ReactElement, ReactElement, ReactElement] }; */
+
+type ProjectShowcaseAnimation = {
+  projects: [ReactElement, ReactElement, ReactElement, ReactElement];
+  onChangeStatus: (status: ProjectStatus) => void;
+};
 
 export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
   const { isSmallerSize } = useBreakPoints();
   const [animationStep, setAnimationStep] = useState<AnimationSteps>("empty");
-  const [currentAmount, setCurrentAmount] = useState(props.currentAmount);
+  const [currentAmount, setCurrentAmount] = useState(0);
   const animationWrapperRef = useRef<HTMLDivElement>();
 
   const transition = (type: "in" | "out" | "none") => {
@@ -84,30 +87,28 @@ export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
       if (animationStep === "empty") setAnimationStep("in_study");
 
       if (animationStep == "in_study") {
+        props.onChangeStatus("in_study");
         inStudyTimeout = setTimeout(() => {
           setAnimationStep("funding");
         }, 3000);
       }
 
       if (animationStep == "funding") {
-        fundingInterval = setInterval(() => {
-          setCurrentAmount((prev) => (prev += 10000));
-        }, 50);
-
+        props.onChangeStatus("funding");
         fundingTimeout = setTimeout(() => {
           setAnimationStep("active");
-          clearInterval(fundingInterval);
-        }, 4000);
+        }, 2000);
       }
-
+      
       if (animationStep == "active") {
+        props.onChangeStatus("active");
         activeTimeout = setTimeout(() => {
-          setCurrentAmount(0);
           setAnimationStep("finished");
         }, 3000);
       }
-
+      
       if (animationStep == "finished") {
+        props.onChangeStatus("finished");
         finishedTimeout = setTimeout(() => {
           setAnimationStep("in_study");
         }, 3000);
@@ -144,7 +145,7 @@ export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
       observer.disconnect();
       clean();
     };
-  }, [animationStep, isSmallerSize]);
+  }, [animationStep, isSmallerSize, props]);
 
   return (
     <div className={styles.projectCardAnimation} ref={animationWrapperRef}>
@@ -153,69 +154,28 @@ export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
           styles.projectCardAnimation_cardWrapper
         }`}
       >
-        <InStudyProjectCardShowcase
-          src={undefined}
-         /*  isSmall={false} */
-          projectId={undefined}
-          isDarkMode
-          region={props.region}
-          street={props.street}
-          businessModel={props.businessModel}
-        />
+        {props.projects[0]}
       </div>
       <div
         className={`${animation("funding", animationStep)} ${
           styles.projectCardAnimation_cardWrapper
         }`}
       >
-        <ProjectCardShowcase
-          src={undefined}
-          projectId={undefined}
-          isDarkMode
-          businessModel={props.businessModel}
-          totalProjectAmount={props.totalProjectAmount}
-          status={"funding"}
-          profitability={props.profitability}
-          currentAmount={currentAmount}
-          region={props.region}
-          street={props.street}
-        />
+        {props.projects[1]}
       </div>
       <div
         className={`${animation("active", animationStep)} ${
           styles.projectCardAnimation_cardWrapper
         }`}
       >
-        <ProjectCardShowcase
-          src={undefined}
-          projectId={undefined}
-          isDarkMode
-          businessModel={props.businessModel}
-          totalProjectAmount={props.totalProjectAmount}
-          status={"active"}
-          profitability={props.profitability}
-          currentAmount={currentAmount}
-          region={props.region}
-          street={props.street}
-        />
+        {props.projects[2]}
       </div>
       <div
         className={`${animation("finished", animationStep)} ${
           styles.projectCardAnimation_cardWrapper
         }`}
       >
-        <ProjectCardShowcase
-          src={undefined}
-          projectId={undefined}
-          isDarkMode
-          businessModel={props.businessModel}
-          totalProjectAmount={props.totalProjectAmount}
-          status={"finished"}
-          profitability={props.profitability}
-          currentAmount={currentAmount}
-          region={props.region}
-          street={props.street}
-        />
+        {props.projects[3]}
       </div>
     </div>
   );

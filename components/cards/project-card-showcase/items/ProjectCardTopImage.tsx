@@ -1,5 +1,5 @@
 import { ProjectStatus } from "@/routes/C4FCloudRoutes";
-import styles from "../styles/Card.module.scss";
+import styles from "../../styles/Card.module.scss";
 import { ProjectTag } from "./ProjectTag";
 import Image from "next/image";
 

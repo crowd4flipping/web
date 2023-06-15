@@ -1,16 +1,37 @@
-import Image from "next/image";
 import styles from "./styles/TeamExperience.module.scss";
-import Workers from "@/public/images/home-page/workers-in-a-construction.png";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 import { LinkButton } from "@/components/buttons/primary/Button";
-import { ProjectCardShowcase } from "@/components/cards/project-card-showcase/ProjectCardShowcase";
 import { ProjectShowcaseAnimation } from "@/components/cards/project-card-showcase/ProjectShowcaseAnimation";
 import { ProjectCardShowcaseWithTopImage } from "@/components/cards/project-card-showcase/ProjectCardShowcaseWithTopImage";
-import { Tag } from "@/components/tags/Tag";
-import { ProjectTag } from "@/components/cards/project-card-showcase/ProjectTag";
+import { InStudyProjectCardShowcase } from "../../../cards/project-card-showcase/InStudyProjectCardShowcase";
+import { ProjectCardShowcase } from "../../../cards/project-card-showcase/ProjectCardShowcase";
+import { useState } from "react";
+import { ProjectStatus } from "@/routes/C4FCloudRoutes";
+import { InStudyProjectCardWithTopImage } from "@/components/cards/project-card-showcase/InStudyProjectCardWithTopImage";
+
+const projectData: Omit<
+  Parameters<typeof ProjectCardShowcase>[number],
+  "status"
+> = {
+  profitability: "14",
+  src: undefined,
+  isDarkMode: true,
+  projectId: undefined,
+  totalProjectAmount: 402000,
+  currentAmount: 0, //123000,
+  region: "Mallorca, Baleares",
+  street: "C/ Avenida de Don Blas de Lezo 23",
+  businessModel: "Alquiler",
+};
 
 export const TeamExperience = () => {
   const { isXSmall } = useBreakPoints();
+  const [currentAmount, setCurrentAmount] = useState(0);
+  const isFunding = (status: ProjectStatus) => {
+    return (
+      status === "funding" && currentAmount <= projectData.totalProjectAmount
+    );
+  };
 
   const text = (
     <div className={styles.teamExperience_experience}>
@@ -46,23 +67,122 @@ export const TeamExperience = () => {
 
         <div className={styles.teamExperience_projectCardWrapper}>
           {isXSmall ? (
-            <div
-            className={styles.teamExperience_tagsWrapper}>
-              <ProjectTag status="in_study" />
-              <ProjectTag status="active" />
-              <ProjectTag status="finished" />
-              <ProjectTag status="funding" />
-              
-            </div>
+            <ProjectShowcaseAnimation
+              onChangeStatus={(status) => {
+                if (status === "in_study") setCurrentAmount(0);
+                if (isFunding(status)) {
+                  setCurrentAmount((prev) => (prev += 10000));
+                }
+              }}
+              projects={[
+                <InStudyProjectCardWithTopImage
+                  key={"a"}
+                  src={projectData.src}
+                  projectId={projectData.projectId}
+                  isDarkMode={projectData.isDarkMode}
+                  region={projectData.region}
+                  street={projectData.street}
+                  businessModel={projectData.businessModel}
+                />,
+                <ProjectCardShowcaseWithTopImage
+                  key={"b"}
+                  src={projectData.src}
+                  projectId={projectData.projectId}
+                  isDarkMode={projectData.isDarkMode}
+                  region={projectData.region}
+                  street={projectData.street}
+                  businessModel={projectData.businessModel}
+                  currentAmount={currentAmount}
+                  profitability={projectData.profitability}
+                  totalProjectAmount={projectData.totalProjectAmount}
+                  status="funding"
+                />,
+                <ProjectCardShowcaseWithTopImage
+                  key={"c"}
+                  src={projectData.src}
+                  projectId={projectData.projectId}
+                  isDarkMode={projectData.isDarkMode}
+                  region={projectData.region}
+                  street={projectData.street}
+                  businessModel={projectData.businessModel}
+                  currentAmount={projectData.currentAmount}
+                  profitability={projectData.profitability}
+                  totalProjectAmount={projectData.totalProjectAmount}
+                  status="active"
+                />,
+                <ProjectCardShowcaseWithTopImage
+                  key={"d"}
+                  src={projectData.src}
+                  projectId={projectData.projectId}
+                  isDarkMode={projectData.isDarkMode}
+                  region={projectData.region}
+                  street={projectData.street}
+                  businessModel={projectData.businessModel}
+                  currentAmount={projectData.currentAmount}
+                  profitability={projectData.profitability}
+                  totalProjectAmount={projectData.totalProjectAmount}
+                  status="finished"
+                />,
+              ]}
+            />
           ) : (
             <ProjectShowcaseAnimation
-              businessModel="Alquiler"
-              street="C/ Avenida de Don Blas de Lezo 23"
-              totalProjectAmount={402000}
-              currentAmount={123000}
-              profitability="14"
-              region="Mallorca, Baleares"
-              status="funding"
+              onChangeStatus={(status) => {
+                if (status === "in_study") setCurrentAmount(0);
+                if (isFunding(status)) {
+                  setCurrentAmount((prev) => (prev += 10000));
+                }
+              }}
+              projects={[
+                <InStudyProjectCardShowcase
+                  key={"a"}
+                  src={projectData.src}
+                  projectId={projectData.projectId}
+                  isDarkMode={projectData.isDarkMode}
+                  region={projectData.region}
+                  street={projectData.street}
+                  businessModel={projectData.businessModel}
+                />,
+                <ProjectCardShowcase
+                  key={"b"}
+                  src={projectData.src}
+                  projectId={projectData.projectId}
+                  isDarkMode={projectData.isDarkMode}
+                  region={projectData.region}
+                  street={projectData.street}
+                  businessModel={projectData.businessModel}
+                  currentAmount={currentAmount}
+                  profitability={projectData.profitability}
+                  totalProjectAmount={projectData.totalProjectAmount}
+                  status="funding"
+                />,
+                <ProjectCardShowcase
+                  key={"c"}
+                  src={projectData.src}
+                  projectId={projectData.projectId}
+                  isDarkMode={projectData.isDarkMode}
+                  region={projectData.region}
+                  street={projectData.street}
+                  businessModel={projectData.businessModel}
+                  currentAmount={projectData.currentAmount}
+                  profitability={projectData.profitability}
+                  totalProjectAmount={projectData.totalProjectAmount}
+                  status="active"
+                />,
+                <ProjectCardShowcase
+                  key={"d"}
+                  src={projectData.src}
+                  projectId={projectData.projectId}
+                  isDarkMode={projectData.isDarkMode}
+                  region={projectData.region}
+                  street={projectData.street}
+                  businessModel={projectData.businessModel}
+                  currentAmount={projectData.currentAmount}
+                  profitability={projectData.profitability}
+                  totalProjectAmount={projectData.totalProjectAmount}
+                  status="finished"
+                />,
+              ]}
             />
           )}
         </div>

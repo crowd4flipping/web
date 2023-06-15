@@ -19,7 +19,8 @@
 
     @include isSmallerRange {
       display: flex;
-      flex-direction: column-reverse;
+     // flex-direction: column-reverse;
+      flex-direction: column;
     }
   }
 

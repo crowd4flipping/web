@@ -1,12 +1,12 @@
 import styles from "../styles/Card.module.scss";
 import { Button } from "@/components/buttons/primary/Button";
 import { Tag, TagColor } from "@/components/tags/Tag";
-import { ProjectStatus } from "routes/C4FCloudRoutes";
+import { ProjectStatus } from "@/routes/C4FCloudRoutes";
 import { ReactElement } from "react";
-import { ProjectFinancialDataShowcase } from "./ProjectFinancialDataShowcase";
-import { ProjectImageShowcase } from "./ProjectImageShowcase";
-import { ProjectCardLayout } from "./ProjectCardLayout";
-import { ProjectTag } from "./ProjectTag";
+import { ProjectFinancialDataShowcase } from "./items/ProjectFinancialDataShowcase";
+import { ProjectImageShowcase } from "./items/ProjectImageShowcase";
+import { ProjectCardLayout } from "./items/ProjectCardLayout";
+import { ProjectTag } from "./items/ProjectTag";
 import Link from "next/link";
 
 type ProjectImageProps = Omit<

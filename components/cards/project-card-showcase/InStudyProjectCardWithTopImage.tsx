@@ -1,27 +1,34 @@
 import { Tag } from "@/components/tags/Tag";
-import { ProjectCardLayout } from "./ProjectCardLayout";
-import { ProjectFinancialDataShowcase } from "./ProjectFinancialDataShowcase";
-import { ProjectImageShowcase } from "./ProjectImageShowcase";
+import { ProjectCardLayout } from "./items/ProjectCardLayout";
+import { ProjectFinancialDataShowcase } from "./items/ProjectFinancialDataShowcase";
+import { ProjectImageShowcase } from "./items/ProjectImageShowcase";
 import { Button } from "@/components/buttons/primary/Button";
 import styles from "../styles/Card.module.scss";
-import { ProjectCardTopImageLayout } from "./ProjectCardTopImageLayout";
-import { ProjectCardTopImage } from "./ProjectCardTopImage";
-import { HorizontalFinancialData } from "./HorizontalFinancialData";
+import { ProjectCardTopImageLayout } from "./items/ProjectCardTopImageLayout";
+import { ProjectCardTopImage } from "./items/ProjectCardTopImage";
+import { HorizontalFinancialData } from "./items/HorizontalFinancialData";
+import { ProjectCardShowcase } from "./ProjectCardShowcase";
+import { InStudyProjectCardShowcase } from "./InStudyProjectCardShowcase";
+import Link from "next/link";
 
 type InStudyProjectCardWithTopImageProps = Parameters<
-  typeof ProjectImageShowcase
->[number] & { projectType: string; src: string | undefined };
+  typeof InStudyProjectCardShowcase
+>[number];
 
 export const InStudyProjectCardWithTopImage = ({
   region,
   street,
-  projectType,
-  src
+  src,
+  projectId,
+  businessModel,
+  isDarkMode = false,
 }: InStudyProjectCardWithTopImageProps) => {
   return (
     <ProjectCardTopImageLayout
+      isDarkMode={isDarkMode}
       top={
         <ProjectCardTopImage
+          isDarkMode={isDarkMode}
           src={src}
           region={region}
           street={street}
@@ -31,7 +38,7 @@ export const InStudyProjectCardWithTopImage = ({
       bottom={
         <>
           <div className={styles.projectCardShowcase_projectType}>
-            {projectType}
+            {businessModel}
           </div>
           <HorizontalFinancialData
             status={"in_study"}
@@ -40,9 +47,17 @@ export const InStudyProjectCardWithTopImage = ({
             profitability={""}
           />
           <div className={styles.projectCardShowcase_button}>
-            <Button size="sm" button="secondary" fullWidth>
-              Ver proyecto
-            </Button>
+            {projectId ? (
+              <Link href={`/proyectos/${projectId}`}>
+                <Button size="sm" button="secondary" fullWidth>
+                  Ver proyecto
+                </Button>
+              </Link>
+            ) : (
+              <Button size="sm" button="secondary" fullWidth>
+                Ver proyecto
+              </Button>
+            )}
           </div>
         </>
       }

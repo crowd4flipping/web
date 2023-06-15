@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import styles from "../styles/Card.module.scss";
+import styles from "../../styles/Card.module.scss";
 
 type ProjectCardLayoutProps = {
   leftSide: ReactElement | ReactElement[];

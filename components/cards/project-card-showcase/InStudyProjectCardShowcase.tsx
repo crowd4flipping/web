@@ -1,10 +1,10 @@
 import { Tag } from "@/components/tags/Tag";
-import { ProjectCardLayout } from "./ProjectCardLayout";
-import { ProjectFinancialDataShowcase } from "./ProjectFinancialDataShowcase";
-import { ProjectImageShowcase } from "./ProjectImageShowcase";
+import { ProjectCardLayout } from "./items/ProjectCardLayout";
+import { ProjectFinancialDataShowcase } from "./items/ProjectFinancialDataShowcase";
+import { ProjectImageShowcase } from "./items/ProjectImageShowcase";
 import { Button } from "@/components/buttons/primary/Button";
 import styles from "../styles/Card.module.scss";
-import { ProjectTag } from "./ProjectTag";
+import { ProjectTag } from "./items/ProjectTag";
 import Link from "next/link";
 
 type InStudyProjectCardShowcaseProps = Parameters<

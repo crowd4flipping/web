@@ -1,15 +1,11 @@
 import styles from "../styles/Card.module.scss";
 import { Button } from "@/components/buttons/primary/Button";
-import { ProjectCardTopImageLayout } from "./ProjectCardTopImageLayout";
+import { ProjectCardTopImageLayout } from "./items/ProjectCardTopImageLayout";
 import { ProjectCardShowcase } from "./ProjectCardShowcase";
-import { ProjectCardTopImage } from "./ProjectCardTopImage";
-import { HorizontalFinancialData } from "./HorizontalFinancialData";
+import { ProjectCardTopImage } from "./items/ProjectCardTopImage";
+import { HorizontalFinancialData } from "./items/HorizontalFinancialData";
 
-type ProjectCardProps = Parameters<typeof ProjectCardShowcase>[number] & {
-  businessModel: string;
-  isDarkMode?: boolean;
-  src: string | undefined;
-};
+type ProjectCardProps = Parameters<typeof ProjectCardShowcase>[number];
 
 export const ProjectCardShowcaseWithTopImage = (props: ProjectCardProps) => {
   const { isDarkMode = false } = props;
@@ -18,7 +14,7 @@ export const ProjectCardShowcaseWithTopImage = (props: ProjectCardProps) => {
       isDarkMode={isDarkMode}
       top={
         <ProjectCardTopImage
-        src={props.src}
+          src={props.src}
           isDarkMode={isDarkMode}
           region={props.region}
           street={props.street}
