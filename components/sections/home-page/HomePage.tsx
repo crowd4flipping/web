@@ -5,7 +5,7 @@ import { GetTheMostForYourMoneySection } from "./the-most-for-money/GetTheMostFo
 import { ColaborativeInvestmentSection } from "./colaborative-investment/ColaborativeInvestmentSection";
 import { InvestFromFiftyEur } from "./bottom-section/InvestFromFiftyEur";
 import { MainPainPoints } from "./bottom-section/MainPainPoints";
-import { TeamExperience } from "./bottom-section/TeamExperience";
+import { KnowTheProjectStatus } from "./bottom-section/KnowTheProjectStatus";
 import { FAQs } from "./FAQs/FAQs";
 import { OpinionsHabitissimo } from "./opinions/OpinionsHabitissimo";
 import { ContactForm } from "./bottom-section/ContactForm";
@@ -30,10 +30,13 @@ export const HomePage = () => {
         <GetTheMostForYourMoneySection />
         <OpinionsTrustpilot />
         <ColaborativeInvestmentSection />
-        <div className={styles.pageLayout_heroPageBottomSection} id="info-section">
+        <div
+          className={styles.pageLayout_heroPageBottomSection}
+          id="info-section"
+        >
           <InvestFromFiftyEur />
           <MainPainPoints />
-          <TeamExperience />
+          <KnowTheProjectStatus />
           <FAQs />
         </div>
         <OpinionsHabitissimo />

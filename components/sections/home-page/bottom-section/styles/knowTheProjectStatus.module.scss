@@ -2,11 +2,11 @@
 @import "../../../../../styles/theme/Default.module.scss";
 @import "../../../../../styles/theme/Utils.module.scss";
 
-.teamExperience {
+.knowTheProjectStatus {
+  @extend %pagePaddingX;
   padding-top: 5rem;
   padding-bottom: 5rem;
   color: var(--color-surface);
-  @extend %pagePaddingX;
 
   &_bg {
     background: linear-gradient(270deg, transparent, #00294e, transparent);
@@ -16,10 +16,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
-
     @include isSmallerRange {
       display: flex;
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
   }
 
@@ -27,6 +26,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include isMobile {
+      padding-bottom: 3rem;
+    }
   }
 
   &_tagsWrapper {

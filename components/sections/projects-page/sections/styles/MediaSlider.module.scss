@@ -5,11 +5,17 @@
   height: 450px;
 
   @include isMobile {
-    height: 300px; 
+    height: 300px;
   }
 
   &_carousel {
     position: relative;
+
+    &_date {
+      font-size: 0.8rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
   }
 
   &_button {
@@ -22,7 +28,7 @@
     z-index: 2;
     cursor: pointer;
 
-    &_right{
+    &_right {
       right: 0;
     }
   }
@@ -38,11 +44,11 @@
     height: 100%;
   }
 
-  &_opinion{
+  &_opinion {
     padding: 0 2rem 0 2rem;
     text-align: center;
 
-    @include isSmallerRange{
+    @include isSmallerRange {
       text-align: left;
     }
   }

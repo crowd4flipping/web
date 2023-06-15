@@ -2,9 +2,15 @@ export function unhandledType(value: never): value is never {
   return value;
 }
 
-export function getReadableDate(date: Date) {
+export function getReadableDate(props: {
+  dd: string;
+  mm: string;
+  yyyy: string;
+}) {
+  const { dd, mm, yyyy } = props;
   const now = new Date();
   const msDay = 1000 * 60 * 60 * 24;
+  const date = new Date(`${yyyy}/${mm}/${dd}`);
   const daysTime = now.getTime() - date.getTime();
   const days = Math.ceil(daysTime / msDay);
 
@@ -20,8 +26,6 @@ export function getReadableDate(date: Date) {
   if (years <= 1) return "Hace 1 año";
 
   const toYears = now.getFullYear() - date.getFullYear();
-  if(toYears === 1) return "Hace 1 año";
+  if (toYears === 1) return "Hace 1 año";
   return `Hace ${toYears} años`;
 }
-
- 

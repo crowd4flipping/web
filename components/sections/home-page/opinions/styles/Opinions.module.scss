@@ -20,6 +20,17 @@
       margin-bottom: 5rem;
     }
 
+    &_branding {
+      display: flex;
+      gap: .3rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &_icon {
+      width: 1.5rem;
+    }
+
     &_title {
       font-size: var(--title-size-md);
       color: var(--text-color);

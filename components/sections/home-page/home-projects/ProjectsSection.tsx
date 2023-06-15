@@ -1,14 +1,16 @@
 import styles from "./styles/Projects.module.scss";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
-import { ProjectCard } from "@/components/cards/project-card/ProjectCard";
 import { ReactElement } from "react";
+import { ProjectCard } from "@/components/cards/project-card/ProjectCard";
 import { ProjectCardWithTopImage } from "@/components/cards/project-card/ProjectCardWithTopImage";
-import { ProjectCardShowcase } from "@/components/cards/project-card-showcase/ProjectCardShowcase";
-import { InStudyProjectCardShowcase } from "@/components/cards/project-card-showcase/InStudyProjectCardShowcase";
-import { ProjectCardShowcaseWithTopImage } from "@/components/cards/project-card-showcase/ProjectCardShowcaseWithTopImage";
 
-type ProjectProps = Omit<Parameters<typeof ProjectCard>[number], "size"> & {
+type ProjectProps = {
   businessModel: string;
+  src: string;
+  profitability: string;
+  totalAmount: string;
+  street: string;
+  projectId: string;
 };
 
 const projectList: ProjectProps[] = [
@@ -53,7 +55,7 @@ export const ProjectsSection = () => {
     props: ProjectProps
   ): Record<typeof breakingPoint, ReactElement> => ({
     xl: (
-      <ProjectCardShowcase
+      <ProjectCard
         src={props.src}
         key={props.src}
         projectId={props.projectId}
@@ -67,7 +69,7 @@ export const ProjectsSection = () => {
       />
     ),
     lg: (
-      <ProjectCardShowcase
+      <ProjectCard
         src={props.src}
         projectId={props.projectId}
         key={props.src}
@@ -81,7 +83,7 @@ export const ProjectsSection = () => {
       />
     ),
     md: (
-      <ProjectCardShowcase
+      <ProjectCard
         src={props.src}
         projectId={props.projectId}
         isSmall
@@ -97,7 +99,7 @@ export const ProjectsSection = () => {
     ),
     sm: (
       <div key={props.src} className={styles.projectsSection_cardWrapper}>
-        <ProjectCardShowcase
+        <ProjectCard
           src={props.src}
           projectId={props.projectId}
           key={props.src}
@@ -113,7 +115,7 @@ export const ProjectsSection = () => {
     ),
     xs: (
       <div key={props.src} className={styles.projectsSection_cardWrapper}>
-        <ProjectCardShowcaseWithTopImage
+        <ProjectCardWithTopImage
           src={props.src}
           projectId={props.projectId}
           key={props.src}
