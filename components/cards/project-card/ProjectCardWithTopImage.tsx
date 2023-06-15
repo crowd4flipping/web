@@ -4,6 +4,7 @@ import { ProjectCardTopImageLayout } from "./items/ProjectCardTopImageLayout";
 import { ProjectCard } from "./ProjectCard";
 import { ProjectCardTopImage } from "./items/ProjectCardTopImage";
 import { HorizontalFinancialData } from "./items/HorizontalFinancialData";
+import Link from "next/link";
 
 type ProjectCardProps = Parameters<typeof ProjectCard>[number];
 
@@ -33,11 +34,21 @@ export const ProjectCardWithTopImage = (props: ProjectCardProps) => {
             totalProjectAmount={props.totalProjectAmount}
             profitability={props.profitability}
           />
-          <div className={styles.projectCardShowcase_button}>
-            <Button size="sm" button="secondary" fullWidth>
-              Ver proyecto
-            </Button>
-          </div>
+          {props.projectId ? (
+            <div className={styles.projectCardShowcase_button}>
+              <Link href={`/proyectos/${props.projectId}`}>
+                <Button size="sm" button="secondary" fullWidth>
+                  Ver proyecto
+                </Button>
+              </Link>
+            </div>
+          ) : (
+            <div className={styles.projectCardShowcase_button}>
+              <Button size="sm" button="secondary" fullWidth>
+                Ver proyecto
+              </Button>
+            </div>
+          )}
         </>
       }
     />
