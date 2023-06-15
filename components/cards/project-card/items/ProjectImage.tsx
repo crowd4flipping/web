@@ -1,7 +1,7 @@
 import Image from "next/image";
-import styles from "../styles/Card.module.scss";
+import styles from "../../styles/Card.module.scss";
 
-export const ProjectImageShowcase = ({
+export const ProjectImage = ({
   region,
   street,
   src,
@@ -13,7 +13,7 @@ export const ProjectImageShowcase = ({
   isSmall?: boolean;
 }) => {
   return (
-    <div className={styles.projectCardShowcase_imageWrapper}>
+    <div className={styles.projectCard_imageWrapper}>
       {src &&
         (isSmall ? (
           <Image
@@ -32,11 +32,11 @@ export const ProjectImageShowcase = ({
             objectFit="cover"
           />
         ))}
-      <div className={styles.projectCardShowcase_address}>
-        <p className={styles.projectCardShowcase_region}>{region}</p>
-        <p className={styles.projectCardShowcase_street}>{street}</p>
+      <div className={styles.projectCard_address}>
+        <p className={styles.projectCard_region}>{region}</p>
+        <p className={styles.projectCard_street}>{street}</p>
       </div>
-      {!src && <div className={styles.projectCardShowcase_image} />}
+      {!src && <div className={styles.projectCard_image} />}
     </div>
   );
 };

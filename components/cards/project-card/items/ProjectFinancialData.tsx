@@ -1,5 +1,5 @@
 import { ProjectStatus } from "@/routes/C4FCloudRoutes";
-import styles from "../styles/ProjectFinancialData.module.scss";
+import styles from "../../styles/ProjectFinancialData.module.scss";
 import { FundedProgressBar } from "./FundedProgressBar";
 import { MoneyFormatter } from "utils/MoneyFormatter";
 
@@ -12,7 +12,7 @@ type ProjectFinancialDataProps = {
   isDarkMode?: boolean;
 };
 
-export const ProjectFinancialDataShowcase = ({
+export const ProjectFinancialData = ({
   status,
   totalProjectAmount,
   profitability,

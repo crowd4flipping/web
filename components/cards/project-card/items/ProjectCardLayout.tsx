@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import styles from "../styles/Card.module.scss";
+import styles from "../../styles/Card.module.scss";
 
 type ProjectCardLayoutProps = {
   leftSide: ReactElement | ReactElement[];
@@ -14,17 +14,17 @@ export const ProjectCardLayout = ({
   isDarkMode,
   isSmall,
 }: ProjectCardLayoutProps) => {
-  const cardStyle = `${styles.projectCardShowcase} ${
-    !isDarkMode && styles.projectCardShowcase_whiteCard
+  const cardStyle = `${styles.projectCard} ${
+    !isDarkMode && styles.projectCard_whiteCard
   }`;
-  const contentStyle = `${styles.projectCardShowcase_content} ${styles.projectCardShowcase_content} ${
-    isSmall && styles.projectCardShowcase_content_sm
+  const contentStyle = `${styles.projectCard_content} ${styles.projectCard_content} ${
+    isSmall && styles.projectCard_content_sm
   }`;
   return (
     <div className={cardStyle}>
       <div className={contentStyle}>
-        <div className={styles.projectCardShowcase_contentLeft}>{leftSide}</div>
-        <div className={styles.projectCardShowcase_contentRight}>
+        <div className={styles.projectCard_contentLeft}>{leftSide}</div>
+        <div className={styles.projectCard_contentRight}>
           {rightSide}
         </div>
       </div>
