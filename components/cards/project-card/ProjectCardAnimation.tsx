@@ -1,22 +1,16 @@
 import { ReactElement, useEffect, useRef, useState } from "react";
-import { InStudyProjectCardShowcase } from "./InStudyProjectCardShowcase";
-import { ProjectCardShowcase } from "./ProjectCardShowcase";
 import styles from "../styles/Card.module.scss";
 import { ProjectStatus } from "@/routes/C4FCloudRoutes";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 
 type AnimationSteps = ProjectStatus | "empty";
-/* type ProjectShowcaseAnimation = Omit<
-  Parameters<typeof ProjectCardShowcase>[number],
-  "projectId" | "src" | "status"
-> & { projects: [ReactElement, ReactElement, ReactElement, ReactElement] }; */
 
-type ProjectShowcaseAnimation = {
+type ProjectCardAnimationProps = {
   projects: [ReactElement, ReactElement, ReactElement, ReactElement];
   onChangeStatus: (status: ProjectStatus) => void;
 };
 
-export const ProjectShowcaseAnimation = (props: ProjectShowcaseAnimation) => {
+export const ProjectCardAnimation = (props: ProjectCardAnimationProps) => {
   const { isSmallerSize } = useBreakPoints();
   const [animationStep, setAnimationStep] = useState<AnimationSteps>("empty");
   const [currentAmount, setCurrentAmount] = useState(0);

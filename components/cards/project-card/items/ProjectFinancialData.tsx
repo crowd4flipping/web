@@ -12,7 +12,7 @@ type ProjectFinancialDataProps = {
   isDarkMode?: boolean;
 };
 
-export const ProjectFinancialDataShowcase = ({
+export const ProjectFinancialData = ({
   status,
   totalProjectAmount,
   profitability,

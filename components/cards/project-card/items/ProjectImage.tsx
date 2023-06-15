@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "../../styles/Card.module.scss";
 
-export const ProjectImageShowcase = ({
+export const ProjectImage = ({
   region,
   street,
   src,

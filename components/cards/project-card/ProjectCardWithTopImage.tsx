@@ -1,49 +1,45 @@
-import { ProjectAddress } from "./ProjectAddress";
 import styles from "../styles/Card.module.scss";
-import { ProjectFinancialData } from "./ProjectFinancialData";
-import Image from "next/image";
 import { Button } from "@/components/buttons/primary/Button";
+import { ProjectCardTopImageLayout } from "./items/ProjectCardTopImageLayout";
 import { ProjectCard } from "./ProjectCard";
-import Link from "next/link";
+import { ProjectCardTopImage } from "./items/ProjectCardTopImage";
+import { HorizontalFinancialData } from "./items/HorizontalFinancialData";
 
-export const ProjectCardWithTopImage = (
-  props: Parameters<typeof ProjectCard>[number]
-) => {
-  const cardContentStyle = `${styles.cardProjectWithTopImage_content} ${
-    props.size == "sm" && styles.cardProjectWithTopImage_content_sm
-  }`;
+type ProjectCardProps = Parameters<typeof ProjectCard>[number];
 
+export const ProjectCardWithTopImage = (props: ProjectCardProps) => {
+  const { isDarkMode = false } = props;
   return (
-    <div className={styles.cardProjectWithTopImage}>
-      <div className={cardContentStyle}>
-        <div className={styles.cardProjectWithTopImage_imageWrapper}>
-          <Image
-            className={styles.cardProjectWithTopImage_image}
-            alt="project-in-mallorca"
-            width={300}
-            height={200}
-            src={props.src}
-          />
-        </div>
-
-        <div>
-          <ProjectAddress region="Mallorca, Baleares" street={props.street} />
-
-          <ProjectFinancialData
-            isHorizontal
-            totalProjectAmount={props.totalAmount}
+    <ProjectCardTopImageLayout
+      isDarkMode={isDarkMode}
+      top={
+        <ProjectCardTopImage
+          src={props.src}
+          isDarkMode={isDarkMode}
+          region={props.region}
+          street={props.street}
+          projectStatus={props.status}
+        />
+      }
+      bottom={
+        <>
+          <div className={styles.projectCardShowcase_projectType}>
+            {props.businessModel}
+          </div>
+          <HorizontalFinancialData
+            isDarkMode={isDarkMode}
+            status={props.status}
+            currentAmount={props.currentAmount}
+            totalProjectAmount={props.totalProjectAmount}
             profitability={props.profitability}
           />
-        </div>
-
-        <div className={styles.cardProjectWithTopImage_button}>
-        <Link href={`/proyectos/${props.projectId}`}>
+          <div className={styles.projectCardShowcase_button}>
             <Button size="sm" button="secondary" fullWidth>
               Ver proyecto
             </Button>
-          </Link>
-        </div>
-      </div>
-    </div>
+          </div>
+        </>
+      }
+    />
   );
 };

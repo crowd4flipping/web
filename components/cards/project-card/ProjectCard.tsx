@@ -1,62 +1,82 @@
-import { ProjectAddress } from "./ProjectAddress";
 import styles from "../styles/Card.module.scss";
-import { ProjectFinancialData } from "./ProjectFinancialData";
-import Image from "next/image";
 import { Button } from "@/components/buttons/primary/Button";
+import { ProjectStatus } from "@/routes/C4FCloudRoutes";
+import { ProjectFinancialData } from "./items/ProjectFinancialData";
+import { ProjectImage } from "./items/ProjectImage";
+import { ProjectCardLayout } from "./items/ProjectCardLayout";
+import { ProjectTag } from "./items/ProjectTag";
 import Link from "next/link";
 
-type ProjectCardProps = {
-  size?: "lg" | "sm";
-  src: string;
-  profitability: string;
-  totalAmount: string;
-  street: string;
-  projectId: string;
+type ProjectImageProps = Omit<
+  Parameters<typeof ProjectImage>[number],
+  "isSmall"
+>;
+type ProjectFinancialDataProps = Parameters<
+  typeof ProjectFinancialData
+>[number];
+
+type ProjectProps = {
+  status: Exclude<ProjectStatus, "in_study">;
+  businessModel: string;
+  isDarkMode?: boolean;
+  isSmall?: boolean;
+  projectId: string | undefined;
+  src: string | undefined;
 };
 
+type ProjectCardProps = ProjectProps &
+  ProjectFinancialDataProps &
+  ProjectImageProps;
+
 export const ProjectCard = (props: ProjectCardProps) => {
-  const cardContentStyle = `${styles.cardProject_content} ${
-    props.size == "sm" && styles.cardProject_content_sm
-  }`;
-  const cardContentLeftStyle = `${
-    props.size == "sm"
-      ? styles.cardProject_contentLeft_sm
-      : styles.cardProject_contentLeft
+  const { isDarkMode = false, isSmall = false } = props;
+  const tagStyles = `${styles.projectCardShowcase_projectType} ${
+    !isDarkMode && styles.projectCardShowcase_projectType_whiteMode
   }`;
 
   return (
-    <div className={styles.cardProject}>
-      <div className={cardContentStyle}>
-        <div className={cardContentLeftStyle}>
-          <ProjectAddress region="Mallorca, Baleares" street={props.street} />
-
+    <ProjectCardLayout
+      isDarkMode={isDarkMode}
+      isSmall={isSmall}
+      leftSide={
+        <>
+          <div>
+            <ProjectTag isDarkMode={isDarkMode} status={props.status} />
+            <div className={tagStyles}>{props.businessModel}</div>
+          </div>
           <ProjectFinancialData
-            isHorizontal={props.size == "sm" && true}
-            totalProjectAmount={props.totalAmount}
+            isDarkMode={isDarkMode}
+            status={props.status}
+            isHorizontal={false}
+            currentAmount={props.currentAmount}
+            totalProjectAmount={props.totalProjectAmount}
             profitability={props.profitability}
           />
-        </div>
-
-        <div className={styles.cardProject_contentRight}>
-          <div className={styles.cardProject_image}>
-            <Image
-              className={styles.cardProject_image}
-              objectFit="cover"
-              alt="project-in-mallorca"
-              width={232}
-              height={200}
-              src={props.src}
-            />
-          </div>
-          <div className={styles.cardProject_button}>
-            <Link href={`/proyectos/${props.projectId}`}>
+        </>
+      }
+      rightSide={
+        <>
+          <ProjectImage
+            isSmall={isSmall}
+            src={props.src}
+            region={props.region}
+            street={props.street}
+          />
+          <div className={styles.projectCardShowcase_button}>
+            {props.projectId ? (
+              <Link href={`/proyectos/${props.projectId}`}>
+                <Button size="sm" button="secondary" fullWidth>
+                  Ver proyecto
+                </Button>
+              </Link>
+            ) : (
               <Button size="sm" button="secondary" fullWidth>
                 Ver proyecto
               </Button>
-            </Link>
+            )}
           </div>
-        </div>
-      </div>
-    </div>
+        </>
+      }
+    />
   );
 };

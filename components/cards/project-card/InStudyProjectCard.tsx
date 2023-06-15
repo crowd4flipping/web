@@ -1,21 +1,20 @@
-import { Tag } from "@/components/tags/Tag";
 import { ProjectCardLayout } from "./items/ProjectCardLayout";
-import { ProjectFinancialDataShowcase } from "./items/ProjectFinancialDataShowcase";
-import { ProjectImageShowcase } from "./items/ProjectImageShowcase";
+import { ProjectFinancialData } from "./items/ProjectFinancialData";
+import { ProjectImage } from "./items/ProjectImage";
 import { Button } from "@/components/buttons/primary/Button";
 import styles from "../styles/Card.module.scss";
 import { ProjectTag } from "./items/ProjectTag";
 import Link from "next/link";
 
-type InStudyProjectCardShowcaseProps = Parameters<
-  typeof ProjectImageShowcase
+type InStudyProjectCardProps = Parameters<
+  typeof ProjectImage
 >[number] & {
   businessModel: string;
   isDarkMode?: boolean;
   projectId: string | undefined;
 };
 
-export const InStudyProjectCardShowcase = ({
+export const InStudyProjectCard = ({
   region,
   street,
   businessModel,
@@ -23,7 +22,7 @@ export const InStudyProjectCardShowcase = ({
   projectId,
   src,
   isSmall,
-}: InStudyProjectCardShowcaseProps) => {
+}: InStudyProjectCardProps) => {
   return (
     <ProjectCardLayout
       isDarkMode={isDarkMode}
@@ -36,7 +35,7 @@ export const InStudyProjectCardShowcase = ({
             </div>
           </div>
           <div>
-            <ProjectFinancialDataShowcase
+            <ProjectFinancialData
               status={"in_study"}
               isHorizontal={false}
               currentAmount={0}
@@ -48,7 +47,7 @@ export const InStudyProjectCardShowcase = ({
       }
       rightSide={
         <>
-          <ProjectImageShowcase
+          <ProjectImage
             isSmall={isSmall}
             src={src}
             region={region}

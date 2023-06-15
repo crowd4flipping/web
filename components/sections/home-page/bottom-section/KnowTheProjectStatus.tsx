@@ -1,18 +1,15 @@
-import styles from "./styles/TeamExperience.module.scss";
+import styles from "./styles/knowTheProjectStatus.module.scss";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 import { LinkButton } from "@/components/buttons/primary/Button";
-import { ProjectShowcaseAnimation } from "@/components/cards/project-card-showcase/ProjectShowcaseAnimation";
-import { ProjectCardShowcaseWithTopImage } from "@/components/cards/project-card-showcase/ProjectCardShowcaseWithTopImage";
-import { InStudyProjectCardShowcase } from "../../../cards/project-card-showcase/InStudyProjectCardShowcase";
-import { ProjectCardShowcase } from "../../../cards/project-card-showcase/ProjectCardShowcase";
+import { ProjectCardAnimation } from "@/components/cards/project-card/ProjectCardAnimation";
+import { ProjectCardWithTopImage } from "@/components/cards/project-card/ProjectCardWithTopImage";
+import { InStudyProjectCard } from "../../../cards/project-card/InStudyProjectCard";
+import { ProjectCard } from "../../../cards/project-card/ProjectCard";
 import { useState } from "react";
 import { ProjectStatus } from "@/routes/C4FCloudRoutes";
-import { InStudyProjectCardWithTopImage } from "@/components/cards/project-card-showcase/InStudyProjectCardWithTopImage";
+import { InStudyProjectCardWithTopImage } from "@/components/cards/project-card/InStudyProjectCardWithTopImage";
 
-const projectData: Omit<
-  Parameters<typeof ProjectCardShowcase>[number],
-  "status"
-> = {
+const projectData: Omit<Parameters<typeof ProjectCard>[number], "status"> = {
   profitability: "14",
   src: undefined,
   isDarkMode: true,
@@ -24,7 +21,7 @@ const projectData: Omit<
   businessModel: "Alquiler",
 };
 
-export const TeamExperience = () => {
+export const KnowTheProjectStatus = () => {
   const { isXSmall } = useBreakPoints();
   const [currentAmount, setCurrentAmount] = useState(0);
   const isFunding = (status: ProjectStatus) => {
@@ -34,8 +31,8 @@ export const TeamExperience = () => {
   };
 
   const text = (
-    <div className={styles.teamExperience_experience}>
-      <h2 className={styles.teamExperience_title}>
+    <div className={styles.knowTheProjectStatus_experience}>
+      <h2 className={styles.knowTheProjectStatus_title}>
         Conoce el estado del proyecto en cada momento
       </h2>
       <p>
@@ -59,15 +56,15 @@ export const TeamExperience = () => {
   );
 
   return (
-    <div className={styles.teamExperience_bg}>
+    <div className={styles.knowTheProjectStatus_bg}>
       <div
-        className={`${styles.teamExperience} ${styles.teamExperience_content}`}
+        className={`${styles.knowTheProjectStatus} ${styles.knowTheProjectStatus_content}`}
       >
         {text}
 
-        <div className={styles.teamExperience_projectCardWrapper}>
+        <div className={styles.knowTheProjectStatus_projectCardWrapper}>
           {isXSmall ? (
-            <ProjectShowcaseAnimation
+            <ProjectCardAnimation
               onChangeStatus={(status) => {
                 if (status === "in_study") setCurrentAmount(0);
                 if (isFunding(status)) {
@@ -84,7 +81,7 @@ export const TeamExperience = () => {
                   street={projectData.street}
                   businessModel={projectData.businessModel}
                 />,
-                <ProjectCardShowcaseWithTopImage
+                <ProjectCardWithTopImage
                   key={"b"}
                   src={projectData.src}
                   projectId={projectData.projectId}
@@ -97,7 +94,7 @@ export const TeamExperience = () => {
                   totalProjectAmount={projectData.totalProjectAmount}
                   status="funding"
                 />,
-                <ProjectCardShowcaseWithTopImage
+                <ProjectCardWithTopImage
                   key={"c"}
                   src={projectData.src}
                   projectId={projectData.projectId}
@@ -110,7 +107,7 @@ export const TeamExperience = () => {
                   totalProjectAmount={projectData.totalProjectAmount}
                   status="active"
                 />,
-                <ProjectCardShowcaseWithTopImage
+                <ProjectCardWithTopImage
                   key={"d"}
                   src={projectData.src}
                   projectId={projectData.projectId}
@@ -126,7 +123,7 @@ export const TeamExperience = () => {
               ]}
             />
           ) : (
-            <ProjectShowcaseAnimation
+            <ProjectCardAnimation
               onChangeStatus={(status) => {
                 if (status === "in_study") setCurrentAmount(0);
                 if (isFunding(status)) {
@@ -134,7 +131,7 @@ export const TeamExperience = () => {
                 }
               }}
               projects={[
-                <InStudyProjectCardShowcase
+                <InStudyProjectCard
                   key={"a"}
                   src={projectData.src}
                   projectId={projectData.projectId}
@@ -143,7 +140,7 @@ export const TeamExperience = () => {
                   street={projectData.street}
                   businessModel={projectData.businessModel}
                 />,
-                <ProjectCardShowcase
+                <ProjectCard
                   key={"b"}
                   src={projectData.src}
                   projectId={projectData.projectId}
@@ -156,7 +153,7 @@ export const TeamExperience = () => {
                   totalProjectAmount={projectData.totalProjectAmount}
                   status="funding"
                 />,
-                <ProjectCardShowcase
+                <ProjectCard
                   key={"c"}
                   src={projectData.src}
                   projectId={projectData.projectId}
@@ -169,7 +166,7 @@ export const TeamExperience = () => {
                   totalProjectAmount={projectData.totalProjectAmount}
                   status="active"
                 />,
-                <ProjectCardShowcase
+                <ProjectCard
                   key={"d"}
                   src={projectData.src}
                   projectId={projectData.projectId}
