@@ -26,10 +26,16 @@
   }
  
   &_icon {
-    margin-right: 0.5rem;
-    width: 1.6rem;
-    height: 1.6rem;
-    color: var(--text-color);
+    margin-bottom: .3rem;
+    width: 2rem;
+    height: 2rem; 
+  }
+
+  &_faceBook{
+    color: #3b5998;
+  }
+  &_linkedin{
+    color: #0e76a8;
   }
 
   &_content {

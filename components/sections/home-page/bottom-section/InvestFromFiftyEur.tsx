@@ -8,7 +8,7 @@ export const InvestFromFiftyEur = () => {
   const { isXSmall } = useBreakPoints();
 
   return (
-    <div id="info-video" className={style.investFromFiftyEur}>
+    <div className={style.investFromFiftyEur}>
       <div className={style.investFromFiftyEur_videoWrapper}>
         <video
           className={style.investFromFiftyEur_video}
@@ -36,4 +36,4 @@ export const InvestFromFiftyEur = () => {
       </InfoCard>
     </div>
   );
-};
+}; 

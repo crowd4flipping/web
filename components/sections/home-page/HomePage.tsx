@@ -30,7 +30,7 @@ export const HomePage = () => {
         <GetTheMostForYourMoneySection />
         <OpinionsTrustpilot />
         <ColaborativeInvestmentSection />
-        <div className={styles.pageLayout_heroPageBottomSection}>
+        <div className={styles.pageLayout_heroPageBottomSection} id="info-section">
           <InvestFromFiftyEur />
           <MainPainPoints />
           <TeamExperience />

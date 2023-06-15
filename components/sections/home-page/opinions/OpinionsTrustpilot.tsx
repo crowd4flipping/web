@@ -5,6 +5,7 @@ import { OpinionsCarrousel } from "@/components/carrousels/OpinionsCarrousel";
 import { getReadableDate } from "utils/utils";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 import { GrayStarTrustPilotIcon } from "@/components/icons/GrayStarTrustPilotIcon";
+import {SiTrustpilot} from 'react-icons/si'
 
 const data: Opinion[] = [
   {
@@ -20,7 +21,7 @@ const data: Opinion[] = [
     text: `Muy buena opción para poder invertir en inmuebles con poco capital. 
     Sobre todo parte de los proyectos han sido ejecutados en las Islas Baleares. 
     Han funcionado muy bien.`,
-  },
+  }, 
   {
     date: getReadableDate(new Date("2023-6-13")),
     name: "Victoria",
@@ -51,7 +52,12 @@ export const OpinionsTrustpilot = () => {
 
       <div>
         <h2 className={styles.opinions_title}>4.1/5</h2>
-        <div className={styles.opinions_trustPilot_title}>TrustPilot</div>
+        <div className={styles.opinions_trustPilot_title}>
+          <SiTrustpilot 
+            color="#00b67a"
+          />
+          TrustPilot
+        </div>
         <div className={styles.opinions_starsWrapper}>
           <div className={styles.opinions_star_trustpilot}>
             <StarTrustPilotIcon />

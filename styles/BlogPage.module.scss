@@ -47,6 +47,13 @@
     }
 }
 
+.blog_page_tags_container{
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 .blog_page_input_container{
     flex: 1;
     display: flex;
