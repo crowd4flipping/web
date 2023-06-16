@@ -1,6 +1,6 @@
 .suscription_card{
     width: 100%;
-    height: 50vh;
+    height: 40vh;
     cursor: pointer;
     border-radius: 10px;
     display: flex;
@@ -12,11 +12,17 @@
     height: 20vh;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    background: var(--blue);
     display: flex;
     align-items: center;
     padding: .5rem;
-    box-shadow: var(--boxShadowHeader);
+    background-color: var(--color-dark-primary);
+    background-image: linear-gradient(
+      90deg,
+      #00193d,
+      var(--color-dark-primary),
+      var(--color-dark-primary), 
+      #00193d
+    );
     & h1{
         text-align: center;
         font-size: 2rem;
@@ -43,6 +49,7 @@
         width: 100%;
         font-size: 1.2rem;
         padding-left: 1rem;
+        border: none;
         
         &:focus {
             border: 1px solid var(--blue);
@@ -54,9 +61,8 @@
         }
 
         &:valid {
-            border: 1px solid var(--green);
+            border: none;
             background-color: #e8f0fe !important;
-
         }
     }
 }
@@ -66,7 +72,7 @@
     align-items: center;
     gap: .5rem;
     font-size: 1rem;
-    color: yellowGreen;
+    color: var(--color-dark-primary);
     width: 100%;
 }
 
@@ -86,7 +92,7 @@
 .suscription_card_button{
     display: inline-block;
     padding: 12px 18px;
-    background: var(--green);
+    background: var(--color-primary);
     color: white;
     font-size: 1.5rem;
     font-weight: 500;

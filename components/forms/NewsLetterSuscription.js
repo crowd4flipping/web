@@ -6,7 +6,7 @@ import validate from './validateOnlyEmail';
 import {FaExclamationTriangle} from "react-icons/fa";
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
-import Loader from '../loaders/BlocksLoader';
+import Loader from '../loaders/MiniBlockLoader';
 import {GiMailbox} from 'react-icons/gi'
 
 function NewsLetterSuscription({width}) {
@@ -59,13 +59,8 @@ function NewsLetterSuscription({width}) {
     }, [errors] )
 
   return (
-    <motion.div 
+    <div 
         className={styles.suscription_card}
-        transition={{ duration: 0.2, type: "spring", stiffness: 100 }}
-        whileHover={{ 
-            y: -10,
-            boxShadow: '1px 1px 4px #131515',
-        }}
     >
         <div className={width === 'blog_page' ? `${styles.suscription_card_header} ${styles.suscription_card_header_blog_page}` : styles.suscription_card_header}>
             <h1> Suscríbete y recibe las últimas actualizaciones </h1>
@@ -113,13 +108,12 @@ function NewsLetterSuscription({width}) {
                   duration: 0.75,
                 }}
             >
-                <GiMailbox />
                 <span>
                     Hola, gracias por la suscripción, recibirás pronto nuevas oportunidades.
                 </span>
             </motion.div>
         )}
-    </motion.div>
+    </div>
   )
 }
 

@@ -3,10 +3,8 @@ import { PageLayout } from "@/components/layouts/PageLayout";
 import Head from 'next/head';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Layout from '../../components/layouts/Layout';
 import styles from '../../styles/BlogPage.module.scss';
 import BlogCard from '../../components/cards/BlogCard';
-import WhatsAppButton from '../../components/buttons/WhatsAppButton';
 import NewsLetterSuscription from '../../components/forms/NewsLetterSuscription';
 import MiniBlockLoader from '../../components/loaders/MiniBlockLoader';
 import {ImDownload} from 'react-icons/im';
@@ -85,21 +83,55 @@ function Index({BlogEntries}) {
   useEffect(() =>{
     if(!blogEntries)return
     getAllTagsFromBlogEntries();
-  }, [blogEntries])
+  }, [])
 
 
   return (
     <PageLayout fixedNavBar>
+
       <Head>
           <title>Crowd4Flipping - Blog</title>
           <meta name="description" content="Todo lo que necesitas saber sobre inversión inmobiliaria participativa, crowdlending y tecnología blockchain." />        
       </Head>
+
       <div className={styles.blog_page}>
+
+        <div className={styles.title_container}>
+          <h1 className={styles.blogHero_title}>Todo lo que necesitas saber</h1>
+        </div>
+
+        <div className={styles.blog_page_hero}>
+          <div>
+            <h2 className={styles.blogHero_subTitle}> 
+              Inversión inmobiliaria participativa, crowdlending y tecnología blockchain
+            </h2>
+          </div>
+          <div className={styles.blogHero_tagsContainer}>
+            {tags?.map((item, key) => (
+              <span 
+                  key={key}
+                  onClick={() => setConsult(item)}
+                  className={styles.blogHero_tag}
+              >
+                {item} 
+            </span>))}
+          </div>
+        </div>
         <div className={styles.blog_page_container}>
           <div className={styles.blog_page_header}>
-            <h1>Todo lo que necesitas saber sobre <strong>inversión inmobiliaria participativa, crowdlending y tecnología blockchain.</strong></h1>
             <div className={styles.blog_page_searcher_container}> 
-              <h2>Busca lo que te interesa entre nuestros artículos:</h2>
+
+              <span 
+                  onClick={() => {
+                  setMessage(null)
+                  setConsult('all')
+                  setQuery('')
+                  }}
+                  className={styles.blog_page_searcher_cleaner_button}
+                >
+                  Limpiar busqueda
+              </span>
+
               <div className={styles.blog_page_input_container}>
                 <input 
                   type='text' 
@@ -109,39 +141,12 @@ function Index({BlogEntries}) {
                 />  
                 <TbListSearch />
               </div>  
+
             </div>
-            {tags !== null && (
-              <>
-              <div className={styles.blog_page_searcher_container}> 
-                <div className={styles.blog_page_tags} >
-                  <h2>Filtrar por etiquetas:</h2>
-                  <div className={styles.blog_page_tags_container}>
-                    {tags?.map((item, key) => (
-                      <span 
-                          key={key}
-                          onClick={() => setConsult(item)}
-                      >
-                        #{item} 
-                      </span>))}
-                  </div>
-                </div>  
-              </div>
-              <span 
-                onClick={() => {
-                setMessage(null)
-                setConsult('all')
-                setQuery('')
-                }}
-                className={styles.blog_page_searcher_cleaner_button}
-              >
-                Limpiar busqueda
-              </span>
-              </>
-            )}
           </div>
           <div className={styles.blog_page_body}>
           <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2} style={{padding: '5px'}}>
+            <Grid container spacing={2}>
               {blogEntries && (
                 search().map((entry, index) => {
                   let lg = currentIndex === 0 ? 8 : currentIndex <= 4 ? 4 : 4;
@@ -169,6 +174,7 @@ function Index({BlogEntries}) {
                 })
               )}
             </Grid>
+            
             {message !== null ? (
               <div className={styles.blog_page_more_articles_container}>
                 <span>{message}</span>
@@ -189,6 +195,7 @@ function Index({BlogEntries}) {
           </div>
         </div>
       </div>
+
     </PageLayout >
   )
 }
