@@ -1,5 +1,5 @@
 import { Component, ReactNode } from "react";
-import Error_500 from './500';
+import { Error_500 } from "./Error_500";
 
 interface ErrorBoundaryState {
   hasError: boolean;
@@ -27,11 +27,11 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   render() {
     if (this.state.hasError) {
-      return <Error_500/>;
+      return <Error_500 />;
     }
 
     return this.props.children;
   }
 }
 
-export default ErrorBoundary;
+export { ErrorBoundary };

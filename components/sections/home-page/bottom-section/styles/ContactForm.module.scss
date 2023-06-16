@@ -5,11 +5,10 @@
 .contactForm {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  width: 90%;
-  margin: auto;
+  @extend %pagePaddingX;
 
-  @include isSmallerRange{
-    width: 100%;
+  @include isMobile{
+    max-width: 100%;
   }
 
   &_iconsWrapper {

@@ -16,7 +16,8 @@
 
   &_content {
     @extend %pagePaddingX;
-
+    padding: 1rem 0rem;
+    
     @include isMediumRange {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
