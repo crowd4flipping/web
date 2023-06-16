@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/globals.scss";
 import Script from "next/script";
 import { CookieBanner } from "../components/cookies/CookieBanner";
-import ErrorBoundary from "../utils/ErrorBoundary";
 import Head from "next/head";
+import { ErrorBoundary } from "@/components/errors/ErrorBoundary";
 
 function MyApp({ Component, pageProps }) {
   return (
