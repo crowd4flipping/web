@@ -23,7 +23,7 @@
 
   &_button {
     cursor: pointer;
-    padding: .3rem;
+    padding: 0.3rem;
     font-size: 1rem;
     display: flex;
     align-items: center;
@@ -60,7 +60,6 @@
 
       &Mobile {
         list-style: none;
-        padding-right: 10rem;
       }
     }
   }
@@ -88,7 +87,6 @@
   &_mobileNavBar {
     position: fixed;
     z-index: 10000;
-    
 
     &_bg {
       position: fixed;
