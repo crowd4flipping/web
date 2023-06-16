@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Layout from '../../components/layouts/Layout';
 import { PageLayout } from "@/components/layouts/PageLayout";
-
 import styles from '../../styles/BlogPage.module.scss';
 import Head from 'next/head';
 import Image from 'next/image';
