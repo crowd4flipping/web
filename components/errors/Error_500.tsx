@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Image_500 from '@/public/images/500.jpg';
 import styles from '@/styles/404.module.scss';
 
-export default function index() {
+export function Error_500() {
   return (
     <PageLayout fixedNavBar>
         <div className={styles.page_404}>   
