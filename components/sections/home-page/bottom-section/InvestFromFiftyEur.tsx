@@ -18,7 +18,7 @@ export const InvestFromFiftyEur = () => {
             controls
             poster="images/video_poster.png"
           />
-          <figcaption>Te explicamos de nmanera sencilla como funciona Crowd4Flipping.</figcaption>
+          <figcaption>Te explicamos de manera sencilla como funciona el crowdlending inmobiliario.</figcaption>
         </figure>
       </div>
 
