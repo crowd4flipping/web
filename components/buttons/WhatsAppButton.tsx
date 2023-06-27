@@ -6,7 +6,7 @@ export const WhatsAppButton = () => {
   return (
     <div className={styles.whatsappBtn}>
       <a
-        href={`https://wa.me/34672126268?text=Hola, hola, soy ______, tengo una propiedad y quisiera tener más información acerca de Crowd4Flipping?`}
+        href={`https://wa.me/34672126268`}
         target="_blank"
         rel="noreferrer"
       >
