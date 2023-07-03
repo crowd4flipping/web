@@ -43,12 +43,22 @@
   &_projects {
     margin-top: 2rem;
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
+    row-gap: 2rem;
 
     @media (max-width: $md) {
       display: block;
       margin-top: 0rem;
+    }
+  }
+
+  &_project{
+    width: 300px;
+    
+    &_md{
+      width: 350px;
     }
   }
 

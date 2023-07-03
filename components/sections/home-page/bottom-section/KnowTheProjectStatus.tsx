@@ -1,19 +1,15 @@
 import styles from "./styles/knowTheProjectStatus.module.scss";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
-import { LinkButton } from "@/components/buttons/primary/Button";
-import { ProjectCardAnimation } from "@/components/cards/project-card/ProjectCardAnimation";
-import { ProjectCardWithTopImage } from "@/components/cards/project-card/ProjectCardWithTopImage";
-import { InStudyProjectCard } from "../../../cards/project-card/InStudyProjectCard";
-import { ProjectCard } from "../../../cards/project-card/ProjectCard";
+import { ProjectCardAnimation } from "@/components/animations/ProjectCardAnimation";
 import { useState } from "react";
 import { ProjectStatus } from "@/routes/C4FCloudRoutes";
-import { InStudyProjectCardWithTopImage } from "@/components/cards/project-card/InStudyProjectCardWithTopImage";
+import { LinkButton, ProjectCardDarkTheme } from "@crowd4flipping/ui-components";
 
-const projectData: Omit<Parameters<typeof ProjectCard>[number], "status"> = {
+const projectData: Omit<Parameters<typeof ProjectCardDarkTheme>[number], "status"> = {
   profitability: "14",
-  src: undefined,
-  isDarkMode: true,
-  projectId: undefined,
+  src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+  /* isDarkMode: true, */
+  projectId: "123-321",
   totalProjectAmount: 402000,
   currentAmount: 0, //123000,
   region: "Mallorca, Baleares",
@@ -23,6 +19,7 @@ const projectData: Omit<Parameters<typeof ProjectCard>[number], "status"> = {
 
 export const KnowTheProjectStatus = () => {
   const { isXSmall } = useBreakPoints();
+  const array = Array(4).fill(projectData);
   const [currentAmount, setCurrentAmount] = useState(0);
   const isFunding = (status: ProjectStatus) => {
     return (
@@ -30,37 +27,34 @@ export const KnowTheProjectStatus = () => {
     );
   };
 
-  const text = (
-    <div className={styles.knowTheProjectStatus_experience}>
-      <h2 className={styles.knowTheProjectStatus_title}>
-        Conoce el estado del proyecto en cada momento
-      </h2>
-      <p>
-        La transparencia es uno de nuestros pilares clave. Es por ello que te
-        mantenemos informado sobre el estado de cada proyecto, su duración y los
-        posibles escenarios que puedan surgir. Esto es posible gracias a nuestra
-        infraestructura organizativa sólida y a los contratos firmados entre
-        todas las partes involucradas en cada proyecto.
-      </p>
-      <div>
-        <LinkButton
-          href="/transparencia"
-          size="md"
-          fullWidth={isXSmall ? true : false}
-          button="primary"
-        >
-          Programa de transparencia
-        </LinkButton>
-      </div>
-    </div>
-  );
-
   return (
     <div className={styles.knowTheProjectStatus_bg}>
       <div
         className={`${styles.knowTheProjectStatus} ${styles.knowTheProjectStatus_content}`}
       >
-        {text}
+        <div className={styles.knowTheProjectStatus_experience}>
+          <h2 className={styles.knowTheProjectStatus_title}>
+            Conoce el estado del proyecto en cada momento
+          </h2>
+          <p className={styles.knowTheProjectStatus_text}>
+            La transparencia es uno de nuestros pilares clave. Es por ello que
+            te mantenemos informado sobre el estado de cada proyecto, su
+            duración y los posibles escenarios que puedan surgir. Esto es
+            posible gracias a nuestra infraestructura organizativa sólida y a
+            los contratos firmados entre todas las partes involucradas en cada
+            proyecto.
+          </p>
+          <div>
+            <LinkButton
+              href="/transparencia"
+              size="md"
+              fullWidth={isXSmall ? true : false}
+              variant="primary"
+            >
+              Programa de transparencia
+            </LinkButton>
+          </div>
+        </div>
 
         <div className={styles.knowTheProjectStatus_projectCardWrapper}>
           <ProjectCardAnimation
@@ -72,106 +66,53 @@ export const KnowTheProjectStatus = () => {
             }}
             projects={
               isXSmall
-                ? [
-                    <InStudyProjectCardWithTopImage
-                      key={"a"}
-                      src={projectData.src}
-                      projectId={projectData.projectId}
-                      isDarkMode={projectData.isDarkMode}
-                      region={projectData.region}
-                      street={projectData.street}
-                      businessModel={projectData.businessModel}
-                    />,
-                    <ProjectCardWithTopImage
-                      key={"b"}
-                      src={projectData.src}
-                      projectId={projectData.projectId}
-                      isDarkMode={projectData.isDarkMode}
-                      region={projectData.region}
-                      street={projectData.street}
-                      businessModel={projectData.businessModel}
-                      currentAmount={currentAmount}
-                      profitability={projectData.profitability}
-                      totalProjectAmount={projectData.totalProjectAmount}
-                      status="funding"
-                    />,
-                    <ProjectCardWithTopImage
-                      key={"c"}
-                      src={projectData.src}
-                      projectId={projectData.projectId}
-                      isDarkMode={projectData.isDarkMode}
-                      region={projectData.region}
-                      street={projectData.street}
-                      businessModel={projectData.businessModel}
-                      currentAmount={projectData.currentAmount}
-                      profitability={projectData.profitability}
-                      totalProjectAmount={projectData.totalProjectAmount}
-                      status="active"
-                    />,
-                    <ProjectCardWithTopImage
-                      key={"d"}
-                      src={projectData.src}
-                      projectId={projectData.projectId}
-                      isDarkMode={projectData.isDarkMode}
-                      region={projectData.region}
-                      street={projectData.street}
-                      businessModel={projectData.businessModel}
-                      currentAmount={projectData.currentAmount}
-                      profitability={projectData.profitability}
-                      totalProjectAmount={projectData.totalProjectAmount}
-                      status="finished"
-                    />,
-                  ]
-                : [
-                    <InStudyProjectCard
-                      key={"a"}
-                      src={projectData.src}
-                      projectId={projectData.projectId}
-                      isDarkMode={projectData.isDarkMode}
-                      region={projectData.region}
-                      street={projectData.street}
-                      businessModel={projectData.businessModel}
-                    />,
-                    <ProjectCard
-                      key={"b"}
-                      src={projectData.src}
-                      projectId={projectData.projectId}
-                      isDarkMode={projectData.isDarkMode}
-                      region={projectData.region}
-                      street={projectData.street}
-                      businessModel={projectData.businessModel}
-                      currentAmount={currentAmount}
-                      profitability={projectData.profitability}
-                      totalProjectAmount={projectData.totalProjectAmount}
-                      status="funding"
-                    />,
-                    <ProjectCard
-                      key={"c"}
-                      src={projectData.src}
-                      projectId={projectData.projectId}
-                      isDarkMode={projectData.isDarkMode}
-                      region={projectData.region}
-                      street={projectData.street}
-                      businessModel={projectData.businessModel}
-                      currentAmount={projectData.currentAmount}
-                      profitability={projectData.profitability}
-                      totalProjectAmount={projectData.totalProjectAmount}
-                      status="active"
-                    />,
-                    <ProjectCard
-                      key={"d"}
-                      src={projectData.src}
-                      projectId={projectData.projectId}
-                      isDarkMode={projectData.isDarkMode}
-                      region={projectData.region}
-                      street={projectData.street}
-                      businessModel={projectData.businessModel}
-                      currentAmount={projectData.currentAmount}
-                      profitability={projectData.profitability}
-                      totalProjectAmount={projectData.totalProjectAmount}
-                      status="finished"
-                    />,
-                  ]
+                ? array.map((project, i) => {
+                    const projectStatus = (index: number) => {
+                      if (index == 0) return "in_study";
+                      if (index == 1) return "funding";
+                      if (index == 2) return "in_progress";
+                      if (index == 3) return "finished";
+                    };
+                    return (
+                      <div key={projectStatus(i)}>
+                        <ProjectCardDarkTheme
+                          isVertical
+                          src={project.src}
+                          projectId={project.projectId}
+                          region={project.region}
+                          street={project.street}
+                          businessModel={project.businessModel}
+                          currentAmount={currentAmount}
+                          profitability={project.profitability}
+                          totalProjectAmount={project.totalProjectAmount}
+                          status={projectStatus(i)}
+                        />
+                      </div>
+                    );
+                  })
+                : array.map((project, i) => {
+                    const projectStatus = (index: number) => {
+                      if (index == 0) return "in_study";
+                      if (index == 1) return "funding";
+                      if (index == 2) return "in_progress";
+                      if (index == 3) return "finished";
+                    };
+                    return (
+                      <div key={projectStatus(i)}>
+                        <ProjectCardDarkTheme
+                          src={project.src}
+                          projectId={project.projectId}
+                          region={project.region}
+                          street={project.street}
+                          businessModel={project.businessModel}
+                          currentAmount={currentAmount}
+                          profitability={project.profitability}
+                          totalProjectAmount={project.totalProjectAmount}
+                          status={projectStatus(i)}
+                        />
+                      </div>
+                    );
+                  })
             }
           />
         </div>

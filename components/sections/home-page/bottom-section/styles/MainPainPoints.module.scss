@@ -28,23 +28,25 @@
   &_painPoint {
     border-left: 0.1rem solid rgba(#f6f2f2, 0.2);
     padding-left: 1rem;
-    color: var(--color-surface);
-
+    color: white;
+    
     &Title {
       font-size: larger;
       font-weight: bold;
-
+      color: white;
+      
       &_withIcon {
         display: flex;
         gap: 0.5rem;
       }
     }
-
+    
     &Icon {
       width: 1.2rem;
     }
-
+    
     &Paragraph {
+      color: white;
       margin-top: 1rem;
     }
   }
