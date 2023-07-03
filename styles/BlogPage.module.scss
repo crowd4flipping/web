@@ -2,6 +2,8 @@
 @import "../styles/theme/Utils.module.scss";
 
 .blog_page {
+ // @extend %pagePaddingX;
+
   min-height: 100vh;
   padding-top: 10.5vh;
   display: flex;
@@ -159,7 +161,24 @@
 }
 .blog_page_child_center {
   flex: 6;
-  position: relative;
+}
+
+.blog_articles_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+
+  &_article{
+    
+    @include isLarge{
+      width: 30rem;
+    }
+
+    @include isLargerRange{
+      width: 24rem;
+    }
+  }
 }
 
 .blog_page_social_container {

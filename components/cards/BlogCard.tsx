@@ -9,7 +9,7 @@ type Props = {
   title: string;
   description: string;
   imageUrl: string;
-  lg: number;
+
   author?: {
     name: string;
     photo: string;
@@ -21,7 +21,7 @@ export const BlogCard = ({
   title,
   description,
   imageUrl,
-  lg,
+
   author,
 }: Props) => {
   return (
@@ -29,7 +29,7 @@ export const BlogCard = ({
       <div className={styles.blog_card}>
         <Image
           width={560}
-          height={lg === 8 ? 300 : 150}
+          height={300}
           alt={title}
           src={imageUrl}
           objectFit="cover"
