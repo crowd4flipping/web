@@ -5,6 +5,7 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .blog_card_image_container{
@@ -17,8 +18,7 @@
 }
 
 .blog_card_text_container{
-    background-color: var(--blue);
-    box-shadow: var(--boxShadowHeader);
+    background-color: var(--white);
     padding: 7px;
     height: 20vh;
 
@@ -29,12 +29,11 @@
 }
 
 .blog_card_footer{
-    height: 10vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem 0 1rem;
+    padding:1rem 0 1rem .5rem;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -52,7 +51,6 @@
     justify-content: flex-end;
     width: fit-content; 
     gap: .2rem;
-    padding: 10px;
     & span{
         font-size: 1.2rem;
         color: var(--blue);

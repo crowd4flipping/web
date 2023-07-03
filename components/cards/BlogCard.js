@@ -38,39 +38,35 @@ export default function BlogCard({id, title, description, imageUrl, lg, autor}) 
     }, [description]);
 
   return (
-    <motion.div 
-        className={styles.blog_card}
-        whileHover={{ 
-            y: -10,
-            boxShadow: '1px 1px 4px #131515',
-        }}
-        transition={{ duration: 0.2, type: "spring", stiffness: 100 }}
-    >
-        <div className={styles.blog_card_image_container}>
-            <CardMedia
-                className={styles.blog_card_media}
-                component="img"
-                alt="green iguana"
-                height={lg === 8 ? 300 : 150}
-                image={imageUrl}
-            />
-        </div>
-        <div className={styles.blog_card_text_container}> 
-            <h2> { lg === 8 ? title : _title } </h2>
-            <p>  { lg === 8 ? description : _description} </p>
-        </div>
-        <div className={styles.blog_card_footer}>
-            <div className={styles.blog_card_avatar_container}>
-                <Avatar src={autor?.photo}/>
-                <span> {autor?.name ? autor.name : 'Avatar Name'} </span>
+    <Link href={`/blog/${id}`}>
+        <motion.div 
+            className={styles.blog_card}
+            whileHover={{ 
+                y: -10,
+                boxShadow: '1px 1px 4px #131515',
+            }}
+            transition={{ duration: 0.2, type: "spring", stiffness: 100 }}
+        >
+            <div className={styles.blog_card_image_container}>
+                <CardMedia
+                    className={styles.blog_card_media}
+                    component="img"
+                    alt="green iguana"
+                    height={lg === 8 ? 300 : 150}
+                    image={imageUrl}
+                />
             </div>
-            <Link href={`/blog/${id}`}>
-                <div className={styles.blog_card_footer_cta}>
-                    <span><FaBookReader /></span>
-                    <h4> Leer más...</h4>
+            <div className={styles.blog_card_text_container}> 
+                <h2> { lg === 8 ? title : _title } </h2>
+                <p>  { lg === 8 ? description : _description} </p>
+            </div>
+            <div className={styles.blog_card_footer}>
+                <div className={styles.blog_card_avatar_container}>
+                    <Avatar src={autor?.photo}/>
+                    <span> {autor?.name ? autor.name : 'Avatar Name'} </span>
                 </div>
-            </Link>
-        </div>
-    </motion.div>
+            </div>
+        </motion.div>
+    </Link>
   )
 }

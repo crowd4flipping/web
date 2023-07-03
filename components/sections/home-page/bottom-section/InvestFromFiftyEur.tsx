@@ -10,14 +10,18 @@ export const InvestFromFiftyEur = () => {
   return (
     <div className={style.investFromFiftyEur}>
       <div className={style.investFromFiftyEur_videoWrapper}>
-        <video
-          className={style.investFromFiftyEur_video}
-          src="https://firebasestorage.googleapis.com/v0/b/c4f-backend-c3e81.appspot.com/o/videos-corporativos%2FCF4%20ANIMACION_BAJO.mp4?alt=media&token=7d70d3e5-d84e-48eb-8172-ea4abf987b1f"
-          playsInline
-          controls
-          poster="images/video_poster.png"
-        />
+        <figure>
+          <video
+            className={style.investFromFiftyEur_video}
+            src="https://firebasestorage.googleapis.com/v0/b/c4f-backend-c3e81.appspot.com/o/videos-corporativos%2FCF4%20ANIMACION_BAJO.mp4?alt=media&token=7d70d3e5-d84e-48eb-8172-ea4abf987b1f"
+            playsInline
+            controls
+            poster="images/video_poster.png"
+          />
+          <figcaption>Te explicamos de manera sencilla como funciona el crowdlending inmobiliario.</figcaption>
+        </figure>
       </div>
+
       <InfoCard title="Desde 500€" bgColor="white" width="100%">
         <p>
           Nuestra plataforma de préstamos colaborativos permite a nuestros
