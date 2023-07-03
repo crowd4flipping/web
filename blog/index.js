@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Layout from '../components/layouts/Layout';
 import styles from '../../styles/BlogPage.module.scss';
-import BlogCard from '../components/cards/BlogCard';
+import {BlogCard} from '../components/cards/BlogCard';
 import WhatsAppButton from '../components/buttons/WhatsAppButton';
 import NewsLetterSuscription from '../components/forms/NewsLetterSuscription';
 import MiniBlockLoader from '../components/loaders/MiniBlockLoader';
@@ -116,7 +116,7 @@ function Index({BlogEntries}) {
                         title={entry.title} 
                         description={entry.description} 
                         imageUrl={entry.imageUrl}  
-                        autor={entry.author}
+                        author={entry.author}
                       />
                     </Grid>
 
@@ -143,7 +143,7 @@ function Index({BlogEntries}) {
                           title={entry.title} 
                           description={entry.description} 
                           imageUrl={entry.imageUrl}  
-                          autor={entry.author}
+                          author={entry.author}
                         />
                       </Grid>
 
@@ -189,7 +189,7 @@ function Index({BlogEntries}) {
                           title={entry.title} 
                           description={entry.description} 
                           imageUrl={entry.imageUrl}  
-                          autor={entry.author}
+                          author={entry.author}
                         />
                       </Grid>
 

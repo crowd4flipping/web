@@ -18,18 +18,10 @@
   }
 
   &_title {
-    font-size: var(--title-size);
-    margin-left: 1.5rem;
-    font-weight: 400;
-
     @media (max-width: $md) {
       font-size: var(--title-size-md);
       text-align: center;
       padding: 0rem;
-    }
-
-    &_bold {
-      font-weight: bold;
     }
   }
 
@@ -54,10 +46,10 @@
     }
   }
 
-  &_project{
+  &_project {
     width: 300px;
-    
-    &_md{
+
+    &_md {
       width: 350px;
     }
   }

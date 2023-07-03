@@ -47,7 +47,6 @@ export const KnowTheProjectStatus = () => {
           <div>
             <LinkButton
               href="/transparencia"
-              size="md"
               fullWidth={isXSmall ? true : false}
               variant="primary"
             >

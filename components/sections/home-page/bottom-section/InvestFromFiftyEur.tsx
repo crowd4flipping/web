@@ -1,8 +1,8 @@
 import { InfoCard } from "@/components/cards/info-card/InfoCard";
 import style from "./styles/InvestFromFiftyEur.module.scss";
-import { LinkButton } from "@/components/buttons/primary/Button";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 import { Routes } from "routes/Routes";
+import { LinkButton } from "@crowd4flipping/ui-components";
 
 export const InvestFromFiftyEur = () => {
   const { isXSmall } = useBreakPoints();
@@ -31,8 +31,7 @@ export const InvestFromFiftyEur = () => {
         <br />
         <LinkButton
           href={Routes.app().queryHostFW()}
-          size="md"
-          button="primary"
+          variant="primary"
           fullWidth={isXSmall && true}
         >
           Empezar a invertir
@@ -40,4 +39,4 @@ export const InvestFromFiftyEur = () => {
       </InfoCard>
     </div>
   );
-}; 
+};

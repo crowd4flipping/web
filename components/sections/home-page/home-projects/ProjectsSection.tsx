@@ -146,15 +146,11 @@ export const ProjectsSection = () => {
     <section className={styles.projectsSection_bg}>
       <div className={styles.projectsSection}>
         <h2 className={styles.projectsSection_title}>
-          Algunos de nuestros{" "}
-          <span className={styles.projectsSection_title_bold}>
-            proyectos finalizados
-          </span>
+          Algunos de nuestros proyectos finalizados
         </h2>
-        <div className={styles.projectsSection_projectsWrapper}>
-          <div className={styles.projectsSection_projects}>
-            {projectList.map((project) => projectCard(project)[breakingPoint])}
-          </div>
+
+        <div className={styles.projectsSection_projects}>
+          {projectList.map((project) => projectCard(project)[breakingPoint])}
         </div>
       </div>
     </section>

@@ -11,7 +11,7 @@ import { Avatar } from '@mui/material';
 import CardMedia from '@mui/material/CardMedia';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import BlogCard from '../../components/cards/BlogCard';
+import {BlogCard} from '../../components/cards/BlogCard';
 import NewsLetterSuscription from '../../components/forms/NewsLetterSuscription';
 import { FaFacebookSquare } from 'react-icons/fa'
 import { MdOutlineAccountCircle } from "react-icons/md";
@@ -118,7 +118,7 @@ function Index({blogEntry, BlogEntries}) {
                       title={entry.title} 
                       description={entry.description} 
                       imageUrl={entry.imageUrl} 
-                      autor={entry.author}
+                      author={entry.author}
                       lg={6} 
                     />
                   </Grid>

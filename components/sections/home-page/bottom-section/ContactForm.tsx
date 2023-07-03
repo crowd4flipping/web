@@ -1,8 +1,5 @@
-import { Button } from "@/components/buttons/primary/Button";
 import { EmptyInfoCard } from "@/components/cards/info-card/EmptyInfoCard";
 import styles from "./styles/ContactForm.module.scss";
-import { FaFacebookSquare } from "react-icons/fa";
-import { RiInstagramFill } from "react-icons/ri";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 import { ContactData } from "./ContactData";
 import { ContactFormItem } from "./ContactFormItem";
