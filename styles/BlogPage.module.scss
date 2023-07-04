@@ -2,7 +2,7 @@
 @import "../styles/theme/Utils.module.scss";
 
 .blog_page {
- // @extend %pagePaddingX;
+  // @extend %pagePaddingX;
 
   min-height: 100vh;
   padding-top: 10.5vh;
@@ -169,13 +169,12 @@
   justify-content: space-around;
   gap: 2rem;
 
-  &_article{
-    
-    @include isLarge{
+  &_article {
+    @include isLarge {
       width: 30rem;
     }
 
-    @include isLargerRange{
+    @include isLargerRange {
       width: 24rem;
     }
   }
@@ -258,22 +257,26 @@
 }
 
 .blog_page_more_articles_button {
-  width: fit-content;
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  background-color: var(--color-dark-primary); // #ecf0f4;
+  border-radius: 5rem;
+  padding: 0.5rem 1rem;
+  color: white;
   cursor: pointer;
-  height: 4rem;
+
+  
 
   & span {
-    font-size: 1.2rem;
-    color: var(--blue);
+    opacity: 0.9;
   }
+}
 
-  &h4 {
-    font-size: 1rem;
-    color: var(--black);
-  }
+.blog_page_more_articles_loader_icon{
+  color: white;
+  width: 1.3rem;
+  height: 1.3rem;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 991px) {

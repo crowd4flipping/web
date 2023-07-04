@@ -74,7 +74,6 @@ export const ProjectsSection = () => {
     ),
     lg: (
       <div className={styles.projectsSection_project_md}>
-        {" "}
         <ProjectCard
           isVertical
           src={props.src}

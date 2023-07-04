@@ -8,7 +8,8 @@ import { BlogCard } from "../../components/cards/BlogCard";
 import NewsLetterSuscription from "../../components/forms/NewsLetterSuscription";
 import MiniBlockLoader from "../../components/loaders/MiniBlockLoader";
 import { ImDownload } from "react-icons/im";
-import { TbListSearch } from "react-icons/tb";
+import { TbListSearch, TbLoader, TbLoader2 } from "react-icons/tb";
+import { LoaderSpinner } from "../../components/animations/LoaderSpinner";
 
 function Index({ BlogEntries }) {
   const [blogEntries, setBlogEntries] = useState(BlogEntries[0].data);
@@ -165,19 +166,23 @@ function Index({ BlogEntries }) {
               </div>
             ) : (
               <div className={styles.blog_page_more_articles_container}>
-                {loadingData ? (
-                  <MiniBlockLoader />
-                ) : (
-                  <div
-                    className={styles.blog_page_more_articles_button}
-                    onClick={() => loadMoreEntries()}
-                  >
-                    <span>
-                      <ImDownload />{" "}
-                    </span>
-                    <p>Cargar más artículos</p>
-                  </div>
-                )}
+                <div
+                  className={styles.blog_page_more_articles_button}
+                  onClick={() => loadMoreEntries()}
+                >
+                  {loadingData ? (
+                    <div className={styles.blog_page_more_articles_loader_icon}>
+                      <LoaderSpinner />
+                    </div>
+                  ) : (
+                    <>
+                      <span>
+                        <ImDownload />{" "}
+                      </span>
+                      <p>Cargar más artículos</p>
+                    </>
+                  )}
+                </div>
               </div>
             )}
           </div>
