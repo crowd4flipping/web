@@ -9,18 +9,19 @@ export const InvestFromFiftyEur = () => {
 
   return (
     <div className={style.investFromFiftyEur}>
-      <div className={style.investFromFiftyEur_videoWrapper}>
-        <figure>
-          <video
-            className={style.investFromFiftyEur_video}
-            src="https://firebasestorage.googleapis.com/v0/b/c4f-backend-c3e81.appspot.com/o/videos-corporativos%2FCF4%20ANIMACION_BAJO.mp4?alt=media&token=7d70d3e5-d84e-48eb-8172-ea4abf987b1f"
-            playsInline
-            controls
-            poster="images/video_poster.png"
-          />
-          <figcaption>Te explicamos de manera sencilla como funciona el crowdlending inmobiliario.</figcaption>
-        </figure>
-      </div>
+      <figure className={style.investFromFiftyEur_videoWrapper}>
+        <figcaption className={style.investFromFiftyEur_video_title}>
+          Te explicamos de manera sencilla como funciona el crowdlending
+          inmobiliario.
+        </figcaption>
+        <video
+          className={style.investFromFiftyEur_video}
+          src="https://firebasestorage.googleapis.com/v0/b/c4f-backend-c3e81.appspot.com/o/videos-corporativos%2FCF4%20ANIMACION_BAJO.mp4?alt=media&token=7d70d3e5-d84e-48eb-8172-ea4abf987b1f"
+          playsInline
+          controls
+          poster="images/video_poster.png"
+        />
+      </figure>
 
       <InfoCard title="Desde 500€" bgColor="white" width="100%">
         <p>
