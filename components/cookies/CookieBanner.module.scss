@@ -1,6 +1,10 @@
 @import "../../styles/theme/Default.module.scss";
 
 .cookieBanner {
+  &_text {
+    color: white;
+  }
+
   &_link {
     color: var(--color-primary);
   }
