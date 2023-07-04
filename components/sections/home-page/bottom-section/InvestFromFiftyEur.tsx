@@ -22,22 +22,23 @@ export const InvestFromFiftyEur = () => {
           poster="images/video_poster.png"
         />
       </figure>
-
-      <InfoCard title="Desde 500€" bgColor="white" width="100%">
-        <p>
-          Nuestra plataforma de préstamos colaborativos permite a nuestros
-          usuarios invertir en proyectos inmobiliarios de alta calidad sin tener
-          que comprometer grandes sumas de dinero.
-        </p>
-        <br />
-        <LinkButton
-          href={Routes.app().queryHostFW()}
-          variant="primary"
-          fullWidth={isXSmall && true}
-        >
-          Empezar a invertir
-        </LinkButton>
-      </InfoCard>
+      <div className={style.investFromFiftyEur_infoCard}>
+        <InfoCard title="Desde 500€" bgColor="white" width="100%">
+          <p>
+            Nuestra plataforma de préstamos colaborativos permite a nuestros
+            usuarios invertir en proyectos inmobiliarios de alta calidad sin
+            tener que comprometer grandes sumas de dinero.
+          </p>
+          <br />
+          <LinkButton
+            href={Routes.app().queryHostFW()}
+            variant="primary"
+            fullWidth={isXSmall && true}
+          >
+            Empezar a invertir
+          </LinkButton>
+        </InfoCard>
+      </div>
     </div>
   );
 };
