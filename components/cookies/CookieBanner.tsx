@@ -31,13 +31,12 @@ export const CookieBanner = () => {
       buttonText="Aceptar"
       declineButtonText="Rechazar"
     >
-      <p>
+      <p className={styles.cookieBanner_text}>
         Respetamos tu privacidad y estamos comprometidos en preservar tu derecho
         al procesamiento legal y a la protección de tus datos personales.
       </p>
       <br />
-      <p>
-        {" "}
+      <p className={styles.cookieBanner_text}>
         Utilizamos{" "}
         <span className={styles.cookieBanner_link}>
           <Link href="/politica-cookies">cookies</Link>{" "}
