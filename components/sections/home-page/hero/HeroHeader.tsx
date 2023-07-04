@@ -1,6 +1,6 @@
 import { Button } from "@/components/buttons/primary/Button";
 import heroStyles from "./styles/Hero.module.scss";
-import Link from "next/link";
+import { LinkButton } from "@crowd4flipping/ui-components";
 import { Routes } from "routes/Routes";
 
 export const HeroHeader = () => {
@@ -21,19 +21,18 @@ export const HeroHeader = () => {
       </div>
 
       <div className={heroStyles.heroSection_ctas}>
-        <Link href="#info-section">
-          <Button size="md" button="secondary" fullWidth>
-            Saber más
-          </Button>
-        </Link>
+        <LinkButton fullWidth href="#info-section" variant="secondary">
+          Saber más
+        </LinkButton>
 
-        <Link href={Routes.app().queryHostFW()}>
-          <Button size="md" button="primary" fullWidth>
-            Empezar a invertir
-          </Button>
-        </Link>
+        <LinkButton
+          href={Routes.app().queryHostFW()}
+          variant="primary"
+          fullWidth
+        >
+          Empezar a invertir
+        </LinkButton>
       </div>
     </div>
   );
 };
- 

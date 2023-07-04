@@ -1,4 +1,3 @@
-import { Button } from "@/components/buttons/primary/Button";
 import styles from "./styles/ContactForm.module.scss";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import axios from "axios";
@@ -7,6 +6,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import Link from "next/link";
 import { Routes } from "routes/Routes";
 import { Loader } from "@/components/loaders/Loader";
+import { Button } from "@crowd4flipping/ui-components";
 
 export const ContactFormItem = () => {
   const router = useRouter();
@@ -109,7 +109,7 @@ export const ContactFormItem = () => {
         onChange={onChangeCaptcha}
       />
       <div className={styles.contactForm_formButton}>
-        <Button size="md" button="primary" fullWidth type="submit">
+        <Button variant="primary" fullWidth type="submit">
           {sendData ? <Loader /> : "Enviar"}
         </Button>
       </div>

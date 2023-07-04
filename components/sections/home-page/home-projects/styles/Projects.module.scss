@@ -18,18 +18,10 @@
   }
 
   &_title {
-    font-size: var(--title-size);
-    margin-left: 1.5rem;
-    font-weight: 400;
-
     @media (max-width: $md) {
       font-size: var(--title-size-md);
       text-align: center;
       padding: 0rem;
-    }
-
-    &_bold {
-      font-weight: bold;
     }
   }
 
@@ -43,12 +35,22 @@
   &_projects {
     margin-top: 2rem;
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
+    row-gap: 2rem;
 
     @media (max-width: $md) {
       display: block;
       margin-top: 0rem;
+    }
+  }
+
+  &_project {
+    width: 300px;
+
+    &_md {
+      width: 350px;
     }
   }
 

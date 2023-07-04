@@ -11,7 +11,7 @@ import { Avatar } from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import BlogCard from "../../components/cards/BlogCard";
+import { BlogCard } from "../../components/cards/BlogCard";
 import NewsLetterSuscription from "../../components/forms/NewsLetterSuscription";
 import { FaFacebookSquare, FaInstagram } from "react-icons/fa";
 import { MdOutlineAccountCircle } from "react-icons/md";

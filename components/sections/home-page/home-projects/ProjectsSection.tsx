@@ -1,8 +1,9 @@
 import styles from "./styles/Projects.module.scss";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 import { ReactElement } from "react";
-import { ProjectCard } from "@/components/cards/project-card/ProjectCard";
-import { ProjectCardWithTopImage } from "@/components/cards/project-card/ProjectCardWithTopImage";
+/* import { ProjectCard } from "@/components/cards/project-card/ProjectCard";
+import { ProjectCardWithTopImage } from "@/components/cards/project-card/ProjectCardWithTopImage"; */
+import { ProjectCard } from "@crowd4flipping/ui-components";
 
 type ProjectProps = {
   businessModel: string;
@@ -55,54 +56,62 @@ export const ProjectsSection = () => {
     props: ProjectProps
   ): Record<typeof breakingPoint, ReactElement> => ({
     xl: (
-      <ProjectCard
-        src={props.src}
-        key={props.src}
-        projectId={props.projectId}
-        currentAmount={parseInt(props.totalAmount)}
-        profitability={props.profitability}
-        businessModel={props.businessModel}
-        region={"Mallorca, Baleares"}
-        status="finished"
-        street={props.street}
-        totalProjectAmount={parseInt(props.totalAmount)}
-      />
+      <div className={styles.projectsSection_project}>
+        <ProjectCard
+          isVertical
+          src={props.src}
+          key={props.projectId}
+          projectId={props.projectId}
+          currentAmount={parseInt(props.totalAmount)}
+          profitability={props.profitability}
+          businessModel={props.businessModel}
+          region={"Mallorca, Baleares"}
+          status="finished"
+          street={props.street}
+          totalProjectAmount={parseInt(props.totalAmount)}
+        />
+      </div>
     ),
     lg: (
-      <ProjectCard
-        src={props.src}
-        projectId={props.projectId}
-        key={props.src}
-        currentAmount={parseInt(props.totalAmount)}
-        profitability={props.profitability}
-        businessModel={props.businessModel}
-        region={"Mallorca, Baleares"}
-        status="finished"
-        street={props.street}
-        totalProjectAmount={parseInt(props.totalAmount)}
-      />
+      <div className={styles.projectsSection_project_md}>
+        <ProjectCard
+          isVertical
+          src={props.src}
+          projectId={props.projectId}
+          key={props.projectId}
+          currentAmount={parseInt(props.totalAmount)}
+          profitability={props.profitability}
+          businessModel={props.businessModel}
+          region={"Mallorca, Baleares"}
+          status="finished"
+          street={props.street}
+          totalProjectAmount={parseInt(props.totalAmount)}
+        />
+      </div>
     ),
     md: (
-      <ProjectCard
-        src={props.src}
-        projectId={props.projectId}
-        isSmall
-        key={props.src}
-        currentAmount={parseInt(props.totalAmount)}
-        profitability={props.profitability}
-        businessModel={props.businessModel}
-        region={"Mallorca, Baleares"}
-        status="finished"
-        street={props.street}
-        totalProjectAmount={parseInt(props.totalAmount)}
-      />
+      <div className={styles.projectsSection_project}>
+        <ProjectCard
+          isVertical
+          src={props.src}
+          projectId={props.projectId}
+          key={props.projectId}
+          currentAmount={parseInt(props.totalAmount)}
+          profitability={props.profitability}
+          businessModel={props.businessModel}
+          region={"Mallorca, Baleares"}
+          status="finished"
+          street={props.street}
+          totalProjectAmount={parseInt(props.totalAmount)}
+        />
+      </div>
     ),
     sm: (
       <div key={props.src} className={styles.projectsSection_cardWrapper}>
         <ProjectCard
           src={props.src}
           projectId={props.projectId}
-          key={props.src}
+          key={props.projectId}
           currentAmount={parseInt(props.totalAmount)}
           profitability={props.profitability}
           businessModel={props.businessModel}
@@ -115,10 +124,11 @@ export const ProjectsSection = () => {
     ),
     xs: (
       <div key={props.src} className={styles.projectsSection_cardWrapper}>
-        <ProjectCardWithTopImage
+        <ProjectCard
+          isVertical
           src={props.src}
           projectId={props.projectId}
-          key={props.src}
+          key={props.projectId}
           currentAmount={parseInt(props.totalAmount)}
           profitability={props.profitability}
           businessModel={props.businessModel}
@@ -135,23 +145,11 @@ export const ProjectsSection = () => {
     <section className={styles.projectsSection_bg}>
       <div className={styles.projectsSection}>
         <h2 className={styles.projectsSection_title}>
-          Algunos de nuestros{" "}
-          <span className={styles.projectsSection_title_bold}>
-            proyectos finalizados
-          </span>
+          Algunos de nuestros proyectos finalizados
         </h2>
-        <div className={styles.projectsSection_projectsWrapper}>
-          <div className={styles.projectsSection_projects}>
-            {projectList
-              .slice(0, 2)
-              .map((project) => projectCard(project)[breakingPoint])}
-          </div>
 
-          <div className={styles.projectsSection_projects}>
-            {projectList
-              .slice(2, 4)
-              .map((project) => projectCard(project)[breakingPoint])}
-          </div>
+        <div className={styles.projectsSection_projects}>
+          {projectList.map((project) => projectCard(project)[breakingPoint])}
         </div>
       </div>
     </section>
