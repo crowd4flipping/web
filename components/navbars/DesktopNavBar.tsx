@@ -26,7 +26,7 @@ export const DesktopNavBar = ({
             <Link href="/">
               <Image
                 src={Logo}
-                width={153}
+                width={110}
                 height={45}
                 alt="logo crowd4flipping"
                 objectFit="contain"

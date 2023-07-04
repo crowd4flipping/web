@@ -5,13 +5,16 @@
   color: white;
   
 
-  &_copyRight {
-   /*  @extend %pagePaddingX; */
+  &_copyright_content {
     text-align: center;
     padding: 1rem 0;
     font-size: .85rem;
     background-color: rgba(#02b3e8, 0.1);
-    color: var(--color-surface);
+    color: white;
+  }
+
+  &_copyright{
+    color:white;
   }
 
   &_content {

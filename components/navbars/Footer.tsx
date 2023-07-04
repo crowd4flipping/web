@@ -66,7 +66,7 @@ export const Footer = () => {
           })}
         </ul>
       </nav>
-      <div className={styles.footer_copyRight}>
+      <div className={styles.footer_copyright_content}>
         <Link href="/">
           <Image
             className={styles.footer_logo}
@@ -77,7 +77,7 @@ export const Footer = () => {
             objectFit="contain"
           />
         </Link>
-        <p>Copyright {currentYear} · Crowd4Flipping.com</p>
+        <p className={styles.footer_copyright}>Copyright {currentYear} · Crowd4Flipping.com</p>
       </div>
     </footer>
   );

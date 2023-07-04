@@ -1,12 +1,12 @@
 import { ReactElement, useEffect, useRef, useState } from "react";
-import styles from "../styles/Card.module.scss";
+import styles from "../cards/styles/Card.module.scss";
 import { ProjectStatus } from "@/routes/C4FCloudRoutes";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 
 type AnimationSteps = ProjectStatus | "empty";
 
 type ProjectCardAnimationProps = {
-  projects: [ReactElement, ReactElement, ReactElement, ReactElement];
+  projects: ReactElement[];
   onChangeStatus: (status: ProjectStatus) => void;
 };
 
@@ -93,14 +93,14 @@ export const ProjectCardAnimation = (props: ProjectCardAnimationProps) => {
           setAnimationStep("active");
         }, 2000);
       }
-      
+
       if (animationStep == "active") {
         props.onChangeStatus("active");
         activeTimeout = setTimeout(() => {
           setAnimationStep("finished");
         }, 3000);
       }
-      
+
       if (animationStep == "finished") {
         props.onChangeStatus("finished");
         finishedTimeout = setTimeout(() => {

@@ -58,7 +58,7 @@ export const AnimatedMobileNavBar = ({
                         onClick={() => setIsOpen(false)}
                         href={section.href}
                       >
-                        <div className={styles.navbar_buttonText}>
+                        <div className={`${styles.navbar_buttonText} ${styles.navbar_buttonText_mobile}`}>
                           <div className={styles.navbar_buttonIcon}>
                             {section.icon}
                           </div>{" "}
