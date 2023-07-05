@@ -14,15 +14,18 @@
   &_video {
     width: 100%;
     border-radius: 0.5rem;
+    height: 100%;
   }
 
   &_video_title{
     margin-bottom: 1rem;
     color: white;
     font-weight: bold;
+    text-align: center
   }
 
   &_videoWrapper {
+    @extend %pagePaddingX;
     @media (max-width: $lg) {
       text-align: center;
       margin-bottom: 2rem;
@@ -32,5 +35,6 @@
   &_infoCard{
     display: flex;
     align-items: center;
+    height: 100%;
   }
 }
