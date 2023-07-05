@@ -13,6 +13,7 @@ $borderRadius: 0.5rem;
   border-radius: $cardBorderRadius;
   background-color: white;
   display: inline-block;
+  height: 100%;
 
   @include isMobile {
     padding-top: 1rem;

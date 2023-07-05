@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@badrap/bar-of-progress": "^0.2.2",
-    "@crowd4flipping/ui-components": "^0.2.5",
+    "@crowd4flipping/ui-components": "^0.2.6",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/icons-material": "^5.10.6",
