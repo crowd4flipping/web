@@ -1,4 +1,3 @@
-import { Button } from "@/components/buttons/primary/Button";
 import heroStyles from "./styles/Hero.module.scss";
 import { LinkButton } from "@crowd4flipping/ui-components";
 import { Routes } from "routes/Routes";
