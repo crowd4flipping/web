@@ -41,7 +41,9 @@
     gap: 1rem;
 
     @include isMobile {
-      flex-direction: column;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: .5rem;
       width: 100%;
     }
   }

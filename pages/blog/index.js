@@ -179,7 +179,7 @@ function Index({ BlogEntries }) {
                       <span>
                         <ImDownload />{" "}
                       </span>
-                      <p>Cargar más artículos</p>
+                      <span>Cargar más artículos</span>
                     </>
                   )}
                 </div>

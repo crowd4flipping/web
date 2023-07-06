@@ -37,7 +37,7 @@ export const BlogCard = ({
 
         <div className={styles.blog_card_content}>
           <div className={styles.blog_card_header}>
-            <h3> {title} </h3>
+            <h3 className={styles.blog_card_title}> {title} </h3>
             <p className={styles.blog_card_description}>{description}</p>
           </div>
 
