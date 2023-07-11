@@ -7,45 +7,60 @@
   align-items: center;
   height: 100%;
   width: 100%;
+  &_content {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+  }
 
-  &_painPointsWrapper {
+  &_title {
+    /* @extend %title-xl;
+    @extend %title-gradient;
+    margin-bottom: 0.7rem; */
+    text-align: center;
+
+    &_highlight {
+      @extend %text-gradient-primary;
+    }
+
+   /*  @include isSmallerRange {
+      font-size: var(--title-size);
+    }
+
+    @media (max-width: $md) {
+      font-size: 3rem;
+    }
+
+    @include isMobile {
+      font-size: 2rem;
+    } */
+
+    /* @media (min-width: $xl) {
+      font-size: 5rem;
+    } */
+  }
+
+  &_subtitle {
+    color: var(--subtitle-color);
+    text-align: center;
+  }
+
+  &_childrenWrapper {
     width: 100vw;
     background-color: var(--color-dark-primary);
     background-image: linear-gradient(
       90deg,
       #00193d,
       var(--color-dark-primary),
-      var(--color-dark-primary), 
+      var(--color-dark-primary),
       #00193d
     );
     padding: 2rem;
     margin-top: 2rem;
   }
 
-  &_painPointContent {
+  &_children {
     @extend %pagePaddingX;
-
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(1, 1fr);
-
-    &_two {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    &_three {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    @include isSmallerRange {
-      p {
-        font-size: 1rem;
-      }
-    }
-
-    @include isMobile {
-      grid-template-columns: repeat(1, 1fr);
-      row-gap: 2.5rem;
-    }
   }
 }

@@ -13,7 +13,6 @@ type ProjectCardAnimationProps = {
 export const ProjectCardAnimation = (props: ProjectCardAnimationProps) => {
   const { isSmallerSize } = useBreakPoints();
   const [animationStep, setAnimationStep] = useState<AnimationSteps>("empty");
-  const [currentAmount, setCurrentAmount] = useState(0);
   const animationWrapperRef = useRef<HTMLDivElement>();
 
   const transition = (type: "in" | "out" | "none") => {
@@ -49,11 +48,11 @@ export const ProjectCardAnimation = (props: ProjectCardAnimationProps) => {
       case "funding":
         return setAnimationForSteps(step, {
           in: "funding",
-          out: "active",
+          out: "in_progress",
         });
-      case "active":
+      case "in_progress":
         return setAnimationForSteps(step, {
-          in: "active",
+          in: "in_progress",
           out: "finished",
         });
       case "finished":
@@ -90,12 +89,12 @@ export const ProjectCardAnimation = (props: ProjectCardAnimationProps) => {
       if (animationStep == "funding") {
         props.onChangeStatus("funding");
         fundingTimeout = setTimeout(() => {
-          setAnimationStep("active");
+          setAnimationStep("in_progress");
         }, 2000);
       }
 
-      if (animationStep == "active") {
-        props.onChangeStatus("active");
+      if (animationStep == "in_progress") {
+        props.onChangeStatus("in_progress");
         activeTimeout = setTimeout(() => {
           setAnimationStep("finished");
         }, 3000);
@@ -115,7 +114,6 @@ export const ProjectCardAnimation = (props: ProjectCardAnimationProps) => {
       clearTimeout(fundingTimeout);
       clearTimeout(activeTimeout);
       clearTimeout(finishedTimeout);
-      setCurrentAmount(0);
     };
 
     const observer = new IntersectionObserver(
@@ -158,7 +156,7 @@ export const ProjectCardAnimation = (props: ProjectCardAnimationProps) => {
         {props.projects[1]}
       </div>
       <div
-        className={`${animation("active", animationStep)} ${
+        className={`${animation("in_progress", animationStep)} ${
           styles.projectCardAnimation_cardWrapper
         }`}
       >

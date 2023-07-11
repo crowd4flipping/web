@@ -18,12 +18,17 @@ export const HeroSection = () => {
         {isXSmall ? (
           <>
             <HeroImageWrapper>
-              <Image
-                width={200}
-                height={262}
-                alt="Empieza a invertir en inmuebles"
-                src={HeroImage}
-              />
+              <div style={{
+                width:"100%",
+                height: "260px"
+              }}>
+                <Image
+                  width={200}
+                  height={262}
+                  alt="Empieza a invertir en inmuebles"
+                  src={HeroImage}
+                />
+              </div>
             </HeroImageWrapper>
             <HeroHeader />
           </>

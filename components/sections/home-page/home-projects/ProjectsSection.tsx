@@ -61,7 +61,7 @@ export const ProjectsSection = () => {
           isVertical
           src={props.src}
           key={props.projectId}
-          projectId={props.projectId}
+          href={`/proyectos/${props.projectId}`}
           currentAmount={parseInt(props.totalAmount)}
           profitability={props.profitability}
           businessModel={props.businessModel}
@@ -75,9 +75,9 @@ export const ProjectsSection = () => {
     lg: (
       <div className={styles.projectsSection_project_md}>
         <ProjectCard
+          href={`/proyectos/${props.projectId}`}
           isVertical
           src={props.src}
-          projectId={props.projectId}
           key={props.projectId}
           currentAmount={parseInt(props.totalAmount)}
           profitability={props.profitability}
@@ -94,7 +94,7 @@ export const ProjectsSection = () => {
         <ProjectCard
           isVertical
           src={props.src}
-          projectId={props.projectId}
+          href={`/proyectos/${props.projectId}`}
           key={props.projectId}
           currentAmount={parseInt(props.totalAmount)}
           profitability={props.profitability}
@@ -110,7 +110,7 @@ export const ProjectsSection = () => {
       <div key={props.src} className={styles.projectsSection_cardWrapper}>
         <ProjectCard
           src={props.src}
-          projectId={props.projectId}
+          href={`/proyectos/${props.projectId}`}
           key={props.projectId}
           currentAmount={parseInt(props.totalAmount)}
           profitability={props.profitability}
@@ -127,7 +127,7 @@ export const ProjectsSection = () => {
         <ProjectCard
           isVertical
           src={props.src}
-          projectId={props.projectId}
+          href={`/proyectos/${props.projectId}`}
           key={props.projectId}
           currentAmount={parseInt(props.totalAmount)}
           profitability={props.profitability}
