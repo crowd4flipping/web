@@ -10,13 +10,27 @@
   gap: 1.5rem;
   grid-template-columns: repeat(3, 1fr);
 
-  &_sm {
+  @include isMobile {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     text-align: center;
     gap: 2rem;
     padding-top: 2rem;
+  }
+
+  &__hero_image_mobile {
+    display: none;
+    @include isMobile {
+      display: block;
+    }
+  }
+
+  &__hero_image {
+    display: block;
+    @include isMobile {
+      display: none;
+    }
   }
 
   &_bg {
@@ -43,7 +57,7 @@
     @include isMobile {
       display: flex;
       flex-direction: column-reverse;
-      gap: .5rem;
+      gap: 0.5rem;
       width: 100%;
     }
   }
@@ -87,7 +101,7 @@
 
   &_imageWrapper {
     display: flex;
-   
+
     &_content {
       margin: auto;
 

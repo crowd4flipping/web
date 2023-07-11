@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 
-const navBarLabels = ["Sobre nosotros", "Blog", "FAQs", "Acceder", "Transparencia"] as const;
+const navBarLabels = ["Sobre nosotros", "Blog", "FAQs", "Acceder", "Transparencia", "Proyectos"] as const;
 
 export type NavBarLabel = (typeof navBarLabels)[number];
 

@@ -1,6 +1,12 @@
 import { Query } from "./types/types";
 
-export type ProjectStatus = "in_study" | "funding" | "active" | "finished";
+export const projectStatusList = [
+  "in_study",
+  "funding",
+  "in_progress",
+  "finished",
+] as const;
+export type ProjectStatus = (typeof projectStatusList)[number];
 type QueryProjects = { status: ProjectStatus };
 
 export class C4FCloudRoutes {
@@ -19,7 +25,6 @@ export class C4FCloudRoutes {
     const route = this.c4fCloudSite + "proyectos?";
     return this.query(route, query);
   }
-
 
   contact(): string {
     return this.c4fCloudSite + "api/contact/";

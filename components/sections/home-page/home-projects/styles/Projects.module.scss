@@ -4,13 +4,10 @@
 
 .projectsSection {
   @extend %pagePaddingX;
+  width: 100%;
 
-  @include isMobile {
-    background: none;
-    padding: 0rem;
-    border: none;
-    border-radius: 0rem;
-    box-shadow: none;
+  @include isSmallerRange{
+    padding-top: 3rem;
   }
 
   &_bg {
@@ -25,13 +22,6 @@
     }
   }
 
-  &_projectsWrapper {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
   &_projects {
     margin-top: 2rem;
     display: flex;
@@ -39,26 +29,29 @@
     width: 100%;
     justify-content: space-between;
     row-gap: 2rem;
-
+    
     @media (max-width: $md) {
       display: block;
       margin-top: 0rem;
+    }
+    
+    @include isSmallerRange {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 2rem;
+      margin-bottom: 2rem;
+      gap: 2rem;
     }
   }
 
   &_project {
     width: 300px;
 
-    &_md {
-      width: 350px;
+    @include isSmallerRange {
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
-  }
-
-  &_cardWrapper {
-    display: flex;
-    justify-content: center;
-    padding-top: 2rem;
-    border-radius: 5rem;
-    margin-bottom: 2rem;
   }
 }

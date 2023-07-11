@@ -4,13 +4,14 @@ import Script from "next/script";
 import { CookieBanner } from "../components/cookies/CookieBanner";
 import Head from "next/head";
 import { ErrorBoundary } from "@/components/errors/ErrorBoundary";
+import "@crowd4flipping/ui-components";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" /> */}
 
         {/* FB META TAGS */}
         <meta property="og:url" content="https://www.crowd4flipping.com/" />

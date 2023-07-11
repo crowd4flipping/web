@@ -1,3 +1,5 @@
+import { ProjectStatus, projectStatusList } from "@/routes/C4FCloudRoutes";
+
 export function unhandledType(value: never): value is never {
   return value;
 }
@@ -28,4 +30,38 @@ export function getReadableDate(props: {
   const toYears = now.getFullYear() - date.getFullYear();
   if (toYears === 1) return "Hace 1 año";
   return `Hace ${toYears} años`;
+}
+
+export function isValidStatus(value: string): value is ProjectStatus {
+  const statusFound = projectStatusList.find(
+    (status) => status === value.toLowerCase()
+  );
+  if (!statusFound) return false;
+  return true;
+}
+
+type Map<Type> = {
+  value: Array<Type>;
+  do: <TNewType>(fn: (value: Type) => TNewType | undefined) => Map<TNewType>;
+};
+
+export function mapWithoutUndefined<TArray>(
+  values: Array<TArray>
+): Map<TArray> {
+  const iterate = <TNewType>(fn: (_: TArray) => TNewType | undefined) => {
+    let newArray: Array<TNewType> = [];
+
+    values.forEach((value) => {
+      const newValue = fn(value);
+      if (!newValue) return;
+      newArray.push(newValue);
+    });
+
+    return mapWithoutUndefined(newArray);
+  };
+
+  return {
+    value: [...values],
+    do: iterate,
+  };
 }

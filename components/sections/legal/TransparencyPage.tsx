@@ -4,59 +4,46 @@ import { PainPoint } from "../home-page/bottom-section/PainPoint";
 import { LegalSection } from "./LegalSection";
 import styles from "./styles/LegalSection.module.scss";
 import transparencyStyles from "./styles/Transparency.module.scss";
-import { ReactElement } from "react";
 import Image from "next/image";
 import HouseLoupe from "@/public/images/house-loupe-transparency.png";
 import { useBreakPoints } from "@/components/hooks/useBreakPoints";
-import { EmptyInfoCard } from "@/components/cards/info-card/EmptyInfoCard";
 import { InfoCard } from "@/components/cards/info-card/InfoCard";
-
-type InfoHeroSectionProps = Parameters<typeof InfoHeroSection>[number];
 
 export const TransparencyPage = () => {
   const { isSmallerSize } = useBreakPoints();
 
-  const headerSection: Record<keyof InfoHeroSectionProps, ReactElement> = {
-    header: (
-      <h2 className={styles.legalSection_heroTitle}>
-        <span className={styles.legalSection_heroTitle_highlight}>
-          Transparencia.
-        </span>
-        <br />
-        Uno de nuestros pilares.
-      </h2>
-    ),
-    elementOne: (
-      <PainPoint
-        title="Participación proactiva"
-        text="En caso de escenarios de inversión no favorables, barajamos las diferentes posibilidades y son los propios inversores del proyecto quienes toman las decisiones."
-        icon={<PainPointIconThree />}
-      />
-    ),
-    elementTwo: (
-      <PainPoint
-        title="Información financiera"
-        text="Para tomar una decisión acertada, facilitamos el desglose de costes para realizar la inversión, contemplando diferentes escenarios: Desfavorable, moderado y favorable."
-        icon={<PainPointIconThree />}
-      />
-    ),
-    elementThree: (
-      <PainPoint
-        title="Estado del proyecto"
-        text="Además de recibir información sobre la evolución del proyecto, los inversores podrán solicitar visitas presenciales a los inmuebles."
-        icon={<PainPointIconThree />}
-      />
-    ),
-  };
-
   return (
     <LegalSection>
       <InfoHeroSection
-        header={headerSection.header}
-        elementOne={headerSection.elementOne}
-        elementTwo={headerSection.elementTwo}
-        elementThree={headerSection.elementThree}
-      />
+        title={
+          <>
+            <span className={transparencyStyles.transparencyPolicy_title_highlight}>
+              Transparencia.
+            </span>
+            <br />
+            Uno de nuestros pilares.
+          </>
+        }
+      >
+        <div className={styles.legalSection_hero_content}>
+          <PainPoint
+            title="Participación proactiva"
+            text="En caso de escenarios de inversión no favorables, barajamos las diferentes posibilidades y son los propios inversores del proyecto quienes toman las decisiones."
+            icon={<PainPointIconThree />}
+          />
+          <PainPoint
+            title="Información financiera"
+            text="Para tomar una decisión acertada, facilitamos el desglose de costes para realizar la inversión, contemplando diferentes escenarios: Desfavorable, moderado y favorable."
+            icon={<PainPointIconThree />}
+          />
+          <PainPoint
+            title="Estado del proyecto"
+            text="Además de recibir información sobre la evolución del proyecto, los inversores podrán solicitar visitas presenciales a los inmuebles."
+            icon={<PainPointIconThree />}
+          />
+        </div>
+      </InfoHeroSection>
+
       <div className={transparencyStyles.transparencyPolicy_contentWithImage}>
         <div
           className={
@@ -125,7 +112,9 @@ export const TransparencyPage = () => {
           </strong>
         </p>
         <br />
-        <p>Para solicitar tu visita escribenos a: contacto@crowd4flipping.com </p>
+        <p>
+          Para solicitar tu visita escribenos a: contacto@crowd4flipping.com{" "}
+        </p>
       </InfoCard>
       <div>
         <p>
