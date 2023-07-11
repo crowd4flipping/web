@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./styles/DesktopNavBar.module.scss";
-import Logo from "@/public/images/brand/crowd4flipping/logo/Crowd4Flipping.png";
+import Logo from "@/public/images/brand/crowd4flipping/logo/Crowd4Flipping.svg";
 import Link from "next/link";
 import { MdMenu } from "react-icons/md";
 import { Dispatch, SetStateAction, useState } from "react";

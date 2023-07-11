@@ -7,6 +7,7 @@
   align-items: center;
   height: 100%;
   width: 100%;
+  
   &_content {
     margin-top: 4rem;
     display: flex;
@@ -15,30 +16,11 @@
   }
 
   &_title {
-    /* @extend %title-xl;
-    @extend %title-gradient;
-    margin-bottom: 0.7rem; */
     text-align: center;
 
     &_highlight {
       @extend %text-gradient-primary;
     }
-
-   /*  @include isSmallerRange {
-      font-size: var(--title-size);
-    }
-
-    @media (max-width: $md) {
-      font-size: 3rem;
-    }
-
-    @include isMobile {
-      font-size: 2rem;
-    } */
-
-    /* @media (min-width: $xl) {
-      font-size: 5rem;
-    } */
   }
 
   &_subtitle {

@@ -20,7 +20,7 @@ const statusLabels: Record<ProjectStatus, string> = {
 
 export const ProjectsPage = (props: { projectsList: ProjectData[] }) => {
   const router = useRouter();
-  const [statusLabel, setStatusLabel] = useState(statusLabels.funding);
+  const [statusLabel, setStatusLabel] = useState(statusLabels.in_study);
 
   useEffect(() => {
     const queryStatus = router.query.status as string;
@@ -67,7 +67,6 @@ export const ProjectsPage = (props: { projectsList: ProjectData[] }) => {
             />
           </div>
         </div>
-
         <ProjectsPageContent
           filterByStatus={getStatusFromLabel(statusLabel)}
           projectsList={props.projectsList}

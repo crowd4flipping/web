@@ -12,13 +12,19 @@ import { QuestionIcon } from "../icons/QuestionIcon";
 import { BlogIcon } from "../icons/BlogIcon";
 import { DocCheckedIcon } from "../icons/DocCheckedIcon";
 import { SigninIcon } from "../icons/SinginIcon";
+import { BsHouseDoor } from "react-icons/bs"
 
 const navBarSections: NavBarSection[] = [
+  {
+    icon: <BsHouseDoor />,
+    label: "Proyectos",
+    href: "/proyectos",
+  },
   {
     icon: <DocCheckedIcon />,
     label: "Transparencia",
     href: "/transparencia",
-  }, 
+  },
   {
     icon: <TeamIcon />,
     label: "Sobre nosotros",

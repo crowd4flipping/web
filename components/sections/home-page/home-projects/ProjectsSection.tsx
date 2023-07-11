@@ -1,8 +1,4 @@
 import styles from "./styles/Projects.module.scss";
-import { useBreakPoints } from "@/components/hooks/useBreakPoints";
-import { ReactElement } from "react";
-/* import { ProjectCard } from "@/components/cards/project-card/ProjectCard";
-import { ProjectCardWithTopImage } from "@/components/cards/project-card/ProjectCardWithTopImage"; */
 import { ProjectCard } from "@crowd4flipping/ui-components";
 
 type ProjectProps = {
@@ -50,97 +46,6 @@ const projectList: ProjectProps[] = [
 ];
 
 export const ProjectsSection = () => {
-  const { breakingPoint } = useBreakPoints();
-
-  const projectCard = (
-    props: ProjectProps
-  ): Record<typeof breakingPoint, ReactElement> => ({
-    xl: (
-      <div className={styles.projectsSection_project}>
-        <ProjectCard
-          isVertical
-          src={props.src}
-          key={props.projectId}
-          href={`/proyectos/${props.projectId}`}
-          currentAmount={parseInt(props.totalAmount)}
-          profitability={props.profitability}
-          businessModel={props.businessModel}
-          region={"Mallorca, Baleares"}
-          status="finished"
-          street={props.street}
-          totalProjectAmount={parseInt(props.totalAmount)}
-        />
-      </div>
-    ),
-    lg: (
-      <div className={styles.projectsSection_project_md}>
-        <ProjectCard
-          href={`/proyectos/${props.projectId}`}
-          isVertical
-          src={props.src}
-          key={props.projectId}
-          currentAmount={parseInt(props.totalAmount)}
-          profitability={props.profitability}
-          businessModel={props.businessModel}
-          region={"Mallorca, Baleares"}
-          status="finished"
-          street={props.street}
-          totalProjectAmount={parseInt(props.totalAmount)}
-        />
-      </div>
-    ),
-    md: (
-      <div className={styles.projectsSection_project}>
-        <ProjectCard
-          isVertical
-          src={props.src}
-          href={`/proyectos/${props.projectId}`}
-          key={props.projectId}
-          currentAmount={parseInt(props.totalAmount)}
-          profitability={props.profitability}
-          businessModel={props.businessModel}
-          region={"Mallorca, Baleares"}
-          status="finished"
-          street={props.street}
-          totalProjectAmount={parseInt(props.totalAmount)}
-        />
-      </div>
-    ),
-    sm: (
-      <div key={props.src} className={styles.projectsSection_cardWrapper}>
-        <ProjectCard
-          src={props.src}
-          href={`/proyectos/${props.projectId}`}
-          key={props.projectId}
-          currentAmount={parseInt(props.totalAmount)}
-          profitability={props.profitability}
-          businessModel={props.businessModel}
-          region={"Mallorca, Baleares"}
-          status="finished"
-          street={props.street}
-          totalProjectAmount={parseInt(props.totalAmount)}
-        />
-      </div>
-    ),
-    xs: (
-      <div key={props.src} className={styles.projectsSection_cardWrapper}>
-        <ProjectCard
-          isVertical
-          src={props.src}
-          href={`/proyectos/${props.projectId}`}
-          key={props.projectId}
-          currentAmount={parseInt(props.totalAmount)}
-          profitability={props.profitability}
-          businessModel={props.businessModel}
-          region={"Mallorca, Baleares"}
-          status="finished"
-          street={props.street}
-          totalProjectAmount={parseInt(props.totalAmount)}
-        />
-      </div>
-    ),
-  });
-
   return (
     <section className={styles.projectsSection_bg}>
       <div className={styles.projectsSection}>
@@ -149,7 +54,26 @@ export const ProjectsSection = () => {
         </h2>
 
         <div className={styles.projectsSection_projects}>
-          {projectList.map((project) => projectCard(project)[breakingPoint])}
+          {projectList.map((project) => (
+            <div
+              key={project.projectId}
+              className={styles.projectsSection_project}
+            >
+              <ProjectCard
+                isVertical
+                src={project.src}
+                key={project.projectId}
+                href={`/proyectos/${project.projectId}`}
+                currentAmount={parseInt(project.totalAmount)}
+                profitability={project.profitability}
+                businessModel={project.businessModel}
+                region={"Mallorca, Baleares"}
+                status="finished"
+                street={project.street}
+                totalProjectAmount={parseInt(project.totalAmount)}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

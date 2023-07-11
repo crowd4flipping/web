@@ -2,49 +2,33 @@ import Image from "next/image";
 import { HeroHeader } from "./HeroHeader";
 import { HeroImageWrapper } from "./HeroImageWrapper";
 import styles from "./styles/Hero.module.scss";
-import HeroImage from "@/public/images/invertir-en-inmuebles.png";
-import { useBreakPoints } from "@/components/hooks/useBreakPoints";
+import HeroImage from "@/public/images/invertir-en-inmuebles.webp";
 
 export const HeroSection = () => {
-  const { isXSmall } = useBreakPoints();
-
-  const heroSection = `${styles.heroSection} ${
-    isXSmall && styles.heroSection_sm
-  }`;
-
   return (
     <section className={styles.heroSection_bg}>
-      <div className={heroSection}>
-        {isXSmall ? (
+      <div className={styles.heroSection}>
+        <HeroHeader />
+        <HeroImageWrapper>
           <>
-            <HeroImageWrapper>
-              <div style={{
-                width:"100%",
-                height: "260px"
-              }}>
-                <Image
-                  width={200}
-                  height={262}
-                  alt="Empieza a invertir en inmuebles"
-                  src={HeroImage}
-                />
-              </div>
-            </HeroImageWrapper>
-            <HeroHeader />
-          </>
-        ) : (
-          <>
-            <HeroHeader />
-            <HeroImageWrapper>
+            <div className={styles.heroSection__hero_image_mobile}>
+              <Image
+                width={200}
+                height={262}
+                alt="Empieza a invertir en inmuebles"
+                src={HeroImage}
+              />
+            </div>
+            <div className={styles.heroSection__hero_image}>
               <Image
                 width={381}
                 height={502}
                 alt="Empieza a invertir en inmuebles"
                 src={HeroImage}
               />
-            </HeroImageWrapper>
+            </div>
           </>
-        )}
+        </HeroImageWrapper>
       </div>
     </section>
   );
