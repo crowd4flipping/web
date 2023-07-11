@@ -3,13 +3,18 @@ import { useBreakPoints } from "@/components/hooks/useBreakPoints";
 import { ProjectCardAnimation } from "@/components/animations/ProjectCardAnimation";
 import { useState } from "react";
 import { ProjectStatus } from "@/routes/C4FCloudRoutes";
-import { LinkButton, ProjectCardDarkTheme } from "@crowd4flipping/ui-components";
+import {
+  LinkButton,
+  ProjectCardDarkTheme,
+} from "@crowd4flipping/ui-components";
 
-const projectData: Omit<Parameters<typeof ProjectCardDarkTheme>[number], "status"> = {
+const projectData: Omit<
+  Parameters<typeof ProjectCardDarkTheme>[number],
+  "status"
+> = {
   profitability: "14",
   src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  /* isDarkMode: true, */
-  projectId: "123-321",
+  href: "/proyectos",
   totalProjectAmount: 402000,
   currentAmount: 0, //123000,
   region: "Mallorca, Baleares",
@@ -19,7 +24,7 @@ const projectData: Omit<Parameters<typeof ProjectCardDarkTheme>[number], "status
 
 export const KnowTheProjectStatus = () => {
   const { isXSmall } = useBreakPoints();
-  const array = Array(4).fill(projectData);
+  const array = Array<typeof projectData>(4).fill(projectData);
   const [currentAmount, setCurrentAmount] = useState(0);
   const isFunding = (status: ProjectStatus) => {
     return (
@@ -77,7 +82,7 @@ export const KnowTheProjectStatus = () => {
                         <ProjectCardDarkTheme
                           isVertical
                           src={project.src}
-                          projectId={project.projectId}
+                          href={project.href}
                           region={project.region}
                           street={project.street}
                           businessModel={project.businessModel}
@@ -100,7 +105,7 @@ export const KnowTheProjectStatus = () => {
                       <div key={projectStatus(i)}>
                         <ProjectCardDarkTheme
                           src={project.src}
-                          projectId={project.projectId}
+                          href={project.href}
                           region={project.region}
                           street={project.street}
                           businessModel={project.businessModel}

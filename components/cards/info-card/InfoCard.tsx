@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import cardStyles from "../styles/Card.module.scss";
 import { EmptyInfoCard } from "./EmptyInfoCard";
+import "@crowd4flipping/ui-components";
 
 type InfoCard = Parameters<typeof EmptyInfoCard>[number] & { title: string };
 
@@ -12,7 +13,7 @@ export const InfoCard = ({
 }: InfoCard) => {
   return (
     <EmptyInfoCard bgColor={bgColor} width={width}>
-      <h2 className={cardStyles.infoCard_title}>{title}</h2>
+      <h2 >{title}</h2>
       <br />
       <div>{children}</div>
     </EmptyInfoCard>

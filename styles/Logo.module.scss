@@ -1,90 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-.active{
-    & .logoContent > h1{
-        color: #0c334a;
-        font-size: 1.3rem;
-    }
-    & .logo > p{
-        font-size: .6rem;
-    }
-}
 
-.logo{
-    display: block;
-    cursor: pointer;
-    transition: .5s all ease-in-out;
-    font-family: 'Michroma', sans-serif;
-}
-
-.logoContent{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-size: .8rem;
-}
-
-.logoContent > h1{
-    color: #fff;
-    font-size: 2rem;
-    margin-left: .5rem;
-}
-
-.logo > p{
+.active {
+  & .logoContent > h1 {
     color: #0c334a;
-    font-size: .8rem;
+    font-size: 1.3rem;
+  }
+  & .logo > p {
+    font-size: 0.6rem;
+  }
 }
 
-.biglogo_container{
-    background-color: #0c334a56;
-    padding: 1rem;
-    width: fit-content;
-    border-radius: 10px;
-    backdrop-filter: blur(4px);
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+.logo {
+  display: block;
+  cursor: pointer;
+  transition: 0.5s all ease-in-out;
 }
-.bigLogo > p{
-    color: #fff;
-    font-size: 1.8rem;
-    width: 100%;
+
+.logoContent {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.logoContent > h1 {
+  color: #fff;
+  font-size: 2rem;
+  margin-left: 0.5rem;
+}
+
+.logo > p {
+  color: #0c334a;
+  font-size: 0.8rem;
+}
+
+.biglogo_container {
+  background-color: #0c334a56;
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+.bigLogo > p {
+  color: #fff;
+  font-size: 1.8rem;
+  width: 100%;
 }
 
 .bigLogoContent {
-    & h1{
+  & h1 {
     color: #fff;
     font-size: 3.5rem;
     text-shadow: 2px 2px 4px #000000;
-    }
+  }
 }
 
-.logo_image_container_{
+.logo_image_container_ {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .logo_image_container {
     display: none;
-}
+  }
 
-@media only screen and (max-width: 900px){
+  .logo_image_container_ {
+    display: contents;
+  }
 
+  .logoContent > h1 {
+    font-size: 1.5rem;
+  }
 
-    .logo_image_container{
-        display: none;
-    }
+  .logo > p {
+    font-size: 0.7rem;
+  }
 
-    .logo_image_container_{
-        display: contents;
-    }
+  .biglogo_container {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  }
 
-    .logoContent > h1{
-        font-size: 1.5rem;
-    }
-
-    .logo > p{
-        font-size: .7rem;
-    }
- 
-
-    .biglogo_container{
-        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-    }
-
-    .bigLogo > p{
-        font-size: 1rem;
-    }
+  .bigLogo > p {
+    font-size: 1rem;
+  }
 }

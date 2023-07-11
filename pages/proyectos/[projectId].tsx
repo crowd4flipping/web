@@ -1,18 +1,18 @@
 import React from "react";
 import Head from "next/head";
-import { ProjectsPage } from "@/components/sections/projects-page/ProjectsPage";
+import { ProjectPage } from "@/components/sections/projects-page/ProjectPage";
 import { Routes } from "routes/Routes";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 export default function Index({ project }) {
-  const title = project.name +  " | Crowd4Flipping";
+  const title = project.name + " | Crowd4Flipping";
   return (
     <>
       <Head>
         <title>{title}</title>
         <meta name="description" content={project.description} />
       </Head>
-      <ProjectsPage project={{ ...project, media: project.projectMedia }} />
+      <ProjectPage project={{ ...project, media: project.projectMedia }} />
     </>
   );
 }
@@ -20,7 +20,8 @@ export default function Index({ project }) {
 export const getStaticProps: GetStaticProps = async (context) => {
   const projectId = context.params.projectId as string;
   const api = Routes.cloud().projectId(projectId);
-  const project = (await fetch(api).then((res) => res.json())) as object;
+  const response = await fetch(api);
+  const project = await response.json();
 
   return {
     props: {

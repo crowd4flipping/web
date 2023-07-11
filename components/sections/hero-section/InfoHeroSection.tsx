@@ -1,45 +1,30 @@
 import { ReactElement } from "react";
 import styles from "./styles/InfoHeroSection.module.scss";
 import { SectionLayout } from "@/components/layouts/SectionLayout";
+import "@crowd4flipping/ui-components";
 
-type InfoHeroSectionProps = {
-  header: ReactElement;
-  elementOne: ReactElement;
-  elementTwo?: ReactElement;
-  elementThree?: ReactElement;
+type Props = {
+  title: ReactElement | string;
+  subtitle?: ReactElement | string;
+  children?: ReactElement;
 };
 
-export const InfoHeroSection = (props: InfoHeroSectionProps) => {
-  const contentLength = () => {
-    if (props.elementTwo && props.elementThree) return 3;
-    if (props.elementTwo || props.elementThree) return 2;
-    return 1;
-  };
-
-  const painPointsContent =
-    styles.infoHeroSection_painPointContent +
-    ` ${
-      contentLength() === 2
-        ? styles.infoHeroSection_painPointContent_two
-        : contentLength() === 3
-        ? styles.infoHeroSection_painPointContent_three
-        : ""
-    }`;
-
+export const InfoHeroSection = (props: Props) => {
   return (
     <div className={styles.infoHeroSection}>
-      <div>
+      <div className={styles.infoHeroSection_content}>
         <SectionLayout>
-          <div>{props.header}</div>
+          <h1 className={styles.infoHeroSection_title}>{props.title}</h1>
+          {props.subtitle && (
+            <p className={styles.infoHeroSection_subtitle}>{props.subtitle}</p>
+          )}
         </SectionLayout>
 
-        <div className={styles.infoHeroSection_painPointsWrapper}>
-          <div className={painPointsContent}>
-            {props.elementOne}
-            {props.elementTwo && props.elementTwo}
-            {props.elementThree && props.elementThree}
+        {props.children && <div className={styles.infoHeroSection_childrenWrapper}>
+          <div className={styles.infoHeroSection_children}>
+            {props.children}
           </div>
-        </div>
+        </div>}
       </div>
     </div>
   );

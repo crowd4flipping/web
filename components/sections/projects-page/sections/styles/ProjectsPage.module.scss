@@ -1,0 +1,72 @@
+@use "../../../../../styles/theme/Default.module.scss";
+@import "../../../../../styles/theme/Utils.module.scss";
+
+.projectsPage {
+  &_title_highlight {
+    @extend %text-gradient-primary;
+  }
+
+  &_status_selector_content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--subtitle-color);
+  }
+
+  &__status_options {
+    display: flex;
+    justify-content: center;
+
+    @include isMobile {
+      display: none;
+    }
+  }
+
+  &__selector_status {
+    display: none;
+
+    @include isMobile {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__icon {
+    font-size: 1.2rem;
+  }
+
+  &__content_wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 85vh;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 1.5rem 0;
+  }
+
+  &__projects_wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+
+    @include isLarge {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include isMediumRange {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include isSmallerRange {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include isMobile {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+}
