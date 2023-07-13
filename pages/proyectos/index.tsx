@@ -76,6 +76,6 @@ function isValidStatus(value: string): value is ProjectStatus {
 function convertFromOldStatusToNewStatus(
   status: Project["phase"]
 ): ProjectStatus {
-  if (status === "CROWD") return "in_study";
+  if (status === "crowd") return "funding";
   throw new Error(`Project status "${status}" is not valid`);
 }
