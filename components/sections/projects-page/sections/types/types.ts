@@ -23,7 +23,7 @@ export type Project = {
     estimatedRentability: number;
     finalProfit: number;
   };
-  phase: "CROWD" | "IN_STUDY" | "FINISHED" | "IN_PROGRESS";
+  phase: "crowd" | "in_study" | "finished" | "in_progress";
   projectMedia: ProjectMedia[];
 };
 
