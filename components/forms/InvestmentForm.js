@@ -2,7 +2,6 @@ import React, {useState, useEffect, useRef} from 'react'
 import styles from '../../styles/forms.module.scss';
 import axios from 'axios';
 import Router from 'next/router'
-import EllipsisLoader from '../loaders/ellipsisLoaderWhite';
 import ReCAPTCHA from "react-google-recaptcha";
 import Link from 'next/link';
 import {motion} from 'framer-motion';

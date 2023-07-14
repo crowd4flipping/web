@@ -23,6 +23,6 @@
       "@/routes/*": ["./routes/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/inversor.js", "pages/_error.js", "components/carrousels/Opinions.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/inversor.js", "pages/_error.js", "components/carrousels/Opinions.tsx"],
   "exclude": ["node_modules"]
 }
