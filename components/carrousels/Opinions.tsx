@@ -2,7 +2,7 @@ import React from "react";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import styles from "../sections/projects-page/sections/styles/MediaSlider.module.scss";
+import styles from "components/sections/projects-page/sections/styles/MediaSlider.module.scss";
 
 export const Opinions = ({ data }) => {
   return (

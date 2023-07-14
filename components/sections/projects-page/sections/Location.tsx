@@ -1,5 +1,5 @@
 import styles from "./styles/Map.module.scss";
-import Map from "@/components/maps";
+import { Map } from "@/components/maps/Map";
 
 export const Location = ({
   coordenates,
