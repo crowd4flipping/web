@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { PageLayout } from "@/components/layouts/PageLayout";
 import Head from "next/head";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 import styles from "../../styles/BlogPage.module.scss";
 import { BlogCard } from "../../components/cards/BlogCard";
-import NewsLetterSuscription from "../../components/forms/NewsLetterSuscription";
-import MiniBlockLoader from "../../components/loaders/MiniBlockLoader";
 import { ImDownload } from "react-icons/im";
-import { TbListSearch, TbLoader, TbLoader2 } from "react-icons/tb";
-import { LoaderSpinner } from "../../components/animations/LoaderSpinner";
+import { TbListSearch } from "react-icons/tb";
+import { Loader } from "@/components/loaders/Loader";
+
 
 function Index({ BlogEntries }) {
   const [blogEntries, setBlogEntries] = useState(BlogEntries[0].data);
@@ -172,7 +169,7 @@ function Index({ BlogEntries }) {
                 >
                   {loadingData ? (
                     <div className={styles.blog_page_more_articles_loader_icon}>
-                      <LoaderSpinner />
+                      <Loader />
                     </div>
                   ) : (
                     <>

@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
 import styles from "./styles/LockedSection.module.scss";
-import { Button } from "@/components/buttons/primary/Button";
 import Link from "next/link";
 import { Routes } from "routes/Routes";
+import { Button } from "@crowd4flipping/ui-components";
 
 export const LockedSection = ({
   children,
@@ -29,7 +29,7 @@ export const LockedSection = ({
             </p>
             <div>
               <Link href={Routes.app().projectId(projectId)}>
-                <Button size="md" button="primary">
+                <Button size="md" variant="primary">
                   Acceder
                 </Button>
               </Link>

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Avatar } from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import { BlogCard } from "../../components/cards/BlogCard";
-import NewsLetterSuscription from "../../components/forms/NewsLetterSuscription";
+import { NewsLetterSuscription } from "../../components/forms/NewsLetterSuscription";
 import { FaFacebookSquare } from "react-icons/fa";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import InstagramIcon from "../../public/images/icons/instagramIcon.webp";

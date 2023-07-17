@@ -12,8 +12,9 @@ import { ContactForm } from "./bottom-section/ContactForm";
 import styles from "@/components/layouts/styles/PageLayout.module.scss";
 import Head from "next/head";
 import { OpinionsTrustpilot } from "./opinions/OpinionsTrustpilot";
+import { ProjectData } from "../projects-page/sections/types/types";
 
-export const HomePage = () => {
+export const HomePage = ({ projects }: { projects: ProjectData[] }) => {
   return (
     <>
       <Head>
@@ -26,7 +27,7 @@ export const HomePage = () => {
       </Head>
       <PageLayout fixedNavBar>
         <HeroSection />
-        <ProjectsSection />
+        <ProjectsSection projects={projects} />
         <GetTheMostForYourMoneySection />
         <OpinionsTrustpilot />
         <ColaborativeInvestmentSection />

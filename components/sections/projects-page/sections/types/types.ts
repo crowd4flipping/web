@@ -7,7 +7,7 @@ type ProjectMedia = {
 /**
  * @description Used to decouple the data given from cloud
  */
-export type Project = {
+export type ProjectLegacy = {
   id: string;
   name: string;
   address: {

@@ -1,7 +1,7 @@
 import { ProjectStatus } from "@/routes/C4FCloudRoutes";
 import { ProjectCard } from "@crowd4flipping/ui-components";
 import { ProjectData } from "./types/types";
-import { unhandledType } from "utils/utils";
+import { filterProjects } from "utils/utils";
 import styles from "./styles/ProjectsPage.module.scss";
 
 type Props = {
@@ -46,39 +46,4 @@ export const ProjectsPageContent = ({
       </div>
     </div>
   );
-
-  function filterProjects(projects: ProjectData[]) {
-    let in_progress: ProjectData[] = [];
-    let finished: ProjectData[] = [];
-    let funding: ProjectData[] = [];
-    let in_study: ProjectData[] = [];
-
-    projects.forEach((project) => {
-      switch (project.status) {
-        case "in_progress":
-          in_progress.push(project);
-          break;
-        case "finished":
-          finished.push(project);
-          break;
-        case "funding":
-          funding.push(project);
-          break;
-        case "in_study":
-          in_study.push(project);
-          break;
-        default:
-          throw unhandledType(project.status);
-      }
-    });
-
-    const data: Record<ProjectStatus, ProjectData[]> = {
-      in_progress,
-      finished,
-      funding,
-      in_study,
-    };
-
-    return data;
-  }
 };

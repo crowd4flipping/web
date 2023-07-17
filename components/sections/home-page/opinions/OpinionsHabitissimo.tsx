@@ -3,7 +3,7 @@ import styles from "./styles/Opinions.module.scss";
 import Image from "next/image";
 import HabitissimoSrc from "@/public/images/brand/habitissimo_logo.png";
 import Logo from "@/public/images/brand/crowd4flipping/logo/Crowd4Flipping.png";
-import RefconLogo from "../../../logos/RefconLogo";
+import { ByRefcon } from "@/components/logos/ByRefcon";
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
 import { OpinionsCarrousel } from "@/components/carrousels/OpinionsCarrousel";
@@ -84,7 +84,7 @@ export const OpinionsHabitissimo = () => {
             alt="Crowd for Flipping logo"
           />
 
-          <RefconLogo />
+          <ByRefcon />
         </div>
       </div>
 

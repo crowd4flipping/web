@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../../styles/BlogCard.module.scss";
 import Link from "next/link";
 import { Avatar } from "@mui/material";
@@ -21,7 +20,6 @@ export const BlogCard = ({
   title,
   description,
   imageUrl,
-
   author,
 }: Props) => {
   return (

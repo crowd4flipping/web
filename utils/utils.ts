@@ -1,3 +1,4 @@
+import { ProjectData } from "@/components/sections/projects-page/sections/types/types";
 import { ProjectStatus, projectStatusList } from "@/routes/C4FCloudRoutes";
 
 export function unhandledType(value: never): value is never {
@@ -64,4 +65,41 @@ export function mapWithoutUndefined<TArray>(
     value: [...values],
     do: iterate,
   };
+}
+
+export function filterProjects(
+  projects: ProjectData[]
+): Record<ProjectStatus, ProjectData[]> {
+  let in_progress: ProjectData[] = [];
+  let finished: ProjectData[] = [];
+  let funding: ProjectData[] = [];
+  let in_study: ProjectData[] = [];
+
+  projects.forEach((project) => {
+    switch (project.status) {
+      case "in_progress":
+        in_progress.push(project);
+        break;
+      case "finished":
+        finished.push(project);
+        break;
+      case "funding":
+        funding.push(project);
+        break;
+      case "in_study":
+        in_study.push(project);
+        break;
+      default:
+        throw unhandledType(project.status);
+    }
+  });
+
+  const data: Record<ProjectStatus, ProjectData[]> = {
+    in_progress,
+    finished,
+    funding,
+    in_study,
+  };
+
+  return data;
 }
