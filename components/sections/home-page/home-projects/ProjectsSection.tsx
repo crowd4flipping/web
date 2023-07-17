@@ -5,7 +5,7 @@ import { LinkButton, ProjectCard } from "@crowd4flipping/ui-components";
 
 export const ProjectsSection = ({ projects }: { projects: ProjectData[] }) => {
   const { funding, finished } = filterProjects(projects);
-  const areProjectsFunding = funding.length !== 0 ? false : true;
+  const areProjectsFunding = funding.length == 0 ? false : true;
 
   return (
     <section className={styles.projectsSection_bg}>
