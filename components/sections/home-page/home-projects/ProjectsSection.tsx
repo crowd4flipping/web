@@ -1,11 +1,11 @@
 import { filterProjects } from "utils/utils";
 import { ProjectData } from "../../projects-page/sections/types/types";
 import styles from "./styles/Projects.module.scss";
-import { ProjectCard } from "@crowd4flipping/ui-components";
+import { LinkButton, ProjectCard } from "@crowd4flipping/ui-components";
 
 export const ProjectsSection = ({ projects }: { projects: ProjectData[] }) => {
   const { funding, finished } = filterProjects(projects);
-  const areProjectsFunding = funding.length == 0 ? false : true;
+  const areProjectsFunding = funding.length !== 0 ? false : true;
 
   return (
     <section className={styles.projectsSection_bg}>
@@ -22,6 +22,11 @@ export const ProjectsSection = ({ projects }: { projects: ProjectData[] }) => {
           {areProjectsFunding
             ? getProjectCardList(funding)
             : getProjectCardList(finished)}
+        </div>
+        <div className={styles.projectsSection__all_projects_button}>
+          <LinkButton href="/proyectos" variant="primary">
+            Ver todos los proyectos
+          </LinkButton>
         </div>
       </div>
     </section>
