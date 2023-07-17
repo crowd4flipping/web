@@ -2,9 +2,8 @@ import { PageLayout } from "@/components/layouts/PageLayout";
 import { PageHeroSection } from "../hero-section/PageHeroSection";
 import { InfoHeroSection } from "../hero-section/InfoHeroSection";
 import styles from "./sections/styles/ProjectsPage.module.scss";
-import { Options, ProjectCard, Selector } from "@crowd4flipping/ui-components";
+import { Options, Selector } from "@crowd4flipping/ui-components";
 import { ProjectStatus, projectStatusList } from "@/routes/C4FCloudRoutes";
-import { BiFilter } from "react-icons/bi";
 import { isValidStatus, unhandledType } from "utils/utils";
 import { ProjectsPageContent } from "./sections/ProjectsPageContent";
 import { useEffect, useState } from "react";
@@ -20,7 +19,9 @@ const statusLabels: Record<ProjectStatus, string> = {
 
 export const ProjectsPage = (props: { projectsList: ProjectData[] }) => {
   const router = useRouter();
-  const [statusLabel, setStatusLabel] = useState(statusLabels.in_study);
+  const areProjectsFunding = props.projectsList.find(project => project.status === "funding")
+  const firstStatusLabel: ProjectStatus = areProjectsFunding ? "funding" : "in_study";
+  const [statusLabel, setStatusLabel] = useState(statusLabels[firstStatusLabel]);
 
   useEffect(() => {
     const queryStatus = router.query.status as string;
