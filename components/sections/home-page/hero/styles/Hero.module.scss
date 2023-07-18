@@ -4,19 +4,36 @@
 
 .heroSection {
   @extend %pagePaddingX;
+
   width: 100%;
   height: 100vh;
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(3, 1fr);
 
-  @include isMobile {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    text-align: center;
-    gap: 2rem;
-    padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include isSmallerRange{
+    margin-top: 3rem;
+  }
+  
+  @include isMobile{
+    margin-top: 0;
+  }
+
+  &__content {
+    display: grid;
+    gap: 1.5rem;
+    /* height: 100%; */
+    grid-template-columns: repeat(3, 1fr);
+
+    @include isMobile {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      text-align: center;
+      gap: 2rem;
+      padding-top: 2rem;
+    }
   }
 
   &__hero_image_mobile {
@@ -51,14 +68,39 @@
   &_ctas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 25rem;
+
+    width: 100%;
+    padding-right: 8rem;
+
     gap: 1rem;
+
+    @include isSmallerRange {
+      display: none;
+    }
 
     @include isMobile {
       display: flex;
       flex-direction: column-reverse;
       gap: 0.5rem;
       width: 100%;
+      padding-right: 0rem;
+    }
+
+    &__ipad_screen {
+      display: none;
+
+      @include isSmallerRange {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 0.5rem;
+        width: 100%;
+        padding-right: 0rem;
+        padding-bottom: 10%;
+      }
+
+      @include isMobile {
+        display: none;
+      }
     }
   }
 
