@@ -5,22 +5,22 @@ import Link from "next/link";
 import { MdMenu } from "react-icons/md";
 import { Dispatch, SetStateAction, useState } from "react";
 import { NavBarSection } from "../layouts/types/NavBar";
+import { LinkButton } from "@crowd4flipping/ui-components";
 
 export const DesktopNavBar = ({
   setIsOpen,
   navBarSections,
-  isFixed = false,  
+  isFixed = false,
 }: {
   isFixed?: boolean;
   navBarSections: NavBarSection[];
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
   const navBarStyle = `${isFixed ? styles.navbar_fixed : styles.navbar}`;
-
+  const navBarSignUp = navBarSections.find(section => section.label == "Registrate")
   return (
     <nav className={navBarStyle}>
-      <div  className={styles.navbar_content}>
-        
+      <div className={styles.navbar_content}>
         <div>
           <div className={styles.navbar_button}>
             <Link href="/">
@@ -37,6 +37,14 @@ export const DesktopNavBar = ({
 
         <ul className={styles.navbar_buttonList}>
           {navBarSections.map((section) => {
+            if (section.label == "Registrate")
+              return (
+                <li key={section.label} className={styles.navbar_button}>
+                  <LinkButton variant="primary" href={section.href}>
+                    {section.label}
+                  </LinkButton>
+                </li>
+              );
             if (section.href)
               return (
                 <li key={section.label} className={styles.navbar_button}>
@@ -60,14 +68,19 @@ export const DesktopNavBar = ({
           })}
         </ul>
 
-        <button
-          onClick={() => {
-            setIsOpen((prev) => !prev);
-          }}
-          className={styles.navbar_hamburgerMenu}
-        >
-          <MdMenu />
-        </button>
+        <div className={styles.navbar__mobile}>
+          <LinkButton variant="primary" href={navBarSignUp.href}>
+            {navBarSignUp.label}
+          </LinkButton>
+          <button
+            onClick={() => {
+              setIsOpen((prev) => !prev);
+            }}
+            className={styles.navbar_hamburgerMenu}
+          >
+            <MdMenu />
+          </button>
+        </div>
       </div>
     </nav>
   );
