@@ -91,6 +91,8 @@
     all: unset;
     color: var(--text-color);
     font-size: 2rem;
+    display: flex;
+    align-content: center;
 
     &_close {
       @extend .navbar_hamburgerMenu;

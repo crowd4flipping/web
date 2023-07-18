@@ -43,8 +43,8 @@ const navBarSections: NavBarSection[] = [
   },
   {
     icon: <SigninIcon />,
-    label: "Registrate",
-    href: Routes.app().host(),
+    label: "Regístrate",
+    href: Routes.app().host().concat("/?fw"),
   },
 ];
 
