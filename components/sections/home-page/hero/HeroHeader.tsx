@@ -20,16 +20,22 @@ export const HeroHeader = () => {
       </div>
 
       <div className={heroStyles.heroSection_ctas}>
-        <LinkButton fullWidth href="#info-section" variant="secondary">
+        <LinkButton
+          size="lg"
+          fullWidth
+          href="#info-section"
+          variant="secondary"
+        >
           Saber más
         </LinkButton>
 
         <LinkButton
+          size="lg"
           href={Routes.app().queryHostFW()}
           variant="primary"
           fullWidth
         >
-          Empezar a invertir
+          Regístrate gratis
         </LinkButton>
       </div>
     </div>
