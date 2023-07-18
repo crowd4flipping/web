@@ -52,7 +52,7 @@ export const AnimatedMobileNavBar = ({
 
             <ul className={styles.navbar_buttonListMobile}>
               {navBarSections.map((section) => {
-                if (section.label == "Registrate")
+                if (section.label == "Regístrate")
                   return (
                     <li key={section.label} className={styles.navbar_button}>
                       <LinkButton variant="primary" href={section.href}>
