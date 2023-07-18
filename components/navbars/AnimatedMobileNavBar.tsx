@@ -4,6 +4,7 @@ import styles from "./styles/DesktopNavBar.module.scss";
 import { Dispatch, SetStateAction } from "react";
 import { MdClose } from "react-icons/md";
 import { NavBarSection } from "../layouts/types/NavBar";
+import { LinkButton } from "@crowd4flipping/ui-components";
 
 const variants = {
   closed: {
@@ -51,6 +52,15 @@ export const AnimatedMobileNavBar = ({
 
             <ul className={styles.navbar_buttonListMobile}>
               {navBarSections.map((section) => {
+                if (section.label == "Registrate")
+                  return (
+                    <li key={section.label} className={styles.navbar_button}>
+                      <LinkButton variant="primary" href={section.href}>
+                        {section.label}
+                      </LinkButton>
+                    </li>
+                  );
+
                 if (section.href)
                   return (
                     <li key={section.label} className={styles.navbar_button}>
@@ -58,7 +68,9 @@ export const AnimatedMobileNavBar = ({
                         onClick={() => setIsOpen(false)}
                         href={section.href}
                       >
-                        <div className={`${styles.navbar_buttonText} ${styles.navbar_buttonText_mobile}`}>
+                        <div
+                          className={`${styles.navbar_buttonText} ${styles.navbar_buttonText_mobile}`}
+                        >
                           <div className={styles.navbar_buttonIcon}>
                             {section.icon}
                           </div>{" "}
