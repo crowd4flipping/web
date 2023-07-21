@@ -34,7 +34,7 @@ export const TeamProfiles = () => {
           firstSrc={Andres}
           secondSrc={Andres_}
           alt="Andres-Gomez-Profile"
-          memberName="Andres Gómez"
+          memberName="Andrés Gómez"
           role="CTO"
         />
         <MemberProfile

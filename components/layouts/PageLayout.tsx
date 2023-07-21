@@ -12,7 +12,7 @@ import { QuestionIcon } from "../icons/QuestionIcon";
 import { BlogIcon } from "../icons/BlogIcon";
 import { DocCheckedIcon } from "../icons/DocCheckedIcon";
 import { SigninIcon } from "../icons/SinginIcon";
-import { BsHouseDoor } from "react-icons/bs"
+import { BsHouseDoor } from "react-icons/bs";
 
 const navBarSections: NavBarSection[] = [
   {
@@ -45,6 +45,11 @@ const navBarSections: NavBarSection[] = [
     icon: <SigninIcon />,
     label: "Regístrate",
     href: Routes.app().host().concat("?fw"),
+  },
+  {
+    icon: <></>,
+    label: "Acceder",
+    href: Routes.app().host(),
   },
 ];
 

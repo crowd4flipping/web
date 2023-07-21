@@ -2,6 +2,16 @@
 @import "../../../styles/theme/Utils.module.scss";
 
 .navbar {
+  background-color: #ffffff73;
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid #ffffff3b;
+
+  &__cta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
   &_fixed {
     @extend .navbar;
 
@@ -11,10 +21,6 @@
     right: 0;
     z-index: 100;
   }
-
-  background-color: #ffffff73;
-  backdrop-filter: blur(4px);
-  border-bottom: 1px solid #ffffff3b;
 
   &_content {
     @extend %pagePaddingX;
@@ -96,9 +102,8 @@
 
     &_close {
       @extend .navbar_hamburgerMenu;
-      width: 75%;
+      width: 100%;
       display: flex;
-      margin-top: 1rem;
       justify-content: flex-end;
     }
   }
@@ -106,6 +111,7 @@
   &_mobileNavBar {
     position: fixed;
     z-index: 10000;
+    width: 80vw;
 
     &_bg {
       position: fixed;
@@ -113,18 +119,39 @@
       backdrop-filter: blur(2px);
     }
 
-    &_content {
+    &__content_wrapper {
       position: fixed;
-
-      background-image: linear-gradient(
-        0deg,
-        #abb6c1,
-        var(--color-surface),
-        white
-      );
-      inset: 0;
+      top: 0;
+      left: 0;
+      right: 20;
+      bottom: 0;
       height: 100vh;
+      width: 80vw;
+      background-color: white;
       box-shadow: -10px 0px 100px #3d4247;
     }
+    
+    &__content {
+      position: relative;
+      height: 100%;
+      margin: 1rem;
+    }
+  }
+
+  &__ctas{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__mobile_ctas {
+    position: absolute;
+    width: 100%;
+    bottom: 3rem;
+  }
+
+  &__mobile_cta {
+    width: 100%;
+    margin-top: 1rem;
   }
 }

@@ -10,7 +10,7 @@ const variants = {
   closed: {
     display: "none",
     opacity: 0,
-    x: "100%",
+   // x: "-100%",
   },
   open: {
     display: "block",
@@ -28,6 +28,13 @@ export const AnimatedMobileNavBar = ({
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
+  const navBarSignUp = navBarSections.find(
+    (section) => section.label == "Regístrate"
+  );
+  const navBarSignIn = navBarSections.find(
+    (section) => section.label == "Acceder"
+  );
+
   return (
     isOpen && (
       <div className={styles.navbar_mobileNavBar}>
@@ -36,11 +43,11 @@ export const AnimatedMobileNavBar = ({
           className={styles.navbar_mobileNavBar_bg}
         />
         <motion.nav
-          className={styles.navbar_mobileNavBar_content}
+          className={styles.navbar_mobileNavBar__content_wrapper}
           animate={isOpen ? "open" : "closed"}
           variants={variants}
         >
-          <div>
+          <div className={styles.navbar_mobileNavBar__content}>
             <button
               onClick={() => setIsOpen(false)}
               className={styles.navbar_hamburgerMenu_close}
@@ -52,14 +59,8 @@ export const AnimatedMobileNavBar = ({
 
             <ul className={styles.navbar_buttonListMobile}>
               {navBarSections.map((section) => {
-                if (section.label == "Regístrate")
-                  return (
-                    <li key={section.label} className={styles.navbar_button}>
-                      <LinkButton variant="primary" href={section.href}>
-                        {section.label}
-                      </LinkButton>
-                    </li>
-                  );
+                if (section.label == "Regístrate" || section.label == "Acceder")
+                  return;
 
                 if (section.href)
                   return (
@@ -92,6 +93,26 @@ export const AnimatedMobileNavBar = ({
                 );
               })}
             </ul>
+            <div className={styles.navbar__mobile_ctas}>
+              <div className={styles.navbar__mobile_cta}>
+                <LinkButton
+                  fullWidth
+                  variant="primary"
+                  href={navBarSignUp.href}
+                >
+                  {navBarSignUp.label}
+                </LinkButton>
+              </div>
+              <div className={styles.navbar__mobile_cta}>
+                <LinkButton
+                  fullWidth
+                  variant="secondary"
+                  href={navBarSignIn.href}
+                >
+                  {navBarSignIn.label}
+                </LinkButton>
+              </div>
+            </div>
           </div>
         </motion.nav>
       </div>
