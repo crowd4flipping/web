@@ -3,7 +3,7 @@ import styles from "./styles/DesktopNavBar.module.scss";
 import Logo from "@/public/images/brand/crowd4flipping/logo/Crowd4Flipping.svg";
 import Link from "next/link";
 import { MdMenu } from "react-icons/md";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { NavBarSection } from "../layouts/types/NavBar";
 import { LinkButton } from "@crowd4flipping/ui-components";
 
@@ -17,7 +17,12 @@ export const DesktopNavBar = ({
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
   const navBarStyle = `${isFixed ? styles.navbar_fixed : styles.navbar}`;
-  const navBarSignUp = navBarSections.find(section => section.label == "Regístrate")
+  const navBarSignUp = navBarSections.find(
+    (section) => section.label == "Regístrate"
+  );
+  const navBarSignIn = navBarSections.find(
+    (section) => section.label == "Acceder"
+  );
   return (
     <nav className={navBarStyle}>
       <div className={styles.navbar_content}>
@@ -37,14 +42,8 @@ export const DesktopNavBar = ({
 
         <ul className={styles.navbar_buttonList}>
           {navBarSections.map((section) => {
-            if (section.label == "Regístrate")
-              return (
-                <li key={section.label} className={styles.navbar_button}>
-                  <LinkButton variant="primary" href={section.href}>
-                    {section.label}
-                  </LinkButton>
-                </li>
-              );
+            if (section.label == "Regístrate" || section.label == "Acceder")
+              return;
             if (section.href)
               return (
                 <li key={section.label} className={styles.navbar_button}>
@@ -66,19 +65,29 @@ export const DesktopNavBar = ({
               </li>
             );
           })}
+          <div className={styles.navbar__ctas}>
+            <LinkButton variant="secondary" href={navBarSignIn.href}>
+              {navBarSignIn.label}
+            </LinkButton>
+            <LinkButton variant="primary" href={navBarSignUp.href}>
+              {navBarSignUp.label}
+            </LinkButton>
+          </div>
         </ul>
 
         <div className={styles.navbar__mobile}>
-          <LinkButton variant="primary" href={navBarSignUp.href}>
-            {navBarSignUp.label}
-          </LinkButton>
+          <div className={styles.navbar__ctas}>
+            <LinkButton variant="primary" href={navBarSignUp.href}>
+              {navBarSignUp.label}
+            </LinkButton>
+          </div>
 
           <button
             onClick={() => {
               setIsOpen((prev) => !prev);
             }}
             className={styles.navbar_hamburgerMenu}
-            >
+          >
             <MdMenu />
           </button>
         </div>
