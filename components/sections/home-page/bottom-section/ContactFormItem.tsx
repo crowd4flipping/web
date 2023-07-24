@@ -67,8 +67,11 @@ export const ContactFormItem = () => {
   return (
     <form onSubmit={handleSubmit} className={styles.contactForm_form}>
       <div>
-        <label className={styles.contactForm_formLabel}>Email</label>
+        <label htmlFor="email" className={styles.contactForm_formLabel}>
+          Email
+        </label>
         <input
+          id="email"
           type="email"
           name="email"
           value={state.email}
@@ -79,10 +82,11 @@ export const ContactFormItem = () => {
       </div>
 
       <div className={styles.contactForm_formTextArea_expanded}>
-        <label className={styles.contactForm_formLabel}>
+        <label htmlFor="question" className={styles.contactForm_formLabel}>
           Cuentanos tus dudas
         </label>
         <textarea
+          id="question"
           name="comments"
           value={state.comments}
           onChange={handleChange}
@@ -92,12 +96,16 @@ export const ContactFormItem = () => {
 
       <div className={styles.contactForm_checkBoxWrapper}>
         <input
+          id="terms-and-conditions"
           type="checkbox"
           name="termsAndConditions"
           checked={state.termsAndConditions}
           onChange={(e) => handleChange(e)}
         />
-        <label className={styles.contactForm_checkBoxLabel}>
+        <label
+          htmlFor="terms-and-conditions"
+          className={styles.contactForm_checkBoxLabel}
+        >
           Autorizo el tratamiento de mis datos para recibir una respuesta a mi
           consulta según la{" "}
           <Link href="/docs/aviso-legal">Política de Privacidad</Link>

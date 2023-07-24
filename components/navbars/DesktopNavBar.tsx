@@ -27,8 +27,8 @@ export const DesktopNavBar = ({
     <nav className={navBarStyle}>
       <div className={styles.navbar_content}>
         <div>
-          <div className={styles.navbar_button}>
-            <Link href="/">
+          <Link href="/">
+            <div className={styles.navbar_button}>
               <Image
                 src={Logo}
                 width={110}
@@ -36,8 +36,8 @@ export const DesktopNavBar = ({
                 alt="logo crowd4flipping"
                 objectFit="contain"
               />
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
 
         <ul className={styles.navbar_buttonList}>
@@ -47,11 +47,9 @@ export const DesktopNavBar = ({
             if (section.href)
               return (
                 <li key={section.label} className={styles.navbar_button}>
-                  <Link href={section.href}>
-                    <div className={styles.navbar_buttonText}>
-                      {section.label}
-                    </div>
-                  </Link>
+                  <div className={styles.navbar_buttonText}>
+                    <Link href={section.href}>{section.label}</Link>
+                  </div>
                 </li>
               );
             return (
@@ -59,6 +57,7 @@ export const DesktopNavBar = ({
                 <a
                   className={styles.navbar_buttonText}
                   href={section.id ? section.id : section.href}
+                  aria-label={section.label}
                 >
                   {section.label}
                 </a>
@@ -87,6 +86,8 @@ export const DesktopNavBar = ({
               setIsOpen((prev) => !prev);
             }}
             className={styles.navbar_hamburgerMenu}
+            type="button"
+            aria-label="Menú desplegable"
           >
             <MdMenu />
           </button>

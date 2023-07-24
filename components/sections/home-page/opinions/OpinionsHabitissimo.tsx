@@ -97,6 +97,7 @@ export const OpinionsHabitissimo = () => {
             href="https://www.refcon.es/"
             target="_blank"
             rel="noreferrer"
+            aria-label="habitissimo"
           >
             Refcon
           </a>
