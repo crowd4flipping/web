@@ -9,6 +9,7 @@ export const WhatsAppButton = () => {
         href={`https://wa.me/34672126268`}
         target="_blank"
         rel="noreferrer"
+        aria-label="whatsapp"
       >
         <RiWhatsappLine className={styles.whatsappBtn_icon} />
       </a>

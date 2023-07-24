@@ -35,6 +35,7 @@ export const ContactData = ({ children }: ContactFormDataProps) => {
               href={Routes.facebook()}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="facebook"
             >
               <FaFacebookSquare className={`${styles.contactForm_icon} ${styles.contactForm_faceBook}`} />
             </a>
@@ -44,6 +45,7 @@ export const ContactData = ({ children }: ContactFormDataProps) => {
               href={Routes.instagram()}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="instagram"
             >
               <Image 
                 src={InstagramIcon}
@@ -63,6 +65,7 @@ export const ContactData = ({ children }: ContactFormDataProps) => {
               href={Routes.linkedin()}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="linkedin"
             >
               <FaLinkedin className={`${styles.contactForm_icon} ${styles.contactForm_linkedin}`} />
             </a>
