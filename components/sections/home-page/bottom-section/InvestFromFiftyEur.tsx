@@ -18,7 +18,7 @@ export const InvestFromFiftyEur = () => {
             src="https://firebasestorage.googleapis.com/v0/b/c4f-backend-c3e81.appspot.com/o/videos-corporativos%2FCF4%20ANIMACION_BAJO.mp4?alt=media&token=7d70d3e5-d84e-48eb-8172-ea4abf987b1f"
             playsInline
             controls
-            poster="images/video_poster.png"
+            poster="images/video_poster.webp"
           />
         <div className={style.investFromFiftyEur_infoCard}>
           <InfoCard title="Desde 500€" bgColor="white" width="100%">

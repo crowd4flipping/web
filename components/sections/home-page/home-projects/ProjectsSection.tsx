@@ -2,6 +2,7 @@ import { filterProjects } from "utils/utils";
 import { ProjectData } from "../../projects-page/sections/types/types";
 import styles from "./styles/Projects.module.scss";
 import { LinkButton, ProjectCard } from "@crowd4flipping/ui-components";
+import NextImage from "next/image";
 
 export const ProjectsSection = ({ projects }: { projects: ProjectData[] }) => {
   const { funding, finished } = filterProjects(projects);
@@ -38,6 +39,7 @@ export const ProjectsSection = ({ projects }: { projects: ProjectData[] }) => {
         <div key={project.id} className={styles.projectsSection_project}>
           <ProjectCard
             isVertical
+            NextImageComponent={NextImage}
             src={project.images[0]}
             href={`/proyectos/${project.id}`}
             currentAmount={parseInt(project.currentAmount.toString())}

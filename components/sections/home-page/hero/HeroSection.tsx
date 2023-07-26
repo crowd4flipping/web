@@ -3,6 +3,7 @@ import { HeroHeader } from "./HeroHeader";
 import { HeroImageWrapper } from "./HeroImageWrapper";
 import styles from "./styles/Hero.module.scss";
 import HeroImage from "@/public/images/invertir-en-inmuebles.webp";
+import HeroImageMobile from "@/public/images/invertir-en-inmuebles-mobile.webp";
 import { LinkButton } from "@crowd4flipping/ui-components";
 import { Routes } from "@/routes/Routes";
 
@@ -19,8 +20,9 @@ export const HeroSection = () => {
                   width={200}
                   height={262}
                   alt="Empieza a invertir en inmuebles"
-                  src={HeroImage}
-                />
+                  src={HeroImageMobile}
+                  priority={true}
+                  />
               </div>
               <div className={styles.heroSection__hero_image}>
                 <Image
@@ -28,6 +30,7 @@ export const HeroSection = () => {
                   height={502}
                   alt="Empieza a invertir en inmuebles"
                   src={HeroImage}
+                  priority={true}
                 />
               </div>
             </>
