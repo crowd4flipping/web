@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps }) {
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
 
-      <Script strategy="lazyOnload" id="google-analitycs">
+      {/* <Script strategy="lazyOnload" id="google-analitycs">
         {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -57,7 +57,7 @@ function MyApp({ Component, pageProps }) {
             page_path: window.location.pathname,
             });
         `}
-      </Script>
+      </Script> */}
 
       <Script id="facebook-pixel">
         {`
