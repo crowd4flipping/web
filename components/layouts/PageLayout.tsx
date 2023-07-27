@@ -49,7 +49,7 @@ const navBarSections: NavBarSection[] = [
   {
     icon: <></>,
     label: "Acceder",
-    href: Routes.app().queryHostFW(),
+    href: Routes.app().hos(),
   },
 ];
 
