@@ -5,12 +5,13 @@ import { Dispatch, SetStateAction } from "react";
 import { MdClose } from "react-icons/md";
 import { NavBarSection } from "../layouts/types/NavBar";
 import { LinkButton } from "@crowd4flipping/ui-components";
+import { useAdQueryTracker } from "../hooks/useAdQueryTracker";
 
 const variants = {
   closed: {
     display: "none",
     opacity: 0,
-   // x: "-100%",
+    // x: "-100%",
   },
   open: {
     display: "block",
@@ -28,6 +29,9 @@ export const AnimatedMobileNavBar = ({
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
+  const { getAdQueryTracker } = useAdQueryTracker();
+  const queryAdTracker = getAdQueryTracker();
+  const queryAd = !queryAdTracker ? "" : `&${queryAdTracker}`;
   const navBarSignUp = navBarSections.find(
     (section) => section.label == "Regístrate"
   );
@@ -98,7 +102,7 @@ export const AnimatedMobileNavBar = ({
                 <LinkButton
                   fullWidth
                   variant="primary"
-                  href={navBarSignUp.href}
+                  href={navBarSignUp.href.concat(queryAd)}
                 >
                   {navBarSignUp.label}
                 </LinkButton>
@@ -107,7 +111,7 @@ export const AnimatedMobileNavBar = ({
                 <LinkButton
                   fullWidth
                   variant="secondary"
-                  href={navBarSignIn.href}
+                  href={navBarSignIn.href.concat(queryAd)}
                 >
                   {navBarSignIn.label}
                 </LinkButton>

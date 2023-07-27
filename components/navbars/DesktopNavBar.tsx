@@ -6,6 +6,7 @@ import { MdMenu } from "react-icons/md";
 import { Dispatch, SetStateAction } from "react";
 import { NavBarSection } from "../layouts/types/NavBar";
 import { LinkButton } from "@crowd4flipping/ui-components";
+import { useAdQueryTracker } from "../hooks/useAdQueryTracker";
 
 export const DesktopNavBar = ({
   setIsOpen,
@@ -17,6 +18,9 @@ export const DesktopNavBar = ({
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
   const navBarStyle = `${isFixed ? styles.navbar_fixed : styles.navbar}`;
+  const { getAdQueryTracker } = useAdQueryTracker();
+  const queryAdTracker = getAdQueryTracker();
+  const queryAd = !queryAdTracker ? "" : `&${queryAdTracker}`;
   const navBarSignUp = navBarSections.find(
     (section) => section.label == "Regístrate"
   );
@@ -65,10 +69,16 @@ export const DesktopNavBar = ({
             );
           })}
           <div className={styles.navbar__ctas}>
-            <LinkButton variant="secondary" href={navBarSignIn.href}>
+            <LinkButton
+              variant="secondary"
+              href={navBarSignIn.href.concat(queryAd)}
+            >
               {navBarSignIn.label}
             </LinkButton>
-            <LinkButton variant="primary" href={navBarSignUp.href}>
+            <LinkButton
+              variant="primary"
+              href={navBarSignUp.href.concat(queryAd)}
+            >
               {navBarSignUp.label}
             </LinkButton>
           </div>
@@ -76,7 +86,10 @@ export const DesktopNavBar = ({
 
         <div className={styles.navbar__mobile}>
           <div className={styles.navbar__ctas}>
-            <LinkButton variant="primary" href={navBarSignUp.href}>
+            <LinkButton
+              variant="primary"
+              href={navBarSignUp.href.concat(queryAd)}
+            >
               {navBarSignUp.label}
             </LinkButton>
           </div>

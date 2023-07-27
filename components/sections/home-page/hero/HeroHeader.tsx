@@ -1,8 +1,12 @@
+import { useAdQueryTracker } from "@/components/hooks/useAdQueryTracker";
 import heroStyles from "./styles/Hero.module.scss";
 import { LinkButton } from "@crowd4flipping/ui-components";
 import { Routes } from "routes/Routes";
 
 export const HeroHeader = () => {
+  const { getAdQueryTracker } = useAdQueryTracker();
+  const queryAd = getAdQueryTracker();
+
   return (
     <div
       className={`${heroStyles.heroSection_header} ${heroStyles.heroSection_header_oneThird}`}
@@ -31,7 +35,7 @@ export const HeroHeader = () => {
 
         <LinkButton
           size="lg"
-          href={Routes.app().queryHostFW()}
+          href={Routes.app().queryHostFW().concat(`&${queryAd}`)}
           variant="primary"
           fullWidth
         >
