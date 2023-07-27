@@ -42,16 +42,6 @@ const navBarSections: NavBarSection[] = [
     href: "/#faqs",
     id: "#faqs",
   },
-  /* {
-    icon: <SigninIcon />,
-    label: "Regístrate",
-    href: Routes.app().queryHostFW(),
-  },
-  {
-    icon: <></>,
-    label: "Acceder",
-    href: Routes.app().host(),
-  }, */
 ];
 
 export const PageLayout = ({
