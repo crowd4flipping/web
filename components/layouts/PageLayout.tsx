@@ -13,6 +13,7 @@ import { BlogIcon } from "../icons/BlogIcon";
 import { DocCheckedIcon } from "../icons/DocCheckedIcon";
 import { SigninIcon } from "../icons/SinginIcon";
 import { BsHouseDoor } from "react-icons/bs";
+import { LinkToPlatformButton } from "../buttons/LinkToPlatformButton";
 
 const navBarSections: NavBarSection[] = [
   {
@@ -41,7 +42,7 @@ const navBarSections: NavBarSection[] = [
     href: "/#faqs",
     id: "#faqs",
   },
-  {
+  /* {
     icon: <SigninIcon />,
     label: "Regístrate",
     href: Routes.app().queryHostFW(),
@@ -49,8 +50,8 @@ const navBarSections: NavBarSection[] = [
   {
     icon: <></>,
     label: "Acceder",
-    href: Routes.app().queryHostFW(),
-  },
+    href: Routes.app().host(),
+  }, */
 ];
 
 export const PageLayout = ({

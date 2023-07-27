@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Routes } from "routes/Routes";
 import { Button } from "@crowd4flipping/ui-components";
 import { useAdQueryTracker } from "@/components/hooks/useAdQueryTracker";
+import { useRouter } from "next/router";
+import { LinkToPlatformButton } from "@/components/buttons/LinkToPlatformButton";
 
 export const LockedSection = ({
   children,
@@ -14,7 +16,8 @@ export const LockedSection = ({
   projectId: string;
   showSignupCard?: boolean;
 }) => {
-  const { getAdQueryTracker } = useAdQueryTracker();
+  const { query } = useRouter();
+  const { getAdQueryTracker } = useAdQueryTracker(query);
   const queryAdTracker = getAdQueryTracker();
   const queryAd = !queryAdTracker ? "" : `?${queryAdTracker}`;
   return (
@@ -32,11 +35,9 @@ export const LockedSection = ({
               o iniciar sesión
             </p>
             <div>
-              <Link href={Routes.app().projectId(projectId).concat(queryAd)}>
-                <Button size="md" variant="primary">
-                  Acceder
-                </Button>
-              </Link>
+              <LinkToPlatformButton variant="primary">
+                Acceder
+              </LinkToPlatformButton>
             </div>
           </div>
         )}
