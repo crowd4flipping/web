@@ -6,6 +6,8 @@ import { MdClose } from "react-icons/md";
 import { NavBarSection } from "../layouts/types/NavBar";
 import { LinkButton } from "@crowd4flipping/ui-components";
 import { useAdQueryTracker } from "../hooks/useAdQueryTracker";
+import { useRouter } from "next/router";
+import { LinkToPlatformButton } from "../buttons/LinkToPlatformButton";
 
 const variants = {
   closed: {
@@ -29,7 +31,8 @@ export const AnimatedMobileNavBar = ({
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const { getAdQueryTracker } = useAdQueryTracker();
+  const { query } = useRouter();
+  const { getAdQueryTracker } = useAdQueryTracker(query);
   const queryAdTracker = getAdQueryTracker();
   const queryAd = !queryAdTracker ? "" : `&${queryAdTracker}`;
   const navBarSignUp = navBarSections.find(
@@ -63,8 +66,8 @@ export const AnimatedMobileNavBar = ({
 
             <ul className={styles.navbar_buttonListMobile}>
               {navBarSections.map((section) => {
-                if (section.label == "Regístrate" || section.label == "Acceder")
-                  return;
+                /* if (section.label == "Regístrate" || section.label == "Acceder")
+                  return; */
 
                 if (section.href)
                   return (
@@ -99,22 +102,14 @@ export const AnimatedMobileNavBar = ({
             </ul>
             <div className={styles.navbar__mobile_ctas}>
               <div className={styles.navbar__mobile_cta}>
-                <LinkButton
-                  fullWidth
-                  variant="primary"
-                  href={navBarSignUp.href.concat(queryAd)}
-                >
-                  {navBarSignUp.label}
-                </LinkButton>
+                <LinkToPlatformButton fullWidth variant="primary">
+                  Regístrate
+                </LinkToPlatformButton>
               </div>
               <div className={styles.navbar__mobile_cta}>
-                <LinkButton
-                  fullWidth
-                  variant="secondary"
-                  href={navBarSignIn.href.concat(queryAd)}
-                >
-                  {navBarSignIn.label}
-                </LinkButton>
+                <LinkToPlatformButton fullWidth variant="secondary">
+                  Acceder
+                </LinkToPlatformButton>
               </div>
             </div>
           </div>
