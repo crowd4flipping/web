@@ -5,6 +5,33 @@ type FAQ = { id: string; question: string; answer: string };
 
 const questions: FAQ[] = [
   {
+    id: "q9",
+    question: "Tributación de rendimientos generados",
+    answer: `En relación a la tributación de los ingresos que se puedan obtener a raíz del préstamo que se realiza, es decir, 
+    los porcentajes que se distribuyen de las rentas obtenidas en el proyecto, 
+    serán considerados como rendimientos de capital mobiliario y deberán ser declarados dentro de la base del ahorro en la declaración de la renta.
+
+    Sobre dichos rendimientos se le aplicarán los tramos establecidos para la base del ahorro, que van desde el 19% al 26% máximo en caso de que superen los 200.000€.
+
+    Hay que tener presente que únicamente se declararán los porcentajes distribuidos, no la cantidad prestada, 
+    ya que el préstamo estará exento de tributación al no considerarse ni ganancia o ingreso ni pérdida.`,
+  },
+  {
+    id: "q10",
+    question: "Marco legal Crowd4Flipping",
+    answer: `Crowd4Flipping no está supervisado actualmente por la CNMV puesto que, 
+    por el tipo de actividad que realiza y la metodología implementada para la financiación de cada proyecto, 
+    no tiene la obligación impuesta por la Ley sobre Plataformas de Financiación Participativa de estar controlada por dicho organismo.
+
+    Se ha realizado un profundo estudio de la normativa aplicable y hemos creado una estructura 
+    por la cual trabajamos a través de contratos de préstamo directamente entre Crowd4Flipping 
+    y el prestamista para que seamos nosotros mismos los que ejecutemos el proyecto. 
+    Como no se produce una intermediación para financiar proyectos ajenos de tal manera que se promocionan en nuestra web o plataforma, 
+    sino que es el propio Crowd4Flipping el que va a desarrollar el proyecto, siempre manteniendo total transparencia y comunicación con nuestros clientes, 
+    no existe obligación de cumplir con la supervisión de la Comisión Nacional del Mercado de Valores.
+    `,
+  },
+  {
     id: "q1",
     question: "¿Qué es el crowdlending inmobiliario?",
     answer: `El crowdlending inmobiliario es el método de financiación colectiva
