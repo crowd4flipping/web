@@ -4,16 +4,12 @@ import styles from "./styles/DesktopNavBar.module.scss";
 import { Dispatch, SetStateAction } from "react";
 import { MdClose } from "react-icons/md";
 import { NavBarSection } from "../layouts/types/NavBar";
-import { LinkButton } from "@crowd4flipping/ui-components";
-import { useAdQueryTracker } from "../hooks/useAdQueryTracker";
-import { useRouter } from "next/router";
 import { LinkToPlatformButton } from "../buttons/LinkToPlatformButton";
 
 const variants = {
   closed: {
     display: "none",
     opacity: 0,
-    // x: "-100%",
   },
   open: {
     display: "block",
@@ -31,17 +27,6 @@ export const AnimatedMobileNavBar = ({
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
-  const { query } = useRouter();
-  const { getAdQueryTracker } = useAdQueryTracker(query);
-  const queryAdTracker = getAdQueryTracker();
-  const queryAd = !queryAdTracker ? "" : `&${queryAdTracker}`;
-  const navBarSignUp = navBarSections.find(
-    (section) => section.label == "Regístrate"
-  );
-  const navBarSignIn = navBarSections.find(
-    (section) => section.label == "Acceder"
-  );
-
   return (
     isOpen && (
       <div className={styles.navbar_mobileNavBar}>
@@ -66,9 +51,6 @@ export const AnimatedMobileNavBar = ({
 
             <ul className={styles.navbar_buttonListMobile}>
               {navBarSections.map((section) => {
-                /* if (section.label == "Regístrate" || section.label == "Acceder")
-                  return; */
-
                 if (section.href)
                   return (
                     <li key={section.label} className={styles.navbar_button}>

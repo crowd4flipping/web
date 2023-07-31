@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/globals.scss";
 import Script from "next/script";
 import { CookieBanner } from "../components/cookies/CookieBanner";
 import Head from "next/head";
 import { ErrorBoundary } from "@/components/errors/ErrorBoundary";
 import "@crowd4flipping/ui-components";
+import { useRouter } from "next/router";
+import { useAdQueryTracker } from "@/components/hooks/useAdQueryTracker";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -47,17 +49,6 @@ function MyApp({ Component, pageProps }) {
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
-
-      {/* <Script strategy="lazyOnload" id="google-analitycs">
-        {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-            page_path: window.location.pathname,
-            });
-        `}
-      </Script> */}
 
       <Script id="facebook-pixel">
         {`

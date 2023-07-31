@@ -5,9 +5,6 @@ import Link from "next/link";
 import { MdMenu } from "react-icons/md";
 import { Dispatch, SetStateAction } from "react";
 import { NavBarSection } from "../layouts/types/NavBar";
-import { LinkButton } from "@crowd4flipping/ui-components";
-import { useAdQueryTracker } from "../hooks/useAdQueryTracker";
-import { useRouter } from "next/router";
 import { LinkToPlatformButton } from "../buttons/LinkToPlatformButton";
 
 export const DesktopNavBar = ({
@@ -20,16 +17,7 @@ export const DesktopNavBar = ({
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }) => {
   const navBarStyle = `${isFixed ? styles.navbar_fixed : styles.navbar}`;
-  const { query } = useRouter();
-  const { getAdQueryTracker } = useAdQueryTracker(query);
-  const queryAdTracker = getAdQueryTracker();
-  const queryAd = !queryAdTracker ? "" : `&${queryAdTracker}`;
-  const navBarSignUp = navBarSections.find(
-    (section) => section.label == "Regístrate"
-  );
-  const navBarSignIn = navBarSections.find(
-    (section) => section.label == "Acceder"
-  );
+
   return (
     <nav className={navBarStyle}>
       <div className={styles.navbar_content}>
@@ -49,8 +37,6 @@ export const DesktopNavBar = ({
 
         <ul className={styles.navbar_buttonList}>
           {navBarSections.map((section) => {
-            /*  if (section.label == "Regístrate" || section.label == "Acceder")
-              return; */
             if (section.href)
               return (
                 <li key={section.label} className={styles.navbar_button}>

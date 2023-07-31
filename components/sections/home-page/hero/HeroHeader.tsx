@@ -1,15 +1,8 @@
-import { useAdQueryTracker } from "@/components/hooks/useAdQueryTracker";
 import heroStyles from "./styles/Hero.module.scss";
 import { LinkButton } from "@crowd4flipping/ui-components";
-import { Routes } from "routes/Routes";
-import { useRouter } from "next/router";
 import { LinkToPlatformButton } from "@/components/buttons/LinkToPlatformButton";
 
 export const HeroHeader = () => {
-  const { query } = useRouter();
-  const { getAdQueryTracker } = useAdQueryTracker(query);
-  const queryAd = getAdQueryTracker();
-
   return (
     <div
       className={`${heroStyles.heroSection_header} ${heroStyles.heroSection_header_oneThird}`}
