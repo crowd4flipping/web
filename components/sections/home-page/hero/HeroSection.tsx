@@ -6,6 +6,7 @@ import HeroImage from "@/public/images/invertir-en-inmuebles.webp";
 import HeroImageMobile from "@/public/images/invertir-en-inmuebles-mobile.webp";
 import { LinkButton } from "@crowd4flipping/ui-components";
 import { Routes } from "@/routes/Routes";
+import { LinkToPlatformButton } from "@/components/buttons/LinkToPlatformButton";
 
 export const HeroSection = () => {
   return (
@@ -22,7 +23,7 @@ export const HeroSection = () => {
                   alt="Empieza a invertir en inmuebles"
                   src={HeroImageMobile}
                   priority={true}
-                  />
+                />
               </div>
               <div className={styles.heroSection__hero_image}>
                 <Image
@@ -46,14 +47,9 @@ export const HeroSection = () => {
             Saber más
           </LinkButton>
 
-          <LinkButton
-            size="lg"
-            href={Routes.app().queryHostFW()}
-            variant="primary"
-            fullWidth
-          >
+          <LinkToPlatformButton variant="primary" fullWidth>
             Regístrate gratis
-          </LinkButton>
+          </LinkToPlatformButton>
         </div>
       </div>
     </section>
