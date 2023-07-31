@@ -16,10 +16,6 @@ export const LockedSection = ({
   projectId: string;
   showSignupCard?: boolean;
 }) => {
-  const { query } = useRouter();
-  const { getAdQueryTracker } = useAdQueryTracker(query);
-  const queryAdTracker = getAdQueryTracker();
-  const queryAd = !queryAdTracker ? "" : `?${queryAdTracker}`;
   return (
     <div className={styles.lockedSection}>
       <div className={styles.lockedSection_lockedContent}>

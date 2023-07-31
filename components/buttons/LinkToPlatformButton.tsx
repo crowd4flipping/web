@@ -1,6 +1,6 @@
 import { Routes } from "@/routes/Routes";
 import { LinkButton } from "@crowd4flipping/ui-components";
-import { ReactElement } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { useAdQueryTracker } from "../hooks/useAdQueryTracker";
 import { useRouter } from "next/router";
 
@@ -19,11 +19,11 @@ export const LinkToPlatformButton = ({
   fullWidth = false,
 }: Props) => {
   const { query } = useRouter();
-  const { getAdQueryTracker } = useAdQueryTracker(query);
-  const { concatValue } = getAdQueryTracker();
-  const adQueryIsEmpty = !concatValue ? true : false;
+  const { tracker } = useAdQueryTracker(query);
 
-  const queryAd = adQueryIsEmpty ? "" : `&${concatValue}`;
+  const adQueryIsEmpty = !tracker?.utm_ad ? true : false;
+
+  const queryAd = adQueryIsEmpty ? "" : `&${tracker.utm_ad}`;
   const primaryButtonQueries = `?fw${queryAd}`;
   const primaryHref = Routes.app().host().concat(primaryButtonQueries);
 
@@ -34,7 +34,7 @@ export const LinkToPlatformButton = ({
       </LinkButton>
     );
 
-  const secondaryButtonQueries = adQueryIsEmpty ? "" : `?${concatValue}`;
+  const secondaryButtonQueries = adQueryIsEmpty ? "" : `?${tracker.utm_ad}`;
   const secondaryHref = Routes.app().host().concat(secondaryButtonQueries);
 
   return (
