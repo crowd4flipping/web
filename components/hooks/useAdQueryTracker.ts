@@ -22,10 +22,4 @@ export const useSetCookieTracker = (parsedQuery: ParsedUrlQuery) => {
     const expirationDate = new Date().setMonth(currentDate.getMonth() + 1);
     return new Date(expirationDate);
   };
-
-  const getUtmAdCookie = () => {
-    return document.cookie
-      .split("; ")
-      .find((cookie) => cookie.startsWith("utm_ad="));
-  };
 };
