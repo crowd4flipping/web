@@ -1,8 +1,6 @@
 import { Routes } from "@/routes/Routes";
 import { LinkButton } from "@crowd4flipping/ui-components";
-import { ReactElement, useEffect, useState } from "react";
-import { useAdQueryTracker } from "../hooks/useAdQueryTracker";
-import { useRouter } from "next/router";
+import { ReactElement } from "react";
 
 type Variant = Parameters<typeof LinkButton>[number]["variant"];
 type FullWidth = Parameters<typeof LinkButton>[number]["fullWidth"];
@@ -18,14 +16,9 @@ export const LinkToPlatformButton = ({
   variant,
   fullWidth = false,
 }: Props) => {
-  const { query } = useRouter();
-  const { tracker } = useAdQueryTracker(query);
-
-  const adQueryIsEmpty = !tracker?.utm_ad ? true : false;
-
-  const queryAd = adQueryIsEmpty ? "" : `&${tracker.utm_ad}`;
-  const primaryButtonQueries = `?fw${queryAd}`;
-  const primaryHref = Routes.app().host().concat(primaryButtonQueries);
+  const primaryButtonQueries = "?fw";
+  const appBaseUrl = Routes.app().host();
+  const primaryHref = appBaseUrl.concat(primaryButtonQueries);
 
   if (variant == "primary")
     return (
@@ -34,11 +27,8 @@ export const LinkToPlatformButton = ({
       </LinkButton>
     );
 
-  const secondaryButtonQueries = adQueryIsEmpty ? "" : `?${tracker.utm_ad}`;
-  const secondaryHref = Routes.app().host().concat(secondaryButtonQueries);
-
   return (
-    <LinkButton fullWidth={fullWidth} variant="secondary" href={secondaryHref}>
+    <LinkButton fullWidth={fullWidth} variant="secondary" href={appBaseUrl}>
       {children}
     </LinkButton>
   );
