@@ -1,15 +1,9 @@
 import { ReactElement } from "react";
 import styles from "./styles/LockedSection.module.scss";
-import Link from "next/link";
-import { Routes } from "routes/Routes";
-import { Button } from "@crowd4flipping/ui-components";
-import { useAdQueryTracker } from "@/components/hooks/useAdQueryTracker";
-import { useRouter } from "next/router";
 import { LinkToPlatformButton } from "@/components/buttons/LinkToPlatformButton";
 
 export const LockedSection = ({
   children,
-  projectId,
   showSignupCard = true,
 }: {
   children: ReactElement | ReactElement[];

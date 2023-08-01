@@ -6,9 +6,12 @@ import Head from "next/head";
 import { ErrorBoundary } from "@/components/errors/ErrorBoundary";
 import "@crowd4flipping/ui-components";
 import { useRouter } from "next/router";
-import { useAdQueryTracker } from "@/components/hooks/useAdQueryTracker";
+import { useSetCookieTracker } from "@/components/hooks/useAdQueryTracker";
 
 function MyApp({ Component, pageProps }) {
+  const { query } = useRouter();
+  useSetCookieTracker(query);
+
   return (
     <>
       <Head>

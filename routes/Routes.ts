@@ -4,6 +4,11 @@ import { C4FCloudRoutes } from "./C4FCloudRoutes";
 export class Routes {
   private static cloudRoute = process.env.NEXT_PUBLIC_C4F_CLOUD;
   private static appRoute = process.env.NEXT_PUBLIC_C4F_APP;
+  private static webSiteRoute = process.env.NEXT_PUBLIC_BASE_URL;
+
+  static web() {
+    return this.webSiteRoute;
+  }
 
   static app() {
     return new C4FAppRoutes(this.appRoute);
