@@ -8,12 +8,9 @@ type QueryTracker = {
 
 export const useSetCookieTracker = (parsedQuery: ParsedUrlQuery) => {
   useEffect(() => {
-    const utmAdCookie = getUtmAdCookie();
-    if (utmAdCookie) return;
-
     const { utm_ad } = parsedQuery as QueryTracker;
     if (!utm_ad) return;
-    
+
     const expirationDate = getCookieExpirationDate();
     const domain = Routes.web();
 
