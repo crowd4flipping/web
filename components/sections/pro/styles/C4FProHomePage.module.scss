@@ -15,10 +15,13 @@
   }
 
   &__hero_bg_img {
-    background-image: linear-gradient(270deg, #00193d00, #010f2400, #00193d00),
-      url("../../../../public/images/home-page/c4f_pro_hero_bg.svg");
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin-top: 12rem;
+    background-image: url("../../../../public/images/home-page/c4f_pro_hero_bg.svg");
     background-repeat: no-repeat;
-    background-size: 100% 80%;
+    background-size: 100% 100%;
   }
 
   &__nav_and_hero {

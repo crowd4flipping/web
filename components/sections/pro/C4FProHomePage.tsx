@@ -15,7 +15,8 @@ export const C4FProHomePage = () => {
         />
       </Head>
       <main className={styles.c4fProHomePage}>
-        <div className={styles.c4fProHomePage__hero_bg_img}>
+        <div style={{ position: "relative" }}>
+          <div className={styles.c4fProHomePage__hero_bg_img}> </div>
           <div className={styles.c4fProHomePage__lr_padding}>
             <div className={styles.c4fProHomePage__nav_and_hero}>
               <nav className={styles.c4fProHomePage__navbar}>
