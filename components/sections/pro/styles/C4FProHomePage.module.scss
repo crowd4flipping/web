@@ -1,0 +1,57 @@
+@import "../../../../styles/theme/Utils.module.scss";
+@import "../../../../styles/theme/Default.module.scss";
+
+.c4fProHomePage {
+  background-color: var(--color-dark-primary);
+  background: linear-gradient(
+    270deg,
+    #00193d,
+    var(--color-dark-primary),
+    #00193d
+  );
+
+  &__lr_padding {
+    @extend %pagePaddingX;
+  }
+
+  &__hero_bg_img {
+    background-image: linear-gradient(270deg, #00193d00, #010f2400, #00193d00),
+      url("../../../../public/images/home-page/c4f_pro_hero_bg.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 80%;
+  }
+
+  &__nav_and_hero {
+    position: relative;
+    height: 100vh;
+  }
+
+  &__navbar {
+    position: absolute;
+    top: 0;
+  }
+
+  &__hero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+  }
+
+  &__hero_content {
+    grid-column: 1 / 3;
+  }
+}
+
+.c4fProHomePage {
+  h1 {
+    color: white;
+  }
+
+  h2 {
+    color: white;
+  }
+
+  p {
+    color: white;
+  }
+}

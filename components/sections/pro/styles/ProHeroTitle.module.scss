@@ -1,0 +1,38 @@
+.proHeroTitle {
+  position: relative;
+
+  &__bottom_title {
+    position: absolute;
+    top: 0;
+  }
+
+  &__hero_shadow {
+    opacity: 0.5;
+    filter: blur(5px);
+    background-image: linear-gradient(
+      90deg,
+      var(--color-primary-hover),
+      var(--color-primary-hover),
+      #ff38fb
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+
+  &__hero_gradient_text {
+    background-image: linear-gradient(
+      90deg,
+      var(--color-primary-hover),
+      var(--color-primary-hover),
+      #ff38fb
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+}
