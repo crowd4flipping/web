@@ -3,17 +3,41 @@
 .howItWorks {
   @extend %pagePaddingX;
 
+  &__content{
+    height: 15rem;
+    width: 100%;
+  //  background-color:green;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &__point_one{
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  &__point_one_title{
+    margin: 1rem 0;
+  }
+
   &__title {
     text-align: center;
   }
 
   &__dashed_content{
+    padding: 2rem 0;
     display: flex;
     justify-content: center;
+    height: 100%;
+    width:100%;
+    grid-column: 3/4;
   }
 
   &__dashed_line_wrapper {
-    height: 15rem;
-    width: 10%;
+    width: 100%;
+    height: 100%;
+   // background-color: rgba(255, 0, 0, 0.437);
   }
 }

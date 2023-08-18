@@ -6,12 +6,10 @@ $color: #294367;
   height: 100%;
 
   &__line {
-    margin: 2rem 0;
     border-right: 3px dashed $color;
   }
 
   &__line_rounded_right {
-    margin: 2rem 0;
     border-right: 3px dashed $color;
     border-bottom: 3px dashed $color;
     border-bottom-right-radius: 7rem;
