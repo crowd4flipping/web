@@ -1,0 +1,19 @@
+@import "../../../../styles/theme/Utils.module.scss";
+
+.howItWorks {
+  @extend %pagePaddingX;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__dashed_content{
+    display: flex;
+    justify-content: center;
+  }
+
+  &__dashed_line_wrapper {
+    height: 15rem;
+    width: 10%;
+  }
+}

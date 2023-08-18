@@ -1,7 +1,7 @@
+import { DashedLine } from "./DasedLine";
 import styles from "./styles/ProDescriptionSection.module.scss";
 
 export const ProDescriptionSection = () => {
-  const lines = Array(7).fill("");
   return (
     <section className={styles.proDescriptionSection}>
       <div className={styles.proDescriptionSection__content}>
@@ -23,8 +23,8 @@ export const ProDescriptionSection = () => {
         </p>
       </div>
 
-      <div className={styles.proDescriptionSection__line_wrapper}>
-        <div className={styles.proDescriptionSection__line}></div>
+      <div className={styles.proDescriptionSection__dashed_line_wrapper}>
+        <DashedLine />
       </div>
 
       <div className={styles.proDescriptionSection__content}>
@@ -43,8 +43,9 @@ export const ProDescriptionSection = () => {
           <strong> desarrollo, renovación o revalorización.</strong>
         </p>
       </div>
-      <div className={styles.proDescriptionSection__line_wrapper}>
-        <div className={styles.proDescriptionSection__line}></div>
+
+      <div className={styles.proDescriptionSection__bottom_dashed_line_wrapper}>
+        <DashedLine />
       </div>
     </section>
   );

@@ -22,7 +22,6 @@
   }
 
   &__c4f {
-    font-size: 4rem;
     font-weight: 200;
     letter-spacing: 0.3rem;
   }
@@ -33,8 +32,12 @@
     font-weight: 300;
     box-shadow: 0px 0px 15px #1ecbff8b;
 
-    &:hover{
+    &:hover {
       box-shadow: 0px 0px 30px #71dcfc8b;
     }
   }
+}
+
+h2.proHeroHeader__c4f {
+  font-size: 4rem;
 }
