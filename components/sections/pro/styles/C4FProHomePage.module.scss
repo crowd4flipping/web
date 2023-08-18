@@ -9,40 +9,6 @@
     var(--color-dark-primary),
     #00193d
   );
-
-  &__lr_padding {
-    @extend %pagePaddingX;
-  }
-
-  &__hero_bg_img {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    margin-top: 12rem;
-    background-image: url("../../../../public/images/home-page/c4f_pro_hero_bg.svg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-  }
-
-  &__nav_and_hero {
-    position: relative;
-    height: 100vh;
-  }
-
-  &__navbar {
-    position: absolute;
-    top: 0;
-  }
-
-  &__hero {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 100%;
-  }
-
-  &__hero_content {
-    grid-column: 1 / 3;
-  }
 }
 
 .c4fProHomePage {
