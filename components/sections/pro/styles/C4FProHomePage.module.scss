@@ -9,6 +9,11 @@
     var(--color-dark-primary),
     #00193d
   );
+
+  &__content {
+    @extend %pagePaddingX;
+    padding: 0 10rem;
+  }
 }
 
 .c4fProHomePage {
@@ -20,12 +25,21 @@
     color: white;
     font-size: 2.5rem;
   }
- 
+
   h3 {
     color: white;
   }
 
   p {
     color: white;
+  }
+  
+  label {
+    font-size: var(--text-size);
+  }
+
+  fieldset{
+    appearance: none;
+    border: none;
   }
 }

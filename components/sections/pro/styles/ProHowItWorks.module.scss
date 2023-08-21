@@ -1,22 +1,14 @@
 @import "../../../../styles/theme/Utils.module.scss";
 
 .howItWorks {
-  @extend %pagePaddingX;
+  /* @extend %pagePaddingX; */
 
   &__content {
-    padding: 0 10rem;
+   /*  padding: 0 10rem; */
     height: 15rem;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-  }
-  
-  &__bottom_content {
-    padding: 0 10rem;
-    height: 15rem;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
   }
 
   &__icon {
@@ -47,15 +39,10 @@
     width: 100%;
     grid-column: 3/5;
   }
-  
+
   &__top_dashed_content {
     @extend .howItWorks__dashed_content;
     grid-column: 3/4;
-  }
-  
-  &__bottom_dashed_content {
-    @extend .howItWorks__dashed_content;
-    grid-column: 2/4;
   }
 
   &__dashed_line_wrapper {
@@ -71,7 +58,7 @@
   }
 
   &__dashed_content_right {
-    padding: 2rem 2rem;
+    padding: 2rem;
     display: flex;
     justify-content: center;
     height: 100%;

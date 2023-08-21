@@ -1,0 +1,126 @@
+@import "../../../../styles/theme/Utils.module.scss";
+@import "../../../../styles/theme/Default.module.scss";
+
+%input {
+  padding: 0.3rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  border: none;
+  background-color: #122745;
+  caret-color: white;
+  color: white;
+}
+
+.proFormSection {
+  padding: 15rem 0 5rem 0;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__form_content {
+    height: 10rem;
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+  &__field_title {
+    padding-bottom: 1rem;
+    font-size: 1.3rem !important;
+    font-weight: 500;
+  }
+
+  &__asset_type {
+    padding: 0 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /*  justify-content: space-between; */
+
+    & input[type="checkbox"] {
+      border: none;
+
+      transform: scale(1.5);
+
+      &:checked {
+        accent-color: var(--color-primary);
+      }
+    }
+  }
+
+  &__checkbox_wrapper {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__comments_wrapper {
+    display: flex;
+    flex-direction: column;
+
+    & textarea {
+      border: none;
+      max-width: 100%;
+      min-width: 100%;
+      border-radius: 0.3rem;
+      background-color: var(--color-surface);
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 0.7rem 0.3rem;
+      font-size: 1rem;
+
+      border: none;
+      background-color: #122745;
+      caret-color: white;
+      color: white;
+    }
+  }
+
+  &__name_email {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  &__phone {
+    width: 50%;
+    padding-right: 1rem;
+  }
+
+  &__input_wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 1.5rem;
+
+    & input[type="text"] {
+      @extend %input;
+    }
+
+    & input[type="email"] {
+      @extend %input;
+    }
+
+    & input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    & input[type="number"] {
+      appearance: textfield;
+      -moz-appearance: textfield;
+      @extend %input;
+    }
+  }
+
+  &__termsAndConditions {
+    & label {
+      font-size: medium;
+    }
+
+    & a {
+      color: var(--color-primary-hover);
+    }
+  }
+}

@@ -7,7 +7,7 @@
   padding-bottom: 5rem;
   @extend %pagePaddingX;
 
-  @include isMobile{
+  @include isMobile {
     max-width: 100%;
   }
 
@@ -23,17 +23,17 @@
       margin-top: 2rem;
     }
   }
- 
+
   &_icon {
-    margin-bottom: .3rem;
+    margin-bottom: 0.3rem;
     width: 2rem;
-    height: 2rem; 
+    height: 2rem;
   }
 
-  &_faceBook{
+  &_faceBook {
     color: #3b5998;
   }
-  &_linkedin{
+  &_linkedin {
     color: #0e76a8;
   }
 
@@ -101,16 +101,16 @@
     align-items: flex-start;
     gap: 1rem;
     margin-top: 2rem;
+
+    & input[type="checkbox"] {
+      height: 2rem;
+      width: 2rem;
+      accent-color: var(--color-primary);
+      border: none;
+    }
   }
 
-  &_checkBoxLabel{
+  &_checkBoxLabel {
     font-size: small;
-  }
-
-  & input[type="checkbox"] {
-    height: 2rem;
-    width: 2rem;
-    accent-color: var(--color-primary);
-    border: none;
   }
 }

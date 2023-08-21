@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Routes } from "routes/Routes";
 import { Loader } from "@/components/loaders/Loader";
 import { Button } from "@crowd4flipping/ui-components";
+import { TermsAndConditionsCheckbox } from "./TermsAndConditionsCheckbox";
 
 export const ContactFormItem = () => {
   const router = useRouter();
@@ -94,23 +95,7 @@ export const ContactFormItem = () => {
         ></textarea>
       </div>
 
-      <div className={styles.contactForm_checkBoxWrapper}>
-        <input
-          id="terms-and-conditions"
-          type="checkbox"
-          name="termsAndConditions"
-          checked={state.termsAndConditions}
-          onChange={(e) => handleChange(e)}
-        />
-        <label
-          htmlFor="terms-and-conditions"
-          className={styles.contactForm_checkBoxLabel}
-        >
-          Autorizo el tratamiento de mis datos para recibir una respuesta a mi
-          consulta según la{" "}
-          <Link href="/docs/aviso-legal">Política de Privacidad</Link>
-        </label>
-      </div>
+      <TermsAndConditionsCheckbox isChecked={state.termsAndConditions} onChange={handleChange} />
       <ReCAPTCHA
         ref={captcha}
         sitekey="6LeW0vYiAAAAABvzPB2SSZrvaz3d7ptD70HNJak4"
