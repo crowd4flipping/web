@@ -3,41 +3,79 @@
 .howItWorks {
   @extend %pagePaddingX;
 
-  &__content{
+  &__content {
+    padding: 0 10rem;
     height: 15rem;
     width: 100%;
-  //  background-color:green;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
   }
-
-  &__point_one{
-    grid-column: 1/3;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
+  
+  &__bottom_content {
+    padding: 0 10rem;
+    height: 15rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
   }
 
-  &__point_one_title{
-    margin: 1rem 0;
+  &__icon {
+    width: 2rem;
+    height: 2rem;
   }
 
   &__title {
     text-align: center;
   }
 
-  &__dashed_content{
+  &__point_content_left {
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__point_title {
+    margin: 1rem 0;
+  }
+
+  &__dashed_content {
     padding: 2rem 0;
     display: flex;
     justify-content: center;
     height: 100%;
-    width:100%;
+    width: 100%;
+    grid-column: 3/5;
+  }
+  
+  &__top_dashed_content {
+    @extend .howItWorks__dashed_content;
     grid-column: 3/4;
+  }
+  
+  &__bottom_dashed_content {
+    @extend .howItWorks__dashed_content;
+    grid-column: 2/4;
   }
 
   &__dashed_line_wrapper {
     width: 100%;
     height: 100%;
-   // background-color: rgba(255, 0, 0, 0.437);
+  }
+
+  &__point_content_right {
+    grid-column: 4/6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__dashed_content_right {
+    padding: 2rem 2rem;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    grid-column: 2/4;
   }
 }
