@@ -95,7 +95,13 @@ export const ContactFormItem = () => {
         ></textarea>
       </div>
 
-      <TermsAndConditionsCheckbox isChecked={state.termsAndConditions} onChange={handleChange} />
+      <div className={styles.contactForm__termsAndConditions}>
+        <TermsAndConditionsCheckbox
+          missingCheck={false}
+          isChecked={state.termsAndConditions}
+          onChange={handleChange}
+        />
+      </div>
       <ReCAPTCHA
         ref={captcha}
         sitekey="6LeW0vYiAAAAABvzPB2SSZrvaz3d7ptD70HNJak4"

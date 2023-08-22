@@ -1,47 +1,64 @@
 import { ChangeEvent } from "react";
-import { TermsAndConditionsCheckbox } from "../home-page/bottom-section/TermsAndConditionsCheckbox";
 import styles from "./styles/ProFormSection.module.scss";
 
 type Props = {
-  isChecked: boolean;
-  onClickTC: (event: ChangeEvent<HTMLInputElement>) => void;
   handleInputs: (event: ChangeEvent<HTMLInputElement>) => void;
+  missingInputs: () => Array<"name" | "email">;
 };
 
-export const ProFormStepTwo = ({ isChecked, onClickTC }: Props) => {
+export const ProFormStepTwo = ({ handleInputs, missingInputs }: Props) => {
   return (
-    <div>
-      <div className={styles.proFormSection__name_email}>
+    <>
+      <div className={styles.proFormSection__name_phone}>
         <div className={styles.proFormSection__input_wrapper}>
-          <label htmlFor="" className={styles.proFormSection__field_title}>
+          <label htmlFor="name" className={styles.proFormSection__field_title}>
             Nombre
+            {missingInputs().includes("name") && (
+              <span className={styles.proFormSection__error_field}>
+                Escribe tu nombre
+              </span>
+            )}
           </label>
-          <input type="text"></input>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            onChange={handleInputs}
+          ></input>
         </div>
 
         <div className={styles.proFormSection__input_wrapper}>
-          <label htmlFor="" className={styles.proFormSection__field_title}>
+          <label htmlFor="phone" className={styles.proFormSection__field_title}>
             Teléfono
           </label>
-          <input type="number"></input>
+          <input
+            type="number"
+            name="phone"
+            id="phone"
+            onChange={handleInputs}
+          ></input>
         </div>
       </div>
 
-      <div className={styles.proFormSection__phone}>
+      <div className={styles.proFormSection__email}>
         <div className={styles.proFormSection__input_wrapper}>
           <label htmlFor="email" className={styles.proFormSection__field_title}>
             Email
+            {missingInputs().includes("email") && (
+              <span className={styles.proFormSection__error_field}>
+                Escribe tu email
+              </span>
+            )}
           </label>
-          <input type="email" name="email" id="email"></input>
+
+          <input
+            type="email"
+            name="email"
+            id="email"
+            onChange={handleInputs}
+          ></input>
         </div>
       </div>
-
-      <div className={styles.proFormSection__termsAndConditions}>
-        <TermsAndConditionsCheckbox
-          isChecked={isChecked}
-          onChange={onClickTC}
-        />
-      </div>
-    </div>
+    </>
   );
 };

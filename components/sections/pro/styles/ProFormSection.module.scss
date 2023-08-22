@@ -12,37 +12,46 @@
 }
 
 .proFormSection {
-  padding: 15rem 0 5rem 0;
+  padding: 7rem 0 5rem 0;
 
   &__form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-  }
 
-  &__form_content {
-    height: 10rem;
-    width: 100%;
-    border-radius: 1rem;
+    & button {
+      color: var(--color-dark-primary);
+    }
   }
 
   &__field_title {
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     font-size: 1.3rem !important;
     font-weight: 500;
   }
 
+  &__error_field {
+    color: yellow;
+    font-size: 1rem;
+    padding-left: 1rem;
+  }
+
+  &__field_subtitle {
+    color: #b5ccd6 !important;
+    padding-bottom: 1rem;
+    padding-top: 0.3rem;
+  }
+
   &__asset_type {
-    padding: 0 8px;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    /*  justify-content: space-between; */
+    padding: 0.5rem 0;
 
     & input[type="checkbox"] {
       border: none;
-
-      transform: scale(1.5);
+      height: 1.2rem;
+      width: 1.2rem;
 
       &:checked {
         accent-color: var(--color-primary);
@@ -52,7 +61,8 @@
 
   &__checkbox_wrapper {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 0.3rem;
   }
 
   &__comments_wrapper {
@@ -76,13 +86,13 @@
     }
   }
 
-  &__name_email {
+  &__name_phone {
     display: flex;
     width: 100%;
     gap: 2rem;
   }
 
-  &__phone {
+  &__email {
     width: 50%;
     padding-right: 1rem;
   }
@@ -91,7 +101,6 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    padding-bottom: 1.5rem;
 
     & input[type="text"] {
       @extend %input;
@@ -115,6 +124,8 @@
   }
 
   &__termsAndConditions {
+    padding-bottom: 1rem;
+
     & label {
       font-size: medium;
     }

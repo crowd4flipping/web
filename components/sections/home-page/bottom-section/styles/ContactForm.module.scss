@@ -11,6 +11,10 @@
     max-width: 100%;
   }
 
+  & label a{
+    color: var(--color-primary);
+  }
+
   &_iconsWrapper {
     margin-top: 1rem;
   }
@@ -96,17 +100,27 @@
     }
   }
 
+  &__termsAndConditions {
+    padding-top: 2rem;
+  }
+
   &_checkBoxWrapper {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
-    margin-top: 2rem;
 
     & input[type="checkbox"] {
-      height: 2rem;
-      width: 2rem;
+      height: 1.5rem;
+      width: 1.5rem;
       accent-color: var(--color-primary);
-      border: none;
+    }
+
+    &_missing{
+      color: yellow;
+      & input[type="checkbox"] {
+        outline-offset: 1px;
+        outline: 2px solid rgba(255, 255, 0, 0.48);
+      }
     }
   }
 

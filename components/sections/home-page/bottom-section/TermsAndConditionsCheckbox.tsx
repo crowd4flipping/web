@@ -5,11 +5,21 @@ import Link from "next/link";
 type Props = {
   isChecked: boolean;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  missingCheck: boolean;
 };
 
-export const TermsAndConditionsCheckbox = ({ isChecked, onChange }: Props) => {
+export const TermsAndConditionsCheckbox = ({
+  isChecked,
+  onChange,
+  missingCheck,
+}: Props) => {
+  const checkBoxStyles =
+    missingCheck && styles.contactForm_checkBoxWrapper_missing;
+
+    console.log(checkBoxStyles);
+
   return (
-    <div className={styles.contactForm_checkBoxWrapper}>
+    <div className={`${styles.contactForm_checkBoxWrapper} ${checkBoxStyles}`}>
       <input
         id="terms-and-conditions"
         type="checkbox"
