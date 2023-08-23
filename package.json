@@ -17,6 +17,7 @@
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.7",
     "@react-google-maps/api": "^2.18.1",
+    "@rive-app/react-canvas": "^4.1.4",
     "axios": "^1.1.2",
     "framer-motion": "^7.3.6",
     "next": "12.3.1",
