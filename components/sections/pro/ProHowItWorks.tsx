@@ -2,11 +2,11 @@ import styles from "./styles/ProHowItWorks.module.scss";
 import { ProHowItWorksPoint } from "./ProHowItWorksPoint";
 import { PainPointIconOne } from "@/components/icons/PainPointIconOne";
 import { ProHowItWorksTopPoint } from "./ProHowItWorksTopPoint";
-import { DashedLine } from "./DasedLine";
 import { ProBottomSLine } from "./ProBottomSLine";
 import { PainPointIconTwo } from "@/components/icons/PainPointIconTwo";
 import { PainPointIconThree } from "@/components/icons/PainPointIconThree";
 import { PainPointIconFour } from "@/components/icons/PainPointIconFour";
+import { DashedLine } from "./DasedLine";
 
 export const ProHowItWorks = () => {
   return (
@@ -50,8 +50,13 @@ export const ProHowItWorks = () => {
         title="SALIDA ESTRATÉGICA"
         content="Cuando es oportuno, aplicamos estrategias de salidas alineadas con objetivos y condiciones de mercado. "
       />
-      <div className={styles.howItWorks__content}>
+
+      <div className={styles.howItWorks__sLine}>
         <ProBottomSLine />
+      </div>
+      
+      <div className={styles.howItWorks__vertical_line}>
+        <DashedLine />
       </div>
     </section>
   );

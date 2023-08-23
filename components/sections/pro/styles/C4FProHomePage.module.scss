@@ -17,11 +17,11 @@
     @include isLarge {
       padding: 0 5rem;
     }
-    
+
     @include isMediumRange {
       padding: 0;
     }
-    
+
     @include isSmallerRange {
       padding: 0;
     }
@@ -35,11 +35,11 @@
     @include isLarge {
       font-size: 3rem !important;
     }
-   
+
     @include isMediumRange {
       font-size: 3.5rem !important;
     }
-    
+
     @include isSmallerRange {
       font-size: 2.5rem !important;
     }
@@ -48,6 +48,10 @@
   h2 {
     color: white;
     font-size: 2.5rem;
+
+    @include isMobile {
+      font-size: 2rem !important;
+    }
   }
 
   h3 {

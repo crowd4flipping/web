@@ -8,11 +8,38 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+
+    @include isSmallerRange {
+      height: 10rem;
+      margin: 2rem 0;
+      display: block;
+    }
+
+    @include isMobile {
+      margin: 4rem 0;
+    }
   }
 
   &__content {
     @extend .howItWorks__top_content;
     height: 10rem;
+  }
+
+  &__sLine {
+    height: 10rem;
+
+    @include isSmallerRange {
+      display: none;
+    }
+  }
+
+  &__vertical_line{
+     display: none; 
+    
+    @include isSmallerRange {
+      display: block;
+      height: 10rem;
+    }
   }
 
   &__icon {
@@ -31,6 +58,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
+    @include isMobile {
+      padding-left: 2.5rem;
+    }
   }
 
   &__number {
@@ -42,9 +73,16 @@
     font-weight: 900;
     z-index: 0;
 
-    &_one{
+    &_one {
       @extend .howItWorks__number;
       left: -2rem;
+    }
+
+    @include isSmallerRange {
+      font-size: 10rem;
+      top: 1rem;
+      bottom: -3rem;
+      left: -1.5rem;
     }
   }
 
@@ -63,6 +101,10 @@
     height: 100%;
     width: 100%;
     grid-column: 3/5;
+
+    @include isSmallerRange {
+      display: none;
+    }
   }
 
   &__top_dashed_content {
@@ -82,6 +124,10 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
+    @include isMobile {
+      padding-left: 2.5rem;
+    }
   }
 
   &__dashed_content_right {
@@ -91,5 +137,9 @@
     height: 100%;
     width: 100%;
     grid-column: 2/4;
+
+    @include isSmallerRange {
+      display: none;
+    }
   }
 }
