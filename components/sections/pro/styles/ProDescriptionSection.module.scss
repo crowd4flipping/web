@@ -2,15 +2,9 @@
 @import "../../../../styles/theme/Default.module.scss";
 
 .proDescriptionSection {
-  /* @extend %pagePaddingX; */
-
   margin-top: 5rem;
 
   text-align: center;
-
-  /* &__content {
-    padding: 0 20%;
-  } */
 
   &__title {
     margin-bottom: 2rem;
@@ -21,12 +15,12 @@
     }
   }
 
-  &__dashed_line_wrapper{
+  &__dashed_line_wrapper {
     height: 7rem;
     margin: 2rem 0;
   }
-  
-  &__bottom_dashed_line_wrapper{
+
+  &__bottom_dashed_line_wrapper {
     margin: 2rem 0;
     height: 13rem;
   }

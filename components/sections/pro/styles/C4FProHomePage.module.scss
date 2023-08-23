@@ -13,12 +13,36 @@
   &__content {
     @extend %pagePaddingX;
     padding: 0 10rem;
+
+    @include isLarge {
+      padding: 0 5rem;
+    }
+    
+    @include isMediumRange {
+      padding: 0;
+    }
+    
+    @include isSmallerRange {
+      padding: 0;
+    }
   }
 }
 
 .c4fProHomePage {
   h1 {
     color: white;
+
+    @include isLarge {
+      font-size: 3rem !important;
+    }
+   
+    @include isMediumRange {
+      font-size: 3.5rem !important;
+    }
+    
+    @include isSmallerRange {
+      font-size: 2.5rem !important;
+    }
   }
 
   h2 {
@@ -33,12 +57,12 @@
   p {
     color: white;
   }
-  
+
   label {
     font-size: var(--text-size);
   }
 
-  fieldset{
+  fieldset {
     appearance: none;
     border: none;
   }

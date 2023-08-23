@@ -1,4 +1,5 @@
 @import "../../../../styles/theme/Default.module.scss";
+@import "../../../../styles/theme/Utils.module.scss";
 
 .proHeroHeader {
   height: 100%;
@@ -9,22 +10,54 @@
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
+
+    @include isLarge {
+      gap: 1rem;
+    }
+
+    @include isMediumRange {
+      gap: 1.5rem;
+    }
+
+    @include isSmallerRange {
+      gap: 1.5rem;
+    }
   }
 
   &__divider {
     height: 1px;
     width: 100%;
     background-image: linear-gradient(90deg, white, transparent);
+
+    @include isMediumRange {
+      background-image: linear-gradient(90deg, transparent, white, transparent);
+    }
+
+    @include isSmallerRange {
+      background-image: linear-gradient(90deg, transparent, white, transparent);
+    }
   }
 
   &__c4f_content {
     display: flex;
     align-items: flex-end;
+    
+    @include isMediumRange {
+      justify-content: center;
+    }
+
+    @include isSmallerRange {
+      justify-content: center;
+    }
   }
 
   &__c4f {
     font-weight: 200;
     letter-spacing: 0.3rem;
+
+    @include isSmallerRange {
+      letter-spacing: .15rem;
+    }
   }
 
   &__button button {
@@ -36,9 +69,33 @@
     &:hover {
       box-shadow: 0px 0px 30px #71dcfc8b;
     }
+
+    @include isLarge {
+      font-size: 1.5rem;
+    }
+
+    @include isSmallerRange {
+      font-size: 1.2rem;
+    }
   }
 }
 
 h2.proHeroHeader__c4f {
   font-size: 4rem;
+
+  @include isLarge {
+    font-size: 3rem !important;
+  }
+
+  @include isMediumRange {
+    font-size: 3rem;
+  }
+
+  @include isSmallerRange {
+    font-size: 2.5rem;
+  }
+
+  @include isSmallerRange {
+    font-size: 1.8rem;
+  }
 }

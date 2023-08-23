@@ -1,8 +1,26 @@
+@import "../../../../styles/theme/Utils.module.scss";
+
+
 .proTag {
   position: relative;
 
   height: 70px;
   width: 140px;
+
+  @include isLarge {
+    height: 55px;
+    width: 110px;
+  }
+  
+  @include isMediumRange {
+    height: 55px;
+    width: 110px;
+  }
+ 
+  @include isSmallerRange {
+    height: 35px;
+    width: 70px;
+  }
 
   &__container {
     position: relative;
@@ -32,5 +50,20 @@
     font-weight: 100;
     letter-spacing: 0.3rem;
     margin-left: 0.2rem;
+    height: 100%;
+    width: 100%;
+    
+    @include isLarge {
+      font-size: 2.7rem !important;
+    }
+    
+    @include isMediumRange {
+      font-size: 2.7rem !important;
+    }
+    
+    @include isSmallerRange {
+      letter-spacing: 0.2rem;
+      font-size: 1.6rem !important;
+    }
   }
 }
