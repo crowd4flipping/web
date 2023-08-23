@@ -26,6 +26,14 @@
       padding: 0;
     }
   }
+
+  &__form_wrapper {
+    padding: 7rem 0 5rem 0;
+
+    @include isMobile {
+      padding: 4rem 0 5rem 0;
+    }
+  }
 }
 
 .c4fProHomePage {

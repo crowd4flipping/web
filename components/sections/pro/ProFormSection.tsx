@@ -148,7 +148,7 @@ export const ProFormSection = () => {
   };
 
   return (
-    <section >
+    <section className={styles.proFormSection}>
       <ContentCard
         theme="dark"
         title={formHeader[step].title}

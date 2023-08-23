@@ -1,3 +1,5 @@
+@import "../../../styles/theme/Utils.module.scss";
+
 $cardBorderRadius: 0.7rem;
 $borderRadius: 0.5rem;
 $dark-card-color: #294367;
@@ -9,6 +11,10 @@ $dark-surface-color: #122745;
   background-color: var(--card-color);
   display: inline-block;
   width: 100%;
+
+  @include isMobile {
+    padding: 1rem;
+  }
 
   &__darkTheme {
     color: white;

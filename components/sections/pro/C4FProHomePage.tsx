@@ -4,7 +4,6 @@ import { ProHeroSection } from "./ProHeroSection";
 import { ProDescriptionSection } from "./ProDescriptionSection";
 import { ProHowItWorks } from "./ProHowItWorks";
 import { ProFormSection } from "./ProFormSection";
-import formStyles from "./styles/ProFormSection.module.scss";
 
 export const C4FProHomePage = () => {
   return (
@@ -22,11 +21,11 @@ export const C4FProHomePage = () => {
           <ProDescriptionSection />
 
           <ProHowItWorks />
+        </div>
 
-          <div className={formStyles.proFormSection}>
-            <div id="contact">
-              <ProFormSection />
-            </div>
+        <div className={styles.c4fProHomePage__form_wrapper}>
+          <div id="contact">
+            <ProFormSection />
           </div>
         </div>
       </main>
