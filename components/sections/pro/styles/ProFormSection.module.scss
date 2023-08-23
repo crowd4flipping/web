@@ -103,11 +103,20 @@
     display: flex;
     width: 100%;
     gap: 2rem;
+
+    @include isMobile {
+      flex-direction: column;
+    }
   }
 
   &__email {
     width: 50%;
     padding-right: 1rem;
+
+    @include isMobile {
+      padding-right: 0;
+      width: 100%;
+    }
   }
 
   &__input_wrapper {
