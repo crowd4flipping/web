@@ -58,7 +58,7 @@
     font-size: 2.5rem;
 
     @include isMobile {
-      font-size: 2rem !important;
+      font-size: 2rem;
     }
   }
 

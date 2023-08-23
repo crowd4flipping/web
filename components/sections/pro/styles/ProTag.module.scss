@@ -21,6 +21,11 @@
     height: 35px;
     width: 70px;
   }
+  
+  @include isMobile {
+    height: 27px;
+    width: 53px;
+  }
 
   &__container {
     position: relative;
@@ -32,6 +37,10 @@
       rgba(255, 255, 255, 0.093),
       rgba(255, 255, 255, 0.474)
     );
+
+    @include isMobile {
+      border-radius: 0.1rem;
+    }
   }
 
   &__container_content {
@@ -40,6 +49,10 @@
     margin: 1px;
     border-radius: 0.3rem;
     background-color: #19273e;
+
+    @include isMobile {
+      border-radius: 0.1rem;
+    }
   }
 
   &__text {
@@ -64,6 +77,11 @@
     @include isSmallerRange {
       letter-spacing: 0.2rem;
       font-size: 1.6rem !important;
+    }
+
+    @include isMobile {
+      font-size: 1.2rem !important;
+      margin-left: 0.1rem;
     }
   }
 }
