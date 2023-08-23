@@ -67,8 +67,8 @@
     }
   }
 
-  &__button button {
-    color: var(--color-dark-primary);
+  &__button a div {
+    color: var(--color-dark-primary) !important;
     font-size: 1.7rem;
     font-weight: 300;
     box-shadow: 0px 0px 15px #1ecbff8b;
