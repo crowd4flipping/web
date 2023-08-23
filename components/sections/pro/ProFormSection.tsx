@@ -117,10 +117,11 @@ export const ProFormSection = () => {
       setMissingMandatoryInput(["asset-types"]);
       return;
     }
-
+    
     if (emptyInputs) {
       setMissingMandatoryInput(["email", "name"]);
-      missingData = true;
+      if (!acceptedTC) setMissingTC(true);
+      return;
     }
 
     if (!inputData.email) {
@@ -147,7 +148,7 @@ export const ProFormSection = () => {
   };
 
   return (
-    <section className={styles.proFormSection}>
+    <section >
       <ContentCard
         theme="dark"
         title={formHeader[step].title}

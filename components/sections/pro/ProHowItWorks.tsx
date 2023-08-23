@@ -4,6 +4,9 @@ import { PainPointIconOne } from "@/components/icons/PainPointIconOne";
 import { ProHowItWorksTopPoint } from "./ProHowItWorksTopPoint";
 import { DashedLine } from "./DasedLine";
 import { ProBottomSLine } from "./ProBottomSLine";
+import { PainPointIconTwo } from "@/components/icons/PainPointIconTwo";
+import { PainPointIconThree } from "@/components/icons/PainPointIconThree";
+import { PainPointIconFour } from "@/components/icons/PainPointIconFour";
 
 export const ProHowItWorks = () => {
   return (
@@ -16,36 +19,36 @@ export const ProHowItWorks = () => {
         icon={<PainPointIconOne />}
         title="ANÁLISIS DE MERCADO"
         content="Estudiamos tendencias y datos para identificar áreas prometedoras en
-          el mercado inmobiliario."
+        el mercado inmobiliario."
       />
 
       <ProHowItWorksPoint
         rounded="bl"
-        icon={<PainPointIconOne />}
-        title="ANÁLISIS DE MERCADO"
-        content="Estudiamos tendencias y datos para identificar áreas prometedoras en
-          el mercado inmobiliario."
+        number={2}
+        icon={<PainPointIconTwo />}
+        title="SELECCIÓN ESTRATÉGICA"
+        content="Elegimos propiedades que se ajusten a la estrategia y objetivos del inversor. "
       />
       <ProHowItWorksPoint
+        number={3}
         rounded="br"
-        icon={<PainPointIconOne />}
-        title="ANÁLISIS DE MERCADO"
-        content="Estudiamos tendencias y datos para identificar áreas prometedoras en
-          el mercado inmobiliario."
+        icon={<PainPointIconThree />}
+        title="EVALUACIÓN RIGUROSA"
+        content="Realizamos análisis detallados y due diligence para evaluar la viabilidad y riesgo de cada oportunidad. "
       />
       <ProHowItWorksPoint
+        number={4}
         rounded="bl"
-        icon={<PainPointIconOne />}
-        title="ANÁLISIS DE MERCADO"
-        content="Estudiamos tendencias y datos para identificar áreas prometedoras en
-          el mercado inmobiliario."
+        icon={<PainPointIconFour />}
+        title="ESTRUCTURACIÓN"
+        content="Negociamos términos y acuerdos para asegurar adquisiciones sólidas y estratégicas. "
       />
       <ProHowItWorksPoint
+        number={5}
         rounded="br"
         icon={<PainPointIconOne />}
-        title="ANÁLISIS DE MERCADO"
-        content="Estudiamos tendencias y datos para identificar áreas prometedoras en
-          el mercado inmobiliario."
+        title="SALIDA ESTRATÉGICA"
+        content="Cuando es oportuno, aplicamos estrategias de salidas alineadas con objetivos y condiciones de mercado. "
       />
       <div className={styles.howItWorks__content}>
         <ProBottomSLine />

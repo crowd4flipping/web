@@ -20,6 +20,8 @@ export const ProFormStepTwo = ({ handleInputs, missingInputs }: Props) => {
             )}
           </label>
           <input
+            minLength={3}
+            maxLength={30}
             type="text"
             name="name"
             id="name"
@@ -52,6 +54,8 @@ export const ProFormStepTwo = ({ handleInputs, missingInputs }: Props) => {
           </label>
 
           <input
+            minLength={3}
+            maxLength={50}
             type="email"
             name="email"
             id="email"

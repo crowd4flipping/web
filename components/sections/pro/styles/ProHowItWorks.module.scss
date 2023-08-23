@@ -3,12 +3,16 @@
 .howItWorks {
   /* @extend %pagePaddingX; */
 
-  &__content {
-   /*  padding: 0 10rem; */
+  &__top_content {
     height: 15rem;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+  }
+
+  &__content {
+    @extend .howItWorks__top_content;
+    height: 10rem;
   }
 
   &__icon {
@@ -21,10 +25,31 @@
   }
 
   &__point_content_left {
+    position: relative;
+    padding-left: 3rem;
     grid-column: 1/3;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+  }
+
+  &__number {
+    font-size: 13rem;
+    color: #1e3a634f;
+    position: absolute;
+    left: -3rem;
+    bottom: -4rem;
+    font-weight: 900;
+    z-index: 0;
+
+    &_one{
+      @extend .howItWorks__number;
+      left: -2rem;
+    }
+  }
+
+  &__content_wrapper {
+    z-index: 1;
   }
 
   &__point_title {
@@ -51,6 +76,8 @@
   }
 
   &__point_content_right {
+    position: relative;
+    padding-left: 3.5rem;
     grid-column: 4/6;
     display: flex;
     flex-direction: column;
@@ -58,7 +85,7 @@
   }
 
   &__dashed_content_right {
-    padding: 2rem;
+    padding: 2rem 3rem 0 0;
     display: flex;
     justify-content: center;
     height: 100%;

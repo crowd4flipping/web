@@ -1,4 +1,4 @@
-import { Button } from "@crowd4flipping/ui-components";
+import { Button, LinkButton } from "@crowd4flipping/ui-components";
 import { ProTag } from "./ProTag";
 import styles from "./styles/ProHeroHeader.module.scss";
 import { ProHeroTitle } from "./ProHeroTitle";
@@ -18,9 +18,9 @@ export const ProHeroHeader = () => {
         <ProHeroTitle />
 
         <div className={styles.proHeroHeader__button}>
-          <Button variant="primary" size="lg">
+          <LinkButton href="#contact" variant="primary" size="lg">
             Contacta con nosotros
-          </Button>
+          </LinkButton>
         </div>
       </div>
     </div>
