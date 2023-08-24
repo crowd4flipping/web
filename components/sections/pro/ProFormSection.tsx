@@ -5,6 +5,8 @@ import { ChangeEvent, FormEvent, MouseEvent, useState } from "react";
 import { ProFormStepOne } from "./ProFormStepOne";
 import { ProFormStepTwo } from "./ProFormStepTwo";
 import { TermsAndConditionsCheckbox } from "../home-page/bottom-section/TermsAndConditionsCheckbox";
+import { Routes } from "@/routes/Routes";
+import { LoaderSpinner } from "@/components/animations/LoaderSpinner";
 
 type FormHeader = {
   title: string;
@@ -29,6 +31,7 @@ const formHeader: Record<FormStep, FormHeader> = {
 };
 
 export const ProFormSection = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [assetTypes, setAssetTypes] = useState(new Set<string>());
   const [missingMandatoryInput, setMissingMandatoryInput] = useState<
     Array<MandatoryInputs>
@@ -100,27 +103,55 @@ export const ProFormSection = () => {
     return [];
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const submitForm = async (data: {
+    name: string;
+    phone: string;
+    email: string;
+    extraInfo: string;
+    assetsType: string[];
+  }) => {
+    const route = Routes.cloud().contactPro();
+    try {
+      let res = await fetch(route, {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+      if (res.status === 200) {
+        setIsLoading(false);
+      }
+      console.log(res.status);
+    } catch (error) {
+      console.error(error);
+      setIsLoading(false);
+    }
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    setIsLoading(true);
     event.preventDefault();
     setMissingMandatoryInput([]);
     setMissingTC(false);
+
     const emptyInputs = !inputData.email && !inputData.name ? true : false;
     const emptyAssets = assetTypes.size == 0;
     let missingData = false;
 
     if (emptyInputs && emptyAssets) {
       setMissingMandatoryInput(["asset-types", "email", "name"]);
+      setIsLoading(false);
       return;
     }
 
     if (emptyAssets) {
       setMissingMandatoryInput(["asset-types"]);
+      setIsLoading(false);
       return;
     }
-    
+
     if (emptyInputs) {
       setMissingMandatoryInput(["email", "name"]);
       if (!acceptedTC) setMissingTC(true);
+      setIsLoading(false);
       return;
     }
 
@@ -139,12 +170,19 @@ export const ProFormSection = () => {
       missingData = true;
     }
 
-    if (missingData) return;
+    if (missingData) {
+      setIsLoading(false);
+      return;
+    }
 
-   
     setMissingTC(false);
     setMissingMandatoryInput([]);
-    console.log("Success!");
+
+    await submitForm({
+      ...inputData,
+      extraInfo: inputData["extra-info"],
+      assetsType: Array.from(assetTypes),
+    });
   };
 
   return (
@@ -189,7 +227,15 @@ export const ProFormSection = () => {
               </div>
               <div style={{ display: "flex" }}>
                 <Button fullWidth type="submit" variant="primary" size="lg">
-                  Enviar
+                  {isLoading ? (
+                    <div style={{ width: "100%", display: "flex", justifyContent: "center"}}>
+                      <div style={{ width: "1.5rem", height: "1.5rem" }}>
+                        <LoaderSpinner />
+                      </div>
+                    </div>
+                  ) : (
+                    "Enviar"
+                  )}
                 </Button>
               </div>
             </div>
