@@ -8,7 +8,6 @@ import { TermsAndConditionsCheckbox } from "../home-page/bottom-section/TermsAnd
 import { Routes } from "@/routes/Routes";
 import { LoaderSpinner } from "@/components/animations/LoaderSpinner";
 import axios from "axios";
-import ReCAPTCHA from "react-google-recaptcha";
 import { ProRecaptcha } from "./ProRecaptcha";
 
 type FormHeader = {

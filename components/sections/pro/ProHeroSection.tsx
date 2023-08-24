@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ProHeroHeader } from "./ProHeroHeader";
 import styles from "./styles/ProHeroSection.module.scss";
-import C4FLogo from "@/public/images/brand/crowd4flipping/logo/Crowd4Flipping.svg";
+import C4FLogo from "@/public/images/brand/crowd4flipping/logo/Crowd4Flipping-white.svg";
 
 export const ProHeroSection = () => {
   return (
