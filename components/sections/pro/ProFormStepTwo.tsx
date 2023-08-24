@@ -34,7 +34,7 @@ export const ProFormStepTwo = ({ handleInputs, missingInputs }: Props) => {
             Teléfono
           </label>
           <input
-            type="number"
+            type="text"
             name="phone"
             id="phone"
             onChange={handleInputs}

@@ -7,6 +7,7 @@ import { ProFormStepTwo } from "./ProFormStepTwo";
 import { TermsAndConditionsCheckbox } from "../home-page/bottom-section/TermsAndConditionsCheckbox";
 import { Routes } from "@/routes/Routes";
 import { LoaderSpinner } from "@/components/animations/LoaderSpinner";
+import axios from "axios";
 
 type FormHeader = {
   title: string;
@@ -112,14 +113,12 @@ export const ProFormSection = () => {
   }) => {
     const route = Routes.cloud().contactPro();
     try {
-      let res = await fetch(route, {
-        method: "POST",
-        body: JSON.stringify(data),
-      });
-      if (res.status === 200) {
-        setIsLoading(false);
+      let res = await axios.post(route, data);
+      setIsLoading(false);
+
+      if (res.status < 200 || res.status > 299) {
+        console.error("Error sending form");
       }
-      console.log(res.status);
     } catch (error) {
       console.error(error);
       setIsLoading(false);
@@ -228,7 +227,13 @@ export const ProFormSection = () => {
               <div style={{ display: "flex" }}>
                 <Button fullWidth type="submit" variant="primary" size="lg">
                   {isLoading ? (
-                    <div style={{ width: "100%", display: "flex", justifyContent: "center"}}>
+                    <div
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                    >
                       <div style={{ width: "1.5rem", height: "1.5rem" }}>
                         <LoaderSpinner />
                       </div>
