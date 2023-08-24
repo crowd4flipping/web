@@ -1,13 +1,15 @@
 import { ContentCard } from "@/components/cards/ContentCard";
 import styles from "./styles/ProFormSection.module.scss";
 import { Button } from "@crowd4flipping/ui-components";
-import { ChangeEvent, FormEvent, MouseEvent, useState } from "react";
+import { ChangeEvent, FormEvent, MouseEvent, useRef, useState } from "react";
 import { ProFormStepOne } from "./ProFormStepOne";
 import { ProFormStepTwo } from "./ProFormStepTwo";
 import { TermsAndConditionsCheckbox } from "../home-page/bottom-section/TermsAndConditionsCheckbox";
 import { Routes } from "@/routes/Routes";
 import { LoaderSpinner } from "@/components/animations/LoaderSpinner";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
+import { ProRecaptcha } from "./ProRecaptcha";
 
 type FormHeader = {
   title: string;
@@ -32,6 +34,8 @@ const formHeader: Record<FormStep, FormHeader> = {
 };
 
 export const ProFormSection = () => {
+  const [captcha, setCaptcha] = useState(false);
+  const [missingCaptcha, setMissingCaptcha] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [assetTypes, setAssetTypes] = useState(new Set<string>());
   const [missingMandatoryInput, setMissingMandatoryInput] = useState<
@@ -104,6 +108,14 @@ export const ProFormSection = () => {
     return [];
   };
 
+  const onChangeCaptcha = (state: boolean) => {
+    if (state) {
+      setCaptcha(true);
+    } else {
+      setCaptcha(false);
+    }
+  };
+
   const submitForm = async (data: {
     name: string;
     phone: string;
@@ -130,6 +142,7 @@ export const ProFormSection = () => {
     event.preventDefault();
     setMissingMandatoryInput([]);
     setMissingTC(false);
+    setMissingCaptcha(false);
 
     const emptyInputs = !inputData.email && !inputData.name ? true : false;
     const emptyAssets = assetTypes.size == 0;
@@ -150,6 +163,7 @@ export const ProFormSection = () => {
     if (emptyInputs) {
       setMissingMandatoryInput(["email", "name"]);
       if (!acceptedTC) setMissingTC(true);
+      if (!captcha) setMissingCaptcha(true);
       setIsLoading(false);
       return;
     }
@@ -166,6 +180,11 @@ export const ProFormSection = () => {
 
     if (!acceptedTC) {
       setMissingTC(true);
+      missingData = true;
+    }
+
+    if (!captcha) {
+      setMissingCaptcha(true);
       missingData = true;
     }
 
@@ -218,6 +237,7 @@ export const ProFormSection = () => {
           ) : (
             <div>
               <div className={styles.proFormSection__termsAndConditions}>
+                <ProRecaptcha isMissing={missingCaptcha} onChange={onChangeCaptcha} />
                 <TermsAndConditionsCheckbox
                   missingCheck={missingTC}
                   isChecked={!acceptedTC ? false : acceptedTC}
