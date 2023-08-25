@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/pro",
+      "destination": "pro.crowd4flipping.com"
+    }
+  ]
+}
