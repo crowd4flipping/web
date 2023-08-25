@@ -9,13 +9,13 @@ module.exports = {
         // this rewrite will be applied
         {
           source: "/pro",
-          has: [
+         /*  has: [
             {
               type: "host",
               value: "pro.crowd4flipping.com",
             },
-          ],
-          destination: "/pro",
+          ], */
+          destination: "pro.crowd4flipping.com",
         },
       ],
     };
