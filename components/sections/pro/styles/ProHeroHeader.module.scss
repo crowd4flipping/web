@@ -1,0 +1,112 @@
+@import "../../../../styles/theme/Default.module.scss";
+@import "../../../../styles/theme/Utils.module.scss";
+
+.proHeroHeader {
+  height: 100%;
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+
+    @include isLarge {
+      gap: 1rem;
+    }
+
+    @include isMediumRange {
+      gap: 1.5rem;
+    }
+
+    @include isSmallerRange {
+      gap: 1.5rem;
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    width: 100%;
+    background-image: linear-gradient(90deg, white, transparent);
+
+    @include isMediumRange {
+      background-image: linear-gradient(90deg, transparent, white, transparent);
+    }
+
+    @include isSmallerRange {
+      background-image: linear-gradient(90deg, transparent, white, transparent);
+    }
+  }
+
+  &__c4f_content {
+    display: flex;
+    align-items: flex-end;
+
+    @include isMediumRange {
+      justify-content: center;
+    }
+
+    @include isSmallerRange {
+      justify-content: center;
+    }
+  }
+
+  &__c4f {
+    font-weight: 200;
+    letter-spacing: 0.3rem;
+    margin-right: 1rem;
+
+    @include isSmallerRange {
+      letter-spacing: 0.15rem;
+      margin-right: 0.5rem;
+    }
+
+    @include isMobile {
+      letter-spacing: 0.15rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__button a div {
+    color: var(--color-dark-primary) !important;
+    font-size: 1.7rem;
+    font-weight: 300;
+    box-shadow: 0px 0px 15px #1ecbff8b;
+
+    &:hover {
+      box-shadow: 0px 0px 30px #71dcfc8b;
+    }
+
+    @include isLarge {
+      font-size: 1.5rem;
+    }
+
+    @include isSmallerRange {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+h2.proHeroHeader__c4f {
+  font-size: 4rem;
+
+  @include isLarge {
+    font-size: 3rem !important;
+  }
+
+  @include isMediumRange {
+    font-size: 3rem !important;
+  }
+
+  @include isSmallerRange {
+    font-size: 2.5rem !important;
+  }
+
+  @include isSmallerRange {
+    font-size: 1.8rem !important;
+  }
+
+  @include isMobile {
+    font-size: 1.4rem !important;
+  }
+}

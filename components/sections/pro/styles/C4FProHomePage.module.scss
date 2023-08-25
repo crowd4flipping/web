@@ -1,0 +1,88 @@
+@import "../../../../styles/theme/Utils.module.scss";
+@import "../../../../styles/theme/Default.module.scss";
+
+.c4fProHomePage {
+  background-color: var(--color-dark-primary);
+  background: linear-gradient(
+    270deg,
+    #00193d,
+    var(--color-dark-primary),
+    #00193d
+  );
+
+  &__content {
+    @extend %pagePaddingX;
+    padding: 0 10rem;
+
+    @include isLarge {
+      padding: 0 5rem;
+    }
+
+    @include isMediumRange {
+      padding: 0;
+    }
+
+    @include isSmallerRange {
+      padding: 0;
+    }
+  }
+
+  &__form_wrapper {
+    padding: 7rem 0 5rem 0;
+
+    @include isMobile {
+      padding: 4rem 0 5rem 0;
+    }
+  }
+
+  &__footer{
+    background-color: #1227453e;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.c4fProHomePage {
+  h1 {
+    color: white;
+
+    @include isLarge {
+      font-size: 3rem !important;
+    }
+
+    @include isMediumRange {
+      font-size: 3.5rem !important;
+    }
+
+    @include isSmallerRange {
+      font-size: 2.5rem !important;
+    }
+  }
+
+  h2 {
+    color: white;
+    font-size: 2.5rem;
+
+    @include isMobile {
+      font-size: 2rem;
+    }
+  }
+
+  h3 {
+    color: white;
+  }
+
+  p {
+    color: white;
+  }
+
+  label {
+    font-size: var(--text-size);
+  }
+
+  fieldset {
+    appearance: none;
+    border: none;
+  }
+}

@@ -29,6 +29,10 @@ export class C4FCloudRoutes {
   contact(): string {
     return this.c4fCloudSite + "api/contact/";
   }
+  
+  contactPro(): string {
+    return this.c4fCloudSite + "api/contact-pro";
+  }
 
   private query(route: string, queries: object) {
     const entries = Object.entries(queries);

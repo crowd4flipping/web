@@ -1,0 +1,145 @@
+@import "../../../../styles/theme/Utils.module.scss";
+
+.howItWorks {
+  /* @extend %pagePaddingX; */
+
+  &__top_content {
+    height: 15rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    @include isSmallerRange {
+      height: 10rem;
+      margin: 2rem 0;
+      display: block;
+    }
+
+    @include isMobile {
+      margin: 4rem 0;
+    }
+  }
+
+  &__content {
+    @extend .howItWorks__top_content;
+    height: 10rem;
+  }
+
+  &__sLine {
+    height: 10rem;
+
+    @include isSmallerRange {
+      display: none;
+    }
+  }
+
+  &__vertical_line{
+     display: none; 
+    
+    @include isSmallerRange {
+      display: block;
+      height: 10rem;
+    }
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__point_content_left {
+    position: relative;
+    padding-left: 3rem;
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include isMobile {
+      padding-left: 2.5rem;
+    }
+  }
+
+  &__number {
+    font-size: 13rem;
+    color: #1e3a634f;
+    position: absolute;
+    left: -3rem;
+    bottom: -4rem;
+    font-weight: 900;
+    z-index: 0;
+
+    &_one {
+      @extend .howItWorks__number;
+      left: -2rem;
+    }
+
+    @include isSmallerRange {
+      font-size: 10rem;
+      top: 1rem;
+      bottom: -3rem;
+      left: -1.5rem;
+    }
+  }
+
+  &__content_wrapper {
+    z-index: 1;
+  }
+
+  &__point_title {
+    margin: 1rem 0;
+  }
+
+  &__dashed_content {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    grid-column: 3/5;
+
+    @include isSmallerRange {
+      display: none;
+    }
+  }
+
+  &__top_dashed_content {
+    @extend .howItWorks__dashed_content;
+    grid-column: 3/4;
+  }
+
+  &__dashed_line_wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__point_content_right {
+    position: relative;
+    padding-left: 3.5rem;
+    grid-column: 4/6;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include isMobile {
+      padding-left: 2.5rem;
+    }
+  }
+
+  &__dashed_content_right {
+    padding: 2rem 3rem 0 0;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    grid-column: 2/4;
+
+    @include isSmallerRange {
+      display: none;
+    }
+  }
+}

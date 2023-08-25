@@ -1,0 +1,89 @@
+@import "../../../../styles/theme/Utils.module.scss";
+
+.proHeroSection {
+  position: relative;
+
+  &__lr_padding {
+    @extend %pagePaddingX;
+  }
+
+  &__hero_bg_img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin-top: 12rem;
+    background-image: url("../../../../public/images/home-page/c4f_pro_hero_bg.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  &__nav_and_hero {
+    position: relative;
+
+    min-height: 40rem;
+    height: 100vh;
+  }
+
+  &__navbar {
+    position: absolute;
+    top: 0;
+  }
+
+  &__hero {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 100%;
+    min-height: 40rem;
+
+    @include isMediumRange {
+      display: flex;
+      flex-direction: column-reverse;
+      text-align: center;
+      justify-content: center;
+    }
+
+    @include isSmallerRange {
+      display: flex;
+      flex-direction: column-reverse;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  &__hero_content {
+    grid-column: 1 / 4;
+  }
+
+  &__hero_animation_wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    grid-column: 4/6;
+
+    @include isMediumRange {
+      height: 10rem;
+      width: 100%;
+      justify-content: center;
+    }
+
+    @include isSmallerRange {
+      height: 8rem;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &__hero_animation {
+    border: none;
+    padding-bottom: 5rem;
+
+    @include isMediumRange {
+      padding-bottom: 2rem;
+    }
+
+    @include isSmallerRange {
+      padding-bottom: 2rem;
+    }
+  }
+}

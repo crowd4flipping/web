@@ -1,0 +1,25 @@
+@import "../../../../styles/theme/Utils.module.scss";
+@import "../../../../styles/theme/Default.module.scss";
+
+.proDescriptionSection {
+  text-align: center;
+
+  &__title {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+
+    &_blue {
+      color: var(--color-primary-hover);
+    }
+  }
+
+  &__dashed_line_wrapper {
+    height: 5rem;
+    margin: 2rem 0;
+  }
+
+  &__bottom_dashed_line_wrapper {
+    margin: 2rem 0;
+    height: 10rem;
+  }
+}
