@@ -15,7 +15,7 @@ module.exports = {
               value: "pro.crowd4flipping.com",
             },
           ],
-          destination: "/pages/pro",
+          destination: "/pro",
         },
       ],
     };
@@ -23,8 +23,23 @@ module.exports = {
 };
 
 /* 
+  TEST 3
+ {
+          source: "/pro",
+          has: [
+            {
+              type: "host",
+              value: "pro.crowd4flipping.com",
+            },
+          ],
+          destination: "/pages/pro",
+        },
 
-  TEST 1
+*/
+
+/* 
+
+  TEST 2
 
  {
           source: "/pages/pro",
@@ -41,7 +56,7 @@ module.exports = {
 
 /* 
 
-   TEST 2
+   TEST 1
  {
           source: "/pages/pro",
           has: [
