@@ -2,6 +2,7 @@ module.exports = {
   images: {
     domains: ["firebasestorage.googleapis.com"],
   },
+  assetPrefix: 'https://crowd4flipping.com',
   rewrites() {
     return {
       beforeFiles: [
@@ -21,68 +22,3 @@ module.exports = {
     };
   },
 };
-
-/* 
-  TEST 4
-
-   {
-          source: "/pro",
-          has: [
-            {
-              type: "host",
-              value: "pro.crowd4flipping.com",
-            },
-          ],
-          destination: "/pro",
-        },
-
-*/
-
-/* 
-  TEST 3
- {
-          source: "/pro",
-          has: [
-            {
-              type: "host",
-              value: "pro.crowd4flipping.com",
-            },
-          ],
-          destination: "/pages/pro",
-        },
-
-*/
-
-/* 
-
-  TEST 2
-
- {
-          source: "/pages/pro",
-          has: [
-            {
-              type: "host",
-              value: "pro.crowd4flipping.com",
-            },
-          ],
-          destination: "/pages/pro",
-        },
-
-*/
-
-/* 
-
-   TEST 1
- {
-          source: "/pages/pro",
-          has: [
-            {
-              type: "host",
-              value: "pro.crowd4flipping.com",
-            },
-          ],
-          destination: "/pro",
-        },
-
-        
-*/
