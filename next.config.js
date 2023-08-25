@@ -2,7 +2,7 @@ module.exports = {
   images: {
     domains: ["firebasestorage.googleapis.com"],
   },
-  //assetPrefix: "https://crowd4flipping.com",
+  assetPrefix: "https://crowd4flipping.com",
   async rewrites() {
     return [
       {
