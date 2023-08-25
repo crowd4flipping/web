@@ -8,7 +8,7 @@ module.exports = {
         // if the host is `app.acme.com`,
         // this rewrite will be applied
         {
-          source: "/pages/pro",
+          source: "/pro",
           has: [
             {
               type: "host",
@@ -24,7 +24,24 @@ module.exports = {
 
 /* 
 
-  FIRST TEST
+  TEST 1
+
+ {
+          source: "/pages/pro",
+          has: [
+            {
+              type: "host",
+              value: "pro.crowd4flipping.com",
+            },
+          ],
+          destination: "/pages/pro",
+        },
+
+*/
+
+/* 
+
+   TEST 2
  {
           source: "/pages/pro",
           has: [
