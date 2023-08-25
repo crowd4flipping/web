@@ -1,0 +1,46 @@
+$color: #122745;
+
+.dashedLine_start_from_middle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+  
+  &__line {
+    border-right: 3px dashed $color;
+  }
+  
+  &__line_rounded_right {
+    border-right: 3px dashed $color;
+    border-bottom: 3px dashed $color;
+    border-bottom-right-radius: 7rem;
+  }
+  
+  &__line_rounded_left {
+    grid-column: 2/3;
+    border-left: 3px dashed $color;
+    border-bottom: 3px dashed $color;
+    border-bottom-left-radius: 7rem;
+  }
+}
+
+.dashedLine_start_from_beginning {
+  height: 100%;
+  
+  &__line {
+    border-right: 3px dashed $color;
+  }
+  
+  &__line_rounded_right {
+    height: 100%;
+    border-right: 3px dashed $color;
+    border-bottom: 3px dashed $color;
+    border-bottom-right-radius: 7rem;
+  }
+  
+  &__line_rounded_left {
+    height: 100%;
+    border-left: 3px dashed $color;
+    border-bottom: 3px dashed $color;
+    border-bottom-left-radius: 7rem;
+  }
+}

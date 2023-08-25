@@ -7,8 +7,12 @@
   padding-bottom: 5rem;
   @extend %pagePaddingX;
 
-  @include isMobile{
+  @include isMobile {
     max-width: 100%;
+  }
+
+  & label a{
+    color: var(--color-primary);
   }
 
   &_iconsWrapper {
@@ -23,17 +27,17 @@
       margin-top: 2rem;
     }
   }
- 
+
   &_icon {
-    margin-bottom: .3rem;
+    margin-bottom: 0.3rem;
     width: 2rem;
-    height: 2rem; 
+    height: 2rem;
   }
 
-  &_faceBook{
+  &_faceBook {
     color: #3b5998;
   }
-  &_linkedin{
+  &_linkedin {
     color: #0e76a8;
   }
 
@@ -96,21 +100,31 @@
     }
   }
 
+  &__termsAndConditions {
+    padding-top: 2rem;
+  }
+
   &_checkBoxWrapper {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
-    margin-top: 2rem;
+
+    & input[type="checkbox"] {
+      height: 1.5rem;
+      width: 1.5rem;
+      accent-color: var(--color-primary);
+    }
+
+    &_missing{
+      color: yellow;
+      & input[type="checkbox"] {
+        outline-offset: 1px;
+        outline: 2px solid rgba(255, 255, 0, 0.48);
+      }
+    }
   }
 
-  &_checkBoxLabel{
+  &_checkBoxLabel {
     font-size: small;
-  }
-
-  & input[type="checkbox"] {
-    height: 2rem;
-    width: 2rem;
-    accent-color: var(--color-primary);
-    border: none;
   }
 }

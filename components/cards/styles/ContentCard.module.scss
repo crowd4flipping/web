@@ -1,0 +1,40 @@
+@import "../../../styles/theme/Utils.module.scss";
+
+$cardBorderRadius: 0.7rem;
+$borderRadius: 0.5rem;
+$dark-card-color: #294367;
+$dark-surface-color: #122745;
+
+.contentCard {
+  padding: 1.7rem;
+  border-radius: $cardBorderRadius;
+  background-color: var(--card-color);
+  display: inline-block;
+  width: 100%;
+
+  @include isMobile {
+    padding: 1rem;
+  }
+
+  &__darkTheme {
+    color: white;
+    background-color: $dark-card-color;
+  }
+  
+  &__description{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: var(--subtitle-color)
+  }
+
+  &__header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $dark-surface-color;
+
+    &__darkTheme {
+      @extend .contentCard__header;
+      border-bottom: 1px solid #e2e9ed82;
+    }
+  }
+
+}
