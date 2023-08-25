@@ -8,14 +8,14 @@ module.exports = {
         // if the host is `app.acme.com`,
         // this rewrite will be applied
         {
-          source: "/:path*",
+          source: "/pro",
           has: [
             {
               type: "host",
-              value: "app.acme.com",
+              value: "pro.crowd4flipping.com",
             },
           ],
-          destination: "/app/:path*",
+          destination: "/pages/pro",
         },
       ],
     };
