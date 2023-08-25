@@ -1,0 +1,16 @@
+.c4fProLogo {
+  &_content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__c4f {
+    font-weight: 200;
+
+    letter-spacing: 0.1rem;
+  }
+}
+
+h2.c4fProLogo__c4f {
+  font-size: 1rem !important;
+}
