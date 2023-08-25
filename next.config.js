@@ -5,6 +5,8 @@ module.exports = {
   rewrites() {
     return {
       beforeFiles: [
+        // if the host is `app.acme.com`,
+        // this rewrite will be applied
         {
           source: "/pro",
           has: [
@@ -13,7 +15,7 @@ module.exports = {
               value: "pro.crowd4flipping.com",
             },
           ],
-          destination: "pro.crowd4flipping.com",
+          destination: "/pro",
         },
       ],
     };
