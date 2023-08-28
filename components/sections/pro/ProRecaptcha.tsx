@@ -19,10 +19,10 @@ export const ProRecaptcha = ({
     <div className={style}>
       <ReCAPTCHA
         ref={refCaptcha}
-        sitekey="6LeW0vYiAAAAABvzPB2SSZrvaz3d7ptD70HNJak4"
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
         onChange={() => {
+          console.log(refCaptcha.current.getValue());
           if (refCaptcha.current.getValue()) {
-            console.log("object");
             onChange(true);
           }
         }}

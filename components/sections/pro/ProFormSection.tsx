@@ -9,6 +9,7 @@ import { Routes } from "@/routes/Routes";
 import { LoaderSpinner } from "@/components/animations/LoaderSpinner";
 import axios from "axios";
 import { ProRecaptcha } from "./ProRecaptcha";
+import { BiMailSend } from "react-icons/bi";
 
 type FormHeader = {
   title: string;
@@ -19,7 +20,7 @@ type MandatoryInputs =
   | Exclude<ProFormInputData, "extra-info" | "phone">
   | "asset-types";
 
-type FormStep = "one" | "two";
+type FormStep = "one" | "two" | "three";
 
 const formHeader: Record<FormStep, FormHeader> = {
   one: {
@@ -28,6 +29,10 @@ const formHeader: Record<FormStep, FormHeader> = {
       "Te ayudamos a encontrar el inmueble con las características que necesitas para que puedas invertir en él",
   },
   two: {
+    title: "Recibe asistencia personalizada",
+    description: "Contactaremos contigo cuanto antes",
+  },
+  three: {
     title: "Recibe asistencia personalizada",
     description: "Contactaremos contigo cuanto antes",
   },
@@ -148,6 +153,7 @@ export const ProFormSection = () => {
     email: string;
     extraInfo: string;
     assetsType: string[];
+    budget: string;
   }) => {
     const route = Routes.cloud().contactPro();
     try {
@@ -157,6 +163,7 @@ export const ProFormSection = () => {
       if (res.status < 200 || res.status > 299) {
         console.error("Error sending form");
       }
+      setStep("three");
     } catch (error) {
       console.error(error);
       setIsLoading(false);
@@ -204,6 +211,11 @@ export const ProFormSection = () => {
       missingData = true;
     }
 
+    if (!inputData.budget) {
+      setMissingMandatoryInput(["budget"]);
+      missingData = true;
+    }
+
     if (!acceptedTC) {
       setMissingTC(true);
       missingData = true;
@@ -246,11 +258,16 @@ export const ProFormSection = () => {
               handleAssetTypes={handleAssetTypes}
               handleExtraInfo={handleInputs}
             />
-          ) : (
+          ) : step === "two" ? (
             <ProFormStepTwo
               missingInputs={getStepTwoMissingInputs}
               handleInputs={handleInputs}
             />
+          ) : (
+            <div className={styles.proFormSection__message_sent}>
+              <BiMailSend size={40} />
+              <p>Hemos enviado tu mensaje. Te responderemos lo antes posible</p>
+            </div>
           )}
 
           {step === "one" ? (
@@ -262,7 +279,7 @@ export const ProFormSection = () => {
             >
               Continuar
             </Button>
-          ) : (
+          ) : step === "two" ? (
             <div>
               <div className={styles.proFormSection__termsAndConditions}>
                 <ProRecaptcha
@@ -295,7 +312,7 @@ export const ProFormSection = () => {
                 </Button>
               </div>
             </div>
-          )}
+          ) : null}
         </form>
       </ContentCard>
     </section>
