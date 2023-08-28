@@ -2,24 +2,28 @@ import styles from "./styles/ProFormSection.module.scss";
 import { ChangeEvent } from "react";
 
 type Props = {
-  values: Set<string>;
+  assetsChecked: Set<string>;
   handleAssetTypes: (event: ChangeEvent<HTMLInputElement>) => void;
+  handleBudget: (event: ChangeEvent<HTMLInputElement>) => void;
   handleExtraInfo: (event: ChangeEvent<HTMLTextAreaElement>) => void;
-  missingAssets: boolean;
+  missingInputs: () => ("budget" | "assets")[];
+  budgetChecked: string;
 };
 
 export const ProFormStepOne = ({
-  values,
+  assetsChecked,
   handleAssetTypes,
   handleExtraInfo,
-  missingAssets,
+  handleBudget,
+  missingInputs,
+  budgetChecked,
 }: Props) => {
   return (
     <>
       <fieldset>
         <legend className={styles.proFormSection__field_title}>
           Tipos de inmueble
-          {missingAssets && (
+          {missingInputs().includes("assets") && (
             <span className={styles.proFormSection__error_field}>
               Selecciona un tipo de inmueble
             </span>
@@ -33,7 +37,7 @@ export const ProFormStepOne = ({
               name="new-construction"
               value="new-construction"
               onChange={handleAssetTypes}
-              checked={values.has("new-construction")}
+              checked={assetsChecked.has("new-construction")}
             />
             <label htmlFor="new-construction">Obra nueva</label>
           </div>
@@ -45,7 +49,7 @@ export const ProFormStepOne = ({
               name="hotels"
               value="hotels"
               onChange={handleAssetTypes}
-              checked={values.has("hotels")}
+              checked={assetsChecked.has("hotels")}
             />
             <label htmlFor="hotels">Hoteles</label>
           </div>
@@ -57,7 +61,7 @@ export const ProFormStepOne = ({
               name="residential-properties"
               value="residential-properties"
               onChange={handleAssetTypes}
-              checked={values.has("residential-properties")}
+              checked={assetsChecked.has("residential-properties")}
             />
             <label htmlFor="residential-properties">
               Propiedades residenciales a reformar
@@ -71,7 +75,7 @@ export const ProFormStepOne = ({
               name="offices"
               value="offices"
               onChange={handleAssetTypes}
-              checked={values.has("offices")}
+              checked={assetsChecked.has("offices")}
             />
             <label htmlFor="offices">Oficinas</label>
           </div>
@@ -83,7 +87,7 @@ export const ProFormStepOne = ({
               name="stores"
               value="stores"
               onChange={handleAssetTypes}
-              checked={values.has("stores")}
+              checked={assetsChecked.has("stores")}
             />
             <label htmlFor="stores">Locales comerciales</label>
           </div>
@@ -95,9 +99,56 @@ export const ProFormStepOne = ({
               name="other"
               value="other"
               onChange={handleAssetTypes}
-              checked={values.has("other")}
+              checked={assetsChecked.has("other")}
             />
             <label htmlFor="other">Otros</label>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend className={styles.proFormSection__field_title}>
+          Presupuesto
+          {missingInputs().includes("budget") && (
+            <span className={styles.proFormSection__error_field}>
+              Selecciona un presupuesto
+            </span>
+          )}
+        </legend>
+        <div className={styles.proFormSection__asset_type}>
+          <div className={styles.proFormSection__checkbox_wrapper}>
+            <input
+              type="checkbox"
+              id="threethousend-onemillion"
+              name="threethousend-onemillion"
+              value="threethousend-onemillion"
+              onChange={handleBudget}
+              checked={budgetChecked == "threethousend-onemillion"}
+            />
+            <label htmlFor="threethousend-onemillion">300K€ - 1M€</label>
+          </div>
+
+          <div className={styles.proFormSection__checkbox_wrapper}>
+            <input
+              type="checkbox"
+              id="onemillion-fivemillion"
+              name="onemillion-fivemillion"
+              value="onemillion-fivemillion"
+              onChange={handleBudget}
+              checked={budgetChecked == "onemillion-fivemillion"}
+            />
+            <label htmlFor="onemillion-fivemillion">1M€ - 5M€</label>
+          </div>
+
+          <div className={styles.proFormSection__checkbox_wrapper}>
+            <input
+              type="checkbox"
+              id="more-fivemillion"
+              name="more-fivemillion"
+              value="more-fivemillion"
+              onChange={handleBudget}
+              checked={budgetChecked == "more-fivemillion"}
+            />
+            <label htmlFor="more-fivemillion">+5M€</label>
           </div>
         </div>
       </fieldset>
@@ -115,7 +166,7 @@ export const ProFormStepOne = ({
           </p>
         </div>
         <textarea
-          rows={10}
+          rows={5}
           id="extra-info"
           name="extra-info"
           onChange={handleExtraInfo}
