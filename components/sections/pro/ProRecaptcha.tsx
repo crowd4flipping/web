@@ -21,7 +21,6 @@ export const ProRecaptcha = ({
         ref={refCaptcha}
         sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
         onChange={() => {
-          console.log(refCaptcha.current.getValue());
           if (refCaptcha.current.getValue()) {
             onChange(true);
           }
