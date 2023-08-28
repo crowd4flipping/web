@@ -2,8 +2,8 @@ module.exports = {
   images: {
     domains: ["firebasestorage.googleapis.com"],
   },
-  assetPrefix: "https://crowd4flipping.com",
-  async rewrites() {
+  assetPrefix: process.env.NODE_ENV == "production" ? "https://crowd4flipping.com" : "",
+  rewrites: process.env.NODE_ENV == "production" ? () => {
     return {
       beforeFiles: [
         {
@@ -18,5 +18,5 @@ module.exports = {
         },
       ],
     };
-  },
+  } : ()=>({}),
 };

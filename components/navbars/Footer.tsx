@@ -9,6 +9,10 @@ type FooterNav = {
 };
 
 const footerNavContent: FooterNav = {
+  c4fPro: {
+    label: "Crowd4Flipping PRO",
+    href: "https://pro.crowd4flipping.com/",
+  },
   privacyPolicy: {
     label: "Politica de privacidad",
     href: "/politica-privacidad",
@@ -28,7 +32,7 @@ const footerNavContent: FooterNav = {
 };
 
 export const Footer = () => {
-  const footerNavLeft = Object.entries(footerNavContent).slice(0, 2);
+  const footerNavLeft = Object.entries(footerNavContent).slice(0, 3);
   const footerNavRight = Object.entries(footerNavContent).slice(2, 4);
   const currentYear = new Date().getFullYear();
   return (

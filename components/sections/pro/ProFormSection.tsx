@@ -14,12 +14,13 @@ type FormHeader = {
   title: string;
   description: string;
 };
-type ProFormInputData = "name" | "phone" | "email" | "extra-info";
+type ProFormInputData = "name" | "phone" | "email" | "extra-info" | "budget";
 type MandatoryInputs =
   | Exclude<ProFormInputData, "extra-info" | "phone">
   | "asset-types";
 
 type FormStep = "one" | "two";
+
 const formHeader: Record<FormStep, FormHeader> = {
   one: {
     title: "¿Qué propiedades estás buscando?",
@@ -47,6 +48,7 @@ export const ProFormSection = () => {
     email: "",
     name: "",
     phone: "",
+    budget: "",
   });
 
   const [step, setStep] = useState<FormStep>("one");
@@ -71,6 +73,12 @@ export const ProFormSection = () => {
     else addAsset(value);
   };
 
+  const handleBudget = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+
+    setInputData((prev) => ({ ...prev, budget: value }));
+  };
+
   const handleInputs = (
     event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
@@ -86,14 +94,33 @@ export const ProFormSection = () => {
     event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
   ) => {
     event.preventDefault();
+    setMissingMandatoryInput([]);
+    let missingValues = false;
     const emptyAssets = assetTypes.size == 0;
 
     if (emptyAssets) {
-      setMissingMandatoryInput(["asset-types"]);
-      return;
+      setMissingMandatoryInput((prev) => [...prev, "asset-types"]);
+      missingValues = true;
     }
 
+    if (!inputData.budget) {
+      setMissingMandatoryInput((prev) => [...prev, "budget"]);
+      missingValues = true;
+    }
+
+    if (missingValues) return;
+
     setStep("two");
+  };
+
+  const getStepOneMissingInputs = (): ("assets" | "budget")[] => {
+    let missingInputs = [];
+
+    if (missingMandatoryInput.includes("asset-types"))
+      missingInputs.push("assets");
+    if (missingMandatoryInput.includes("budget")) missingInputs.push("budget");
+
+    return missingInputs;
   };
 
   const getStepTwoMissingInputs = (): ("name" | "email")[] => {
@@ -212,8 +239,10 @@ export const ProFormSection = () => {
         <form onSubmit={handleSubmit} className={styles.proFormSection__form}>
           {step === "one" ? (
             <ProFormStepOne
-              missingAssets={missingMandatoryInput.includes("asset-types")}
-              values={assetTypes}
+              missingInputs={getStepOneMissingInputs}
+              handleBudget={handleBudget}
+              assetsChecked={assetTypes}
+              budgetChecked={inputData.budget}
               handleAssetTypes={handleAssetTypes}
               handleExtraInfo={handleInputs}
             />
@@ -236,7 +265,10 @@ export const ProFormSection = () => {
           ) : (
             <div>
               <div className={styles.proFormSection__termsAndConditions}>
-                <ProRecaptcha isMissing={missingCaptcha} onChange={onChangeCaptcha} />
+                <ProRecaptcha
+                  isMissing={missingCaptcha}
+                  onChange={onChangeCaptcha}
+                />
                 <TermsAndConditionsCheckbox
                   missingCheck={missingTC}
                   isChecked={!acceptedTC ? false : acceptedTC}
