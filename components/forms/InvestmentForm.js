@@ -93,7 +93,7 @@ function InvestmentForm({type, tag, urlThanks}) {
             <div className={`${styles.input_container} ${styles.input_container_checkbox}`}>
             <ReCAPTCHA
                 ref={captcha}
-                sitekey="6LeW0vYiAAAAABvzPB2SSZrvaz3d7ptD70HNJak4"
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                 onChange={onChangeCaptcha}
             />
             </div>
