@@ -26,6 +26,9 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    
+    width: fit-content;
+
 
     @include isSmallerRange {
       margin-bottom: 5rem;
