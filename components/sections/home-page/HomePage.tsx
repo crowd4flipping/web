@@ -29,7 +29,6 @@ export const HomePage = ({ projects }: { projects: ProjectData[] }) => {
         <HeroSection />
         <ProjectsSection projects={projects} />
         <GetTheMostForYourMoneySection />
-        <OpinionsTrustpilot />
         <ColaborativeInvestmentSection />
         <div
           className={styles.pageLayout_heroPageBottomSection}
