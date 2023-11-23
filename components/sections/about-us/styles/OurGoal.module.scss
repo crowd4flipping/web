@@ -1,4 +1,4 @@
-@import "../../../../styles/theme/Utils.module.scss";
+@use "../../../../styles/theme/Utils.module.scss";
 
 .ourGoal {
   @include isMobile {

@@ -1,5 +1,5 @@
-@import "../../../../styles/theme/Utils.module.scss";
-@import "../../../../styles/theme/Default.module.scss";
+@use "../../../../styles/theme/Utils.module.scss";
+@use "../../../../styles/theme/Default.module.scss";
 
 .c4fProHomePage {
   background-color: var(--color-dark-primary);
