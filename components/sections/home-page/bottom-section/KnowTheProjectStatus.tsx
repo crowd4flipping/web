@@ -12,8 +12,8 @@ const projectData: Omit<
   Parameters<typeof ProjectCardDarkTheme>[number],
   "status"
 > = {
-  profitability: "14",
   src: "https://firebasestorage.googleapis.com/v0/b/crowd4flipping-app.appspot.com/o/blog-entry-images%2Fphoto-1512917774080-9991f1c4c750.webp?alt=media&token=2ba3420a-5390-4fab-9473-c7380a177f3c",
+  profitability: "14",
   href: "/proyectos",
   totalProjectAmount: 402000,
   currentAmount: 0, //123000,
