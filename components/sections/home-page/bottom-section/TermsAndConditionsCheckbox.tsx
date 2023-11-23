@@ -16,8 +16,6 @@ export const TermsAndConditionsCheckbox = ({
   const checkBoxStyles =
     missingCheck && styles.contactForm_checkBoxWrapper_missing;
 
-    console.log(checkBoxStyles);
-
   return (
     <div className={`${styles.contactForm_checkBoxWrapper} ${checkBoxStyles}`}>
       <input
