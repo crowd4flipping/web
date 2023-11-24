@@ -7,6 +7,34 @@
   padding-top: 5rem;
   padding-bottom: 5rem;
 
+  &_transparency_button {
+    &_wrapper {
+      width: fit-content;
+
+      @include isSmallerRange {
+        width: 100%;
+      }
+    }
+
+    &_text {
+      padding: 0 20px;
+    }
+  }
+
+  &_mobile_wrapper {
+    display: none;
+
+    @include isSmallerRange {
+      display: block;
+    }
+  }
+
+  &_desktop_wrapper {
+    @include isSmallerRange {
+      display: none;
+    }
+  }
+
   &_bg {
     background: linear-gradient(270deg, transparent, #00294e, transparent);
   }
@@ -26,9 +54,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    
-    width: fit-content;
 
+    width: fit-content;
 
     @include isSmallerRange {
       margin-bottom: 5rem;
