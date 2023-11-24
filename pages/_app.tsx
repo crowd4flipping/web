@@ -8,7 +8,6 @@ import "@crowd4flipping/ui-components";
 import { useRouter } from "next/router";
 import { useSetCookieTracker } from "@/components/hooks/useAdQueryTracker";
 
-
 function MyApp({ Component, pageProps }) {
   const { query } = useRouter();
   useSetCookieTracker(query);
@@ -50,11 +49,12 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Script
+        defer
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
 
-      <Script id="facebook-pixel">
+      <Script defer id="facebook-pixel">
         {`
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -69,7 +69,7 @@ function MyApp({ Component, pageProps }) {
       `}
       </Script>
 
-      <Script strategy="lazyOnload" id="google-tag-manager">
+      <Script defer strategy="lazyOnload" id="google-tag-manager">
         {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -79,10 +79,10 @@ function MyApp({ Component, pageProps }) {
       `}
       </Script>
 
-        <ErrorBoundary>
-          <Component {...pageProps} />
-          <CookieBanner />
-        </ErrorBoundary>
+      <ErrorBoundary>
+        <Component {...pageProps} />
+        <CookieBanner />
+      </ErrorBoundary>
     </>
   );
 }
