@@ -8,6 +8,7 @@ import "@crowd4flipping/ui-components";
 import { useRouter } from "next/router";
 import { useSetCookieTracker } from "@/components/hooks/useAdQueryTracker";
 
+
 function MyApp({ Component, pageProps }) {
   const { query } = useRouter();
   useSetCookieTracker(query);
@@ -78,10 +79,10 @@ function MyApp({ Component, pageProps }) {
       `}
       </Script>
 
-      <ErrorBoundary>
-        <Component {...pageProps} />
-        <CookieBanner />
-      </ErrorBoundary>
+        <ErrorBoundary>
+          <Component {...pageProps} />
+          <CookieBanner />
+        </ErrorBoundary>
     </>
   );
 }
