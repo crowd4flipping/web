@@ -130,7 +130,7 @@
       background-color: white;
       box-shadow: -10px 0px 100px #3d4247;
     }
-    
+
     &__content {
       position: relative;
       height: 100%;
@@ -138,19 +138,20 @@
     }
   }
 
-  &__ctas{
+  &__ctas {
     display: flex;
     align-items: center;
     gap: 1rem;
   }
 
   &__mobile_ctas {
-   // position: absolute;
     width: 100%;
     padding-top: 3rem;
   }
 
   &__mobile_cta {
+    display: flex;
+
     width: 100%;
     margin-top: 1rem;
   }
