@@ -12,7 +12,7 @@ const projectData: Omit<
   Parameters<typeof ProjectCardDarkTheme>[number],
   "status"
 > = {
-  src: "https://firebasestorage.googleapis.com/v0/b/crowd4flipping-app.appspot.com/o/blog-entry-images%2Fphoto-1512917774080-9991f1c4c750.webp?alt=media&token=2ba3420a-5390-4fab-9473-c7380a177f3c",
+  src: "https://res.cloudinary.com/fernanprojects/image/upload/v1700814215/C4F/esiljje6v44ewqbvhezv.webp",
   profitability: "14",
   href: "/proyectos",
   totalProjectAmount: 402000,
@@ -23,7 +23,6 @@ const projectData: Omit<
 };
 
 export const KnowTheProjectStatus = () => {
-  const { isXSmall } = useBreakPoints();
   const array = Array<typeof projectData>(4).fill(projectData);
   const [currentAmount, setCurrentAmount] = useState(0);
   const isFunding = (status: ProjectStatus) => {
@@ -49,13 +48,15 @@ export const KnowTheProjectStatus = () => {
             los contratos firmados entre todas las partes involucradas en cada
             proyecto.
           </p>
-          <div>
-            <LinkButton
-              href="/transparencia"
-              fullWidth={isXSmall ? true : false}
-              variant="primary"
-            >
-              Programa de transparencia
+          <div
+            className={styles.knowTheProjectStatus_transparency_button_wrapper}
+          >
+            <LinkButton href="/transparencia" fullWidth variant="primary">
+              <span
+                className={styles.knowTheProjectStatus_transparency_button_text}
+              >
+                Programa de transparencia
+              </span>
             </LinkButton>
           </div>
         </div>
@@ -68,56 +69,51 @@ export const KnowTheProjectStatus = () => {
                 setCurrentAmount((prev) => (prev += 10000));
               }
             }}
-            projects={
-              isXSmall
-                ? array.map((project, i) => {
-                    const projectStatus = (index: number) => {
-                      if (index == 0) return "in_study";
-                      if (index == 1) return "funding";
-                      if (index == 2) return "in_progress";
-                      if (index == 3) return "finished";
-                    };
-                    return (
-                      <div key={projectStatus(i)}>
-                        <ProjectCardDarkTheme
-                          isVertical
-                          src={project.src}
-                          href={project.href}
-                          region={project.region}
-                          street={project.street}
-                          businessModel={project.businessModel}
-                          currentAmount={currentAmount}
-                          profitability={project.profitability}
-                          totalProjectAmount={project.totalProjectAmount}
-                          status={projectStatus(i)}
-                        />
-                      </div>
-                    );
-                  })
-                : array.map((project, i) => {
-                    const projectStatus = (index: number) => {
-                      if (index == 0) return "in_study";
-                      if (index == 1) return "funding";
-                      if (index == 2) return "in_progress";
-                      if (index == 3) return "finished";
-                    };
-                    return (
-                      <div key={projectStatus(i)}>
-                        <ProjectCardDarkTheme
-                          src={project.src}
-                          href={project.href}
-                          region={project.region}
-                          street={project.street}
-                          businessModel={project.businessModel}
-                          currentAmount={currentAmount}
-                          profitability={project.profitability}
-                          totalProjectAmount={project.totalProjectAmount}
-                          status={projectStatus(i)}
-                        />
-                      </div>
-                    );
-                  })
-            }
+            projects={array.map((project, i) => {
+              const projectStatus = (index: number) => {
+                if (index == 0) return "in_study";
+                if (index == 1) return "funding";
+                if (index == 2) return "in_progress";
+                if (index == 3) return "finished";
+              };
+              return (
+                <>
+                  <div
+                    key={projectStatus(i)}
+                    className={styles.knowTheProjectStatus_mobile_wrapper}
+                  >
+                    <ProjectCardDarkTheme
+                      isVertical
+                      src={project.src}
+                      href={project.href}
+                      region={project.region}
+                      street={project.street}
+                      businessModel={project.businessModel}
+                      currentAmount={currentAmount}
+                      profitability={project.profitability}
+                      totalProjectAmount={project.totalProjectAmount}
+                      status={projectStatus(i)}
+                    />
+                  </div>
+                  <div
+                    key={projectStatus(i)}
+                    className={styles.knowTheProjectStatus_desktop_wrapper}
+                  >
+                    <ProjectCardDarkTheme
+                      src={project.src}
+                      href={project.href}
+                      region={project.region}
+                      street={project.street}
+                      businessModel={project.businessModel}
+                      currentAmount={currentAmount}
+                      profitability={project.profitability}
+                      totalProjectAmount={project.totalProjectAmount}
+                      status={projectStatus(i)}
+                    />
+                  </div>
+                </>
+              );
+            })}
           />
         </div>
       </div>
