@@ -6,7 +6,7 @@ import { Options, Selector } from "@crowd4flipping/ui-components";
 import { ProjectStatus, projectStatusList } from "@/routes/C4FCloudRoutes";
 import { isValidStatus, unhandledType } from "utils/utils";
 import { ProjectsPageContent } from "./sections/ProjectsPageContent";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ProjectData } from "./sections/types/types";
 import { useRouter } from "next/router";
 
@@ -23,7 +23,7 @@ export const ProjectsPage = (props: { projectsList: ProjectData[] }) => {
   const firstStatusLabel: ProjectStatus = areProjectsFunding ? "funding" : "in_study";
   const [statusLabel, setStatusLabel] = useState(statusLabels[firstStatusLabel]);
 
-  useEffect(() => {
+  useMemo(() => {
     const queryStatus = router.query.status as string;
     if (!queryStatus || !isValidStatus(queryStatus)) return;
     setStatusLabel(statusLabels[queryStatus]);
