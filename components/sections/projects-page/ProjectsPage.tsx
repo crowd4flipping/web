@@ -18,16 +18,22 @@ const statusLabels: Record<ProjectStatus, string> = {
 };
 
 export const ProjectsPage = (props: { projectsList: ProjectData[] }) => {
-  const router = useRouter();
-  const areProjectsFunding = props.projectsList.find(project => project.status === "funding")
-  const firstStatusLabel: ProjectStatus = areProjectsFunding ? "funding" : "in_study";
-  const [statusLabel, setStatusLabel] = useState(statusLabels[firstStatusLabel]);
+  ///const router = useRouter();
+  const areProjectsFunding = props.projectsList.find(
+    (project) => project.status === "funding"
+  );
+  const firstStatusLabel: ProjectStatus = areProjectsFunding
+    ? "funding"
+    : "in_study";
+  const [statusLabel, setStatusLabel] = useState(
+    statusLabels[firstStatusLabel]
+  );
 
-  useMemo(() => {
+  /*   useMemo(() => {
     const queryStatus = router.query.status as string;
     if (!queryStatus || !isValidStatus(queryStatus)) return;
     setStatusLabel(statusLabels[queryStatus]);
-  }, [router]);
+  }, [router]); */
 
   return (
     <PageLayout fixedNavBar>
@@ -46,7 +52,7 @@ export const ProjectsPage = (props: { projectsList: ProjectData[] }) => {
           <div className={styles.projectsPage__status_options}>
             <Options
               arialLabel="estado del proyecto"
-              onValueChange={onValueChange}
+              onValueChange={(label) => setStatusLabel(label)}
               value={statusLabel}
               values={getLabelsFromStatuses()}
               defaultValue={statusLabel}
@@ -63,7 +69,7 @@ export const ProjectsPage = (props: { projectsList: ProjectData[] }) => {
                 },
               ]}
               value={statusLabel}
-              onValueChange={onValueChange}
+              onValueChange={(label) => setStatusLabel(label)}
               ariaLabel="estado del proyecto"
             />
           </div>
@@ -77,10 +83,12 @@ export const ProjectsPage = (props: { projectsList: ProjectData[] }) => {
     </PageLayout>
   );
 
-  function onValueChange(label: string) {
+ /* function onValueChange(label: string) {
     setStatusLabel(label);
-    router.push({ query: { status: getStatusFromLabel(label) } });
-  }
+     router.push({ query: { status: getStatusFromLabel(label) } }, undefined, {
+      shallow: true,
+    }); 
+  }*/
 
   function getLabelsFromStatuses() {
     return projectStatusList.map((status) => {
