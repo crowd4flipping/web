@@ -7,7 +7,6 @@ import { ImDownload } from "react-icons/im";
 import { TbListSearch } from "react-icons/tb";
 import { Loader } from "@/components/loaders/Loader";
 
-
 function Index({ BlogEntries }) {
   const [blogEntries, setBlogEntries] = useState(BlogEntries[0].data);
   const [lastDoc, setLastDoc] = useState(
@@ -39,7 +38,6 @@ function Index({ BlogEntries }) {
         setloadingData(false);
       }
     } catch (error) {
-      console.log(error.message);
       setloadingData(false);
     }
   };

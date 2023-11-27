@@ -1,4 +1,4 @@
-@import "./PageLayout.module.scss";
+@use "./PageLayout.module.scss";
 
 .sectionLayout {
   @extend %pagePaddingX;

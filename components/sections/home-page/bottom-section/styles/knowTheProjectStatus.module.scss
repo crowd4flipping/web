@@ -7,6 +7,42 @@
   padding-top: 5rem;
   padding-bottom: 5rem;
 
+  &_transparency_button {
+    &_wrapper {
+      width: fit-content;
+
+      @include isSmallerRange {
+        width: 100%;
+      }
+    }
+
+    &_text {
+      padding: 0 20px;
+    }
+  }
+
+  &_mobile_wrapper {
+    display: none;
+
+    @include isMobile {
+      display: block;
+    }
+  }
+
+  &_tablet_wrapper {
+    display: none;
+
+    @include isTablet {
+      display: block;
+    }
+  }
+
+  &_desktop_wrapper {
+    @include isSmallerRange {
+      display: none;
+    }
+  }
+
   &_bg {
     background: linear-gradient(270deg, transparent, #00294e, transparent);
   }
@@ -15,9 +51,16 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
-    @include isSmallerRange {
+
+    @include isMobile {
       display: flex;
       flex-direction: column;
+    }
+
+    @include isTablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -26,11 +69,20 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    
-    width: fit-content;
 
+    @include isLargerRange {
+      width: fit-content;
+    }
 
-    @include isSmallerRange {
+    @include isMediumRange {
+      width: fit-content;
+    }
+
+    @include isTablet {
+      width: 90%;
+    }
+
+    @include isMobile {
       margin-bottom: 5rem;
     }
   }
