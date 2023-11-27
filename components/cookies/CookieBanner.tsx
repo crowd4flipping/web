@@ -6,6 +6,7 @@ export const CookieBanner = () => {
   return (
     <CookieConsent
       enableDeclineButton
+      onAccept={(event) => console.log(!event)}
       style={{
         padding: "2rem",
         background: "#010f24",
