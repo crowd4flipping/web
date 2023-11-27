@@ -63,7 +63,7 @@ function MyApp({ Component, pageProps }) {
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '609162034305973');
+        fbq('init', '2436289939949615');
         fbq('track', 'PageView');
       `}
       </Script>
