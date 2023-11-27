@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps }) {
           content="https://firebasestorage.googleapis.com/v0/b/crowd4flipping-app.appspot.com/o/opengraph%2Fopengraph-c4f.png?alt=media&token=a880e75c-80c0-4820-80f4-284b47685cc8"
         />
       </Head>
-    {/*   <Script
+      <Script
         defer
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
@@ -67,7 +67,7 @@ function MyApp({ Component, pageProps }) {
         fbq('init', '609162034305973');
         fbq('track', 'PageView');
       `}
-      </Script> */}
+      </Script>
 
       <Script defer strategy="lazyOnload" id="google-tag-manager">
         {`
