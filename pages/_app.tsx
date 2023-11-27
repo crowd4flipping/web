@@ -4,7 +4,6 @@ import Script from "next/script";
 import { CookieBanner } from "../components/cookies/CookieBanner";
 import Head from "next/head";
 import { ErrorBoundary } from "@/components/errors/ErrorBoundary";
-import "@crowd4flipping/ui-components";
 import { useRouter } from "next/router";
 import { useSetCookieTracker } from "@/components/hooks/useAdQueryTracker";
 
