@@ -1,6 +1,10 @@
 @import "./theme/Default.module.scss";
 @import "./theme/ui-components-props.scss";
 
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
 //TODO: try to import the :root styles from the ui-components libary
 :root {
   @include default;
