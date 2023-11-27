@@ -1,18 +1,22 @@
 import React from "react";
 import { RiWhatsappLine } from "react-icons/ri";
 import styles from "./styles/WhatsappButton.module.scss";
+import Link from "next/link";
 
 export const WhatsAppButton = () => {
   return (
-    <div className={styles.whatsappBtn}>
+    <Link 
+      href={`https://wa.me/34672126268`}
+      passHref
+    >
       <a
-        href={`https://wa.me/34672126268`}
+        className={styles.whatsappBtn}
+        aria-label="whatsapp"
         target="_blank"
         rel="noreferrer"
-        aria-label="whatsapp"
       >
         <RiWhatsappLine className={styles.whatsappBtn_icon} />
       </a>
-    </div>
+    </Link>
   );
 };
