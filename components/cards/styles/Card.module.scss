@@ -190,12 +190,19 @@ $borderRadius: 0.5rem;
   width: 90%;
   margin: 0 auto;
 
-  @include isSmallerRange {
+  @include isMobile {
     position: relative;
     height: 20rem;
-    width: 100%;
+    width: 50%;
   }
-
+  
+  @include isTablet {
+    position: relative;
+    width: 100%;
+    height: 22rem;   
+  }
+  
+  
   &_cardWrapper {
     position: absolute;
     inset: 0;

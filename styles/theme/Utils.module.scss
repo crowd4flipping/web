@@ -5,25 +5,31 @@ $lg: 1280px;
 $xl: 1536px;
 
 @mixin isMobile {
-  @media (max-width: $sm) {
+  @media (max-width: calc(#{$sm} - 1px)) {
     @content;
   }
 }
 
 @mixin isSmallerRange {
-  @media (max-width: $md) {
+  @media (max-width: calc(#{$md} - 1px)) {
     @content;
   }
 }
 
+@mixin isTablet {
+  @media (min-width: $sm) and (max-width: calc(#{$md} - 1px)) {
+    @content;
+  }
+} 
+
 @mixin isMediumRange {
-  @media (min-width: $md) and (max-width: $lg) {
+  @media (min-width: $md) and (max-width: calc(#{$lg} - 1px)) {
     @content;
   }
 } 
 
 @mixin isLarge {
-  @media (min-width: $lg) and (max-width: $xl) {
+  @media (min-width: $lg) and (max-width: calc(#{$xl} - 1px)) {
     @content;
   }
 }

@@ -97,6 +97,22 @@ export const KnowTheProjectStatus = () => {
                   </div>
                   <div
                     key={projectStatus(i)}
+                    className={styles.knowTheProjectStatus_tablet_wrapper}
+                  >
+                    <ProjectCardDarkTheme
+                      src={project.src}
+                      href={project.href}
+                      region={project.region}
+                      street={project.street}
+                      businessModel={project.businessModel}
+                      currentAmount={currentAmount}
+                      profitability={project.profitability}
+                      totalProjectAmount={project.totalProjectAmount}
+                      status={projectStatus(i)}
+                    />
+                  </div>
+                  <div
+                    key={projectStatus(i)}
                     className={styles.knowTheProjectStatus_desktop_wrapper}
                   >
                     <ProjectCardDarkTheme
