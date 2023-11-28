@@ -102,11 +102,11 @@ export const ContactFormItem = () => {
           onChange={handleChange}
         />
       </div>
-     {/*  <ReCAPTCHA
+      <ReCAPTCHA
         ref={captcha}
         sitekey="6LeW0vYiAAAAABvzPB2SSZrvaz3d7ptD70HNJak4"
         onChange={onChangeCaptcha}
-      /> */}
+      />
       <div className={styles.contactForm_formButton}>
         <Button variant="primary" fullWidth type="submit">
           {sendData ? <Loader /> : "Enviar"}
