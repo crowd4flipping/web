@@ -34,12 +34,11 @@ export const AnimatedMobileNavBar = ({
           onClick={() => setIsOpen(false)}
           className={styles.navbar_mobileNavBar_bg}
         />
-        {/*  <motion.nav
+        <motion.nav
           className={styles.navbar_mobileNavBar__content_wrapper}
           animate={isOpen ? "open" : "closed"}
           variants={variants}
-        > */}
-        <nav className={styles.navbar_mobileNavBar__content_wrapper}>
+        >
           <div className={styles.navbar_mobileNavBar__content}>
             <button
               onClick={() => setIsOpen(false)}
@@ -96,7 +95,7 @@ export const AnimatedMobileNavBar = ({
               </div>
             </div>
           </div>
-        </nav>
+        </motion.nav>
       </div>
     )
   );
