@@ -22,6 +22,6 @@ export const useSetCookieTracker = (parsedQuery: ParsedUrlQuery) => {
     const expirationDate = new Date();
     expirationDate.setMonth(currentDate.getMonth() + 1);
 
-    return expirationDate.toISOString();
+    return new Date(expirationDate).toUTCString();
   };
 };
