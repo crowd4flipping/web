@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "@crowd4flipping/ui-components";
+import "@crowd4flipping/ui-components/dist/assets/output-wasyNj-z.css";
 import "../styles/globals.scss";
 import Script from "next/script";
 import { CookieBanner } from "../components/cookies/CookieBanner";
