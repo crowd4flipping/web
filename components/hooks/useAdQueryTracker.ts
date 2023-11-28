@@ -11,19 +11,18 @@ export const useSetCookieTracker = (parsedQuery: ParsedUrlQuery) => {
     const { utm_ad } = parsedQuery as QueryTracker;
     if (!utm_ad) return;
 
-    console.log(utm_ad);
     const expirationDate = getCookieExpirationDate();
     const domain = Routes.web();
-    console.log(domain)
-    document.cookie = `utm_ad=${utm_ad}; expires=${expirationDate.toUTCString()}; domain=${domain}`;
-    document.cookie = `utm_ad=${utm_ad};`;
-    console.log(document.cookie)
-  
+    document.cookie = `utm_ad=${utm_ad}; expires=${expirationDate}; domain=${domain}`;
+    
   }, [parsedQuery]);
 
   const getCookieExpirationDate = () => {
     const currentDate = new Date();
-    const expirationDate = new Date().setMonth(currentDate.getMonth() + 1);
-    return new Date(expirationDate);
+    const expirationDate = new Date();
+    expirationDate.setMonth(currentDate.getMonth() + 1);
+
+    return expirationDate.toISOString();
   };
+ 
 };
