@@ -5,41 +5,8 @@
   @return red($hex), green($hex), blue($hex);
 }
 
-//TODO: try to import the :root styles from the ui-components libary
 :root {
   @include default;
-
-  --primary-color: #{$primary-color};
-  --primary-color-rgb: #{hexToRGB($primary-color)};
-  --primary-color-hover: #{$primary-color-hover};
-
-  --text-color: #{$text-color};
-  --subtitle-color: #{$subtitle-color};
-
-  --background-color: #{$background-color};
-
-  --surface-color: #{$surface-color};
-
-  --card-color: #{$card-color};
-
-  --highlight-color: #{$highlight-color};
-}
-
-//TODO: try to import the .dark-theme styles from the ui-components libary
-.dark-theme {
-  --primary-color: #{$primary-color-dark};
-  --primary-color-hover: #{$primary-color-dark-hover};
-
-  --text-color: #{$white};
-  --subtitle-color: #{$subtitle-color-dark};
-
-  --background-color: #{$background-color-dark};
-
-  --surface-color: #{$surface-color-dark};
-
-  --card-color: #{$card-color-dark};
-
-  --highlight-color: #{$highlight-color-dark};
 }
 
 html,
