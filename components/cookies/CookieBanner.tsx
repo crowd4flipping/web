@@ -2,11 +2,24 @@ import Link from "next/link";
 import CookieConsent from "react-cookie-consent";
 import styles from "./CookieBanner.module.scss";
 
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
+
 export const CookieBanner = () => {
   return (
     <CookieConsent
       enableDeclineButton
-      onAccept={(event) => console.log(!event)}
+      onAccept={() => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'cookie_accepted' });
+      }}
+      onDecline={() => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'cookie_refused' });
+      }}
       style={{
         padding: "2rem",
         background: "#010f24",
