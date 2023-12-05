@@ -6,7 +6,7 @@ import Link from "next/link";
 export const WhatsAppButton = () => {
   return (
     <Link 
-      href={`https://wa.me/34672126268`}
+      href={`https://wa.me/34672126268?text=Hola, me llamo _______ y estoy interesadx en Crowd4Flipping, podríais enviarme más información.`}
       passHref
     >
       <a
