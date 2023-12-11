@@ -15,6 +15,10 @@ export const C4FProHomePage = () => {
           name="description"
           content="En Crowd4Flipping PRO brindamos oportunidades inmobiliarias a medida"
         />
+        <link
+          rel="icon"
+          href="/images/brand/crowd4flipping/Favicon/favicon_0.png"
+        />
       </Head>
       <main className={styles.c4fProHomePage}>
         <ProHeroSection />
