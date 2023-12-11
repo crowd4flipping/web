@@ -15,7 +15,7 @@ export const HeroHeader = () => {
           </span>
         </h1>
         <h2 className={heroStyles.heroSection_subtitle}>
-          Descubre la inversión inmobiliaria del futuro desde 500€
+          Inversión inmobiliaria <span className={heroStyles.heroSection_subtitle_highligh}>desde 500€</span>
         </h2>
       </div>
 
