@@ -33,7 +33,7 @@ const footerNavContent: FooterNav = {
 
 export const Footer = () => {
   const footerNavLeft = Object.entries(footerNavContent).slice(0, 3);
-  const footerNavRight = Object.entries(footerNavContent).slice(2, 4);
+  const footerNavRight = Object.entries(footerNavContent).slice(3, 5);
   const currentYear = new Date().getFullYear();
   return (
     <footer className={styles.footer}>
