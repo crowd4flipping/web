@@ -1,7 +1,6 @@
 import { ReactElement } from "react";
 
 const navBarLabels = [
-  "Sobre nosotros",
   "Blog",
   "FAQs",
   "Regístrate",

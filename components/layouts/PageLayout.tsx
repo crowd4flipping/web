@@ -27,11 +27,6 @@ const navBarSections: NavBarSection[] = [
     href: "/transparencia",
   },
   {
-    icon: <TeamIcon />,
-    label: "Sobre nosotros",
-    href: "/sobre-nosotros",
-  },
-  {
     icon: <BlogIcon />,
     label: "Blog",
     href: "/blog",
