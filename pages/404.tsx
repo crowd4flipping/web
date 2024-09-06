@@ -8,7 +8,7 @@ export default function index() {
   return (
     <PageLayout fixedNavBar>
         <div className={styles.page_404}>   
-            <h1 className={styles.page_404_title}>¡Ups! Parece que esta página no existe</h1>
+            <h1 className={styles.page_404_title}>¡Ups! Parece que esta página no existe por favor regrese.</h1>
             <Image 
                 src={Image_404} 
                 height={500} 
